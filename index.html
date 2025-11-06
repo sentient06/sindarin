@@ -18,6 +18,10 @@
       white-space: pre-wrap;
       word-wrap: break-word;
     }
+
+    small.note {
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -57,10 +61,8 @@
 <p>
   <img src="Dungeon8807construction.gif" alt="Under construction" />
 </p>
-<small>
-  <i>
-    Some stuff has been copied from Eldamo, some from Vinyë Lambengolmor. I am trying to make my own thing, but so far I'm ripping off everyone. Sorry in advance.
-  </i>
+<small class="note">
+  Some stuff has been copied from Eldamo, some from Vinyë Lambengolmor. I am trying to make my own thing, but so far I'm ripping off everyone. Sorry in advance.
 </small>
 
 <a name="fundamentals" />
@@ -467,7 +469,7 @@ N. sîr    "river"    → siriath    "(all of the) rivers".
   tol-: present tense telin "I come".
 </pre>
 <p>
-  Because of the large number of collisions in the present tense, basic verbs are less likely to survive, and that's we see derived verbs or prefixed verbs in Sindarin where their Quenya equivalents are basic verbs.
+  Because of the large number of collisions in the present tense, basic verbs are less likely to survive, and that's why we see derived verbs or prefixed verbs in Sindarin where their Quenya equivalents are basic verbs.
 </p>
 <pre>
   S. cova-   "assemble"    vs.  Q. ócom-
@@ -654,14 +656,16 @@ Derived verbs ending in -a:
   These consonant mutations apply to the initial consonant of a word, either when closely following another word or in compounds.
 </p>
 
+<small class="note">hw- was the usual Neo-S orthography used before PE23 - Eldamo changed it to wh- after PE23, since it became clear that JRRT used wh- more often</small>
+
 <pre>
   <b>Category                 Base                 Soft Mutation        Nasal Mutation        Mixed Mutation        Stop Mutation   Liquid Mutation   Sibilant Mutation</b>
   Voiceless Stops          p-, t-, c-           b-, d-, g-           ph-, th-, ch-         b-, d-, g-            ph, th, ch      ph, th, ch        ph, th, ch
   Voiced Stops             b-, d-, g-           v-, dh-, '-          m-, n-, ñ- (or ng-)   b-, d-, g-            b-, d-, g-      v, dh, '          b-, d-, g-
   Nasalized Stops          [m]b-, [n]d-, [n]g-  m-, n-, ñ- (or ng-)  m-, n-, ñ- (or ng-)   mb-, nd-, ng-         nd, mb, n-g     b, d, g           [m]b-, [n]d-, [n]g-
-  Sibilants and Spirants
-  Voiceless Liquids †
-  Nasals
+  Sibilants and Spirants   s-, h-, wh-          h-, ch-, chw-        s-, ch-, chw-         h-, ch-, chw-         s-, ch-, wh-    s-, ch-, 'w-      s-, ch-, wh-
+  Voiceless Liquids †      lh-, rh-             thl-, thr-           thl-, thr-            'l-, 'r-              l-, r-          'l-, 'r-          lh-, rh-
+  Nasals                   m-                   v-                   m-                    m-                    m-              v-                m-
 </pre>
 
 
@@ -1396,9 +1400,16 @@ pen pron. "one, somebody"
 <a name="genitive" />
 <h3>Genitive</h3>
 
+<p>
+  In grammar, a genitive construction or genitival construction is used to express a relation between two nouns such as the possession of one by another, or an attributive relationship. A genitive construction involves two nouns, the head (or modified noun) and the dependent (or modifier noun).
+</p>
+<p>
+  Sindarin's most used style of genitive constructions is by juxtaposition, similar to Hebrew.
+</p>
+
 <h4>Juxtapositional genitives</h4>
 <p>
-  Function adjectivally and hence the second (modifying) noun is always indefinite.
+  These function adjectivally and hence the second (modifying) noun is always indefinite.
 </p>
 <p>
   Juxtapositional genitives are always used for nouns in apposition, that is, two nouns referencing the same thing:
@@ -1407,7 +1418,46 @@ pen pron. "one, somebody"
   "ost Minas Tirith" = "city [of] Minas Tirith"
 </pre>
 
+<h5>Definiteness</h5>
+<p>
+  Unlike in English, where each noun may independently bear definiteness, in Sindarin only the final noun in a construct chain determines the definiteness of the entire phrase.
+</p>
+<pre>
+  bâr aran    - "a king's house" (indefinite)
+  bâr en·aran – "the king's house" (definite)
+  bâr erain   - "a house of kings" (plural genitive)
+</pre>
 
+<h5>Construct Chains Beyond Two Nouns</h5>
+<p>
+  Sindarin allows extended construct chains, where multiple nouns are stacked to create complex phrases.
+</p>
+<pre>
+  parf inias ionnath Elrond — "the book of the annals of the sons of Elrond"
+</pre>
+<p>
+  Here, the construct sequence spans three levels:
+</p>
+<pre>
+  parf inias     – book of annals
+  inias ionnath  – annals of sons
+  ionnath Elrond – sons of Elrond
+</pre>
+<p>
+  Such constructions are semantically rich but syntactically rigid. Any adjective modifying the chain must follow the entire construct and agree in number with the head noun.
+</p>
+
+<h5>Interference and Disruption of the Construct Chain</h5>
+<p>
+  One of the strict features of the construct chain is that it must be uninterrupted. Unlike in English, where modifiers may separate the head noun from its genitive, Sindarin prohibits such insertions. An adjective or demonstrative must follow the entire chain. For example:
+</p>
+<pre>
+  ✅ roch aran vaer – "a good horse of a king" (adjective comes after the whole phrase)
+  ❌ roch vaer aran – "good horse of a king" is ungrammatical in construct syntax
+</pre>
+<p>
+  This syntactic rigidity marks a significant difference between Sindarin and many European languages.
+</p>
 
 
 <h4>Prepositional genitives</h4>
