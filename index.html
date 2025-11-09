@@ -29,9 +29,12 @@
     }
 
     main pre {
-/*      white-space: pre-wrap;*/
-/*      word-wrap: break-word;*/
       overflow: auto;
+    }
+
+    main pre.break {
+      white-space: pre-wrap;
+      word-wrap: break-word;
     }
 
     small.note {
@@ -40,6 +43,10 @@
 
     img {
       max-width: 100%;
+    }
+
+    ol.alpha {
+      list-style: lower-alpha;
     }
 
     @media (max-width: 667px)  {
@@ -75,16 +82,16 @@
       </ul>
     </li>
     <li>
-      <a href="#basic2">Basic grammar part II</a>
+      <a href="#basic">Basic grammar</a>
       <ul>
-        <li><a href="#basic_sentence_structure">Basic Sentence Structure</a></li>
+        <li><a href="#sentence_structure">Sentence Structure</a></li>
         <li><a href="#prepositions">Prepositions</a></li>
         <li><a href="#adverbs">Adverbs</a></li>
         <li><a href="#conjunctions">Conjunctions</a></li>
       </ul>
     </li>
     <li>
-      <a href="#basic3">Basic grammar part III</a>
+      <a href="#intermediate">Intermediate grammar</a>
       <ul>
         <li><a href="#pronouns">Pronouns</a></li>
         <li><a href="#demonstrative_pronouns">Demonstrative Pronouns</a></li>
@@ -94,6 +101,7 @@
         <li><a href="#verb_more">More verbs</a></li>
         <li><a href="#past_tense">Past Tense</a></li>
         <li><a href="#future_tense">Future Tense</a></li>
+        <li><a href="#diminitive_augmentative">Diminitive and augmentative</a></li>
       </ul>
     </li>
   </ul>
@@ -106,10 +114,28 @@
 
 <p>
   <img src="Dungeon8807construction.gif" alt="Under construction" />
+  <!-- http://textfiles.com/underconstruction/ -->
 </p>
-<small class="note">
-  Some stuff has been copied from Eldamo, some from Vinyë Lambengolmor. I am trying to make my own thing, but so far I'm ripping off everyone. Sorry in advance.
-</small>
+<p>
+  <small class="note">
+    This is a compilation of notes I've made to use as reference for Neo-Sindarin. I've been transforming it into an HTML for easy access and I'm slowly trying to order it by topics.
+  </small>
+</p>
+<p>
+  <small class="note">
+    Some stuff has been copied from Eldamo, some from Vinyë Lambengolmor. I am trying to make my own thing, but so far I'm ripping off everyone. Sorry in advance.
+  </small>
+</p>
+<p>
+  <small class="note">
+    This is a work in progress with no end in sight.
+  </small>
+</p>
+<p>
+  <small class="note">
+    There should be topics here unexplored elsewhere.
+  </small>
+</p>
 
 <a name="fundamentals" />
 <h1>Fundamentals</h1>
@@ -295,14 +321,17 @@ These past and future copulas are inflected with pronominal suffixes as appropri
   Nouns can be definite or indefinite, singular or plural.
 </p>
 <p>
-  Plural nouns go through vowel mutations.
+  Proper names are considered definite nouns. Other nouns are made definite by use of a definite article. There is a singular and a plural article.
+</p>
+<p>
+  Plural nouns go through vowel mutations. They can be identified by these vowels.
 </p>
 
 <h3>
   Plural nouns
 </h3>
 <p>
-  Plurals in Sindarin go through i-affection. This is the result of an ancient plural suffix ī which has been lost in modern Sindarin plurals.
+  Plurals in Sindarin go through a mutation known as i-affection. This is the result of an ancient plural suffix ī which has been lost in modern Sindarin plurals.
 </p>
 <p>
   There are 3 types of i-affection:
@@ -317,13 +346,14 @@ These past and future copulas are inflected with pronominal suffixes as appropri
 <p>
   Occurs only in non-final syllables:
   <pre>
-  Non-final a → e: adan "man" → edain "men"
-  Non-final o → e: onod "Ent" → enyd "Ents"
-  Non-final u → y: [N.] tulus "poplar" → tylys "poplars"
+  Non-final a → e: <b>a</b>dan  "man"    → <b>e</b>dain "men"
+  Non-final o → e: <b>o</b>nod  "Ent"    → <b>e</b>nyd  "Ents"
+  Non-final u → y: t<b>u</b>lus "poplar" → t<b>y</b>lys "poplars"
 
   Other vowels in non-final syllables (e, i, y) do not mutate.
   Long vowels in non-final syllables (í, ó, ú, ý) do not mutate.
-  Archaically o → œ: golodh “Gnome” → gœlydh "Gnomes".
+  Archaically:
+  Non-final o → œ: g<b>o</b>lodh "Gnome" → g<b>œ</b>lydh "Gnomes"
   </pre>
 </p>
 
@@ -331,11 +361,11 @@ These past and future copulas are inflected with pronominal suffixes as appropri
 <p>
 Occurs only in final syllables:
   <pre>
-  Final a → e: narn "tale" → nern "tales".
-  Final e → i: edhel "elf" → edhil "elves".
-  Final ê → î: hên "child" → hîn "children".
-  Final o → y: orch "orch" → yrch "orcs".
-  Final u → y: [N.] tulus "poplar" → tylys "poplars".
+  Final a → e: n<b>a</b>rn  "tale"   → n<b>e</b>rn  "tales"
+  Final e → i: edh<b>e</b>l "elf"    → edh<b>i</b>l "elves"
+  Final ê → î: h<b>ê</b>n   "child"  → h<b>î</b>n   "children"
+  Final o → y: <b>o</b>rch  "orch"   → <b>y</b>rch  "orcs"
+  Final u → y: tul<b>u</b>s "poplar" → tyl<b>y</b>s "poplars"
 
   Other short vowels in final syllables (i, y) do not mutate.
   </pre>
@@ -346,13 +376,14 @@ Occurs only in final syllables:
 Happens when the last syllable ends in a single consonant:
 
   <pre>
-  Intruded a → ai: adan "man" → edain "men".
-  Intruded â → ai: bâr "home" → bair "homes".
-  Intruded ô → ui: thôn "pine" → thuin "pines"; monosyllables only.
-  Intruded û → ui: dûr "dark" → duir "dark (plural)"; monosyllables only.
-  Intruded au → oe: naug "dwarf" → noeg "dwarves".
+  Intruded  a → ai: <b>a</b>dan "man"   → ed<b>ai</b>n "men"
+  Intruded  â → ai: b<b>â</b>r  "home"  → b<b>ai</b>r  "homes"
+  Intruded  ô → ui: th<b>ô</b>n "pine"  → th<b>ui</b>n "pines"         - monosyllables only
+  Intruded  û → ui: d<b>û</b>r  "dark"  → d<b>ui</b>r  "dark (plural)" - monosyllables only
+  Intruded au → oe: n<b>au</b>g "dwarf" → n<b>oe</b>g  "dwarves"
 
-  The long vowels î, ŷ in final syllables do not mutate. The vowels e/ê, o, u undergo final i-affection instead (to i/î, y, y).
+  The long vowels î, ŷ in final syllables do not mutate.
+  The vowels e/ê, o, u undergo final i-affection instead (to i/î, y, y).
   </pre>
 </p>
 
@@ -360,17 +391,20 @@ Happens when the last syllable ends in a single consonant:
 <p>
 Plurals of rarer diphthongs are the result of other phonetic effects:
   <pre>
-  Rare oe → ui: oew "evil deed" → *uiw "evil deeds".
-  Rare eu → ŷ: teuch "chip" → *tŷch "chips".
+  Rare oe → ui: <b>oe</b>w   "evil deed" → <b>ui</b>w  "evil deeds"
+  Rare eu →  ŷ: t<b>eu</b>ch "chip"      → t<b>ŷ</b>ch "chips"
   </pre>
 </p>
 <p>
-  The diphthongs ae, ei, ai, ui do not normally mutate in plurals, even in final syllables, but there are some unusual plurals where they do. Diphthongs never mutate in non-final syllables, however.
+  The diphthongs ae, ei, ai, ui do not normally mutate in plurals, even in final syllables, but there are some unusual plurals where they do.
+</p>
+<p>
+  Diphthongs never mutate in non-final syllables.
 </p>
 
 <h4>Unusual plurals</h4>
 <p>
-  Sindarin has a number of plural patterns resulting from more obscure sound changes.
+  Sindarin has a number of plural patterns resulting from more obscure sound changes:
 </p>
 <ul>
   <li>
@@ -390,45 +424,55 @@ Plurals of rarer diphthongs are the result of other phonetic effects:
   </li>
   <li>
     <span>
-      When a vowel mutates to i or y in its plural, it absorbs any preceding i, as in: Miniel → Mínil, thalion → thelyn.
+      When a vowel mutates to i or y in its plural, it absorbs any preceding i, as in:
     </span>
-    <pre></pre>
+    <pre>
+  Miniel → Mínil, thalion → thelyn.</pre>
   </li>
   <li>
     <span>
-      When a polysyllable ends in a short vowel, it generally follows the same mutations as in polysyllables ending in a single consonant: -a → -ai, -e → -i, -o/u → -y.
+      When a polysyllable ends in a short vowel, it generally follows the same mutations as in polysyllables ending in a single consonant:
     </span>
-    <pre></pre>
+    <pre>
+  -a → -ai
+  -e → -i
+  -o → -y
+  -u → -y</pre>
   </li>
   <li>
     <span>
-      One exception is when a final -a is derived from an ancient g > ʒ > -a, in which case in plurals: -a → -i.
+      One exception is when a final -a is derived from an ancient g > ʒ > -a, in which case in plurals:
     </span>
-    <pre></pre>
+    <pre>
+  -a → -i</pre>
   </li>
   <li>
     <span>
-      When a monosyllable ends in a long vowel, it generally follows the same mutations as in monosyllables ending in a single consonant: -â → -ai, -ê → -î, -ô/û → -ui.
+      When a monosyllable ends in a long vowel, it generally follows the same mutations as in monosyllables ending in a single consonant:
     </span>
-    <pre></pre>
+    <pre>
+  -â → -ai
+  -ê → -î
+  -ô → -ui
+  -û → -ui</pre>
   </li>
   <li>
     <span>
-      When a monosyllable ends in a diphthong, its plural mutations are -êw → -îw and -aw → -oe(w); other diphthongs are immune to mutation.
+      Diphthongs are immune to mutation except when in some monosyllables:
     </span>
-    <pre></pre>
+    <pre>
+  -êw → -îw
+  -aw → -oe(w)</pre>
   </li>
   <li>
     <span>
       Some Sindarin plurals are formed with the plural suffix -in, either a remnant of an ancient n preserved in the plural, or a generalization of this suffix applied to other situations.
     </span>
-    <pre></pre>
   </li>
   <li>
     <span>
       Sometimes the Sindarin plural becomes the base form, and a singular is derived from it using the suffixes -eg, -ig, -og or -od.
     </span>
-    <pre></pre>
   </li>
 </ul>
 
@@ -496,7 +540,7 @@ N. sîr    "river"    → siriath    "(all of the) rivers".
 </p>
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
-<h3>Basic verbs</h3>
+<h3>Basic verbs (i-stem)</h3>
 <p>
   They are based on an unadorned primitive verbal root. They are also known as i-stem.
 </p>
@@ -549,7 +593,7 @@ N. sîr    "river"    → siriath    "(all of the) rivers".
 
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
-<h3>Derived verbs</h3>
+<h3>Derived verbs (a-stem)</h3>
 <p>
   They are produced with some kind of verbal suffix. They are also known as a-stem.
 </p>
@@ -603,27 +647,33 @@ N. sîr    "river"    → siriath    "(all of the) rivers".
 <h3>Verbal nouns (gerund)</h3>
 
 <p>
-  Verbal nouns function as both gerunds and infinitives, and behave in all respects like nouns except:<br />
-  (a) they cannot be inflected in the plural and<br />
-  (b) are not mutated when functioning as the infinitival object of another verb.
+  Verbal nouns function as both gerunds and infinitives, and behave in all respects like nouns except:
 </p>
+<ol class="alpha">
+  <li>they cannot be inflected in the plural and</li>
+  <li>are not mutated when functioning as the infinitival object of another verb.</li>
+</ol>
 <p>
 Basic verbs:
   add -ed
 </p>
+<pre>
+  car- (to do) = cared (doing)
+</pre>
 <p>
 Derived verbs ending in -a:
   add -d
 </p>
 <pre>
-  car- (to do) = cared (doing)
+  saeda- (to teach) = saedad (teaching)
 </pre>
 <p>
   It works as an object to another verb, like English infinitive.
   E.g.
 </p>
 <pre>
-  nidhin mened "I intend to go"
+  nidhin <b>mened</b> "I intend to go"
+  melin <b>saedad</b> "I love to teach"
 </pre>
 
 <p>
@@ -634,7 +684,7 @@ Derived verbs ending in -a:
   E.g.
 </p>
 <pre>
-  e aníra ennas suilannad "he desires there to greet" (ennas = there)
+  te aníra ennas <b>suilannad</b> "he desires there ‹to greet›" (ennas = there)
 </pre>
 
 <p>
@@ -642,7 +692,7 @@ Derived verbs ending in -a:
   E.g.
 </p>
 <pre>
-  aníra ... suilannad mhellyn "desires to greet friends" (mhellyn is mutated).
+  aníra ... suilannad <b>mhellyn</b> "desires to greet friends" (mhellyn is mutated from "mellyn")
 </pre>
 
 
@@ -673,13 +723,13 @@ Derived verbs ending in -a:
   <span class="hide">Voiceless Liquids †      </span>lh-, rh-             thl-, thr-           thl-, thr-            'l-, 'r-
   <span class="hide">Nasals                   </span>m-                   v-                   m-                    m-
 
-  <b><span class="hide">Category                 </span>Base                 Stop Mutation   Liquid Mutation   Sibilant Mutation</b>
-  <span class="hide">Voiceless Stops          </span>p-, t-, c-           ph, th, ch      ph, th, ch        ph, th, ch
-  <span class="hide">Voiced Stops             </span>b-, d-, g-           b-, d-, g-      v, dh, '          b-, d-, g-
-  <span class="hide">Nasalized Stops          </span>[m]b-, [n]d-, [n]g-  nd, mb, n-g     b, d, g           [m]b-, [n]d-, [n]g-
-  <span class="hide">Sibilants and Spirants   </span>s-, h-, wh-          s-, ch-, wh-    s-, ch-, 'w-      s-, ch-, wh-
-  <span class="hide">Voiceless Liquids †      </span>lh-, rh-             l-, r-          'l-, 'r-          lh-, rh-
-  <span class="hide">Nasals                   </span>m-                   m-              v-                m-
+  <b><span class="hide">Category                 </span>Base                 Stop Mutation        Liquid Mutation       Sibilant Mutation</b>
+  <span class="hide">Voiceless Stops          </span>p-, t-, c-           ph, th, ch           ph, th, ch            ph, th, ch
+  <span class="hide">Voiced Stops             </span>b-, d-, g-           b-, d-, g-           v, dh, '              b-, d-, g-
+  <span class="hide">Nasalized Stops          </span>[m]b-, [n]d-, [n]g-  nd, mb, n-g          b, d, g               [m]b-, [n]d-, [n]g-
+  <span class="hide">Sibilants and Spirants   </span>s-, h-, wh-          s-, ch-, wh-         s-, ch-, 'w-          s-, ch-, wh-
+  <span class="hide">Voiceless Liquids †      </span>lh-, rh-             l-, r-               'l-, 'r-              lh-, rh-
+  <span class="hide">Nasals                   </span>m-                   m-                   v-                    m-
 </pre>
 
 
@@ -934,11 +984,11 @@ Derived verbs ending in -a:
   </li>
 </ul>
 
-<a name="basic2" />
-<h1>Basic grammar part II</h1>
+<a name="basic" />
+<h1>Basic grammar</h1>
 <a href="">[Top]</a>
-<a name="basic_sentence_structure" />
-<h2>Basic Sentence Structure</h2>
+<a name="sentence_structure" />
+<h2>Sentence Structure</h2>
 
 <p>
   The word order of transitive verbs in Sindarin is usually SPO (subject-predicate-object):
@@ -1231,8 +1281,8 @@ ach + soft mutation = "but"
 pen pron. "one, somebody"
 </pre>
 
-<a name="basic3" />
-<h1>Basic grammar part III</h1>
+<a name="intermediate" />
+<h1>Intermediate grammar</h1>
 <a href="">[Top]</a>
 
 <a href="#top">[Top]</a>
@@ -1244,11 +1294,11 @@ pen pron. "one, somebody"
     1st sg.          <i>ni</i>  I/me        <i>-(o)n</i>  I       <i><a href="https://eldamo.org/content/words/word-2068694825.html">nin</a></i>  me        <i><a href="https://eldamo.org/content/words/word-667014213.html">annin</a></i>  to me       <i><a href="https://eldamo.org/content/words/word-191574293.html">nín</a></i>  my 
     2nd sg.          <i><a href="https://eldamo.org/content/words/word-2298877587.html">ci</a></i>  thou        <i>-(o)g</i>  thou    <i>cin</i>  thou      <i>achin</i>  to thee     <i>cín</i>  thine 
     2nd sg. (polite) <i><a href="https://eldamo.org/content/words/word-1581961535.html">le</a></i>  you         <i>-(o)l</i>  you     <i>len</i>  you       <i>allen</i>  to you      <i><a href="https://eldamo.org/content/words/word-3806423637.html">lín</a></i>  your 
-    3rd sg.          <i>te</i>  he/she      -   he/she     <i>ten</i>  him/her   <i>athen</i>  to him/her  <i><a href="https://eldamo.org/content/words/word-2130737323.html">tín</a></i>  his/her 
+    3rd sg.          <i>te</i>  he/she      -      he/she  <i>ten</i>  him/her   <i>athen</i>  to him/her  <i><a href="https://eldamo.org/content/words/word-2130737323.html">tín</a></i>  his/her 
 
-    1st pl.          <i>me</i>  we/us       <i>-(o)f</i>  we      <i><a href="https://eldamo.org/content/words/word-2968542933.html">men</a></i>  us        <i><a href="https://eldamo.org/content/words/word-667014213.html">ammen</a></i>  to us       <i><a href="https://eldamo.org/content/words/word-1998998965.html">mín</a></i>  our 
-    2nd pl.          <i><a href="https://eldamo.org/content/words/word-3071865501.html">de</a></i>  you         <i>-(o)dhir</i>  you  <i>den</i>  you       <i>annen</i>  to you      <i>dín</i>  your 
-    3rd. pl.         <i><a href="https://eldamo.org/content/words/word-206577057.html">ti</a></i>  they/them   <i>-r</i>  they       <i>tin</i>  them      <i>athin</i>  to them     <i>tín</i>  their 
+    1st pl.          <i>me</i>  we/us       <i>-(o)f</i>    we    <i><a href="https://eldamo.org/content/words/word-2968542933.html">men</a></i>  us        <i><a href="https://eldamo.org/content/words/word-667014213.html">ammen</a></i>  to us       <i><a href="https://eldamo.org/content/words/word-1998998965.html">mín</a></i>  our 
+    2nd pl.          <i><a href="https://eldamo.org/content/words/word-3071865501.html">de</a></i>  you         <i>-(o)dhir</i> you   <i>den</i>  you       <i>annen</i>  to you      <i>dín</i>  your 
+    3rd. pl.         <i><a href="https://eldamo.org/content/words/word-206577057.html">ti</a></i>  they/them   <i>-r</i>       they  <i>tin</i>  them      <i>athin</i>  to them     <i>tín</i>  their 
 </pre>
 
 
@@ -1821,28 +1871,27 @@ pen pron. "one, somebody"
   ... Nothing here yet ...
 </p>
 
-<hr>
+<a name="diminitive_augmentative" />
+<h2>Diminitive and augmentative</h2>
+<a href="#top">[Top]</a>
 
 <p>
-  Random notes
+  Diminutive is probably caused with -eg < ✶-ikā, attested in PE23.
+</p>
+<p>
+  That works along with the distribution of -ig (< ✶iki, comparable to Q. -ince) and -og (unknown etymology) is unclear, but it is highly unlikely to be random.
+</p>
+<small>
+  'nín' can't form a diminutive, it expresses a genitive relation.
+</small>
+<p>
+  Augmentatives can be formed with -on and -oth.
 </p>
 
-<pre>
-7. To have
-
-8. Negation
-
-9. Yes and no Questions
-
-10. Who, what, where
-
-11. Present Tense – Regular Verbs
-
-12. Common Irregular Verbs
-</pre>
-
 <hr>
-<pre>
+<pre class="break">
+
+Random notes that require organising:
 
 
 o + i
@@ -1893,26 +1942,35 @@ submissions), so nan will have no special definite form.
 https://discord.com/channels/397489292185960468/1366798511445643325/1422264750334804020
 
 
+
+Diminutive and augmentative
+
+I don't think the diminutive suffixes are interchangeable. The normal one is probably -eg < ✶-ikā, which was now attested again in PE23; how that works along with the distribution of -ig (< ✶iki, comparable to Q. -ince) and -og (unknown etymology) is unclear, but it is highly unlikely to be random IMHO.
+
+I also don't get Fiona's point about "my" used for diminutives in English... "My Father" is not a diminutive in any sense of the term that I am familiar with, and I certainly don't think it's intended as a diminutive in Pater Noster... So I would say that no, nín cannot form a diminutive, it expresses a genitive relation. 
+
+Augmentatives can be formed with -on and -oth.
+
+https://discord.com/channels/397489292185960468/398407102344986625/1427670225372840106
+
+
+There is some research suggesting that Proto-Uralic used diminutives to designate singular instances from words which are either inherently groups or non-discrete things.
+Sindarin maybe uses diminutives that way too.
+
+
+
+More linguistic topics:
+
+7. To have
+8. Negation
+9. Yes and no Questions
+10. Who, what, where
+11. Present Tense – Regular Verbs
+12. Common Irregular Verbs
 14. Numbers
-
 15  Telling Time / Days
-
-1st person - nín  - my
-2nd person - cín  - thine
-2nd person - lín  - your
-3rd person - tín  - his/her/its
-
-1st person - mín  - our
-2nd person - dín  - your
-3rd person - tín  - their
-
-all person - în  - reflexive
-
-
-
 17  Reflexive Pronouns
 18  Demonstratives
-
 20  Modal Verbs
 21  Past Tense – Regular
 22  Past Tense – Irregular
@@ -1920,7 +1978,6 @@ all person - în  - reflexive
 24  Imperative
 25  Participles
 26  Compound Tenses
-
 28  Conditional Mood
 29  Subjunctive / Other Moods
 30+ Passive voice, reported speech, relative clauses, etc.
