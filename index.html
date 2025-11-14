@@ -101,7 +101,7 @@
     }
 
     .liquid {
-      color: #f44336;
+      color: tomato;
     }
 
     .sibilant {
@@ -141,12 +141,13 @@
       vertical-align: top;      /* not strictly needed; flex aligns tops by default */
     }
 
-
-
     .a1, .a2 {
+      -webkit-text-size-adjust: 100%;
       white-space: pre;
       font-family: monospace;
       font-size: 1em;
+      max-width: 100%;
+      overflow: auto;
 
 /*      padding: 5px !important;*/
 /*      border: 1px solid #ccc;*/
@@ -1259,15 +1260,15 @@ Derived verbs ending in -a:
 <div class="wrapper">
 <div class="a1">
   <a href="https://eldamo.org/content/words/word-2583985695.html" target="_blank">mi</a> = "in"
-  indefinite ......: mi       + soft mutation
-  definite singular: min      + mixed mutation
-  definite plural .: min {mi} + nasal mutation
+  indefinite ......: mi  + soft mutation
+  definite singular: min + mixed mutation
+  definite plural .: min + nasal mutation
 </div>
 <div class="a2">
   mi:
-  Elrond <span class="soft"><b>vi</b></span> <span class="soft">ham</span>      = "Elrond [is] <b>in</b> [a] room"
-  Imladris <span class="soft"><b>vin</b></span> <span class="mixed">dum</span>   = "Rivendell [is] <b>in the</b> valley"
-  Loss <span class="soft"><b>vin</b></span> <span class="nasal">pherth</span>    = "snow <b>in the</b> fields"
+  Elrond <b>mi</b> <span class="soft">ham</span>      = "Elrond [is] <b>in</b> [a] room"
+  Imladris <b>min</b> <span class="mixed">dum</span>   = "Rivendell [is] <b>in the</b> valley"
+  Loss <b>min</b> <span class="nasal">pherth</span>    = "snow <b>in the</b> fields"
 </div>
 <hr />
 
@@ -1279,15 +1280,15 @@ Derived verbs ending in -a:
 </div>
 <div class="a2">
   po:
-  Faramir <span class="soft"><b>bo</b></span> <span class="soft">lunt</span>    = "Faramir [is] <b>on</b> [a] boat"
-  Boromir <span class="soft"><b>boe</b></span> <span class="soft">lunt</span>   = "Boromir [is] <b>on the</b> boat"
-  Loss <span class="soft"><b>boen</b></span> <span class="nasal">lunt</span>     = "Snow [is] <b>on the</b> boats"
+  Faramir <b>po</b> <span class="soft">lunt</span>    = "Faramir [is] <b>on</b> [a] boat"
+  Boromir <b>poe</b> <span class="soft">lunt</span>   = "Boromir [is] <b>on the</b> boat"
+  Loss <b>poen</b> <span class="nasal">lunt</span>     = "Snow [is] <b>on the</b> boats"
 </div>
 <hr />
 
 <div class="a1">
   <a href="https://eldamo.org/content/words/word-3815044181.html" target="_blank">nu</a> = "under"
-  indefinite ......: nu + soft mutation
+  indefinite ......: nu   + soft mutation
   definite singular: nui  + soft mutation
   definite plural .: nuin + nasal mutation
 </div>
@@ -1301,9 +1302,9 @@ Derived verbs ending in -a:
 
 <div class="a1">
   <a href="https://eldamo.org/content/words/word-806516075.html" target="_blank">di</a> = "under, beneath"
-  indefinite ......: di       + soft mutation
-  definite singular: din      + mixed mutation
-  definite plural .: din {di} + nasal mutation
+  indefinite ......: di  + soft mutation
+  definite singular: din + mixed mutation
+  definite plural .: din + nasal mutation
 </div>
 <div class="a2">
   di:
@@ -1319,22 +1320,22 @@ Derived verbs ending in -a:
 -->
 <div class="a1">
   ho = 'before, in front (spacial)' ᴺS
-  indefinite ......: ho + soft mutation
-  definite singular: hoe + soft mutation
+  indefinite ......: ho   + soft mutation
+  definite singular: hoe  + soft mutation
   definite plural .: hoen + nasal mutation
 </div>
 <div class="a2">
   ho:
-  Aragorn <span class="soft"><b>cho</b></span> <span class="soft">chenneth</span>       = "Aragorn [is] <b>before</b> [a] window"
-  Aragorn <span class="soft"><b>choe</b></span> <span class="soft">chenneth</span>      = "Aragorn [is] <b>‹before the›</b> window"
-  Aragorn <span class="soft"><b>choen</b></span> <span class="nasal">chennith</span>     = "Aragorn [is] <b>‹before the›</b> windows"
+  Aragorn <b>ho</b> <span class="soft">chenneth</span>       = "Aragorn [is] <b>before</b> [a] window"
+  Aragorn <b>hoe</b> <span class="soft">chenneth</span>      = "Aragorn [is] <b>‹before the›</b> window"
+  Aragorn <b>hoen</b> <span class="nasal">chennith</span>     = "Aragorn [is] <b>‹before the›</b> windows"
 </div>
 <hr />
 
 
 <div class="a1">
   <a href="https://eldamo.org/content/words/word-3169970463.html" target="_blank">sa</a> = "beside, alongside, next to"
-  indefinite ......: sa + soft mutation
+  indefinite ......: sa     + soft mutation
   definite singular: s'e(n) + soft mutation
   definite plural .: s'i(n) + nasal mutation
 </div>
@@ -1357,7 +1358,7 @@ Derived verbs ending in -a:
 </div>
 <div class="a2">
   im:
-  Sardh <b>im</b> <span class="soft">chedhy</span> dâd     = "[a] table between two chairs"
+  Sardh <b>im</b> <span class="soft">chedhy</span> dâd     = "[a] table <b>between</b> two chairs"
   <small>(lit.) "table between chairs two"</small>
   E·<span class="soft">hardh</span> <b>im</b> in·edain dâd = "the table is <b>between</b> the two men"
   <small>(lit.) "the table between the men two"</small>
@@ -1372,7 +1373,7 @@ Derived verbs ending in -a:
 <div class="a2">
   mîg:
   maf <span class="soft">vorn</span> <b>mig</b> <span class="soft">vef</span> nim     = "[a] black sheep <b>among</b> white sheep"
-  e·<span class="soft">vaf</span> <span class="soft">vorn</span> <span class="soft"><b>vig</b></span> e·<span class="soft">vef</span> nim = "[a] black sheep [is] <b>among</b> the white sheep"
+  e·<span class="soft">vaf</span> <span class="soft">vorn</span> <b>mig</b> e·<span class="soft">vef</span> nim = "[a] black sheep [is] <b>among</b> the white sheep"
 </div>
 <hr/>
 
@@ -1383,7 +1384,8 @@ Derived verbs ending in -a:
 </div>
 <div class="a2">
   nef:
-  En·Edhel odul <b>nef</b> aear  = "the elf came <b>‹on this side›</b> [of] ‹the sea›"
+  En·Edhel odul <b>nef</b> aear     = "the elf came <b>‹on this side›</b> [of] ‹the sea›"
+  En·Edhel odul <b>nef</b> en·alaf  = "the elf came <b>‹on this side›</b> [of] the elm"
 </div>
 <hr/>
 
@@ -1394,6 +1396,7 @@ Derived verbs ending in -a:
 </div>
 <div class="a2">
   athar:
+  Ti dorthar <b>athar</b> <span class="soft">barth</span>   = "they live <b>beyond</b> [a] field"
   Ti dorthar <b>athar</b> in·eryd = "they live <b>beyond</b> the mountains"
 </div>
 <hr/>
@@ -1414,7 +1417,6 @@ Derived verbs ending in -a:
   Prepositions of Direction / Goal (movement toward)
 </h4>
 <div class="wrapper">
-
 <div class="a1">
   <a href="https://eldamo.org/content/words/word-667014213.html" target="_blank">an</a> = "to, for"
   indefinite ......: an + nasal mutation
@@ -1423,18 +1425,22 @@ Derived verbs ending in -a:
 </div>
 <div class="a2">
   an:
-  ?
+  Nen <b>an</b> <span class="nasal">phuidad</span>             = "water <b>for</b> cleaning"
+  Nen <b>eni</b> <span class="soft">cheryn</span>             = "water <b>for the</b> lady"
+  Nen <b>enin</b> <span class="nasal">phengelydh</span>        = "water <b>for the</b> teachers"
 </div>
 <hr />
 
 <div class="a1">
   <a href="https://eldamo.org/content/words/word-3149142565.html" target="_blank">na</a> = "to, towards; at; with, by"
   indefinite ......: na (n') + soft mutation
+  definite ........: n'      + article
 </div>
 <div class="a2">
   na:
-  Aragorn padrol <b>na</b> chenneth = "Aragorn walks <b>towards</b> [a] window"
+  Aragorn padrol <b>na</b> <span class="soft">chenneth</span> = "Aragorn walks <b>towards</b> [a] window"
   Aragorn padrol <b>n'</b>annon     = "Aragorn walks <b>towards</b> [a] gate"
+  Aragorn padrol <b>n'</b>en·annon  = "Aragorn walks <b>towards</b> the gate"
 </div>
 <hr />
 
@@ -1450,20 +1456,24 @@ Derived verbs ending in -a:
 <div class="a1">
   <a href="https://eldamo.org/content/words/word-1223027571.html" target="_blank">thar</a> = "across, athwart, over" <small>(also prefix)</small>
   indefinite ......: thar + soft mutation
+  definite ........: thar + article
 </div>
 <div class="a2">
   thar:
-  Faramir padrol <b>thar</b> e·ham  = "Faramir walks <b>across</b> the room"
+  Faramir padrol <b>thar</b> <span class="soft">ham</span>    = "Faramir walks <b>across</b> the room"
+  Faramir padrol <b>thar</b> e·<span class="soft">ham</span>  = "Faramir walks <b>across</b> the room"
 </div>
 <hr />
 
 <div class="a1">
   <a href="https://eldamo.org/content/words/word-1304260511.html" target="_blank">or</a> = "over" <small>(N.)</small>
   indefinite ......: or + liquid mutation
+  definite ........: or + article
 </div>
 <div class="a2">
   or:
-  Iant <b>or</b> dhuin              = "a bridge <b>over</b> a river"
+  Iant <b>or</b> <span class="liquid">dhuin</span>              = "a bridge <b>over</b> a river"
+  Iant <b>or</b> e·<span class="soft">dhuin</span>            = "a bridge <b>over</b> the river"
 </div>
 <hr />
 
