@@ -84,6 +84,31 @@
       color: green;
     }
 
+    .soft {
+      color: dodgerblue;
+    }
+
+    .nasal {
+      color: deeppink;
+    }
+
+    .mixed {
+      color: #48b563;
+    }
+
+    .stop {
+      color: #e0a83f;
+    }
+
+    .liquid {
+      color: #f44336;
+    }
+
+    .sibilant {
+      color: #8843cc;
+    }
+
+
     @media (max-width: 667px)  {
       .menu.float {
         position: revert;
@@ -95,10 +120,49 @@
         display: none;
       }
     }
+
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .wrapper > hr {
+      width: 100%;
+      height: 1px;
+      background: #ccc;
+      border: none;
+      margin-bottom: 0;
+    }
+
+    .wrapper > .a1,
+    .wrapper > .a2 {
+      box-sizing: border-box;
+      flex: 0 0 50%;            /* two items per row: left + right */
+      vertical-align: top;      /* not strictly needed; flex aligns tops by default */
+    }
+
+
+
+    .a1, .a2 {
+      white-space: pre;
+      font-family: monospace;
+/*      font-size: 1em;*/
+
+/*      padding: 5px !important;*/
+/*      border: 1px solid #ccc;*/
+    }
+
+
+    @media (max-width: 560px) {
+      .wrapper > .a1,
+      .wrapper > .a2 {
+        flex: 0 0 100%;         /* each takes full width → A1, A2, A1, A2, ... */
+      }
+    }
   </style>
 </head>
 <body>
-<a name="top" />
+<a name="top"></a>
 
 <template>
   <ul>
@@ -172,11 +236,11 @@
   </small>
 </p>
 
-<a name="fundamentals" />
+<a name="fundamentals"></a>
 <h1>Fundamentals</h1>
 <a href="">[Top]</a>
 
-<a name="personal_pronouns" />
+<a name="personal_pronouns"></a>
 <h2>Independent personal pronouns</h2>
 
 <p>
@@ -283,7 +347,7 @@ they grow    - galar
 </code>
 
 
-<a name="to_be" />
+<a name="to_be"></a>
 <h2>The "to be" verb</h2>
 <a href="">[Top]</a>
 
@@ -348,7 +412,7 @@ These past and future copulas are inflected with pronominal suffixes as appropri
 </p>
 -->
 
-<a name="basic_nouns" />
+<a name="basic_nouns"></a>
 <h2>Basic nouns</h2>
 <a href="">[Top]</a>
 
@@ -564,7 +628,7 @@ N. sîr    "river"    → siriath    "(all of the) rivers".
 </pre>
 
 
-<a name="basic_verbs" />
+<a name="basic_verbs"></a>
 <h2>Basic Verbs</h2>
 <a href="">[Top]</a>
 <p>
@@ -733,7 +797,7 @@ Derived verbs ending in -a:
 
 
 <!-- End of Verbs -->
-<a name="mutations" />
+<a name="mutations"></a>
 <h2>Mutations</h2>
 <a href="">[Top]</a>
 
@@ -866,7 +930,7 @@ Derived verbs ending in -a:
   This mutation has two affects: First, the h which is the normal medial development of s reappears before vowels:
 </p>
 <pre>
-  ah annon or a hannon = "and a gate"
+  a<span class="sibilant">h annon</span> or a <span class="sibilant">hannon</span> = "and a gate"
   Athrabeth Finrod ah Andreth = "The Debate of Finrod and Andreth"
 </pre>
 <p>
@@ -885,7 +949,7 @@ Derived verbs ending in -a:
   l, r → lh, rh 
 </pre>
 
-<a name="articles" />
+<a name="articles"></a>
 <h2>Articles</h2>
 <a href="">[Top]</a>
 <p>
@@ -902,7 +966,7 @@ Derived verbs ending in -a:
   i/in plural
 </pre>
 
-<a name="adjectives" />
+<a name="adjectives"></a>
 <h2>Adjectives</h2>
 <a href="">[Top]</a>
 <p>
@@ -950,7 +1014,7 @@ Derived verbs ending in -a:
   in edain dhelin = "the hidden men"
 </pre>
 
-<a name="copula" />
+<a name="copula"></a>
 <h2>Copula</h2>
 <a href="">[Top]</a>
 <p>
@@ -1019,10 +1083,10 @@ Derived verbs ending in -a:
   </li>
 </ul>
 
-<a name="basic" />
+<a name="basic"></a>
 <h1>Basic grammar</h1>
 <a href="">[Top]</a>
-<a name="sentence_structure" />
+<a name="sentence_structure"></a>
 <h2>Sentence Structure</h2>
 
 <p>
@@ -1121,7 +1185,7 @@ Derived verbs ending in -a:
 </pre>
 
 <a href="#top">[Top]</a>
-<a name="prepositions" />
+<a name="prepositions"></a>
 <h2>Prepositions</h2>
 <p>
   Prepositions are parts of speech that show relationships between words in a sentence.
@@ -1130,7 +1194,7 @@ Derived verbs ending in -a:
   They often indicate where, when, why, or how something happens.
 </p>
 <p>
-  In Sindarin, when a preposition is used adverbially and follows immediately after the verb, it is lenited.
+  In Sindarin, when a preposition is used adverbially and follows immediately after the verb, it undergoes <span class="soft">soft mutation</span>.
 </p>
 <p>
   All prepositions that end in a vowel cause soft mutation.
@@ -1185,114 +1249,158 @@ Derived verbs ending in -a:
   hither, on this side
   beyond (when used statically)
 -->
-<a name="prepositions_space" />
+<a name="prepositions_space"></a>
 <h3>
   Prepositions of space
 </h3>
 <h4>
   Prepositions of location
 </h4>
-<pre>
+<div class="wrapper">
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-2583985695.html" target="_blank">mi</a> = "in"
   indefinite ......: mi       + soft mutation
   definite singular: min      + mixed mutation
   definite plural .: min {mi} + nasal mutation
+</div>
+<div class="a2">
+  mi:
+  Elrond <span class="soft"><b>vi</b></span> <span class="soft">ham</span>      = "Elrond [is] <b>in</b> [a] room"
+  Imladris <span class="soft"><b>vin</b></span> <span class="mixed">dum</span>   = "Rivendell [is] <b>in the</b> valley"
+  Loss <span class="soft"><b>vin</b></span> <span class="nasal">pherth</span>    = "snow <b>in the</b> fields"
+</div>
+<hr />
 
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-1123310207.html" target="_blank">po</a> = "on"
   indefinite ......: po   + soft mutation
   definite singular: poe  + soft mutation
   definite plural .: poen + nasal mutation
+</div>
+<div class="a2">
+  po:
+  Faramir <span class="soft"><b>bo</b></span> <span class="soft">lunt</span>    = "Faramir [is] <b>on</b> [a] boat"
+  Boromir <span class="soft"><b>boe</b></span> <span class="soft">lunt</span>   = "Boromir [is] <b>on the</b> boat"
+  Loss <span class="soft"><b>boen</b></span> <span class="nasal">lunt</span>     = "Snow [is] <b>on the</b> boats"
+</div>
+<hr />
 
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-3815044181.html" target="_blank">nu</a> = "under"
   indefinite ......: nu + soft mutation
   definite singular: nui  + soft mutation
   definite plural .: nuin + nasal mutation
+</div>
+<div class="a2">
+  nu:
+  E·gorf <b>nu</b> <span class="soft">chadhu</span>   = "the ring [is] <b>under</b> [a] chair"
+  E·gorf <b>nui</b> <span class="soft">chadhu</span>  = "the ring [is] <b>under the</b> chair"
+  E·gyrf <b>nuin</b> <span class="nasal">chedhy</span> = "the rings [are] <b>under the</b> chairs"
+</div>
+<hr />
 
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-806516075.html" target="_blank">di</a> = "under, beneath"
   indefinite ......: di       + soft mutation
   definite singular: din      + mixed mutation
   definite plural .: din {di} + nasal mutation
+</div>
+<div class="a2">
+  di:
+  Duin <b>di</b> <span class="soft">iant</span>       = "a river <b>under</b> a bridge"
+  En·loth <b>din</b> <span class="mixed">dulus</span>  = "the flower <b>under the</b> poplar"
+  I·lyth <b>din</b> <span class="nasal">thylys</span>  = "the flowers <b>under the</b> poplars"
+</div>
+<hr />
+
 <!--
   <a href="https://eldamo.org/content/words/word-3873479807.html" target="_blank">eb</a> = "before"
   indefinite ......: eb + soft mutation?
 -->
+<div class="a1">
   ho = 'before, in front (spacial)' ᴺS
   indefinite ......: ho + soft mutation
   definite singular: hoe + soft mutation
   definite plural .: hoen + nasal mutation
+</div>
+<div class="a2">
+  ho:
+  Aragorn <span class="soft"><b>cho</b></span> <span class="soft">chenneth</span>       = "Aragorn [is] <b>before</b> [a] window"
+  Aragorn <span class="soft"><b>choe</b></span> <span class="soft">chenneth</span>      = "Aragorn [is] <b>‹before the›</b> window"
+  Aragorn <span class="soft"><b>choen</b></span> <span class="nasal">chennith</span>     = "Aragorn [is] <b>‹before the›</b> windows"
+</div>
+<hr />
 
+
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-3169970463.html" target="_blank">sa</a> = "beside, alongside, next to"
   indefinite ......: sa + soft mutation
   definite singular: s'e(n) + soft mutation
   definite plural .: s'i(n) + nasal mutation
+</div>
+<div class="a2">
+  sa:
+  Arwen hadhwol <span class="soft"><b>ha</b></span> <span class="soft">'aladh</span>     = "Arwen sits <b>next to</b> [a] tree"
+  Arwen hadhwol <span class="soft"><b>ha</b></span> <span class="soft">vablanthos</span> = "Arwen sits <b>next to</b> [a] sycamore"
+  Arwen hadhwol <span class="soft"><b>h'</b></span><span class="soft">alaf</span>        = "Arwen sits <b>next to</b> [an] elm"
+  Arwen hadhwol <span class="soft"><b>h'en</b></span> <span class="soft">alaf</span>     = "Arwen sits <b>next to the</b> elm"
+  Arwen hadhwol <span class="soft"><b>h'in</b></span> <span class="nasal">elaif</span>    = "Arwen sits <b>next to the</b> elms"
+  Arwen hadhwol <span class="soft"><b>h'</b></span>Aragorn     = "Arwen sits <b>next to</b> Aragorn"
+  En·Edhel <b>s'en</b> <span class="soft">alaf</span>          = "The elf <b>next to the</b> elm"
+</div>
+<hr />
 
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-1118046717.html" target="_blank">im</a> = "between"
   indefinite ......: im + soft mutation?
   definite ........: im + article
+</div>
+<div class="a2">
+  im:
+  Sardh <b>im</b> <span class="soft">chedhy</span> dâd     = "[a] table between two chairs"
+  <small>(lit.) "table between chairs two"</small>
+  E·<span class="soft">hardh</span> <b>im</b> in·edain dâd = "the table is <b>between</b> the two men"
+  <small>(lit.) "the table between the men two"</small>
+</div>
+<hr/>
 
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-934747713.html" target="_blank">mîg</a> = "among" <small>ᴺS</small>
   indefinite ......: mîg + soft mutation
   definite ........: mîg + article
+</div>
+<div class="a2">
+  mîg:
+  maf <span class="soft">vorn</span> <b>mig</b> <span class="soft">vef</span> nim     = "[a] black sheep <b>among</b> white sheep"
+  e·<span class="soft">vaf</span> <span class="soft">vorn</span> <span class="soft"><b>vig</b></span> e·<span class="soft">vef</span> nim = "[a] black sheep [is] <b>among</b> the white sheep"
+</div>
+<hr/>
 
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-882199073.html" target="_blank">nef</a> = "hither, on this side"
   indefinite ......: nef + soft mutation?
   definite ........: nef + article
+</div>
+<div class="a2">
+  nef:
+  En·Edhel odul <b>nef</b> aear  = "the elf came <b>‹on this side›</b> [of] ‹the sea›"
+</div>
+<hr/>
 
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-3274124991.html" target="_blank">athar</a> = "beyond" <small>(athar has been misread as "athan")</small>
   indefinite ......: athar + soft mutation
   definite ........: athar + article
-</pre>
-  <!-- <a href="https://eldamo.org/content/words/word-3741809301.html" target="_blank">mîn</a>       + soft mutation?    = "between; gap, space, barrier; anything intervening between two other things" (also noun) -->
-  <!-- mîn can be easily confused with the definite form of "mi": "min". Use im instead. -->
-<p>
-  Examples:
-</p>
-<pre>
-  mi:
-  Elrond <b>vi</b> ham      = "Elrond [is] <b>in</b> [a] room" (soft mutation sam > ham)
-  Imladris <b>vin</b> dum   = "Rivendell [is] <b>in the</b> valley" (mixed mutation tum > dum)
-  Loss <b>vin</b> pherth    = "snow <b>in the</b> fields" (nasal mutation perth > pherth)
-
-  po:
-  Faramir <b>bo</b> lunt    = "Faramir [is] <b>on</b> [a] boat"
-  Boromir <b>boe</b> lunt   = "Boromir [is] <b>on the</b> boat"
-  Loss <b>boen</b> lunt     = "Snow [is] <b>on the</b> boats"
-
-  nu:
-  E·gorf <b>nu</b> chadhu   = "the ring [is] <b>under</b> [a] chair"
-  E·gorf <b>nui</b> chadhu  = "the ring [is] <b>under the</b> chair"
-  E·gyrf <b>nuin</b> chedhy = "the rings [are] <b>under the</b> chairs"
-
-  di:
-  Duin <b>di</b> iant       = "a river <b>under</b> a bridge"
-  En·loth <b>din</b> dulus  = "the flower <b>under the</b> poplar"
-  I·lyth <b>din</b> thylys  = "the flowers <b>under the</b> poplars"
-
-  ho:
-  Aragorn <b>ho</b> chenneth       = "Aragorn [is] <b>before</b> [a] window"
-  Aragorn <b>hoe</b> chenneth      = "Aragorn [is] <b>‹before the›</b> window"
-  Aragorn <b>hoen</b> chennith     = "Aragorn [is] <b>‹before the›</b> windows"
-
-  sa:
-  Arwen hadhwol <b>sa</b> 'aladh     = "Arwen sits <b>next to</b> [a] tree"
-  Arwen hadhwol <b>sa</b> vablanthos = "Arwen sits <b>next to</b> [a] sycamore"
-  Arwen hadhwol <b>s'</b>alaf        = "Arwen sits <b>next to</b> [an] elm"
-  Arwen hadhwol <b>s'en</b> alaf     = "Arwen sits <b>next to the</b> elm"
-  Arwen hadhwol <b>s'in</b> elaif    = "Arwen sits <b>next to the</b> elms"
-  Arwen hadhwol <b>s'</b>Aragorn     = "Arwen sits <b>next to</b> Aragorn"
-
-  im:
-  E·hardh <b>im</b> in·edain dâd = "the table is <b>between</b> the two men" = (lit.) "the table between the men two"
-
-  mîg:
-  ?
-
-  nef:
-  En·Edhel odul <b>nef</b> aear  = "the elf came <b>‹on this side›</b> [of] ‹the sea›"
-
+</div>
+<div class="a2">
   athar:
   Ti dorthar <b>athar</b> in·eryd = "they live <b>beyond</b> the mountains"
-</pre>
+</div>
+<hr/>
+
+</div>
+  <!-- <a href="https://eldamo.org/content/words/word-3741809301.html" target="_blank">mîn</a>       + soft mutation?    = "between; gap, space, barrier; anything intervening between two other things" (also noun) -->
+  <!-- mîn can be easily confused with the definite form of "mi": "min". Use im instead. -->
 
 <!-- ------------------------------------------------------------------------------------------ -->
 <!--
@@ -1305,44 +1413,61 @@ Derived verbs ending in -a:
 <h4>
   Prepositions of Direction / Goal (movement toward)
 </h4>
-<pre>
+<div class="wrapper">
+
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-667014213.html" target="_blank">an</a> = "to, for"
   indefinite ......: an + nasal mutation
   definite singular: (e)ni + soft mutation
   definite plural .: (e)nin + nasal mutation
+</div>
+<div class="a2">
+  an:
+  ?
+</div>
+<hr />
 
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-3149142565.html" target="_blank">na</a> = "to, towards; at; with, by"
   indefinite ......: na (n') + soft mutation
+</div>
+<div class="a2">
+  na:
+  Aragorn padrol <b>na</b> chenneth = "Aragorn walks <b>towards</b> [a] window"
+  Aragorn padrol <b>n'</b>annon     = "Aragorn walks <b>towards</b> [a] gate"
+</div>
+<hr />
+
 <!--
   <a href="https://eldamo.org/content/words/word-4094191989.html?neo" target="_blank">mî</a> = "into, inside"
   indefinite ......: mî + soft mutation
 -->
-  <a href="https://eldamo.org/content/words/word-1223027571.html" target="_blank">thar</a> = "across, athwart, over" <small>(also prefix)</small>
-  indefinite ......: thar + soft mutation
-
-  <a href="https://eldamo.org/content/words/word-1304260511.html" target="_blank">or</a> = "over" <small>(N.)</small>
-  indefinite ......: or + liquid mutation
-</pre>
-<p>
-  Examples:
-</p>
-<pre>
-  an:
-  ?
-
-  na:
-  Aragorn padrol <b>na</b> chenneth = "Aragorn walks <b>towards</b> [a] window"
-  Aragorn padrol <b>n'</b>annon     = "Aragorn walks <b>towards</b> [a] gate"
 <!--
   mî:
   Faramir dannant <b>mi</b> 'as     = "Faramir fell <b>in</b> [a] hole"
 -->
+
+<div class="a1">
+  <a href="https://eldamo.org/content/words/word-1223027571.html" target="_blank">thar</a> = "across, athwart, over" <small>(also prefix)</small>
+  indefinite ......: thar + soft mutation
+</div>
+<div class="a2">
   thar:
   Faramir padrol <b>thar</b> e·ham  = "Faramir walks <b>across</b> the room"
+</div>
+<hr />
 
+<div class="a1">
+  <a href="https://eldamo.org/content/words/word-1304260511.html" target="_blank">or</a> = "over" <small>(N.)</small>
+  indefinite ......: or + liquid mutation
+</div>
+<div class="a2">
   or:
   Iant <b>or</b> dhuin              = "a bridge <b>over</b> a river"
-</pre>
+</div>
+<hr />
+
+</div>
 
 <!-- ------------------------------------------------------------------------------------------ -->
 <!--
@@ -1351,29 +1476,37 @@ Derived verbs ending in -a:
 -->
 
 <a href="#prepositions">[prepositions]</a>
-<a name="prepositions_direction" />
+<a name="prepositions_direction"></a>
 <h4>
   Prepositions of Source / Origin (movement away from)
 </h4>
-<pre>
-  o (od i) = "(away) from" <small>(< ✶aut) "o galadhremmin", "o menel"</small>
+
+<div class="wrapper">
+<div class="a1">
+  o (od i) = "(away) from"
   indefinite ......: o + stop mutation
   definite singular: od e + soft mutation
   definite plural .: od in + nasal mutation
 
-  <a href="https://eldamo.org/content/words/word-3169907981.html" target="_blank">ed</a> = "out, out of"
-  indefinite ......: ed + soft mutation
-</pre>
-<p>
-  Examples:
-</p>
-<pre>
+  <small>(< ✶aut) "o galadhremmin", "o menel"</small>
+</div>
+<div class="a2">
   o:
   ?
+</div>
+<hr />
 
+<div class="a1">
+  <a href="https://eldamo.org/content/words/word-3169907981.html" target="_blank">ed</a> = "out, out of"
+  indefinite ......: ed + soft mutation
+</div>
+<div class="a2">
   ed:
   Faramir amrant <b>ed</b> e·'as    = "Faramir climbed <b>out of</b> the hole"
-</pre>
+</div>
+<hr />
+
+</div>
 
 <!-- ------------------------------------------------------------------------------------------ -->
 <!--
@@ -1384,17 +1517,18 @@ Derived verbs ending in -a:
 <h4>
   Prepositions of Path / Boundary / Route
 </h4>
-<pre>
+<div class="wrapper">
+<div class="a1">
   pela(h) = 'along, (lit.) by the boundary of' ᴺS
   indefinite ......: pela(h) + sibilant mutation
-</pre>
-<p>
-  Examples:
-</p>
-<pre>
+</div>
+<div class="a2">
   pela(h):
   ?
-</pre>
+</div>
+<hr />
+
+</div>
 
 <!-- ------------------------------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------ -->
@@ -1405,40 +1539,56 @@ Derived verbs ending in -a:
   when
 -->
 <a href="#prepositions">[prepositions]</a>
-<a name="prepositions_time" />
+<a name="prepositions_time"></a>
 <h3>
   Prepositions of time
 </h3>
-<pre>
+<div class="wrapper">
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-3884389517.html" target="_blank">nui</a> = "before" ᴺS
   indefinite ......: nui + soft mutation
+</div>
+<div class="a2">
+  nui:
+  ?
+</div>
+<hr />
 
+<div class="a1">
   fo = "before" (temporal) <small>ᴺS</small>
   indefinite ......: fo + soft mutation
   definite singular: foe  + soft mutation
   definite plural .: foen + nasal mutation
-
-  <a href="https://eldamo.org/content/words/word-323464029.html" target="_blank">ab</a> = "after"
-  indefinite ......: ab + soft mutation
-
-  io = "when" <small>ᴺS: It is a cognate of Q. yá "when"</small>
-  indefinite ......: io + soft mutation
-</pre>
-<p>
-  Examples:
-</p>
-<pre>
+</div>
+<div class="a2">
   fo:
   Legolas ola vara <b>fo</b> vâd       = "Legolas becomes eager <b>before</b> [a] meal"
   Legolas ola vara <b>foe</b> vâd      = "Legolas becomes eager <b>before the</b> meal"
   Legolas ola vara <b>foen</b> vaid    = "Legolas becomes eager <b>before the</b> meals"
+</div>
+<hr />
 
+<div class="a1">
+  <a href="https://eldamo.org/content/words/word-323464029.html" target="_blank">ab</a> = "after"
+  indefinite ......: ab + soft mutation
+</div>
+<div class="a2">
   ab:
   Legolas ola 'elir <b>ab</b> vâd      = "Legolas becomes merry <b>after</b> [a] meal"
+</div>
+<hr />
 
+<div class="a1">
+  io = "when" <small>ᴺS: It is a cognate of Q. yá "when"</small>
+  indefinite ......: io + soft mutation
+</div>
+<div class="a2">
   io:
   Legolas ola rúthui <b>io</b> de haeb = "Legolas becomes angry <b>when</b> he [is] hungry"
-</pre>
+</div>
+<hr />
+
+</div>
 
 <!-- ------------------------------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------ -->
@@ -1451,51 +1601,68 @@ Derived verbs ending in -a:
   from, of
 -->
 <a href="#prepositions">[prepositions]</a>
-<a name="prepositions_means" />
+<a name="prepositions_means"></a>
 <h3>
   Prepositions of association, means, and possession
 </h3>
-<pre>
+<div class="wrapper">
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-6498811.html?neo" target="_blank">gu</a> = "with, together with" ᴺS
   indefinite ......: gu + soft mutation
   definite singular: gui + soft mutation
   definite plural .: guin + nasal mutation
+</div>
+<div class="a2">
+  gu:
+  ?
+</div>
+<hr />
 
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-3619674927.html" target="_blank">na(n)</a> = "of; with, along with, accompanied by, provided with or by, associated with, marked with"
   indefinite ......: na + nasal mutation
+</div>
+<div class="a2">
+  na(n):
+  ?
+</div>
+<hr />
 
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-843550059.html?neo" target="_blank">mo</a> = "by (agent of), with" ᴺS
   indefinite ......: mo + soft mutation
   definite singular: moe + soft mutation
   definite plural .: moen + nasal mutation
+</div>
+<div class="a2">
+  mo:
+  ?
+</div>
+<hr />
 
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-3418180587.html" target="_blank">en</a> = "of the" <small>is the definite form of na(n) ᴺS</small>
   en +         ?
+</div>
+<div class="a2">
+  en:
+  ?
+</div>
+<hr />
 
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-2407603967.html" target="_blank">o</a> (uin) = "from, of" <small>(< ✶hō)  "o Eregion", "o Imladris"</small>
   indefinite ......: o + soft mutation
   definite singular: ui + soft mutation
   definite plural .: uin + nasal mutation
-</pre>
-<p>
-  Examples:
-</p>
-<pre>
-  gu:
-  ?
-
-  na(n):
-  ?
-
-  mo:
-  ?
-
-  en:
-  ?
-
+</div>
+<div class="a2">
   o:
   ?
-</pre>
+</div>
+<hr />
+
+</div>
 
 <!-- ------------------------------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------ -->
@@ -1505,29 +1672,35 @@ Derived verbs ending in -a:
 -->
 
 <a href="#prepositions">[prepositions]</a>
-<a name="prepositions_role" />
+<a name="prepositions_role"></a>
 <h3>
   Prepositions of comparison, role, and conformity
 </h3>
-<pre>
+<div class="wrapper">
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-917698495.html" target="_blank">sui</a> = "as"
   indefinite ......: sui + soft mutation
+</div>
+<div class="a2">
+  sui:
+  ?
+</div>
+<hr />
 
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-1296856217.html" target="_blank">be</a> {ve} = "as, like, according to"
   indefinite ......: be + soft mutation
   definite singular: ben + mixed mutation
   definite plural .: ben + nasal mutation
-</pre>
-<p>
-  Examples:
-</p>
-<pre>
-  sui:
-  ?
-
+</div>
+<div class="a2">
   be:
   Denethor bardha ve aran  = "Denethor rules as [a] King"
-</pre>
+</div>
+<hr />
+
+</div>
+
 <!-- ------------------------------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------ -->
 <!--
@@ -1537,39 +1710,53 @@ Derived verbs ending in -a:
   about
 -->
 <a href="#prepositions">[prepositions]</a>
-<a name="prepositions_opposition" />
+<a name="prepositions_opposition"></a>
 <h3>
   Prepositions of exclusion, opposition, and topic
 </h3>
-<pre>
+<div class="wrapper">
+<div class="a1">
   <a href="https://eldamo.org/content/words/word-1905541541.html" target="_blank">dan</a> = "against"
   indefinite ......: dan + nasal mutation
-
-  <a href="https://eldamo.org/content/words/word-1132986921.html?neo" target="_blank">eb</a> = "except" + ? ᴺS
-  indefinite ......: eb + soft mutation?
-
-  <a href="https://eldamo.org/content/words/word-1872687865.html" target="_blank">pen</a> {ben} = "without, lacking, -less"
-  indefinite ......: pen + nasal mutation
-
-  <a href="https://eldamo.org/content/words/word-350323223.html" target="_blank">os</a> (oh) = "about"
-  indefinite ......: os + sibilant mutation
-</pre>
-<p>
-  Examples:
-</p>
-<pre>
+</div>
+<div class="a2">
   dan:
   ?
+</div>
+<hr/>
 
+<div class="a1">
+  <a href="https://eldamo.org/content/words/word-1132986921.html?neo" target="_blank">eb</a> = "except" + ? ᴺS
+  indefinite ......: eb + soft mutation?
+</div>
+<div class="a2">
   eb:
   ?
+</div>
+<hr/>
 
+<div class="a1">
+  <a href="https://eldamo.org/content/words/word-1872687865.html" target="_blank">pen</a> {ben} = "without, lacking, -less"
+  indefinite ......: pen + nasal mutation
+</div>
+<div class="a2">
   pen:
   Gimli liltha ben thoss   = "Gimli dances without fear"
+</div>
+<hr/>
 
+<div class="a1">
+  <a href="https://eldamo.org/content/words/word-350323223.html" target="_blank">os</a> (oh) = "about"
+  indefinite ......: os + sibilant mutation
+</div>
+<div class="a2">
   os:
   ?
-</pre>
+</div>
+<hr/>
+
+</div>
+
 <!--  o/od/uin: https://discord.com/channels/397489292185960468/402164953529712640/1243820438770155521 -->
 <!--
 <pre>  
@@ -1824,7 +2011,7 @@ Metaphorically: от expresses separation, cause, or origin in a looser, externa
 
 
 <a href="#top">[Top]</a>
-<a name="adverbs" />
+<a name="adverbs"></a>
 <h2>Adverbs</h2>
 
 <p>
@@ -1854,7 +2041,7 @@ to, adv. "so, then" ⪤ Q. tá, adv. "then"
 </pre>
 
 <a href="#top">[Top]</a>
-<a name="conjunctions" />
+<a name="conjunctions"></a>
 <h2>Conjunctions</h2>
 <pre>
 a/ah - "and"
@@ -1880,11 +2067,11 @@ pen pron. "one, somebody"
 </p>
 </div>
 
-<a name="intermediate" />
+<a name="intermediate"></a>
 <h1>Intermediate grammar</h1>
 <a href="#top">[Top]</a>
 
-<a name="pronouns" />
+<a name="pronouns"></a>
 <h2>Pronouns</h2>
 <pre>
                      <b>Independent     Subject        Object         Dative             Possessive</b>
@@ -1901,7 +2088,7 @@ pen pron. "one, somebody"
 
 
 <a href="#top">[Top]</a>
-<a name="demonstrative_pronouns" />
+<a name="demonstrative_pronouns"></a>
 <h2>Demonstrative Pronouns</h2>
 
 <p>
@@ -1936,7 +2123,7 @@ pen pron. "one, somebody"
 
 
 <a href="#top">[Top]</a>
-<a name="relative_pronouns" />
+<a name="relative_pronouns"></a>
 <h2>Relative Pronouns</h2>
 
 <p>
@@ -2009,10 +2196,10 @@ pen pron. "one, somebody"
 </pre>
 
 <a href="#top">[Top]</a>
-<a name="constructions" />
+<a name="constructions"></a>
 <h2>Grammatical constructions</h2>
 
-<a name="genitive" />
+<a name="genitive"></a>
 <h3>Genitive</h3>
 
 <p>
@@ -2202,7 +2389,7 @@ pen pron. "one, somebody"
 </p>
 
 
-<a name="verb_more" />
+<a name="verb_more"></a>
 <h2>More verbs</h2>
 <a href="#top">[Top]</a>
 
@@ -2286,7 +2473,7 @@ pen pron. "one, somebody"
 </pre>
 -->
 
-<a name="past_tense" />
+<a name="past_tense"></a>
 <h2>Past tense</h2>
 <a href="#top">[Top]</a>
 
@@ -2461,7 +2648,7 @@ pen pron. "one, somebody"
   broniannem "we endured"
 </pre>
 
-<a name="future_tense" />
+<a name="future_tense"></a>
 <h2>Future tense</h2>
 <a href="#top">[Top]</a>
 
@@ -2469,7 +2656,7 @@ pen pron. "one, somebody"
   ... Nothing here yet ...
 </p>
 
-<a name="diminitive_augmentative" />
+<a name="diminitive_augmentative"></a>
 <h2>Diminitive and augmentative</h2>
 <a href="#top">[Top]</a>
 
