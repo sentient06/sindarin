@@ -143,11 +143,11 @@
 
     .a1, .a2 {
       -webkit-text-size-adjust: 100%;
-      white-space: pre;
+      white-space: break-spaces;
       font-family: monospace;
       font-size: 1em;
       max-width: 100%;
-      overflow: auto;
+/*      overflow: auto;*/
 
 /*      padding: 5px !important;*/
 /*      border: 1px solid #ccc;*/
@@ -155,6 +155,9 @@
 
 
     @media (max-width: 560px) {
+      .a1, .a2 {
+        white-space: pre;
+      }
       .wrapper > .a1,
       .wrapper > .a2 {
         flex: 0 0 100%;         /* each takes full width → A1, A2, A1, A2, ... */
@@ -1419,8 +1422,8 @@ Derived verbs ending in -a:
 <div class="wrapper">
 <div class="a1">
   <a href="https://eldamo.org/content/words/word-667014213.html" target="_blank">an</a> = "to, for"
-  indefinite ......: an + nasal mutation
-  definite singular: (e)ni + soft mutation
+  indefinite ......: an     + nasal mutation
+  definite singular: (e)ni  + soft mutation
   definite plural .: (e)nin + nasal mutation
 </div>
 <div class="a2">
@@ -1494,25 +1497,29 @@ Derived verbs ending in -a:
 <div class="wrapper">
 <div class="a1">
   o (od i) = "(away) from"
-  indefinite ......: o + stop mutation
-  definite singular: od e + soft mutation
-  definite plural .: od in + nasal mutation
-
   <small>(< ✶aut) "o galadhremmin", "o menel"</small>
+
+  indefinite ......: o     + stop mutation
+  definite singular: od e  + soft mutation
+  definite plural .: od in + nasal mutation
 </div>
 <div class="a2">
   o:
-  ?
+  Te ethul <b>o</b> feleg           = "it came <b>from</b> [a] cave"
+  Retho <b>od</b> e·<span class="soft">bend</span>            = "stay <b>away from</b> the slope"
+  Retho <b>od</b> i·<span class="nasal">ñglemyg</span>         = "stay <b>away from</b> the orcs"
 </div>
 <hr />
 
 <div class="a1">
   <a href="https://eldamo.org/content/words/word-3169907981.html" target="_blank">ed</a> = "out, out of"
   indefinite ......: ed + soft mutation
+  definite ........: ed + article
 </div>
 <div class="a2">
   ed:
-  Faramir amrant <b>ed</b> e·'as    = "Faramir climbed <b>out of</b> the hole"
+  Faramir amrant <b>ed</b> <span class="soft">'as</span>      = "Faramir climbed <b>out of</b> [a] hole"
+  Faramir amrant <b>ed</b> e·<span class="soft">'as</span>    = "Faramir climbed <b>out of</b> the hole"
 </div>
 <hr />
 
@@ -1529,12 +1536,14 @@ Derived verbs ending in -a:
 </h4>
 <div class="wrapper">
 <div class="a1">
-  pela(h) = 'along, (lit.) by the boundary of' ᴺS
+  <a href="https://eldamo.org/content/words/word-3201419597.html" target="_blank">pela(h)</a> = "along, (lit.) by the boundary of" ᴺS
   indefinite ......: pela(h) + sibilant mutation
+  definite ........: pelah   + article
 </div>
 <div class="a2">
   pela(h):
-  ?
+  Padrar <b>pela</b> <span class="sibilant">thaur</span>          = "[they] walk <b>along</b> [a] forest"
+  Padrar <b>pelah</b> e·<span class="soft">daur</span>        = "[they] walk <b>along</b> the forest"
 </div>
 <hr />
 
@@ -1554,6 +1563,7 @@ Derived verbs ending in -a:
   Prepositions of time
 </h3>
 <div class="wrapper">
+<!--
 <div class="a1">
   <a href="https://eldamo.org/content/words/word-3884389517.html" target="_blank">nui</a> = "before" ᴺS
   indefinite ......: nui + soft mutation
@@ -1563,40 +1573,34 @@ Derived verbs ending in -a:
   ?
 </div>
 <hr />
-
+ -->
 <div class="a1">
   fo = "before" (temporal) <small>ᴺS</small>
-  indefinite ......: fo + soft mutation
+  indefinite ......: fo   + soft mutation
   definite singular: foe  + soft mutation
   definite plural .: foen + nasal mutation
 </div>
 <div class="a2">
   fo:
-  Legolas ola vara <b>fo</b> vâd       = "Legolas becomes eager <b>before</b> [a] meal"
-  Legolas ola vara <b>foe</b> vâd      = "Legolas becomes eager <b>before the</b> meal"
-  Legolas ola vara <b>foen</b> vaid    = "Legolas becomes eager <b>before the</b> meals"
+  Legolas ola vara <b>fo</b> <span class="soft">vâd</span>      = "Legolas becomes eager <b>before</b> [a] meal"
+  Legolas ola vara <b>foe</b> <span class="soft">vâd</span>     = "Legolas becomes eager <b>before the</b> meal"
+  Legolas ola vara <b>foen</b> <span class="nasal">vaid</span>   = "Legolas becomes eager <b>before the</b> meals"
 </div>
 <hr />
 
 <div class="a1">
   <a href="https://eldamo.org/content/words/word-323464029.html" target="_blank">ab</a> = "after"
   indefinite ......: ab + soft mutation
+  definite ........: ab + article
 </div>
 <div class="a2">
   ab:
-  Legolas ola 'elir <b>ab</b> vâd      = "Legolas becomes merry <b>after</b> [a] meal"
+  Legolas ola 'elir <b>ab</b> <span class="soft">vâd</span>     = "Legolas becomes merry <b>after</b> [a] meal"
+  Legolas olant 'elir <b>ab</b> e·<span class="soft">vâd</span> = "Legolas became merry <b>after</b> the meal"
 </div>
 <hr />
 
-<div class="a1">
-  io = "when" <small>ᴺS: It is a cognate of Q. yá "when"</small>
-  indefinite ......: io + soft mutation
-</div>
-<div class="a2">
-  io:
-  Legolas ola rúthui <b>io</b> de haeb = "Legolas becomes angry <b>when</b> he [is] hungry"
-</div>
-<hr />
+
 
 </div>
 
@@ -1618,30 +1622,36 @@ Derived verbs ending in -a:
 <div class="wrapper">
 <div class="a1">
   <a href="https://eldamo.org/content/words/word-6498811.html?neo" target="_blank">gu</a> = "with, together with" ᴺS
-  indefinite ......: gu + soft mutation
-  definite singular: gui + soft mutation
+  indefinite ......: gu   + soft mutation
+  definite singular: gui  + soft mutation
   definite plural .: guin + nasal mutation
 </div>
 <div class="a2">
   gu:
-  ?
+  Boromir <b>gu</b> roch               = "Boromir {is} <b>with</b> [a] horse"
+  Boromir <b>gui</b> <span class="soft">chanar</span> dín        = "Boromir {is} <b>with</b> his brother"
+  Boromir <b>gui</b> <span class="nasal">ñgwoen</span> dín        = "Boromir {is} <b>with</b> his geese"
+  Boromir <b>guin</b> <span class="nasal">mellyn</span> dín       = "Boromir {is} <b>with</b> his friends"
+  Boromir glenna <span class="soft"><b>'ui</b></span> <span class="soft">chanar</span> dín = "Boromir travels <b>with</b> his brother"
 </div>
 <hr />
 
 <div class="a1">
-  <a href="https://eldamo.org/content/words/word-3619674927.html" target="_blank">na(n)</a> = "of; with, along with, accompanied by, provided with or by, associated with, marked with"
-  indefinite ......: na + nasal mutation
+  <a href="https://eldamo.org/content/words/word-3619674927.html" target="_blank">na(n)</a> = "(partitive) of; with, accompanied/provided by, associated/marked with"
+  indefinite ......: na(n) + nasal mutation
+  definite ........: <i>Doesn't exist!</i>
 </div>
 <div class="a2">
   na(n):
-  ?
+  Aran <b>na</b> <span class="soft">chîr</span> lim = "king <b>of</b> swift ships"
+  Aran <b>nan</b> aew lim = "king <b>of</b> swift birds"
 </div>
 <hr />
 
 <div class="a1">
   <a href="https://eldamo.org/content/words/word-843550059.html?neo" target="_blank">mo</a> = "by (agent of), with" ᴺS
-  indefinite ......: mo + soft mutation
-  definite singular: moe + soft mutation
+  indefinite ......: mo   + soft mutation
+  definite singular: moe  + soft mutation
   definite plural .: moen + nasal mutation
 </div>
 <div class="a2">
@@ -2065,9 +2075,26 @@ ach + soft mutation = "but"
   ach  +     soft mutation = "but"
   egor +   liquid mutation = "or"
   lo                       = "while"
+  io   + soft mutation     = "when" <small>ᴺS: It is a cognate of Q. yá "when"</small>
 
 !ened adv. "moreover"
 pen pron. "one, somebody"
+
+
+<!-- 
+<div class="a1">
+  io = "when" <small>ᴺS: It is a cognate of Q. yá "when"</small>
+  indefinite ......: io + soft mutation
+  definite ........: io + soft mutation
+</div>
+<div class="a2">
+  io:
+  Legolas ola rúthui <b>io</b> de haeb = "Legolas becomes angry <b>when</b> he [is] hungry"
+</div>
+
+ -->
+
+
 </pre>
 
 <div class="temp">
