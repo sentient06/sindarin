@@ -11,6 +11,7 @@
       left: 0;
       padding-top: 10px;
       max-width: 280px;
+      font-size: 0.75em;
     }
     .menu.float ul {
 /*      list-style: none;*/
@@ -19,8 +20,17 @@
       list-style-position: inside;
       list-style-type: "- ";
     }
-    .menu.float ul li {
-/*      color: red;*/
+    .menu.float li,
+    .menu.float li + ul {
+      margin-top: 5px;
+    }
+
+    .menu.float ul li a {
+      text-decoration: none;
+    }
+
+    .menu.float ul li a:hover {
+      text-decoration: underline;
     }
 
     h6 { font-size: 1.125em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;}
@@ -123,6 +133,7 @@
     @media (max-width: 667px)  {
       .menu.float {
         position: revert;
+        font-size: 1em;
       }
       main {
         margin-left: 0;
@@ -717,7 +728,6 @@ N. sîr    "river"    → siriath    "(all of the) rivers".
 <p>
   Basic verbs are usually represented by stems ending in a consonant as in: ped- "to say, speak".
 </p>
-
 <p>
   Monosyllabic basic verbs are lengthened: câr "do, make" (car-).
 </p>
@@ -754,7 +764,8 @@ N. sîr    "river"    → siriath    "(all of the) rivers".
   2nd person - ceridh     - thou dost (archaic polite)
   3rd person - câr        - he/she does
 
-  1st person - cerif      - we do
+  1st person - cerif      - we (not you) do
+  1st person - cerib      - we (and you) do
   2nd person - ceridh(ir) - you do
   3rd person - cerir      - they do
 </pre>
@@ -765,32 +776,33 @@ N. sîr    "river"    → siriath    "(all of the) rivers".
   They are produced with some kind of verbal suffix. They are also known as a-stem.
 </p>
 <p>
-  Derived verbs generally appear with stems ending in a as in: teitha- "to write".
+  Derived verbs generally appear with stems ending in a as in: <i>teitha-</i> "to write".
 </p>
 <p>
-  The infinitive is formed with the ending -o, displacing the ending -a:
+  The infinitive is formed with the ending <b>-d</b>:
 </p>
+<!-- https://discord.com/channels/397489292185960468/401790658043576330/1440709389563461754 -->
 <pre>
-  bronia- "endure" > bronio "to endure"
+  brenia- "endure" > breniad "to endure"
 </pre>
 <p>
   The 3rd person singular present tense is identical to the unadorned verb stem itself:
 </p>
 <pre>
-  bronia- "endure" > bronia "endures, is enduring"
+  brenia- "endure" > brenia "endures, is enduring"
 </pre>
 <p>
-  Pronominal suffixes make the final a of the verb change to o as in galon "I grow" (gala-).
+  Pronominal suffixes make the final a of the verb change to o as in <i>galon</i> "I grow" (<i>gala-</i>).
 </p>
 <pre>
-  broniar "(they) endure"
-  broniam "we endure"
+  breniar "(they) endure"
+  breniab "we endure"
 </pre>
 <p>
   The ending -n for "I" causes the final -a to become -o instead:
 </p>
 <pre>
-  bronion "I endure",
+  brenion "I endure",
   dagron "I make war"
 </pre>
 
@@ -802,11 +814,12 @@ N. sîr    "river"    → siriath    "(all of the) rivers".
 
   1st person - galon      - I grow
   2nd person - galog      - thou growest
-  2nd person - galol      - thou growest
-  2nd person - galodh     - thou growest
+  2nd person - galol      - thou growest (polite)
+  2nd person - galodh     - thou growest (archaic polite)
   3rd person - gala       - he/she grows
 
-  1st person - galof      - we grow
+  1st person - galof      - we (not you) grow
+  1st person - galob      - we (and you) grow
   2nd person - galodh(ir) - you grow
   3rd person - galar      - they grow
 </pre>
