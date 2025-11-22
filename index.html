@@ -2966,44 +2966,93 @@ so n' en- etc.
   parf inias ionnath Elros — "book [of] [the] annals [of] [the] sons [of] Elros"
 </pre>
 <p>
+  Here, the construct has an internal hierarchical structure:
+</p>
+<pre>
+  [parf [inias [ionnath Elros]]]
+
+  parf
+  │ inias
+  │  └╴ ionnath Elros
+  └╴
+</pre>
+
+<p>
   Here, the construct sequence spans three levels:
 </p>
 <pre>
-  parf inias    – book of annals
-  inias ionnath – annals of sons
-  ionnath Elros – sons of Elros
+  parf inias ionnath Elros – book [of annals of [sons of Elros]]
+  inias ionnath Elros      – annals of [sons of Elros]
+  ionnath Elros            – sons of Elros
 </pre>
-<p>
-  Such constructions are semantically rich but syntactically rigid. Any adjective modifying the chain must follow the entire construct and agree in number with the head noun.
-</p>
-
-<h4>Interruption rules (prohibition)</h4>
-<p>
-  One of the strict features of the construct chain is that it must be uninterrupted. Unlike in English, where modifiers may separate the head noun from its genitive, Sindarin prohibits such insertions. An adjective or demonstrative must follow the entire chain. For example:
-</p>
-<pre>
-  ✅ roch aran vaer – "a good horse of a king" (adjective comes after the whole phrase)
-  ❌ roch vaer aran – "good horse of a king" is ungrammatical in construct syntax
-</pre>
-<p>
-  This syntactic rigidity marks a significant difference between Sindarin and many European languages.
-</p>
-<!-- https://biblicalhebrew.org/how-genitive-constructions-work-in-biblical-hebrew.aspx -->
-
 <h5>
-  Ambiguity and stylistic workarounds
+  Adjectives in a construct chain
 </h5>
 <p>
-  This kind of construction causes ambiguity. Sindarin normally relies on context or emphasis rather than rearrangement to solve that. A few workarounds may serve as reference:
+  Such constructions are semantically rich but syntactically rigid. Any adjective modifying the chain must follow the entire construct and agree in number with the element it refers to.
+</p>
+<p>
+  The first element of the chain is the head noun. If there is any ambiguity, adjectives by default are interpreted as referring to the head noun. For example:
 </p>
 <pre>
-  Intended meaning             Preferred Sindarin form   Notes
-  A horse of a good king       roch aran vaer            Standard, but ambiguous
-  A good horse of a king       vaer roch aran            Slightly poetic, clearer emphasis
-  The horse of the good king   roch en·aran vaer         Unambiguous
-  The good horse of a king     i·roch aran vaer          Unambiguous if context supports it
+  <b>parf</b> inias ionnath Elros <span class="soft"><b>vrûn</b></span> = "<b>{old}</b> book [of] annals [of] sons [of] Elros"
+  <b>brûn</b> refers to <b>parf</b>, the head noun
+</pre>
+<p>
+  However, if syntactic agreement can indicate that the adjective actually refers to another element, that removes the ambiguity.
+</p>
+<pre>
+  aglar maethyr en·aran <span class="soft"><b>verin</b></span> = "glory [of the] <b>{brave}</b> warriors [of] the king"
+</pre>
+<p>
+  <b>berin</b> is plural, so it could only refer to <b>maethyr</b> (warriors).
+</p>
+<p>
+  Semantics can also disambiguate the chain. Example:
+</p>
+<pre>
+  bar en·aran <b>luin</b>  = "the <b>blue</b> house of the king"
+  bar en·aran <b>istui</b> = "the house of the <b>learned</b> king"
+</pre>
+<p>
+  If ambiguity persists and the adjective seems to wrongly refer to the head noun, it needs rephrasing.
+</p>
+<p>
+  Multiple adjectives should show up in order and agree with their modified nouns:
+</p>
+<pre>
+  bar en·aran <b>luin</b> <b>istui</b> = "the <b>blue</b> house of the <b>learned</b> king"
 </pre>
 
+<h4>
+  Interruption rules (prohibition), ambiguity and stylistic workarounds
+</h4>
+<p>
+  One of the strict features of the construct chain is that it must be uninterrupted. Unlike in English, where modifiers may separate the head noun from its genitive, Sindarin discourages such insertions. An adjective or demonstrative should follow the entire chain. For example:
+</p>
+<pre>
+  Preferred:
+  roch aran <span class="soft"><b>vaer</b></span> = "a good horse of a king" (adjective comes after the whole phrase)
+
+  Highly stylised/poetic:
+  roch <span class="soft"><b>vaer</b></span> aran = "good horse of a king"
+</pre>
+<p>
+  This syntactic rigidity causes ambiguity. Sindarin normally relies on context or emphasis rather than rearrangement to solve that. A few workarounds may serve as reference:
+</p>
+<pre>
+  Standard, but ambiguous:
+  roch aran <span class="soft"><b>vaer</b></span> = "a horse of a good king"
+
+  Ungrammatical:
+  <s><span class="soft"><b>vaer</b></span> roch aran = "a good horse of a king"</s>
+
+  Prepositional genitives can prevent ambiguity:
+  roch <span class="soft"><b>vaer</b></span> <b>nan</b> aran = "good horse of a king"
+</pre>
+<!-- https://biblicalhebrew.org/how-genitive-constructions-work-in-biblical-hebrew.aspx -->
+
+<!--
 <h4>Prepositional genitives</h4>
 <div class="old">
   <h5>Old style:</h5>
@@ -3038,6 +3087,16 @@ so n' en- etc.
     haudh in erwin "mound [of] the ladies"
   </pre>
 </div>
+ -->
+
+
+<br />
+<hr />
+
+<i>
+  The following bits were not revised.
+</i>
+
 <h4>
   Partitive na(n)
 </h4>
