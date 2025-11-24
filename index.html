@@ -44,7 +44,11 @@
     h4 { font-size: 1.424em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;}
     h3 { font-size: 1.602em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;}
     h2 { font-size: 1.802em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;}
-    h1 { font-size: 2.027em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;}
+    h1 { font-size: 2.027em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;
+      background: aliceblue;
+      box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 0.25);
+      padding: 10px 16px;
+    }
     h1.title { font-size: 3em; }
 
     main {
@@ -137,6 +141,10 @@
 
 
     @media (max-width: 667px)  {
+      body {
+        margin-left: 0;
+        margin-right: 0;
+      }
       .menu.float {
         position: revert;
         font-size: 1em;
@@ -193,13 +201,34 @@
       }
     }
 
+    .padded {
+      margin: 0 10px;
+    }
+
+    .page {
+      box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 0.25);
+      padding: 1px 20px;
+      background: #FFF;
+      position: relative;
+    }
+
+    .page + .page {
+      margin-top: 20px;
+    }
+
+    .page .top {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
     .top {
       background: gainsboro;
       color: black;
       text-decoration: none;
       padding: 5px 10px;
-      border-radius: 5px;
-      float: right;
+/*      border-radius: 5px;*/
+/*      float: right;*/
     }
   </style>
 </head>
@@ -285,30 +314,32 @@
   <img src="Dungeon8807construction.gif" alt="Under construction" />
   <!-- http://textfiles.com/underconstruction/ -->
 </p>
-<p>
-  This is a compilation of notes I've made to use as reference for Neo-Sindarin. I've been transforming it into an HTML for easy access and I'm slowly trying to order it by topics.
-</p>
-<p>
-  Some stuff has been copied from Eldamo, some from Vinyë Lambengolmor. I am trying to make my own thing, but so far I'm ripping off everyone. Sorry in advance.
-</p>
-<p>
-  This is a work in progress with no end in sight.
-</p>
-<p>
-  There should be topics here unexplored elsewhere.
-</p>
+<div class="padded">
+  <p>
+    This is a compilation of notes I've made to use as reference for Neo-Sindarin. I've been transforming it into an HTML for easy access and I'm slowly trying to order it by topics.
+  </p>
+  <p>
+    Some stuff has been copied from Eldamo, some from Vinyë Lambengolmor. I am trying to make my own thing, but so far I'm ripping off everyone. Sorry in advance.
+  </p>
+  <p>
+    This is a work in progress with no end in sight.
+  </p>
+  <p>
+    There should be topics here unexplored elsewhere.
+  </p>
 
-<p>
-  <img src="important.jpg" alt="Under construction" />
-</p>
+  <p>
+    <img src="important.jpg" alt="Under construction" />
+  </p>
+</div>
 
-<a href="" class="top">Top</a>
-
-<a name="fundamentals"></a>
 <h1>1. Fundamentals</h1>
+<div class="page">
+<a name="fundamentals"></a>
 <a name="pronouns"></a>
+<a href="" class="top">Top</a>
 <h2>
-  1.1. Pronouns
+  1.1 Pronouns
 </h2>
 
 <h3>
@@ -414,9 +445,10 @@ they grow    - galar
 <pre>
   Melian nî redhin an <b>im</b> Ivann = "Melian was related to Yavanna <b>herself</b>"
 </pre>
+</div>
 
+<div class="page">
 <a href="" class="top">Top</a>
-
 <a name="copular"></a>
 <h2>
   1.2 Copular system
@@ -499,12 +531,14 @@ they grow    - galar
     </pre>
   </li>
 </ul>
+</div>
 
+
+<div class="page">
 <a href="" class="top">Top</a>
-
 <a name="basic_nouns"></a>
 <h2>
-  1.3. Basic nouns
+  1.3 Basic nouns
 </h2>
 <p>
   Nouns can be definite or indefinite, singular or plural.
@@ -716,9 +750,10 @@ N. sîr    "river"    → siriath    "(all of the) rivers".
   nobad      "thumb and index finger as a pair, *(lit.) pickers"
   hent       "two eyes (hen)"
 </pre>
+</div>
 
+<div class="page">
 <a href="" class="top">Top</a>
-
 <a name="basic_verbs"></a>
 <h2>
   1.4 Basic Verbs
@@ -884,10 +919,13 @@ Derived verbs ending in -a:
 <pre>
   aníra ... suilannad <b>mhellyn</b> "desires to greet friends" (mhellyn is mutated from "mellyn")
 </pre>
+</div>
 
 <!-- End of Verbs -->
-<a href="" class="top">Top</a>
 
+
+<div class="page">
+<a href="" class="top">Top</a>
 <a name="mutations"></a>
 <h2>1.5 Consonant mutations</h2>
 <div class="image right">
@@ -932,7 +970,6 @@ Derived verbs ending in -a:
   <span class="hide">Voiceless Liquids †      </span>lh-, rh-             l-, r-               'l-, 'r-              <span class="subtle">lh-, rh-</span>
   <span class="hide">Nasals                   </span>m-                   <span class="subtle">m-</span>                   v-                    <span class="subtle">m-</span>
 </pre>
-
 
 <h3>Soft mutation</h3>
 <p>
@@ -1086,13 +1123,14 @@ Derived verbs ending in -a:
 <p>
   It is an obscure but plausible mutation for a(h).
 </p>
+</div>
 
-<a href="" class="top">Top</a>
-<a name="basic"></a>
 <h1>
   2. Articles, Adjectives, and Basic Syntax
 </h1>
-
+<div class="page">
+<a href="" class="top">Top</a>
+<a name="basic"></a>
 <a name="articles"></a>
 <h2>
   2.1 Articles
@@ -1131,9 +1169,10 @@ Derived verbs ending in -a:
   <b>I</b>·<span class="nasal">thiw</span>    = "the signs/letter" (tiw < têw)
   <b>In</b>·<span class="nasal">pherth</span> = "the fields"       (perth < parth)
 </pre>
+</div>
 
+<div class="page">
 <a href="" class="top">Top</a>
-
 <a name="adjectives"></a>
 <h2>
   2.2 Adjectives
@@ -1176,9 +1215,10 @@ Derived verbs ending in -a:
   in·edain <b>delin</b>  = "the men (are) <b>hidden</b>"
   in·edain <span class="soft"><b>dhelin</b></span> = "the <b>hidden</b> men"
 </pre>
+</div>
 
+<div class="page">
 <a href="" class="top">Top</a>
-
 <a name="numerals"></a>
 <h2>
   2.3 Numerals
@@ -1411,9 +1451,10 @@ Derived verbs ending in -a:
     Literature on the subject of Sindarin ordinal numbers is patchy at best. I'll add more information here when I have any.
   </i>
 </p>
+</div>
 
+<div class="page">
 <a href="" class="top">Top</a>
-
 <a name="sentence_structure"></a>
 <h2>
   2.4 Sentence Structure
@@ -1723,7 +1764,9 @@ Derived verbs ending in -a:
   </p>
 </div>
  -->
+</div>
 
+<div class="page">
 <a href="" class="top">Top</a>
 <a name="adverbs"></a>
 <h2>
@@ -1974,7 +2017,9 @@ Derived verbs ending in -a:
 <hr />
 
 </div>
+</div>
 
+<div class="page">
 <a href="" class="top">Top</a>
 <a name="negation"></a>
 <h2>2.6 Negation</h2>
@@ -2159,7 +2204,9 @@ Derived verbs ending in -a:
   baw vado! = "don't eat!"
   baw veno! = "don't go!"
 </pre>
+</div>
 
+<div class="page">
 <a href="" class="top">Top</a>
 <a name="yes_no"></a>
 <h2>2.7 Yes and No</h2>
@@ -2177,7 +2224,9 @@ Derived verbs ending in -a:
     There is a case for using <b>lá</b> as a word for "no", but based on empirical experimentation speaking Neo-Sindarin, people reportedly mistook yes for no too often to be considered a realistic choice.
   </small>
 </p>
+</div>
 
+<div class="page">
 <a href="" class="top">Top</a>
 <a name="conjunctions"></a>
 <h2>2.8 Conjunctions</h2>
@@ -2295,10 +2344,11 @@ pen pron. "one, somebody"
 
  -->
 </pre>
+</div>
 
-<a href="" class="top">Top</a>
 <a name="prepositions"></a>
 <h1>3. Prepositions</h1>
+<div class="page">
 <!--
 The following is theoretical and not confirmed:
 
@@ -2311,7 +2361,9 @@ https://discord.com/channels/397489292185960468/398407102344986625/1397070202033
 <p>
   They often indicate where, when, why, or how something happens.
 </p>
+</div>
 
+<div class="page">
 <h2>
   3.1 Overview
 </h2>
@@ -2522,6 +2574,9 @@ Metaphorically: от expresses separation, cause, or origin in a looser, externa
   hither, on this side
   beyond (when used statically)
 -->
+</div>
+
+<div class="page">
 <a name="prepositions_space"></a>
 <h2>
   3.2 Prepositions of space
@@ -2839,7 +2894,9 @@ Metaphorically: от expresses separation, cause, or origin in a looser, externa
 <hr />
 
 </div>
+</div>
 
+<div class="page">
 <!-- ------------------------------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------ -->
 <!--
@@ -2891,10 +2948,11 @@ Metaphorically: от expresses separation, cause, or origin in a looser, externa
 </div>
 <hr />
 
-
-
+</div>
 </div>
 
+
+<div class="page">
 <!-- ------------------------------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------ -->
 <!--
@@ -2999,14 +3057,15 @@ Metaphorically: от expresses separation, cause, or origin in a looser, externa
 <hr />
 
 </div>
+</div>
 
+<div class="page">
 <!-- ------------------------------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------ -->
 <!--
   as
   as, like, according to
 -->
-
 <!-- <a href="#prepositions">[prepositions]</a> -->
 <a name="prepositions_role"></a>
 <h3>
@@ -3039,7 +3098,9 @@ Metaphorically: от expresses separation, cause, or origin in a looser, externa
 <hr />
 
 </div>
+</div>
 
+<div class="page">
 <!-- ------------------------------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------ -->
 <!--
@@ -3145,12 +3206,15 @@ so n' en- etc.
 
 </pre>
 -->
+</div>
 
-<a href="" class="top">Top</a>
 <a name="intermediate"></a>
 <h1>
   4. Intermediate grammar
 </h1>
+
+<div class="page">
+<a href="" class="top">Top</a>
 <a name="pronouns2"></a>
 <h2>
   4.1 Personal pronoun paradigm
@@ -3267,9 +3331,11 @@ so n' en- etc.
   en·eneth <b>nín</b> Haldir = "<b>my</b> name is Haldir" = (lit.) "the name <b>mine</b> [is] Haldir"
 </pre>
 
+</div>
+
+<div class="page">
 <a href="" class="top">Top</a>
 <a name="demonstrative_pronouns"></a>
-
 <h2>
   4.2 Demonstratives
 </h2>
@@ -3319,6 +3385,9 @@ so n' en- etc.
 “She walked to this (place).”
 “He objected to this.”
 -->
+</div>
+
+<div class="page">
 <a href="" class="top">Top</a>
 <a name="interrogative"></a>
 <h2>
@@ -3420,14 +3489,13 @@ so n' en- etc.
 <hr />
 
 </div>
+</div>
 
-
-
-
+<div class="page">
 <a href="" class="top">Top</a>
 <a name="relative_pronouns"></a>
 <h2>
-  4.3 Relative Pronouns
+  4.4 Relative Pronouns
 </h2>
 <p>
   Attested forms of relative pronouns are scant: we have <b>i</b>, <b>ai</b>, and <b>ir</b>.
@@ -3495,13 +3563,15 @@ so n' en- etc.
   To whom:
   Thingol, <b>ian</b> i·Naugrim agórer Venegroth = "Thingol, to whom the Dwarves made Menegroth"
 </pre>
+</div>
 
-<a href="" class="top">Top</a>
 <a name="constructions"></a>
 <h1>
   5. Grammatical constructions
 </h1>
 
+<div class="page">
+<a href="" class="top">Top</a>
 <a name="genitive"></a>
 <h2>
   5.1 Genitive
@@ -3733,6 +3803,7 @@ so n' en- etc.
 <pre>
   Orod-na-Thôn "Mountain of Pine"
 </pre>
+</div>
 
 <a href="" class="top">Top</a>
 <a name="possessive"></a>
@@ -4138,6 +4209,8 @@ Imperatives
 Genitive Constructions
 Partitive Constructions
 Locative Adverbial Phrases
+
+https://www.cis.upenn.edu/~xtag/tech-report/node1.html
 
 
 
