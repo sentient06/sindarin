@@ -46,11 +46,16 @@
     h3 { font-size: 1.602em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;}
     h2 { font-size: 1.802em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;}
     h1 { font-size: 2.027em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;
-      background: aliceblue;
+      background: azure;
       box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 0.25);
       padding: 10px 16px;
     }
-    h1.title { font-size: 3em; }
+    h1.title {
+      font-size: 3em;
+      box-shadow: none;
+      background: none;
+      font-variant-caps: petite-caps;
+    }
 
     main {
       margin-left: 280px;
@@ -113,7 +118,8 @@
     }
 
     .soft {
-      color: dodgerblue;
+/*      color: dodgerblue;*/
+      color: rgb(0, 114, 255);
     }
 
     .nasal {
@@ -224,12 +230,18 @@
     }
 
     .top {
-      background: gainsboro;
-      color: black;
+      background: #555;
+      color: #FFF;
+/*      background: gainsboro;*/
+/*      color: black;*/
       text-decoration: none;
-      padding: 5px 10px;
+      padding: 2px 20px;
 /*      border-radius: 5px;*/
 /*      float: right;*/
+    }
+
+    small small {
+      font-size: 0.6em;
     }
   </style>
 </head>
@@ -1254,7 +1266,7 @@ Derived verbs ending in -a:
   3 neledh   13 paenel      30 nelphaen
   4 canad    14 paegan      40 caphaen
   5 leben    15 paeleben    50 lephaen
-  6 eneg     16 paeleben    60 enephaen
+  6 eneg     16 paeneg      60 enephaen
   7 odog     17 paenodog    70 odophaen
   8 tolodh   18 paedolodh   80 tolophaen     100 toch
   9 neder    19 paeneder    90 nederphaen   1000 meneg
@@ -1345,7 +1357,7 @@ Derived verbs ending in -a:
 <div class="a1">
   Decimal ..: 360
   English ..: Three hundred sixty
-  Sindarin .: Enephaen neledh tych
+  Sindarin .: Enephaen tych neledh
 </div>
 <div class="a2">
   Duodecimal: 260 <small>(360)</small>
@@ -1374,7 +1386,7 @@ Derived verbs ending in -a:
 <div class="a2">
   Duodecimal: 700 <small>(1008)</small>
   English ..: Seven gross
-  Sindarin .: Odog hyst
+  Sindarin .: Hyst odog
 </div>
 <hr />
 
@@ -1420,8 +1432,8 @@ Derived verbs ending in -a:
   <small>
     <i>
       It's important to stress here the equivalences:<br />
-      700 in duodecimal is exactly the same amount of a thing as 1008 in decimal.<br />
-      "700" means 7 gross, and a gross is 144. 144 × 7 = 1008.<br />
+      700<small>12</small> in duodecimal is exactly the same amount of a thing as 1008<small>10</small> in decimal.<br />
+      "700<small>12</small>" means 7 gross, and a gross is 144<small>10</small>. 144<small>10</small> × 7 = 1008<small>10</small>.<br />
       The number is named differently, it has different algarisms, but it's the same amount.
     </i>
   </small>
@@ -3851,30 +3863,46 @@ so n' en- etc.
 
 <!-- 5.3 Imperative -->
 
-<br />
-<hr />
-
-<i>
-  The following bits were not revised.
-</i>
-
-<a href="" class="top">Top</a>
-<a name="verbs2"></a>
 <h1>
   6. Verbal System (advanced)
 </h1>
+
+<div class="page">
+<a href="" class="top">Top</a>
 <a name="verb_classes"></a>
 <h2>
   6.1 Additional verb classes
 </h2>
 
-<h3>Half-strong and irregular verbs</h3>
+<h3>Half-strong verbs</h3>
 <p>
-  There's also a minor class called half-strong verbs.
+  Sindarin has a minor class of verbs called half-strong verbs.
 </p>
-
+<p>
+  Half-strong verbs are a subclass of derived verbs whose past-tense formation preserves patterns inherited from Common Eldarin and Quenya half-strong verbs. The evidence is limited but consistent.
+</p>
+<p>
+  These verbs were originally derived causative verbs formed with the suffix <b>-ta</b> (Common Eldarin <b>-tā</b>). Their past tense was created not with a regular dental suffix, but by strengthening or infixing the root, producing forms with <b>-nt-</b>.
+</p>
+<p>
+  One of the best evidences is the verb <b>tangad(a)-</b>, meaning "to make firm, confirm" (< ✶tankāta-), from Noldorin (1930s). It's present tense is <i>tangod</i> and its past tense is <i>tangant</i>. Sindarin still have traces of this system in several ways.
+</p>
+<p>
+  A more recent verb in the Sindarin development that serve as example of a causative half-strong verb is the verb <b>covad(a)-</b>, meaning "to make meet". Present <i>covad</i> and past <i>covant</i>. This mirrors the Noldorin pattern and demonstrates that the class survived into Sindarin.
+</p>
+<p>
+  Some general properties of half-strong verbs are:
+</p>
+<ul>
+  <li>They are derived verbs</li>
+  <li>They are typically causative</li>
+  <li>They are formed historically with -tā (S. ending –da/-tha/-a in later forms)</li>
+  <li>Their past tense formed by strengthening the root, giving -nt</li>
+</ul>
+<p>
+  Example of a half-strong verb:
+</p>
 <pre>
-  Half-Strong verb:
   tangad(a)- (to make firm, to confirm)
 
   1st person - tangadan      - I confirm
@@ -3887,66 +3915,14 @@ so n' en- etc.
   2nd person - tangadadh(ir) - you confirm
   3rd person - tangadar      - they confirm
 </pre>
+</div>
 
-<!--
-<h2>Verb tenses ???</h2>
+<br />
+<hr />
 
-<h3>Present Tense</h3>
-
-<h4>Derived verbs</h4>
-<p>
-  The present tense is simply the unadorned verb stem:
-</p>
-<pre>
-  gala "grow" (gala-)
-</pre>
-
-<h4>Basic verbs</h4>
-
-<h5>Monosyllabic</h5>
-<p>
-  The base vowel is lengthened:
-</p>
-<pre>
-  câr "do, make" (car-)
-</pre>
-<h5>Polysyllablic</h5>
-<p>
-  No lenghtening:
-</p>
-<pre>
-  echad "shape" (echad-)
-</pre>
-
-<h3>Pronominal suffixes</h3>
-
-<h4>Derived verbs</h4>
-<p>
-  Usually the final "a" of the verb changes to "o":
-</p>
-<pre>
-  galon "I grow" (gala-)
-</pre>
-<p>
-  In some cases the "a" is preserved: before -r and pronominal suffixes that were clusters.
-</p>
-  
-<h4>Basic verbs</h4>
-<p>
-  The ancient aorist suffix "i" is preserved, and causes internal i-affection of the base vowel:
-</p>
-<pre>
-  cerin "I do" (car-)
-</pre>
-<p>
-  For many basic verbs, the vowel becomes "e" in an inflected present tense:
-</p>
-<pre>
-    car-: present tense cerin "I do"
-    heb-: present tense hebin "I keep"
-    tol-: present tense telin "I come"
-</pre>
--->
+<i>
+  The following bits were not revised.
+</i>
 
 <a href="" class="top">Top</a>
 
@@ -3954,34 +3930,9 @@ so n' en- etc.
 <h2>
   6.2 Past tense
 </h2>
-<h3>
-  Derived verbs
-</h3>
 <p>
-  Weak past suffixes of derived verbs:
-  <ul>
-    <li>-ant (transitive) or</li>
-    <li>-as (intransitive)</li>
-  </ul>
+  Past tense in Sindarin is highly irregular, because it can derive from Common Eldarin and other morphological changes depending on the verb.
 </p>
-
-<p>
-  Joining vowel should be for inflected past tenses is "e".
-</p>
-<pre>
-  teithannen "I drew (something)" or
-  bronassen  "I endured"
-</pre>
-
-<p>
-  Basic verbs use nasal infixion only for stems ending in stops b, d, g.
-</p>
-<p>
-  l, r basic verbs should definitely use augments and vowel mutations
-</p>
-<pre>
-  agor "did" for car- "do"
-</pre>
 
 <h3>
   Basic verbs (nasal infixion, augment, vowel change)
@@ -4050,8 +4001,20 @@ so n' en- etc.
 <pre>
   ólen "I grew"
 </pre>
+<p>
+  Basic verbs use nasal infixion only for stems ending in stops b, d, g.
+</p>
+<p>
+  l, r basic verbs should definitely use augments and vowel mutations
+</p>
+<pre>
+  agor "did" for car- "do"
+</pre>
 
-<h3>Derived verbs</h3>
+<h3>
+  Derived verbs
+</h3>
+
 <p>
   Transitive derived verbs form pasts using the suffix -ant:
 </p>
