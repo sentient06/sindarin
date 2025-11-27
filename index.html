@@ -40,11 +40,11 @@
       text-decoration: underline;
     }
 
-    h6 { font-size: 1.125em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;}
-    h5 { font-size: 1.266em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;}
-    h4 { font-size: 1.424em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;}
-    h3 { font-size: 1.602em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;}
-    h2 { font-size: 1.802em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;}
+    h6 { font-size: 1.125em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.75em; margin: 0.5em 0 0 0; }
+    h5 { font-size: 1.266em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.75em; margin: 0.5em 0 0 0; }
+    h4 { font-size: 1.424em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.75em; margin: 0.5em 0 0 0; }
+    h3 { font-size: 1.602em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.75em; margin: 0.5em 0 0 0; }
+    h2 { font-size: 1.802em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.75em; margin: 0.5em 0 0 0; }
     h1 { font-size: 2.027em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;
       background: azure;
       box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 0.25);
@@ -56,6 +56,17 @@
       background: none;
       font-variant-caps: petite-caps;
     }
+
+    h3, h4, h5 {
+      border-style: solid;
+      border-width: 0;
+      border-top-width: 1px;
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    h3 { border-color: rgba(0, 0, 0, 0.1); }
+    h4 { border-color: rgba(0, 0, 0, 0.05); }
+    h5 { border-color: rgba(0, 0, 0, 0.025); }
 
     main {
       margin-left: 280px;
@@ -238,6 +249,10 @@
       padding: 2px 20px;
 /*      border-radius: 5px;*/
 /*      float: right;*/
+    }
+
+    .anchor_wrapper {
+      position: relative;
     }
 
     small small {
@@ -4137,9 +4152,12 @@ so n' en- etc.
 
 </div>
 
+<div class="anchor_wrapper">
+<a href="#past_tense" class="top">Past tense</a>
 <h3>
   Derived verbs
 </h3>
+</div>
 <p>
   Derived verbs are more complicated because the past tense varies whether the verb is transitive or intransitive, has a strong past tense or half-strong.
 </p>
@@ -4376,6 +4394,9 @@ so n' en- etc.
 
 <a name="other"></a>
 <details>
+  <summary>
+    Notes
+  </summary>
 <pre class="break">
 
 Random notes that require organising:
@@ -4399,23 +4420,7 @@ Advice: You should rest.
 Permission: May I leave?
 
 
-
-
-4. Numbers
-
-Cardinals, ordinals, agreement, mutation.
-
 5. Time expressions
-
-Very valuable:
-
-milume “during”
-days, dates
-"ago", "in X days", “yesterday/tomorrow”
-
-6. Imperative
-
-Short, easy, but essential.
 
 7. Participles
 
@@ -4425,11 +4430,11 @@ This allows you to avoid complicated relative clauses.
 More topics:
 
 Passives
-Relative Clauses
+Relative Clauses - done
 Adjunct Clauses
-Imperatives
-Genitive Constructions
-Partitive Constructions
+Imperatives - done
+Genitive Constructions - done
+Partitive Constructions - a bit done
 Locative Adverbial Phrases
 
 https://www.cis.upenn.edu/~xtag/tech-report/node1.html
@@ -4686,6 +4691,67 @@ nathon I will be
 natha he will be
 natham we will be
 nathar they will be
+
+
+
+
+Time:
+
+
+
+When something happens (past, present, or future)
+How often it happens (frequency)
+How long it lasts (duration)
+In what order it happens (sequence)
+
+Time Expressions for the Past
+
+Sindarin
+Expression
+  Example Sentence
+
+nuir
+yesterday
+  I met him yesterday.
+
+odlad (week)
+last week / last year
+  She traveled to Spain last summer.
+
+oreth (hour)
+an hour ago
+  He called me an hour ago.
+
+?
+recently
+  I’ve recently started a new job.
+
+io (ago)
+a little while ago
+  The bus left a little while ago.
+
+io (ago)
+a long time ago
+  Dinosaurs lived a long time ago.
+
+gwenwi (past)
+ᴺS. !gwanwas n. “the past, past days, olden times” 
+ᴺS. [ᴱN.], G. ^en adv. “then, [G.] that past,
+in the past
+  People didn’t have the internet in the past.
+
+amor (morning)
+this morning
+  I had a meeting this morning.
+
+nuir/orvedui nui- aur
+the day before yesterday
+  We arrived the day before yesterday.
+
+?
+when I was a child
+  When I was a child, I had a dog.
+
 
   </pre>
 </details>
