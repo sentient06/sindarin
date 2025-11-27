@@ -128,35 +128,79 @@
       color: fuchsia;
     }
 
+    a {
+      color: #005BBB;
+    }
+
     .soft {
-/*      color: dodgerblue;*/
-      color: rgb(0, 114, 255);
+/*      color: #4B2CFF;*/
+      border-radius: 0.4em 0 0.3em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(43, 184, 255, 0.2),
+        rgba(43, 184, 255, 0.7) 95%,
+        rgba(43, 184, 255, 0.1)
+      );
     }
 
     .nasal {
-      color: deeppink;
+/*      color: #D3358F;*/
+      border-radius: 0.4em 0 0.3em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(241, 103, 243, 0.2),
+        rgba(241, 103, 243, 0.7) 95%,
+        rgba(241, 103, 243, 0.1)
+      );
     }
 
     .mixed {
-      color: #48b563;
+/*      color: #FF7F0E;*/
+      border-radius: 0.4em 0 0.3em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(255, 120, 12, 0.2),
+        rgba(255, 120, 12, 0.7) 95%,
+        rgba(255, 120, 12, 0.1)
+      );
     }
 
     .stop {
-      color: orangered;
+/*      color: #D62728;*/
+      border-radius: 1em 0 1em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(250, 30, 30, 0.2),
+        rgba(250, 30, 30, 0.7) 95%,
+        rgba(250, 30, 30, 0.1)
+      );
     }
 
     .liquid {
-      color: mediumslateblue;
+/*      color: #17BECF;*/
+      border-radius: 1em 0 1em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(2, 250, 186, 0.2),
+        rgba(2, 250, 186, 0.7) 95%,
+        rgba(2, 250, 186, 0.1)
+      );
     }
 
     .sibilant {
-      color: mediumseagreen;
+/*      color: #2CA02C;*/
+      border-radius: 1em 0 1em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(144, 255, 24, 0.2),
+        rgba(144, 255, 24, 0.7) 95%,
+        rgba(144, 255, 24, 0.1)
+      );
     }
 
     .subtle {
       color: #bbb;
     }
-
 
     @media (max-width: 667px)  {
       body {
@@ -966,7 +1010,7 @@ Derived verbs ending in -a:
   Consonant mutations are where the ends and beginings of words interact. Mutations are closely related to Sindarin's phonetic history. These mutations are so frequent, in fact, that it is probably the most pertinent property of Sindarin for any enthusiasts.
 </p>
 <p>
-  Sindarin has about six types of consonant mutations, but the most important ones are: <span class="soft">soft mutation</span>, <span class="nasal">nasal mutation</span>, and <span class="mixed">mixed mutation</span>. The others are limited in scope.
+  Sindarin has about six types of consonant mutations, but the most important ones are: <span class="soft">soft mutation</span>, <span class="nasal">nasal mutation</span>, and <span class="mixed">mixed mutation</span>. The others are limited in scope, and are known as <span class="stop">stop mutation</span>, <span class="liquid">liquid mutation</span>, and <span class="sibilant">sibilant mutation</span>.
 </p>
 <p>
   These consonant mutations apply to the initial consonant of a word, either when closely following another word or in compounds.
@@ -1001,10 +1045,10 @@ Derived verbs ending in -a:
 
 <h3>Soft mutation</h3>
 <p>
-  Soft mutation - aka lenition - aka vocalic mutation
+  <span class="soft">Soft mutation</span> - aka <span class="soft">lenition</span> - aka <span class="soft">vocalic mutation</span>
 </p>
 <p>
-  Soft mutation is a systematic lenition (sound-softening process) of initial consonants triggered by certain grammatical environments, such as following the definite article or appearing in compounds.
+  <span class="soft">Soft mutation</span> is a systematic lenition (sound-softening process) of initial consonants triggered by certain grammatical environments, such as following the definite article or appearing in compounds.
 </p>
 <p>
   It "softens" the consonant's articulation without changing its place of articulation, producing predictable alternations used to mark grammatical relationships.
@@ -1179,7 +1223,7 @@ Derived verbs ending in -a:
   In CEA, the singular definite article was derived from an ancient emphatic article ✶inā, with a-affection resulting in e(n).
 </p>
 <p>
-  The singular form induces soft mutation on a following consonant, while the plural induces nasal mutation.
+  The singular form induces <span class="soft">soft mutation</span> on a following consonant, while the plural induces <span class="nasal">nasal mutation</span>.
 </p>
 <pre>
   e(n) + <span class="soft">soft mutation</span> for singular
@@ -1230,12 +1274,20 @@ Derived verbs ending in -a:
 </p>
  -->
 <p>
-  For "an elf is tall" (predicative + indefinite), and for a generic statement "elves are tall" use the copula:
+  Predicative statements such as "an elf is tall" and "elves are tall" are ambiguous with attributive sentences.
 </p>
 <pre>
-  Edhel <b>tond</b>      = "[an] elf [is] tall"
-  Edhil <b>tynd</b>      = "elves [are] tall"
+  Edhel <span class="soft"><b>dond</b></span>      = "[an] elf [is] tall" or "[a] tall elf"
+  Edhil <span class="soft"><b>dynd</b></span>      = "elves [are] tall"   or "tall elves"
 </pre>
+<p>
+  The only way we can disambiguate is by reversing the position, so the copula is implied, as such:
+</p>
+<pre>
+  <b>Tond</b> edhel      = "tall [is] [an] elf"
+  <b>Tynd</b> edhil      = "tall [are] elves"
+</pre>
+<!--
 <p>
   The same is used for definite nouns:
 </p>
@@ -1243,6 +1295,7 @@ Derived verbs ending in -a:
   in·edain <b>delin</b>  = "the men (are) <b>hidden</b>"
   in·edain <span class="soft"><b>dhelin</b></span> = "the <b>hidden</b> men"
 </pre>
+-->
 </div>
 
 <div class="page">
@@ -1286,6 +1339,9 @@ Derived verbs ending in -a:
   8 tolodh   18 paedolodh   80 tolophaen     100 toch
   9 neder    19 paeneder    90 nederphaen   1000 meneg
 </pre>
+<p>
+  Note that <b>toch</b>, the word for a hundred, is pluralised for higher numbers, so 200 is written "tych tâd". The same goes for a thousand: 2000 is pluralised to "menig tâd".
+</p>
 
 <h4>
   The duodecimal system
@@ -1294,7 +1350,7 @@ Derived verbs ending in -a:
   The system of base 12 is called the duodecimal system. In that system, instead of using 10 digits, we use 12. After the algarism nine (9), we use, in English, <i>dek</i> and <i>el</i>.
 </p>
 <p>
-  In a duodecimal place system, ten (or <i>dek</i>) is written as <b>A</b> (or <b>ᘔ</b>), eleven (or <i>el</i>) is written as <b>B</b> (or <b>Ɛ</b>), twelve is written as <b>10</b>, meaning "1 dozen and 0 units", instead of "1 ten and 0 units", whereas <b>12</b> means "1 dozen and 2 units" (i.e. the same number that in decimal is written as "14"). According to this notation, <b>50</b> means sixty (= five times twelve), <b>60</b> means seventy two or "half a gross" (= six times twelve), <b>100</b> means one hundred forty-four (= twelve times twelve) or "1 gross", <b>1000</b> means one thousand seven hundred twenty eight or "1 great gross", and <b>0.1</b> means "1 twelfth" instead of "1 tenth".
+  In a duodecimal place system, based on the standards laid out by the Dozenal Societies of America and Great Britain (organisations promoting the use of duodecimal), ten (or <i>dek</i>) is written as <b>A</b> (or <b>ᘔ</b>), eleven (or <i>el</i>) is written as <b>B</b> (or <b>Ɛ</b>), twelve is written as <b>10</b>, meaning "1 dozen and 0 units", instead of "1 ten and 0 units", whereas <b>12</b> means "1 dozen and 2 units" (i.e. the same number that in decimal is written as "14"). According to this notation, <b>50</b> means sixty (= five times twelve), <b>60</b> means seventy two or "half a gross" (= six times twelve), <b>100</b> means one hundred forty-four (= twelve times twelve) or "1 gross", <b>1000</b> means one thousand seven hundred twenty eight or "1 great gross", and <b>0.1</b> means "1 twelfth" instead of "1 tenth".
 </p>
 <p>
   These are reconstructed names of the numbers in duodecimal:
@@ -1315,6 +1371,9 @@ Derived verbs ending in -a:
 </pre>
 <p>
   <i>These are not widely used and very hypothetical.</i>
+</p>
+<p>
+  The same way it works with decimals, the words for gross and great gross are pluralised. So 200 is "hyst tâd" and 2000 is "hui tâd".
 </p>
 
 <h4>
@@ -4773,7 +4832,33 @@ when I was a child
   </pre>
 </details>
 </main>
+<!--
+<pre>
+<span style="color:#C19A00;">Something else</span>
 
+<span style="color:#9467BD;">Something else</span>
+
+<span style="color:#005BBB; text-decoration:underline;">This is a hyperlink example</span>
+
+<span style="color:#4B2CFF;">Soft mutation example:</span>
+<span style="color:#4B2CFF;">p → b, t → d, c → g</span>
+
+<span style="color:#D3358F;">Nasal mutation example:</span>
+<span style="color:#D3358F;">p → ph, t → th, c → ch, b → m, d → n, g → ng</span>
+
+<span style="color:#FF7F0E;">Mixed mutation example:</span>
+<span style="color:#FF7F0E;">p → b, t → d, c → g, but mb/nd/ng restored</span>
+
+<span style="color:#D62728;">Stop mutation example:</span>
+<span style="color:#D62728;">p → ph, t → th, c → ch, (n)d → nd</span>
+
+<span style="color:#17BECF;">Liquid mutation example:</span>
+<span style="color:#17BECF;">p → ph, t → th, c → ch, b → v, d → dh, g → ’</span>
+
+<span style="color:#2CA02C;">Sibilant mutation example:</span>
+<span style="color:#2CA02C;">p → ph, t → th, c → ch, l → lh, r → rh</span>
+</pre>
+ -->
 
 <script>
 function showContent() {
