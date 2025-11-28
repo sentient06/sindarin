@@ -329,6 +329,17 @@
     small small {
       font-size: 0.6em;
     }
+
+    details {
+      padding: 10px;
+      border: 1px solid #bbb;
+      background: ghostwhite;
+    }
+
+    details summary {
+      cursor: pointer;
+/*      background: red;*/
+    }
   </style>
 </head>
 <body>
@@ -578,18 +589,242 @@ they grow    - galar
   In English, in "to be" statements as in "you are wise", "Elrond is an elf", the verb connecting the subject (you, Elrond) to its predicate (wise, an Elf) is the copula.
 </p>
 <p>
-  Elvish languages are notable in that they do not normally use a copula word in such sentences: the subject and predicate are simply placed next to each other with no joining word (in linguistics this is referred to as a "zero copula").
+  Elvish languages do not use an evident copula word in such sentences: the subject and predicate are simply placed next to each other with no joining word (in linguistics this is referred to as a "zero copula").
 </p>
 <p>
   Neo-Sindarin writers use an independent pronoun together with its predicate for "to be" statements that use independent pronouns:
 </p>
 <pre>
   me elidh = "we [are] Elves"
-  le sael  = "you [are] wise"
-  ti belig = "they [are] mighty"
+  le <span class="soft">hael</span>  = "you [are] wise"
+  ti <span class="soft">velig</span> = "they [are] mighty"
 </pre>
 <p>
-  In this system, the predicate noun or adjective matches the subject in number, but it is generally agreed that a predicate adjective is not mutated (see mutations below.)
+  In this system, the predicate noun or adjective matches the subject in number.
+</p>
+<p>
+  Many Sindarin writers agree that a predicate adjective is not mutated (see <a href="#mutations">mutations</a> below.) However, there is no evidence that this would be the case.
+</p>
+
+<details>
+<summary>
+  The problems with the copular system
+</summary>
+<h3>
+  The problems with the copular system
+</h3>
+<p>
+  The copular system may sound simple, but it introduces three chief problems that leave Sindarin writers scrambling and divide opinion:
+</p>
+<ol>
+  <li>There's no distinction between tenses</li>
+  <li>There's no distinction between predication and attribution</li>
+  <li>There's no distinction between predication of nouns and genitive constructions</li>
+</ol>
+<h4>
+  Past and future tense copula
+</h4>
+<p>
+  Paul Strack from Eldamo have tried to address this issue, which he explains on his <a href="https://eldamo.org/content/words/word-4139775763.html" target="_blank">page about the copula</a>.
+</p>
+<p>
+  The issue can be illustrated with the following three sentences:
+</p>
+<pre>
+  Elrond is there
+  Elrond was there
+  Elrond will be there
+</pre>
+<p>
+  Translating that to Sindarin with a zero copula yield the exact same translation to all three sentences:
+</p>
+<pre>
+  Elrond ennas
+</pre>
+<p>
+  How can that be disambiguated? Paul analysed the <a href="https://eldamo.org/content/words/word-3079325279.html" target="_blank">na-</a> verb and figured that Tolkien actually left clues as to what that would look like in the past tense and future tense. With some educated guesses, he suggested the use of a past tense copula <b>nî</b> and a future tense copula <b>tho</b>, which would yield the following translations:
+</p>
+<pre>
+  Elrond ennas     = "Elrond is there"
+  Elrond nî ennas  = "Elrond was there"
+  Elrond tho ennas = "Elrond will be there"
+</pre>
+
+<h4>
+  Predication and attribution
+</h4>
+<p>
+  A predication is basically a meaningful declarative sentence that is true or false. For example:
+</p>
+<pre>
+  the elf is tall
+</pre>
+<p>
+  An attribution refers to a word or word group, such as an adjective, that is placed adjacent to the noun it modifies without a linking verb. For example:
+</p>
+<pre>
+  the tall elf
+</pre>
+<p>
+  A predicative sentence in Sindarin requires the use of a zero copula. The issue is that the translation for both sentences is identical:
+</p>
+<pre>
+  en·edhel <span class="soft">dond</span> = "the elf is tall"
+  en·edhel <span class="soft">dond</span> = "the tall elf"
+</pre>
+<p>
+  The solution that Sindarin writers came up with is to not mutate an adjective if it's being used in a predicative sentence:
+</p>
+<pre>
+  en·edhel <b>tond</b> = "the elf is tall"
+  en·edhel <span class="soft"><b>dond</b></span> = "the tall elf"
+</pre>
+<p>
+  However, some people think this is not a good solution because there is no evidence that Tolkien had ever used such a mechanic.
+</p>
+<p>
+  An alternative solution is to reverse the order of the predicate:
+</p>
+<pre>
+  <b>tond</b> en·edhel = "the elf is tall"
+  en·edhel <span class="soft"><b>dond</b></span> = "the tall elf"
+</pre>
+
+<h4>
+  Copula vs genitive
+</h4>
+<p>
+  A genitive is a construction for expressing relations between two nouns. See the <a href="#genitive">section below</a> for more information.
+</p>
+<p>
+  In Sindarin, as explained below, a genitive is formed by positioning two nouns of a chain in sequence, next to each other, like so:
+</p>
+<pre>
+  aran edhil = "king [of] elves"
+</pre>
+<p>
+  The problem is that nouns can be used in predicative sentences, as much as adjectives do. The difference is that nouns don't mutate like adjectives when using zero copula, so the syntax for a zero copula with two nouns is identical to a genitive construction:
+</p>
+<pre>
+  rhovan maethor = "[a] beast [is] [a] warrior" → copula
+  rhovan maethor = "[a] beast [of] [a] warrior" → genitive
+</pre>
+<p>
+  Fiona Jallings, author of <i>A Fan’s Guide to Neo-Sindarin</i>, tried to tackle this problem by suggesting we use soft mutation for predicative sentences using the copula, using the opposite mechanic used with adjectives. This way it would be easy to disambiguate:
+</p>
+<pre>
+  rhovan <span class="soft">vaethor</span> = "[a] beast [is] [a] warrior"
+  rhovan maethor = "[a] beast [of] [a] warrior"
+</pre>
+<p>
+  The problem with this approach, again, is that it's not attested anywhere. So it's an invention.
+</p>
+
+<h4>
+  Suggestions
+</h4>
+<p>
+  To help disambiguate all the cases presented above, I suppose there are 3 best practices one shoul keep in mind:
+</p>
+<h5>
+  a) use tense copulas
+</h5>
+<p>
+  Paul Strack's solution for disambiguating the past, present and future tense copulas seem reasonable, and I think it should be used.
+</p>
+<h5>
+  b) reverse adjectival predicates
+</h5>
+<p>
+  Always reverse the adjectives in a predicative sentence to prevent making it attributive.
+</p>
+<h5>
+  c) use the definite article to disambiguate from genitives
+</h5>
+<p>
+  In a genitive chain, the article can only be used in the last noun of the chain, and it changes the definiteness of the whole chain. If one uses the article in the first noun of the chain, it has to be interpreted as a predicative sentence:
+</p>
+<pre>
+  en·rhovan maethor = "the beast [is] [a] warrior" → copula
+  rhovan en·maethor = "[a] beast [of] the warrior" → genitive
+</pre>
+
+<h4>
+  The frowned uppon path
+</h4>
+<p>
+  David Salo developed a whole system for Neo-Sindarin back in the 1990s. Today, Salo's contributions have been criticised as too inventive and old-fashioned. Some of the criticism has merit, because after Salo published his book <i>A Gateway to Sindarin</i>, there were at least 11 editions of Parma Eldalamberon, containing a substantial amount of notes by Tolkien that revealed previously unknown details about Sindarin. Salo also had to be creative to fill all the gaps. One of the gaps he felt like filling was a reconstruction of the "to be" verb <b>na-</b>. Which, by the way, he used moderately in his translations for the Peter Jackson film adaptations.
+</p>
+<p>
+  His "to be" reconstruction is extremely hypothetical, but it looks like this:
+</p>
+<pre>
+  na- ("to be")
+  
+  Infinitive ..............: naw     - be (OS nōbe)
+  Gerund ..................: nad     - being
+  Imperative ..............: naw, no - be
+  Present participle ......: naul    - being
+  Past passive participle .: naun    - been
+  Perfect active participle: nóniel  - having been
+
+  <b>Present tense</b>
+
+  1st person - naun  - I am
+  2nd person - ?     - thou art
+  2nd person - ?     - thou art
+  2nd person - ?     - thou art
+  3rd person - naw   - he/she/it is
+
+  1st person - nam   - we are
+  2nd person - ?     - you are
+  3rd person - nar   - they are
+
+  <b>Past tense:</b>
+
+  1st person - nónen - I was
+  2nd person - ?     - thou wast
+  2nd person - ?     - thou wast
+  2nd person - ?     - thou wast
+  3rd person - naun  - he/she/it was (non)
+
+  1st person - nónem - we were
+  2nd person - ?     - you were
+  3rd person - nóner - they were
+
+  <b>Future tense:</b>
+
+  1st person - nathon - I will be
+  2nd person - ?      - thou wilt be
+  2nd person - ?      - thou wilt be
+  2nd person - ?      - thou wilt be
+  3rd person - natha  - he/she/it will be
+
+  1st person - natham - we will be
+  2nd person - ?      - you will be
+  3rd person - nathar - they will be
+</pre>
+<p>
+  Salo's paradigm <b>is not</b> widely used, and it's strongly opposed by most Neo-Sindarin users. It is not compatible with Paul Strack's copulas, and it has not been used in any known Tolkien writings, and it's thus considered an invention. However, it's undeniable that it fixes all problems with predication and attribution:
+</p>
+<pre>
+  Elrond ennas       = "Elrond is there"
+  Elrond naun ennas  = "Elrond was there"
+  Elrond natha ennas = "Elrond will be there"
+
+  en·edhel naw <span class="soft">dond</span>  = "the elf is tall"
+  en·edhel <span class="soft">dond</span>      = "the tall elf"
+
+  rhovan naw maethor = "[a] beast is [a] warrior"   → Salo's 'to be'
+  rhovan maethor     = "[a] beast [of] [a] warrior" → genitive
+</pre>
+</details>
+
+<h3>
+  Guidelines
+</h3>
+<p>
+  The following guidelines may help elucidate how the copula is used:
 </p>
 <ul>
   <li>
@@ -599,7 +834,7 @@ they grow    - galar
     </pre>
   </li>
   <li>
-    <span>Predicate nouns and adjectives are not mutated:</span>
+    <span>Some people think it's best if predicate adjectives are not mutated, and some reverse the position of the adjectives:</span>
     <pre>
   en·edhel <b>bain</b> = "the Elf [is] <b>beautiful</b>"
   <b>bain</b> en·edhel = "<b>beautiful</b> [is] the Elf"
@@ -608,7 +843,7 @@ they grow    - galar
   <li>
     <span>The predicate matches the subject in number:</span>
     <pre>
-  in·edain <b>belig</b> = "the men [are] <b>mighty</b> (beleg-plural)"
+  in·edain <span class="soft"><b>velig</b></span> = "the men [are] <b>mighty</b> (beleg-plural)"
   <b>belig</b> in·edain = "<b>mighty</b> [are] the men"
     </pre>
   </li>
@@ -4827,56 +5062,6 @@ tond edhel           = predication adjectives indefinite      - "tall [is] [an] 
 tond en·edhel        = predication adjectives definite        - "tall [is] the elf"         |
 tond nodui edhel     = predication adjectives indefinite alt  - "tall some elf"             |
 tynd edhil           = predication adjectives indefinite alt  - "tall elves"                |
-
-10 rast
-11 rasnel
-12 rastad
-13 rastnel
-14 rastan
-15 rasthleben
-16 rasteneg
-17 rasnodog*
-18 rasdolodh*
-19 rasneder*
-1A rastpae
-1B rastmin
-
-100 host
-200 hyst dâd
-300 hyst neleth
-
-Naughty bits:
-
-Salo's to be:
-
-Infinitive: naw - OS nōbe be
-Gerund: nad being
-Imperative: naw, no be
-Pres part: naul being
-past passive part: naun been
-perf active part: nóniel having been
-
-Present tense
-
-1s naun I am
-3s naw, no he/she/it is
-1p nam we are
-3p nar they are
-
-past tense:
-
-nónen I was
-naun, non he is
-nónem we were
-nóner they were
-
-future tense:
-
-nathon I will be
-natha (natho?) he will be
-natham we will be
-nathar they will be
-
 
 
 
