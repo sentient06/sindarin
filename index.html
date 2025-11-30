@@ -344,6 +344,65 @@
     th, td {
       padding: 5px;
     }
+    @media print {
+      .menu, .top, .notes {
+        display: none;
+      }
+      main {
+        margin-left: 0;
+      }
+      h1, .page {
+        box-shadow: none;
+      }
+
+      .soft {
+        color: #4B2CFF;
+      }
+
+      .nasal {
+        color: #D3358F;
+      }
+
+      .mixed {
+        color: #FF7F0E;
+      }
+
+      .stop {
+        color: #D62728;
+      }
+
+      .liquid {
+        color: #17BECF;
+      }
+
+      .sibilant {
+        color: #2CA02C;
+      }
+
+      .a1, .a2 {
+        white-space: pre;
+        overflow: auto;
+      }
+      .wrapper > .a1,
+      .wrapper > .a2 {
+        flex: 0 0 100%;
+      }
+
+      .wrapper > .a2 {
+        border-bottom: 1px solid #bbb;
+        padding-bottom: 10px;
+      }
+
+      details {
+        padding: 0;
+        border: none;
+      }
+      h1:has(+ .page) {
+        break-before: page;
+      }
+      .page { break-before: page; }
+      h1 + .page { break-before: revert; }
+    }
   </style>
 </head>
 <body>
@@ -6869,12 +6928,12 @@ so n' en- etc.
 </div>
 
 
-<p>
+<p class="notes">
   This is the end of the sketch. What follows are random notes for future reference and should be ignored.
 </p>
 
 <a name="other"></a>
-<details>
+<details class="notes">
   <summary>
     Notes
   </summary>
@@ -6913,70 +6972,28 @@ Locative Adverbial Phrases
 
 https://www.cis.upenn.edu/~xtag/tech-report/node1.html
 
-
-
 uin:
-
-The sole attestation of uin is in singular:
-
-[...] suilad uin aran o Minas Tirith [...] "a greeting from the king from Minas Tirith"
-
-As for CEA... This leads us into the complicated and murky question of how definite prepositions work,
-and how they may (or may not) relate to the articles in CEA.
-
-One thing to note is that CEA does not in fact invalidate sg. i, it just reframes it as archaic and obsoleted by the paradigm Tolkien presents with en, which itself is the result of older i coalescing with the old emphatic inā.
-
-So in theory we could easily see the older i and in survive in definite forms.
-
-As for what it means, uin (and o of course) are used for "from" to specify origin (e.g. Celebrimbor o Eregion "Celebrimbor of [=from] Eregion"), which would usually be a physical place, but I don't think it's necessarily restricted to physical locations.
-
-There is a tendency to avoid nan in Neo-Sindarin, but it is not necessarily well justified.
-It gets murky when a definite form is needed though, since nia is quite a puzzling formation.
-
-Looking at Sindarin place names that use genitives I'd say that there is a tendency to use nan when a juxtapositional genitive would result in two adjacent stresses.
-
-So if you want a "guideline" for when to use which, maybe this could be a start.
-
-
-
-
 https://discord.com/channels/397489292185960468/398407102344986625/1413872360364441711
 
-
-
 Prepositions:
-
 https://discord.com/channels/397489292185960468/1366798511445643325/1422264750334804020
 
+Unproven prepositions:
 
+Wrong type:
+N. pref.<a target="_blank">ath</a>    + noun soft mutation = 'on both sides, across'
+N. adv. <a target="_blank">am?</a>    + noun soft mutation = 'up'
 
-Some supposed prepositions seem to be the wrong type of word or have zero references:
+Bollocks?:
+<a target="_blank">athra</a>  + noun soft mutation = 'across'
+<a target="_blank">ned</a>    + hard mutation      = 'in'
+<a target="_blank">ter</a>                         = 'through'
 
-  Wrong place:
-  N. pref.<a target="_blank">ath</a>    + noun soft mutation = 'on both sides, across'
-  N. adv. <a target="_blank">am?</a>    + noun soft mutation = 'up'
-  
-  Bollocks:
-  <a target="_blank">athra</a>  + noun soft mutation = 'across'
-  <a target="_blank">ned</a>    + hard mutation      = 'in'
-  <a target="_blank">ter</a>                         = 'through'
-
-
-
-Diminutive and augmentative
-
-I also don't get Fiona's point about "my" used for diminutives in English... "My Father" is not a diminutive in any sense of the term that I am familiar with, and I certainly don't think it's intended as a diminutive in Pater Noster... So I would say that no, nín cannot form a diminutive, it expresses a genitive relation. 
-
-Augmentatives can be formed with -on and -oth.
-
+Diminutive and augmentative:
 https://discord.com/channels/397489292185960468/398407102344986625/1427670225372840106
-
 
 There is some research suggesting that Proto-Uralic used diminutives to designate singular instances from words which are either inherently groups or non-discrete things.
 Sindarin maybe uses diminutives that way too.
-
-
-
 
 
 Word for "during":
@@ -6986,7 +7003,7 @@ mi + -llumë = milume = "during, in [this] time"
 https://discord.com/channels/397489292185960468/398407102344986625/1437139215937699951
 
 
-
+Map of issue with copula:
 
 
 Predication                                         Attribution                       Genitive
@@ -7029,8 +7046,6 @@ If the intended meaning here is that some unspecified individual Elf is tall, th
 If, however, the intended meaning is that if an individual is an Elf, then that individual is tall, then this is a generic statement and would be better in plural, "Elves are tall".
 And there it's a question of whether we accept ambiguity in tynd Edhil / Edhil tynd, or we add a pronoun to disambiguate the predicative meaning, Edhil ti dynd.
 Adding a pronoun is functionally useful, but unattested.
-
-
 
 
 Nouns:
@@ -7091,7 +7106,7 @@ King and Elves are both definite → the king of the elves
 
 The two * should be used situationally - mismatches definiteness in genitives results in relatively niche or odd readings.
 
-
+Compared next to each other to avoid dupes:
 
 aran edhil           = genitive indef indef                   - "[a] king [of] elves"       |
 aran in·edhil        = genitive def def                       - "[the] king [of] the elves" |
@@ -7117,10 +7132,7 @@ tond nodui edhel     = predication adjectives indefinite alt  - "tall some elf" 
 tynd edhil           = predication adjectives indefinite alt  - "tall elves"                |
 
 
-
 Time:
-
-
 
 When something happens (past, present, or future)
 How often it happens (frequency)
@@ -7145,7 +7157,7 @@ oreth (hour)
 an hour ago
   He called me an hour ago.
 
-?
+NQ. undanéya?
 recently
   I’ve recently started a new job.
 
