@@ -5254,7 +5254,7 @@ so n' en- etc.
   Silmarillion list
 </h3>
 <p>
-  Given that Sindarin is a language from a different universe, and thus the Swadesh list wouldn't contain names of other races and concepts frequently used in Middle-earth, I have also checked the most common words in the Silmarillion, bar the common language terms, then removed some proper names, Sindarin words and repeated Swadesh words and put the top 100 in the table below, in alphabetical order. (In progress...)
+  Given that Sindarin is a language from a different universe, and thus the Swadesh list wouldn't contain names of other races and concepts frequently used in Middle-earth, I have also checked the most common words in the Silmarillion, bar the common language terms, then removed some proper names, Sindarin words and repeated Swadesh words and put the top 100 in the table below, in alphabetical order.
 </p>
 <details>
   <summary>
@@ -5263,7 +5263,7 @@ so n' en- etc.
   <table>
     <thead>
       <tr>
-        <th>Index</th>
+        <!-- <th>Index</th> -->
         <th>English</th>
         <th>Sindarin</th>
         <th>Alternative 1</th>
@@ -5550,7 +5550,7 @@ when I was a child
 <script src="silm100.js"></script>
 <script>
   renderWordList('swadesh', swadesh);
-  renderWordList('silm100', silm100);
+  renderWordList('silm100', silm100, true);
   function renderWordList(tbodyId, list, ignoreIndex = false) {
     const $tbody = document.getElementById(tbodyId);
     list.forEach((word, idx) => {
