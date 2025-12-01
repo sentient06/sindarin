@@ -12,12 +12,41 @@ var silm100 = [
   {
     id: 2,
     term: "aid",
-    sindarin: []
+    sindarin: [
+      {
+        term: "gresta-",
+        url: "https://eldamo.org/content/words/word-2278200919.html"
+      },
+      {
+        term: "ethia-",
+        url: "https://eldamo.org/content/words/word-1809839325.html"
+      },
+      {
+        term: "grest",
+        url: "https://eldamo.org/content/words/word-315658199.html"
+      }
+    ]
   },
   {
     id: 3,
     term: "away",
-    sindarin: []
+    sindarin: [
+      {
+        term: "gwa-",
+        url: "https://eldamo.org/content/words/word-2572364285.html",
+        comment: "1) prefix"
+      },
+      {
+        term: "gwachae",
+        url: "https://eldamo.org/content/words/word-3355515993.html",
+        comment: "2) \"far away\""
+      },
+      {
+        term: "palan",
+        url: "https://eldamo.org/content/words/word-3860020313.html",
+        comment: "3) \"afar\""
+      }
+    ]
   },
   {
     id: 4,
@@ -33,27 +62,58 @@ var silm100 = [
   {
     id: 5,
     term: "begin, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "iesta",
+        url: "https://eldamo.org/content/words/word-2862673391.html"
+      }
+    ]
   },
   {
     id: 6,
     term: "behind",
-    sindarin: []
+    sindarin: [
+      {
+        term: "adel",
+        url: "https://eldamo.org/content/words/word-3812269611.html"
+      }
+    ]
   },
   {
     id: 7,
     term: "beneath",
-    sindarin: []
+    sindarin: [
+      {
+        term: "di",
+        url: "https://eldamo.org/content/words/word-806516075.html"
+      }
+    ]
   },
   {
     id: 8,
     term: "beyond",
-    sindarin: []
+    sindarin: [
+      {
+        term: "athar",
+        url: "https://eldamo.org/content/words/word-3274124991.html",
+        comment: "Misread as \"athan\""
+      }
+    ]
   },
   {
     id: 9,
     term: "bring, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "tog-",
+        url: "https://eldamo.org/content/words/word-1436908105.html"
+      },
+      {
+        term: "toltha-",
+        url: "https://eldamo.org/content/words/word-2508158043.html",
+        comment: "2) \"to fetch\""
+      }
+    ]
   },
   {
     id: 10,
@@ -640,7 +700,12 @@ var silm100 = [
   {
     id: 78,
     term:  "shadow",
-    sindarin: []
+    sindarin: [
+      {
+        term: "gwath",
+        url: "https://eldamo.org/content/words/word-1863590853.html"
+      }
+    ]
   },
   {
     id: 79,
@@ -660,22 +725,42 @@ var silm100 = [
   {
     id: 82,
     term:  "son",
-    sindarin: []
+    sindarin: [
+      {
+        term: "ionn",
+        url: "https://eldamo.org/content/words/word-87992701.html?neo"
+      }
+    ]
   },
   {
     id: 83,
     term:  "song",
-    sindarin: []
+    sindarin: [
+      {
+        term: "lind",
+        url: "https://eldamo.org/content/words/word-3855995391.html"
+      }
+    ]
   },
   {
     id: 84,
     term:  "south",
-    sindarin: []
+    sindarin: [
+      {
+        term: "harad",
+        url: "https://eldamo.org/content/words/word-614934925.html?neo"
+      }
+    ]
   },
   {
     id: 85,
     term:  "speak, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "ped-",
+        url: "https://eldamo.org/content/words/word-599418975.html"
+      }
+    ]
   },
   {
     id: 86,
@@ -685,7 +770,12 @@ var silm100 = [
   {
     id: 87,
     term:  "strong",
-    sindarin: []
+    sindarin: [
+      {
+        term: "belt",
+        url: "https://eldamo.org/content/words/word-3110066293.html?neo"
+      }
+    ]
   },
   {
     id: 88,
@@ -695,12 +785,22 @@ var silm100 = [
   {
     id: 89,
     term:  "take, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "nab-",
+        url: "https://eldamo.org/content/words/word-4102772263.html"
+      }
+    ]
   },
   {
     id: 90,
-    term:  "teleri",
-    sindarin: []
+    term:  "teler (Q)",
+    sindarin: [
+      {
+        term: "teler (S)",
+        url: "https://eldamo.org/content/words/word-4207068237.html"
+      }
+    ]
   },
   {
     id: 91,
@@ -709,8 +809,13 @@ var silm100 = [
   },
   {
     id: 92,
-    term:  "things",
-    sindarin: []
+    term:  "thing",
+    sindarin: [
+      {
+        term: "nad",
+        url: "https://eldamo.org/content/words/word-80350277.html"
+      }
+    ]
   },
   {
     id: 93,
@@ -720,36 +825,71 @@ var silm100 = [
   {
     id: 94,
     term:  "time",
-    sindarin: []
+    sindarin: [
+      {
+        term: "lû",
+        url: "https://eldamo.org/content/words/word-3092141245.html"
+      }
+    ]
   },
   {
     id: 95,
-    term:  "valar",
-    sindarin: []
+    term:  "vala",
+    sindarin: [
+      {
+        term: "rodon",
+        url: "https://eldamo.org/content/words/word-4192247721.html"
+      }
+    ]
   },
   {
     id: 96,
     term:  "war",
-    sindarin: []
+    sindarin: [
+      {
+        term: "auth",
+        url: "https://eldamo.org/content/words/word-748348177.html?neo"
+      }
+    ]
   },
   {
     id: 97,
     term:  "way",
-    sindarin: []
+    sindarin: [
+      {
+        term: "leng",
+        url: "https://discord.com/channels/397489292185960468/478277939264225280/1415039925900021801"
+      }
+    ]
   },
   {
     id: 98,
     term:  "west",
-    sindarin: []
+    sindarin: [
+      {
+        term: "dûn",
+        url: "https://eldamo.org/content/words/word-4010460053.html"
+      }
+    ]
   },
   {
     id: 99,
     term:  "woods",
-    sindarin: []
+    sindarin: [
+      {
+        term: "eryn",
+        url: "https://eldamo.org/content/words/word-1635691065.html?neo"
+      }
+    ]
   },
   {
     id: 100,
     term: "world",
-    sindarin: []
+    sindarin: [
+      {
+        term: "ardhon",
+        url: "https://eldamo.org/content/words/word-2787701887.html"
+      }
+    ]
   },
 ];
