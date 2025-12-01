@@ -261,7 +261,7 @@ var silm100 = [
       {
         term: "beleg",
         url: "https://eldamo.org/content/words/word-3202359171.html",
-        comment: "mighty"
+        comment: "1) mighty"
       },
       {
         term: "daer",
@@ -341,7 +341,12 @@ var silm100 = [
   {
     id: 43,
     term:  "kin",
-    sindarin: []
+    sindarin: [
+      {
+        term: "noss",
+        url: "https://eldamo.org/content/words/word-1220983633.html"
+      }
+    ]
   },
   {
     id: 44,
@@ -470,63 +475,127 @@ var silm100 = [
   },
   {
     id: 60,
-    term:  "noldor",
-    sindarin: []
+    term:  "noldo",
+    sindarin: [
+      {
+        term: "golodh",
+        url: "https://eldamo.org/content/words/word-3816813615.html?neo",
+      }
+    ]
   },
   {
     id: 61,
     term:  "north",
-    sindarin: []
+    sindarin: [
+      {
+        term: "forod",
+        url: "https://eldamo.org/content/words/word-348549421.html?neo",
+      }
+    ]
   },
   {
     id: 62,
     term:  "old",
-    sindarin: []
+    sindarin: [
+      {
+        term: "iaur",
+        url: "https://eldamo.org/content/words/word-3395896771.html"
+      }
+    ]
   },
   {
     id: 63,
     term:  "orc",
-    sindarin: []
+    sindarin: [
+      {
+        term: "glamog",
+        url: "https://eldamo.org/content/words/word-4979145.html"
+      },
+      {
+        term: "orch",
+        url: "https://eldamo.org/content/words/word-86383055.html"
+      }
+    ]
   },
   {
     id: 64,
-    term:  "pass",
-    sindarin: []
+    term:  "pass, to",
+    sindarin: [
+      {
+        term: "hída-",
+        url: "https://eldamo.org/content/words/word-3632901929.html?neo"
+      }
+    ]
   },
   {
     id: 65,
     term:  "people",
-    sindarin: []
+    sindarin: [
+      {
+        term: "gwaith",
+        url: "https://eldamo.org/content/words/word-1926942351.html"
+      }
+    ]
   },
   {
     id: 66,
     term:  "place",
-    sindarin: []
+    sindarin: [
+      {
+        term: "sad",
+        url: "https://eldamo.org/content/words/word-278426309.html?neo"
+      }
+    ]
   },
   {
     id: 67,
     term:  "power",
-    sindarin: []
+    sindarin: [
+      {
+        term: "polodh",
+        url: "https://eldamo.org/content/words/word-2842021611.html"
+      }
+    ]
   },
   {
     id: 68,
     term:  "realm",
-    sindarin: []
+    sindarin: [
+      {
+        term: "arthor",
+        url: "https://eldamo.org/content/words/word-1055634733.html"
+      }
+    ]
   },
   {
     id: 69,
     term:  "remain, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "dartha-",
+        url: "https://eldamo.org/content/words/word-1134987525.html?neo"
+      }
+    ]
   },
   {
     id: 70,
     term:  "return, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "dammen-",
+        url: "https://eldamo.org/content/words/word-2021640795.html"
+      }
+    ]
   },
   {
     id: 71,
     term:  "ring",
-    sindarin: []
+    sindarin: [
+      {
+        term: "corf",
+        url: "https://eldamo.org/content/words/word-2565910985.html"
+      }
+    ]
   },
   {
     id: 72,
@@ -536,7 +605,12 @@ var silm100 = [
   {
     id: 73,
     term:  "search, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "cesta-",
+        url: "https://eldamo.org/content/words/word-1433948559.html?neo"
+      }
+    ]
   },
   {
     id: 74,
@@ -546,7 +620,12 @@ var silm100 = [
   {
     id: 75,
     term:  "secret",
-    sindarin: []
+    sindarin: [
+      {
+        term: "thurin",
+        url: "https://eldamo.org/content/words/word-2020516549.html?neo"
+      }
+    ]
   },
   {
     id: 76,
