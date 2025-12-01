@@ -2,7 +2,12 @@ var silm100 = [
   {
     id: 1,
     term: "age",
-    sindarin: []
+    sindarin: [
+      {
+        term: "andrann",
+        url: "https://eldamo.org/content/words/word-3098193411.html"
+      }
+    ]
   },
   {
     id: 2,
@@ -17,7 +22,13 @@ var silm100 = [
   {
     id: 4,
     term: "battle",
-    sindarin: []
+    sindarin: [
+      {
+        term: "oeth",
+        url: "https://eldamo.org/content/words/word-748348177.html?neo",
+        comment: "Popular ᴺS variant of \"auth\""
+      }
+    ]
   },
   {
     id: 5,
@@ -47,7 +58,13 @@ var silm100 = [
   {
     id: 10,
     term:  "call, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "esta-",
+        url: "https://eldamo.org/content/words/word-2847250753.html?neo",
+        comment: "\"to name\""
+      }
+    ]
   },
   {
     id: 11,
@@ -67,12 +84,22 @@ var silm100 = [
   {
     id: 14,
     term:  "dark",
-    sindarin: []
+    sindarin: [
+      {
+        term: "morn",
+        url: "https://eldamo.org/content/words/word-509187197.html"
+      }
+    ]
   },
   {
     id: 15,
     term:  "darkness",
-    sindarin: []
+    sindarin: [
+      {
+        term: "fuin",
+        url: "https://eldamo.org/content/words/word-2399437541.html"
+      }
+    ]
   },
   {
     id: 16,
@@ -92,7 +119,12 @@ var silm100 = [
   {
     id: 19,
     term:  "deep",
-    sindarin: []
+    sindarin: [
+      {
+        term: "nûr",
+        url:  "https://eldamo.org/content/words/word-2045856351.html?neo"
+      }
+    ]
   },
   {
     id: 20,
@@ -106,23 +138,47 @@ var silm100 = [
   },
   {
     id: 22,
-    term:  "dwarves",
-    sindarin: []
+    term:  "dwarf",
+    sindarin: [
+      {
+        term: "nogoth",
+        url: "https://eldamo.org/content/words/word-1973906879.html?neo"
+      },
+      {
+        term: "hadhod",
+        url: "https://eldamo.org/content/words/word-4253031949.html"
+      },
+    ]
   },
   {
     id: 23,
     term:  "dwell, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "dortha-",
+        url: "https://eldamo.org/content/words/word-2667204883.html"
+      }
+    ]
   },
   {
     id: 24,
     term:  "east",
-    sindarin: []
+    sindarin: [
+      {
+        term: "rhûn",
+        url: "https://eldamo.org/content/words/word-2972186711.html?neo"
+      }
+    ]
   },
   {
     id: 25,
     term:  "elf",
-    sindarin: []
+    sindarin: [
+      {
+        term: "edhel",
+        url: "https://eldamo.org/content/words/word-311394245.html"
+      }
+    ]
   },
   {
     id: 26,
