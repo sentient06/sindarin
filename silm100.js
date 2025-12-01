@@ -134,7 +134,20 @@ var silm100 = [
   {
     id: 12,
     term:  "city",
-    sindarin: []
+    sindarin: [
+      {
+        term: "ost",
+        url: "https://eldamo.org/content/words/word-1539713025.html"
+      },
+      {
+        term: "caras",
+        url: "https://eldamo.org/content/words/word-739916641.html"
+      },
+      {
+        term: "gobel",
+        url: "https://eldamo.org/content/words/word-3368542489.html"
+      }
+    ]
   },
   {
     id: 13,
@@ -164,17 +177,32 @@ var silm100 = [
   {
     id: 16,
     term:  "daughter",
-    sindarin: []
+    sindarin: [
+      {
+        term: "sell",
+        url: "https://eldamo.org/content/words/word-3339236895.html"
+      }
+    ]
   },
   {
     id: 17,
     term:  "death",
-    sindarin: []
+    sindarin: [
+      {
+        term: "gurth [ng-]",
+        url: "https://eldamo.org/content/words/word-1295019719.html"
+      }
+    ]
   },
   {
     id: 18,
-    term:  "deeds",
-    sindarin: []
+    term:  "deed",
+    sindarin: [
+      {
+        term: "carth",
+        url: "https://eldamo.org/content/words/word-4005253249.html"
+      }
+    ]
   },
   {
     id: 19,
@@ -189,12 +217,27 @@ var silm100 = [
   {
     id: 20,
     term:  "doom",
-    sindarin: []
+    sindarin: [
+      {
+        term: "amarth",
+        url: "https://eldamo.org/content/words/word-3222272777.html"
+      }
+    ]
   },
   {
     id: 21,
     term:  "draw, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "teitha-",
+        url: "https://eldamo.org/content/words/word-956996613.html",
+        comment: "\"to write\""
+      },
+      {
+        term: "emma-",
+        url: "https://eldamo.org/content/words/word-918305449.html"
+      }
+    ]
   },
   {
     id: 22,
@@ -215,7 +258,7 @@ var silm100 = [
     term:  "dwell, to",
     sindarin: [
       {
-        term: "dortha-",
+        term: "dortha- [nd-]",
         url: "https://eldamo.org/content/words/word-2667204883.html"
       }
     ]
@@ -283,7 +326,12 @@ var silm100 = [
   {
     id: 30,
     term:  "flee, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "drega-",
+        url: "https://eldamo.org/content/words/word-2880568835.html"
+      }
+    ]
   },
   {
     id: 31,
@@ -298,7 +346,13 @@ var silm100 = [
   {
     id: 32,
     term:  "forth",
-    sindarin: []
+    sindarin: [
+      {
+        term: "ed",
+        url: "https://eldamo.org/content/words/word-3169907981.html",
+        comment: "prep. and pref \"out of\""
+      }
+    ]
   },
   {
     id: 33,
@@ -366,7 +420,12 @@ var silm100 = [
   {
     id: 38,
     term:  "high",
-    sindarin: []
+    sindarin: [
+      {
+        term: "taer",
+        url: "https://eldamo.org/content/words/word-3958649473.html"
+      }
+    ]
   },
   {
     id: 39,
@@ -381,19 +440,29 @@ var silm100 = [
   {
     id: 40,
     term:  "host",
-    sindarin: []
+    sindarin: [
+      {
+        term: "rim",
+        url: "https://eldamo.org/content/words/word-2541307047.html"
+      }
+    ]
   },
   {
     id: 41,
     term:  "hour",
-    sindarin: []
+    sindarin: [
+      {
+        term: "oreth",
+        url: "https://eldamo.org/content/words/word-1155906013.html"
+      }
+    ]
   },
   {
     id: 42,
     term:  "house",
     sindarin: [
       {
-        term: "bâr",
+        term: "bâr [mb-]",
         url: "https://eldamo.org/content/words/word-1964807933.html"
       }
     ]
@@ -423,7 +492,7 @@ var silm100 = [
     term:  "land",
     sindarin: [
       {
-        term: "dôr",
+        term: "dôr [nd-]",
         url: "https://eldamo.org/content/words/word-3950740861.html"
       }
     ]
@@ -436,7 +505,12 @@ var silm100 = [
   {
     id: 47,
     term:  "life",
-    sindarin: []
+    sindarin: [
+      {
+        term: "cuithas",
+        url: "https://eldamo.org/content/words/word-1673165907.html"
+      }
+    ]
   },
   {
     id: 48,
@@ -461,7 +535,12 @@ var silm100 = [
   {
     id: 50,
     term:  "little",
-    sindarin: []
+    sindarin: [
+      {
+        term: "pîn",
+        url: "https://eldamo.org/content/words/word-2614444921.html"
+      }
+    ]
   },
   {
     id: 51,
@@ -506,7 +585,12 @@ var silm100 = [
   {
     id: 55,
     term:  "middle",
-    sindarin: []
+    sindarin: [
+      {
+        term: "enaidh",
+        url: "https://eldamo.org/content/words/word-1697668169.html"
+      }
+    ]
   },
   {
     id: 56,
@@ -521,12 +605,28 @@ var silm100 = [
   {
     id: 57,
     term:  "mind",
-    sindarin: []
+    sindarin: [
+      {
+        term: "gûr",
+        url: "https://eldamo.org/content/words/word-2138204605.html",
+        comment: "1) \"heart\" (inner mind)"
+      },
+      {
+        term: "ind",
+        url: "https://eldamo.org/content/words/word-2354893653.html",
+        comment: "2) \"purpose or intention\""
+      }
+    ]
   },
   {
     id: 58,
     term:  "music",
-    sindarin: []
+    sindarin: [
+      {
+        term: "linnas",
+        url: "https://eldamo.org/content/words/word-3017143639.html"
+      }
+    ]
   },
   {
     id: 59,
@@ -538,7 +638,7 @@ var silm100 = [
     term:  "noldo",
     sindarin: [
       {
-        term: "golodh",
+        term: "golodh [ng-]",
         url: "https://eldamo.org/content/words/word-3816813615.html?neo",
       }
     ]
@@ -642,7 +742,7 @@ var silm100 = [
     term:  "return, to",
     sindarin: [
       {
-        term: "dammen-",
+        term: "dammen- [nd-]",
         url: "https://eldamo.org/content/words/word-2021640795.html"
       }
     ]
@@ -820,7 +920,22 @@ var silm100 = [
   {
     id: 93,
     term:  "thought",
-    sindarin: []
+    sindarin: [
+      {
+        term: "nauth",
+        url: "https://eldamo.org/content/words/word-2239396815.html"
+      },
+      {
+        term: "naw",
+        url: "https://eldamo.org/content/words/word-4058027947.html",
+        comment: "2) \"idea\""
+      },
+      {
+        term: "inc",
+        url: "https://eldamo.org/content/words/word-821946581.html",
+        comment: "3) \"notion\""
+      }
+    ]
   },
   {
     id: 94,
@@ -867,7 +982,7 @@ var silm100 = [
     term:  "west",
     sindarin: [
       {
-        term: "dûn",
+        term: "dûn [nd-]",
         url: "https://eldamo.org/content/words/word-4010460053.html"
       }
     ]
