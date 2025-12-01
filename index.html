@@ -5263,7 +5263,7 @@ so n' en- etc.
   <table>
     <thead>
       <tr>
-        <!-- <th>Index</th> -->
+        <th>Index</th>
         <th>English</th>
         <th>Sindarin</th>
         <th>Alternative 1</th>
@@ -5550,11 +5550,12 @@ when I was a child
 <script src="silm100.js"></script>
 <script>
   renderWordList('swadesh', swadesh);
-  renderWordList('silm100', silm100, true);
+  renderWordList('silm100', silm100);
   function renderWordList(tbodyId, list, ignoreIndex = false) {
     const $tbody = document.getElementById(tbodyId);
-    list.forEach(word => {
-      const { id, term, sindarin } = word;
+    list.forEach((word, idx) => {
+      const { term, sindarin } = word;
+      const id = word.hasOwnProperty('id') ? word.id : idx + 1;
       
       const $tr = document.createElement('tr');
       $tbody.appendChild($tr);

@@ -1,6 +1,5 @@
 var silm100 = [
   {
-    id: 1,
     term: "age",
     sindarin: [
       {
@@ -10,7 +9,6 @@ var silm100 = [
     ]
   },
   {
-    id: 2,
     term: "aid",
     sindarin: [
       {
@@ -28,7 +26,21 @@ var silm100 = [
     ]
   },
   {
-    id: 3,
+    term: "ainu",
+    sindarin: [
+      {
+        term: "Aenu",
+        url: "https://eldamo.org/content/words/word-1731435509.html",
+        comment: "1) masculine"
+      },
+      {
+        term: "Aeni",
+        url: "https://eldamo.org/content/words/word-1945903473.html",
+        comment: "2) feminine"
+      }
+    ]
+  },
+  {
     term: "away",
     sindarin: [
       {
@@ -49,7 +61,6 @@ var silm100 = [
     ]
   },
   {
-    id: 4,
     term: "battle",
     sindarin: [
       {
@@ -60,7 +71,6 @@ var silm100 = [
     ]
   },
   {
-    id: 5,
     term: "begin, to",
     sindarin: [
       {
@@ -70,7 +80,6 @@ var silm100 = [
     ]
   },
   {
-    id: 6,
     term: "behind",
     sindarin: [
       {
@@ -80,7 +89,6 @@ var silm100 = [
     ]
   },
   {
-    id: 7,
     term: "beneath",
     sindarin: [
       {
@@ -90,7 +98,6 @@ var silm100 = [
     ]
   },
   {
-    id: 8,
     term: "beyond",
     sindarin: [
       {
@@ -101,7 +108,6 @@ var silm100 = [
     ]
   },
   {
-    id: 9,
     term: "bring, to",
     sindarin: [
       {
@@ -116,7 +122,6 @@ var silm100 = [
     ]
   },
   {
-    id: 10,
     term:  "call, to",
     sindarin: [
       {
@@ -127,12 +132,6 @@ var silm100 = [
     ]
   },
   {
-    id: 11,
-    term:  "cast, to",
-    sindarin: []
-  },
-  {
-    id: 12,
     term:  "city",
     sindarin: [
       {
@@ -150,12 +149,16 @@ var silm100 = [
     ]
   },
   {
-    id: 13,
     term:  "counsel",
-    sindarin: []
+    sindarin: [
+      {
+        term: "goras",
+        url: "https://eldamo.org/content/words/word-1800704403.html?neo",
+        comment: "advice"
+      }
+    ]
   },
   {
-    id: 14,
     term:  "dark",
     sindarin: [
       {
@@ -165,7 +168,6 @@ var silm100 = [
     ]
   },
   {
-    id: 15,
     term:  "darkness",
     sindarin: [
       {
@@ -175,7 +177,6 @@ var silm100 = [
     ]
   },
   {
-    id: 16,
     term:  "daughter",
     sindarin: [
       {
@@ -185,7 +186,6 @@ var silm100 = [
     ]
   },
   {
-    id: 17,
     term:  "death",
     sindarin: [
       {
@@ -195,7 +195,6 @@ var silm100 = [
     ]
   },
   {
-    id: 18,
     term:  "deed",
     sindarin: [
       {
@@ -205,7 +204,6 @@ var silm100 = [
     ]
   },
   {
-    id: 19,
     term:  "deep",
     sindarin: [
       {
@@ -215,7 +213,6 @@ var silm100 = [
     ]
   },
   {
-    id: 20,
     term:  "doom",
     sindarin: [
       {
@@ -225,7 +222,6 @@ var silm100 = [
     ]
   },
   {
-    id: 21,
     term:  "draw, to",
     sindarin: [
       {
@@ -240,7 +236,6 @@ var silm100 = [
     ]
   },
   {
-    id: 22,
     term:  "dwarf",
     sindarin: [
       {
@@ -254,7 +249,6 @@ var silm100 = [
     ]
   },
   {
-    id: 23,
     term:  "dwell, to",
     sindarin: [
       {
@@ -264,7 +258,6 @@ var silm100 = [
     ]
   },
   {
-    id: 24,
     term:  "east",
     sindarin: [
       {
@@ -274,7 +267,6 @@ var silm100 = [
     ]
   },
   {
-    id: 25,
     term:  "elf",
     sindarin: [
       {
@@ -284,7 +276,6 @@ var silm100 = [
     ]
   },
   {
-    id: 26,
     term:  "end",
     sindarin: [
       {
@@ -294,7 +285,6 @@ var silm100 = [
     ]
   },
   {
-    id: 27,
     term:  "evil",
     sindarin: [
       {
@@ -304,7 +294,6 @@ var silm100 = [
     ]
   },
   {
-    id: 28,
     term:  "fair",
     sindarin: [
       {
@@ -314,7 +303,6 @@ var silm100 = [
     ]
   },
   {
-    id: 29,
     term:  "fill, to",
     sindarin: [
       {
@@ -324,7 +312,6 @@ var silm100 = [
     ]
   },
   {
-    id: 30,
     term:  "flee, to",
     sindarin: [
       {
@@ -334,7 +321,6 @@ var silm100 = [
     ]
   },
   {
-    id: 31,
     term:  "form, to",
     sindarin: [
       {
@@ -344,7 +330,6 @@ var silm100 = [
     ]
   },
   {
-    id: 32,
     term:  "forth",
     sindarin: [
       {
@@ -355,7 +340,6 @@ var silm100 = [
     ]
   },
   {
-    id: 33,
     term:  "go, to",
     sindarin: [
       {
@@ -369,7 +353,6 @@ var silm100 = [
     ]
   },
   {
-    id: 34,
     term:  "great",
     sindarin: [
       {
@@ -384,7 +367,6 @@ var silm100 = [
     ]
   },
   {
-    id: 35,
     term:  "grow, to",
     sindarin: [
       {
@@ -394,7 +376,6 @@ var silm100 = [
     ]
   },
   {
-    id: 36,
     term:  "hall",
     sindarin: [
       {
@@ -404,7 +385,6 @@ var silm100 = [
     ]
   },
   {
-    id: 37,
     term:  "hidden",
     sindarin: [
       {
@@ -418,7 +398,6 @@ var silm100 = [
     ]
   },
   {
-    id: 38,
     term:  "high",
     sindarin: [
       {
@@ -428,7 +407,6 @@ var silm100 = [
     ]
   },
   {
-    id: 39,
     term:  "hill",
     sindarin: [
       {
@@ -438,7 +416,6 @@ var silm100 = [
     ]
   },
   {
-    id: 40,
     term:  "host",
     sindarin: [
       {
@@ -448,7 +425,6 @@ var silm100 = [
     ]
   },
   {
-    id: 41,
     term:  "hour",
     sindarin: [
       {
@@ -458,7 +434,6 @@ var silm100 = [
     ]
   },
   {
-    id: 42,
     term:  "house",
     sindarin: [
       {
@@ -468,7 +443,6 @@ var silm100 = [
     ]
   },
   {
-    id: 43,
     term:  "kin",
     sindarin: [
       {
@@ -478,7 +452,6 @@ var silm100 = [
     ]
   },
   {
-    id: 44,
     term:  "king",
     sindarin: [
       {
@@ -488,7 +461,6 @@ var silm100 = [
     ]
   },
   {
-    id: 45,
     term:  "land",
     sindarin: [
       {
@@ -498,12 +470,15 @@ var silm100 = [
     ]
   },
   {
-    id: 46,
-    term:  "lay",
-    sindarin: []
+    term:  "lay, to",
+    sindarin: [
+      {
+        term: "caeda-",
+        url: "https://eldamo.org/content/words/word-2821626025.html"
+      }
+    ]
   },
   {
-    id: 47,
     term:  "life",
     sindarin: [
       {
@@ -513,7 +488,6 @@ var silm100 = [
     ]
   },
   {
-    id: 48,
     term:  "light",
     sindarin: [
       {
@@ -523,7 +497,6 @@ var silm100 = [
     ]
   },
   {
-    id: 49,
     term:  "like",
     sindarin: [
       {
@@ -533,7 +506,6 @@ var silm100 = [
     ]
   },
   {
-    id: 50,
     term:  "little",
     sindarin: [
       {
@@ -543,7 +515,6 @@ var silm100 = [
     ]
   },
   {
-    id: 51,
     term:  "look, to",
     sindarin: [
       {
@@ -553,7 +524,6 @@ var silm100 = [
     ]
   },
   {
-    id: 52,
     term:  "lord",
     sindarin: [
       {
@@ -563,7 +533,6 @@ var silm100 = [
     ]
   },
   {
-    id: 53,
     term:  "love",
     sindarin: [
       {
@@ -573,7 +542,6 @@ var silm100 = [
     ]
   },
   {
-    id: 54,
     term:  "man (person)",
     sindarin: [
       {
@@ -583,7 +551,6 @@ var silm100 = [
     ]
   },
   {
-    id: 55,
     term:  "middle",
     sindarin: [
       {
@@ -593,7 +560,6 @@ var silm100 = [
     ]
   },
   {
-    id: 56,
     term:  "mighty",
     sindarin: [
       {
@@ -603,7 +569,6 @@ var silm100 = [
     ]
   },
   {
-    id: 57,
     term:  "mind",
     sindarin: [
       {
@@ -619,7 +584,6 @@ var silm100 = [
     ]
   },
   {
-    id: 58,
     term:  "music",
     sindarin: [
       {
@@ -629,12 +593,16 @@ var silm100 = [
     ]
   },
   {
-    id: 59,
     term:  "name, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "esta-",
+        url: "https://eldamo.org/content/words/word-2847250753.html?neo",
+        comment: "\"to call, to name\""
+      }
+    ]
   },
   {
-    id: 60,
     term:  "noldo",
     sindarin: [
       {
@@ -644,7 +612,6 @@ var silm100 = [
     ]
   },
   {
-    id: 61,
     term:  "north",
     sindarin: [
       {
@@ -654,7 +621,6 @@ var silm100 = [
     ]
   },
   {
-    id: 62,
     term:  "old",
     sindarin: [
       {
@@ -664,7 +630,6 @@ var silm100 = [
     ]
   },
   {
-    id: 63,
     term:  "orc",
     sindarin: [
       {
@@ -678,7 +643,6 @@ var silm100 = [
     ]
   },
   {
-    id: 64,
     term:  "pass, to",
     sindarin: [
       {
@@ -688,7 +652,6 @@ var silm100 = [
     ]
   },
   {
-    id: 65,
     term:  "people",
     sindarin: [
       {
@@ -698,7 +661,6 @@ var silm100 = [
     ]
   },
   {
-    id: 66,
     term:  "place",
     sindarin: [
       {
@@ -708,7 +670,6 @@ var silm100 = [
     ]
   },
   {
-    id: 67,
     term:  "power",
     sindarin: [
       {
@@ -718,7 +679,6 @@ var silm100 = [
     ]
   },
   {
-    id: 68,
     term:  "realm",
     sindarin: [
       {
@@ -728,7 +688,6 @@ var silm100 = [
     ]
   },
   {
-    id: 69,
     term:  "remain, to",
     sindarin: [
       {
@@ -738,7 +697,6 @@ var silm100 = [
     ]
   },
   {
-    id: 70,
     term:  "return, to",
     sindarin: [
       {
@@ -748,7 +706,6 @@ var silm100 = [
     ]
   },
   {
-    id: 71,
     term:  "ring",
     sindarin: [
       {
@@ -758,12 +715,15 @@ var silm100 = [
     ]
   },
   {
-    id: 72,
-    term:  "save, to",
-    sindarin: []
+    term:  "save (except)",
+    sindarin: [
+      {
+        term: "eb",
+        url: "https://eldamo.org/content/words/word-1132986921.html"
+      }
+    ]
   },
   {
-    id: 73,
     term:  "search, to",
     sindarin: [
       {
@@ -773,12 +733,15 @@ var silm100 = [
     ]
   },
   {
-    id: 74,
-    term:  "second",
-    sindarin: []
+    term:  "second (numeric)",
+    sindarin: [
+      {
+        term: "tadui",
+        url: "https://eldamo.org/content/words/word-696871013.html"
+      }
+    ]
   },
   {
-    id: 75,
     term:  "secret",
     sindarin: [
       {
@@ -788,17 +751,15 @@ var silm100 = [
     ]
   },
   {
-    id: 76,
     term:  "send, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "menna-",
+        url: "https://eldamo.org/content/words/word-681459465.html"
+      }
+    ]
   },
   {
-    id: 77,
-    term:  "set",
-    sindarin: []
-  },
-  {
-    id: 78,
     term:  "shadow",
     sindarin: [
       {
@@ -808,22 +769,37 @@ var silm100 = [
     ]
   },
   {
-    id: 79,
     term:  "ship",
-    sindarin: []
+    sindarin: [
+      {
+        term: "cair",
+        url: "https://eldamo.org/content/words/word-1507132685.html"
+      }
+    ]
   },
   {
-    id: 80,
     term:  "shore",
-    sindarin: []
+    sindarin: [
+      {
+        term: "falas",
+        url: "https://eldamo.org/content/words/word-2051564789.html"
+      },
+      {
+        term: "ras(t)",
+        url: "https://eldamo.org/content/words/word-3930209269.html"
+      }
+    ]
   },
   {
-    id: 81,
     term:  "slay, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "dag- [nd-]",
+        url: "https://eldamo.org/content/words/word-346566117.html"
+      }
+    ]
   },
   {
-    id: 82,
     term:  "son",
     sindarin: [
       {
@@ -833,7 +809,6 @@ var silm100 = [
     ]
   },
   {
-    id: 83,
     term:  "song",
     sindarin: [
       {
@@ -843,7 +818,6 @@ var silm100 = [
     ]
   },
   {
-    id: 84,
     term:  "south",
     sindarin: [
       {
@@ -853,7 +827,6 @@ var silm100 = [
     ]
   },
   {
-    id: 85,
     term:  "speak, to",
     sindarin: [
       {
@@ -863,12 +836,26 @@ var silm100 = [
     ]
   },
   {
-    id: 86,
     term:  "strength",
-    sindarin: []
+    sindarin: [
+      {
+        term: "balt",
+        url: "https://eldamo.org/content/words/word-1367314449.html",
+        comment: "1) \"might\""
+      },
+      {
+        term: "bellas",
+        url: "https://eldamo.org/content/words/word-3109270437.html",
+        comment: "2) \"physical strength\""
+      },
+      {
+        term: "tû",
+        url: "https://eldamo.org/content/words/word-1074038303.html",
+        comment: "3) \"vigour\""
+      }
+    ]
   },
   {
-    id: 87,
     term:  "strong",
     sindarin: [
       {
@@ -878,12 +865,15 @@ var silm100 = [
     ]
   },
   {
-    id: 88,
     term:  "sword",
-    sindarin: []
+    sindarin: [
+      {
+        term: "megil",
+        url: "https://eldamo.org/content/words/word-3519182345.html"
+      }
+    ]
   },
   {
-    id: 89,
     term:  "take, to",
     sindarin: [
       {
@@ -893,7 +883,6 @@ var silm100 = [
     ]
   },
   {
-    id: 90,
     term:  "teler (Q)",
     sindarin: [
       {
@@ -903,12 +892,16 @@ var silm100 = [
     ]
   },
   {
-    id: 91,
     term:  "tell, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "ped-",
+        url: "https://eldamo.org/content/words/word-599418975.html",
+        comment: "Same as \"to say\""
+      }
+    ]
   },
   {
-    id: 92,
     term:  "thing",
     sindarin: [
       {
@@ -918,7 +911,6 @@ var silm100 = [
     ]
   },
   {
-    id: 93,
     term:  "thought",
     sindarin: [
       {
@@ -938,7 +930,6 @@ var silm100 = [
     ]
   },
   {
-    id: 94,
     term:  "time",
     sindarin: [
       {
@@ -948,7 +939,6 @@ var silm100 = [
     ]
   },
   {
-    id: 95,
     term:  "vala",
     sindarin: [
       {
@@ -958,7 +948,6 @@ var silm100 = [
     ]
   },
   {
-    id: 96,
     term:  "war",
     sindarin: [
       {
@@ -968,7 +957,6 @@ var silm100 = [
     ]
   },
   {
-    id: 97,
     term:  "way",
     sindarin: [
       {
@@ -978,7 +966,6 @@ var silm100 = [
     ]
   },
   {
-    id: 98,
     term:  "west",
     sindarin: [
       {
@@ -988,7 +975,15 @@ var silm100 = [
     ]
   },
   {
-    id: 99,
+    term: "wife",
+    sindarin: [
+      {
+        term: "bess",
+        url: "https://eldamo.org/content/words/word-3367157657.html"
+      }
+    ]
+  },
+  {
     term:  "woods",
     sindarin: [
       {
@@ -998,7 +993,6 @@ var silm100 = [
     ]
   },
   {
-    id: 100,
     term: "world",
     sindarin: [
       {
