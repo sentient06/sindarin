@@ -183,22 +183,42 @@ var silm100 = [
   {
     id: 26,
     term:  "end",
-    sindarin: []
+    sindarin: [
+      {
+        term: "methed",
+        url: "https://eldamo.org/content/words/word-1761666635.html"
+      }
+    ]
   },
   {
     id: 27,
     term:  "evil",
-    sindarin: []
+    sindarin: [
+      {
+        term: "oglas",
+        url: "https://eldamo.org/content/words/word-3622050725.html?neo"
+      }
+    ]
   },
   {
     id: 28,
     term:  "fair",
-    sindarin: []
+    sindarin: [
+      {
+        term: "bain",
+        url: "https://eldamo.org/content/words/word-627780085.html"
+      }
+    ]
   },
   {
     id: 29,
     term:  "fill, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "pannad-",
+        url: "https://eldamo.org/content/words/word-2662485257.html?neo"
+      }
+    ]
   },
   {
     id: 30,
@@ -208,7 +228,12 @@ var silm100 = [
   {
     id: 31,
     term:  "form, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "echad-",
+        url: "https://eldamo.org/content/words/word-630017767.html"
+      }
+    ]
   },
   {
     id: 32,
@@ -218,27 +243,65 @@ var silm100 = [
   {
     id: 33,
     term:  "go, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "men-",
+        url: "https://eldamo.org/content/words/word-800667727.html?neo"
+      },
+      {
+        term: "gwae-",
+        url: "https://eldamo.org/content/words/word-1773047519.html"
+      }
+    ]
   },
   {
     id: 34,
     term:  "great",
-    sindarin: []
+    sindarin: [
+      {
+        term: "beleg",
+        url: "https://eldamo.org/content/words/word-3202359171.html",
+        comment: "mighty"
+      },
+      {
+        term: "daer",
+        url: "https://eldamo.org/content/words/word-1321351921.html"
+      }
+    ]
   },
   {
     id: 35,
     term:  "grow, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "gala-",
+        url: "https://eldamo.org/content/words/word-1427533867.html"
+      }
+    ]
   },
   {
     id: 36,
     term:  "hall",
-    sindarin: []
+    sindarin: [
+      {
+        term: "tham",
+        url: "https://eldamo.org/content/words/word-3626698653.html?neo",
+      }
+    ]
   },
   {
     id: 37,
     term:  "hidden",
-    sindarin: []
+    sindarin: [
+      {
+        term: "dolen",
+        url: "https://eldamo.org/content/words/word-4196574653.html?neo"
+      },
+      {
+        term: "thurin",
+        url: "https://eldamo.org/content/words/word-2020516549.html?neo"
+      }
+    ]
   },
   {
     id: 38,
@@ -248,7 +311,12 @@ var silm100 = [
   {
     id: 39,
     term:  "hill",
-    sindarin: []
+    sindarin: [
+      {
+        term: "amon",
+        url: "https://eldamo.org/content/words/word-2107077031.html"
+      }
+    ]
   },
   {
     id: 40,
@@ -263,7 +331,12 @@ var silm100 = [
   {
     id: 42,
     term:  "house",
-    sindarin: []
+    sindarin: [
+      {
+        term: "bâr",
+        url: "https://eldamo.org/content/words/word-1964807933.html"
+      }
+    ]
   },
   {
     id: 43,
@@ -273,12 +346,22 @@ var silm100 = [
   {
     id: 44,
     term:  "king",
-    sindarin: []
+    sindarin: [
+      {
+        term: "aran",
+        url: "https://eldamo.org/content/words/word-658710813.html?neo"
+      }
+    ]
   },
   {
     id: 45,
     term:  "land",
-    sindarin: []
+    sindarin: [
+      {
+        term: "dôr",
+        url: "https://eldamo.org/content/words/word-3950740861.html"
+      }
+    ]
   },
   {
     id: 46,
@@ -293,12 +376,22 @@ var silm100 = [
   {
     id: 48,
     term:  "light",
-    sindarin: []
+    sindarin: [
+      {
+        term: "calad",
+        url: "https://eldamo.org/content/words/word-4273689701.html"
+      }
+    ]
   },
   {
     id: 49,
     term:  "like",
-    sindarin: []
+    sindarin: [
+      {
+        term: "be",
+        url: "https://eldamo.org/content/words/word-1296856217.html"
+      }
+    ]
   },
   {
     id: 50,
@@ -308,22 +401,42 @@ var silm100 = [
   {
     id: 51,
     term:  "look, to",
-    sindarin: []
+    sindarin: [
+      {
+        term: "cen-",
+        url: "https://eldamo.org/content/words/word-1590244863.html"
+      }
+    ]
   },
   {
     id: 52,
     term:  "lord",
-    sindarin: []
+    sindarin: [
+      {
+        term: "hîr",
+        url: "https://eldamo.org/content/words/word-3444049341.html"
+      }
+    ]
   },
   {
     id: 53,
     term:  "love",
-    sindarin: []
+    sindarin: [
+      {
+        term: "meleth",
+        url: "https://eldamo.org/content/words/word-3331909627.html"
+      }
+    ]
   },
   {
     id: 54,
-    term:  "men",
-    sindarin: []
+    term:  "man (person)",
+    sindarin: [
+      {
+        term: "pen",
+        url: "https://eldamo.org/content/words/word-2557917401.html"
+      }
+    ]
   },
   {
     id: 55,
@@ -333,7 +446,12 @@ var silm100 = [
   {
     id: 56,
     term:  "mighty",
-    sindarin: []
+    sindarin: [
+      {
+        term: "beleg",
+        url: "https://eldamo.org/content/words/word-3202359171.html",
+      }
+    ]
   },
   {
     id: 57,
