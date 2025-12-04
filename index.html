@@ -506,30 +506,31 @@
 
 <main>
 <h1 class="title">Neo Sindarin - A Stepwise Grammar</h1>
-
-<p>
-  <img src="Dungeon8807construction.gif" alt="Under construction" />
-  <!-- http://textfiles.com/underconstruction/ -->
-</p>
-<div class="padded">
+<div class="intro">
   <p>
-    This is a compilation of notes I've made to use as reference for Neo-Sindarin. I've been transforming it into an HTML for easy access and I'm slowly trying to order it by topics.
+    <img src="Dungeon8807construction.gif" alt="Under construction" />
+    <!-- http://textfiles.com/underconstruction/ -->
   </p>
-  <p>
-    Some stuff has been taken from Ardalambion, some from Eldamo, some from Vinyë Lambengolmor. I used Gateway to Sindarin from David Salo to fill some gaps, and hypotheses and theories from the fine people from Vinyë Lambengolmor, especially the users Lanto, Elaran, Parmandil, Vyacheslav, Rínor and Mithriel, among others.
-  </p>
-  <p>
-    This is a work in progress with no end in sight.
-  </p>
-  <p>
-    I'm trying to add some topics here left unexplored elsewhere.
-  </p>
-  <p>
-    In this page, Sindarin and Neo-Sindarin might be used interchangeably, but this is chiefly about Neo-Sindarin. I am of the opinion that pure Sindarin is unusable, and the best reference to it is Ardalambion. Neologisms are used here as regular words, and if the reader wants more context, please check the words on Eldamo.
-  </p>
-  <p>
-    <img src="important.jpg" alt="Under construction" />
-  </p>
+  <div class="padded">
+    <p>
+      This is a compilation of notes I've made to use as reference for Neo-Sindarin. I've been transforming it into an HTML for easy access and I'm slowly trying to order it by topics.
+    </p>
+    <p>
+      Some stuff has been taken from Ardalambion, some from Eldamo, some from Vinyë Lambengolmor. I used Gateway to Sindarin from David Salo to fill some gaps, and hypotheses and theories from the fine people from Vinyë Lambengolmor, especially the users Lanto, Elaran, Parmandil, Vyacheslav, Rínor and Mithriel, among others.
+    </p>
+    <p>
+      This is a work in progress with no end in sight.
+    </p>
+    <p>
+      I'm trying to add some topics here left unexplored elsewhere.
+    </p>
+    <p>
+      In this page, Sindarin and Neo-Sindarin might be used interchangeably, but this is chiefly about Neo-Sindarin. I am of the opinion that pure Sindarin is unusable, and the best reference to it is Ardalambion. Neologisms are used here as regular words, and if the reader wants more context, please check the words on Eldamo.
+    </p>
+    <p>
+      <img src="important.jpg" alt="Under construction" />
+    </p>
+  </div>
 </div>
 
 <h1>1. Fundamentals</h1>
@@ -4695,7 +4696,7 @@ so n' en- etc.
 
 </div>
 
-<!-- <div class="page"> -->
+<div class="page">
 <!-- <a href="" class="top">Top</a> -->
 <a name="modal"></a>
 <div class="sketch">
@@ -4795,6 +4796,7 @@ There is an impersonal verb that describes a need for something to happen, which
   "I must eat"
   "‹it needs› ‹for me› ‹to eat›" (lit.)
 
+</div>
 </div>
 
 <a name="verbal_system"></a>
@@ -5293,6 +5295,8 @@ There is an impersonal verb that describes a need for something to happen, which
 </div>
 
 
+<div class="page">
+<a name="other_tenses"></a>
 
 <div class="sketch">
 Other tenses
@@ -5331,6 +5335,7 @@ continuous tenses
                        = "‹I am reading› [a] book, be quiet!"
 
   Sindarin has no mechanisms for describing perfective, i.e. if an action has been completed or not. Context should describe it.
+</div>
 </div>
 
 <a name="word_formation"></a>
@@ -5469,6 +5474,7 @@ continuous tenses
 <br />
 </div>
 
+<div class="outro">
 
 <p class="notes">
   This is the end of the sketch. What follows are random notes for future reference and should be ignored.
@@ -5800,46 +5806,56 @@ we would actually get a reading where nî refers to a specific, singular instanc
 
   </pre>
 </details>
+
+</div>
+
 </main>
 
 <script src="swadesh.js"></script>
 <script src="silm100.js"></script>
 <script>
-  renderWordList('swadesh', swadesh);
-  renderWordList('silm100', silm100, true);
+
+  function draw(type, parent, innerHtml, attrs) {
+    const $node = document.createElement(type);
+    parent.appendChild($node);
+
+    if (!!innerHtml) {
+      $node.innerHTML = innerHtml;
+    }
+    if (!!attrs) {
+      const keys = Object.keys(attrs);
+      keys.forEach((key) => {
+        $node.setAttribute(key, attrs[key]);
+      });
+    }
+
+    return $node;
+  }
+
   function renderWordList(tbodyId, list, ignoreIndex = false) {
     const $tbody = document.getElementById(tbodyId);
     list.forEach((word, idx) => {
       const { term, sindarin } = word;
+      const notes = [];
+      const gaps = 3 - sindarin.length;
       const id = word.hasOwnProperty('id') ? word.id : idx + 1;
       
-      const $tr = document.createElement('tr');
-      $tbody.appendChild($tr);
+      const $tr = draw('tr', $tbody);
 
       if (!ignoreIndex) {
-        const $id = document.createElement('td');
-        $id.innerHTML = id;
-        $tr.appendChild($id);
+        draw('td', $tr, id);
       }
 
-      const $eng = document.createElement('td');
-      $eng.innerHTML = term;
-      $tr.appendChild($eng);
-
-      const notes = [];
-
-      const gaps = 3 - sindarin.length;
+      draw('td', $tr, term);
 
       sindarin.forEach(sin => {
-        const $sin = document.createElement('td');
-        $tr.appendChild($sin);
+        const $sin = draw('td', $tr);
         
         if (sin.hasOwnProperty('url')) {
-          const $a = document.createElement('a');
-          $a.innerHTML = sin.term;
-          $a.setAttribute('href', sin.url);
-          $a.setAttribute('target', '_blank');
-          $sin.appendChild($a);
+          const $a = draw('a', $sin, sin.term, {
+            href: sin.url,
+            target: '_blank'
+          });
         } else {
           $sin.innerHTML = sin.term;
         }
@@ -5850,34 +5866,62 @@ we would actually get a reading where nî refers to a specific, singular instanc
       });
 
       for (var i = 0; i < gaps; i++) {
-        const $gap = document.createElement('td');
-        $tr.appendChild($gap);
+        draw('td', $tr);
       }
 
       if (word.hasOwnProperty('comment')) {
         notes.push(word.comment);
       }
 
-      const $note = document.createElement('td');
-      $note.innerHTML = notes.join("; ");
-      $tr.appendChild($note);
+      draw('td', $tr, notes.join("; "));
     });
   }
 
-/*
-function showContent() {
-  let temp = document.getElementsByTagName("template")[0];
-  const elements = document.getElementsByClassName("menu");
-  // console.log(elements);
-  for (let i = 0; i < elements.length; i++) {
-    const clon = temp.content.cloneNode(true);
-    elements[i].appendChild(clon);
-  }
-  // document.body.appendChild(clon);
-}
+  renderWordList('swadesh', swadesh);
+  renderWordList('silm100', silm100, true);
 
-showContent();
-*/
+  const [hash, qs] = window.location.hash.substr(1).split('?');
+
+  if (!!hash && !!qs) {
+    const unhideElement = (element) => {
+      element.style.display = "";
+    }
+    const hideElement = (element) => {
+      element.style.display = "none";
+    }
+    const hideElements = (elements) => {
+      for (const el of elements) {
+        hideElement(el);
+      }
+    };
+    const hideClass = (className) => {
+      const elements = document.getElementsByClassName(className);
+      hideElements(elements);
+    };
+    if (qs === 'focus') {
+      const main = document.getElementsByTagName('main')[0];
+      const h1s = document.getElementsByTagName('h1');
+      const anchors = document.getElementsByTagName('a');
+      
+      main.style.marginLeft = 0;
+
+      hideClass('menu');
+      hideClass('intro');
+      hideClass('outro');
+      hideClass('page');
+      hideClass('top');
+      hideElements(h1s);
+
+      for (const anchor of anchors) {
+        const name = anchor.name;
+        if (!!name) {
+          if (name === hash) {
+            unhideElement(anchor.parentElement);
+          }
+        }
+      }
+    }
+  }
 </script>
 </body>
 </html>
