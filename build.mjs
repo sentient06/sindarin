@@ -63,16 +63,69 @@ function renderTableRows(list, ignoreIndex = false) {
   return rows.join('\n');
 }
 
+let numberSection = 0;
+let numberTopic = 0;
+
+function nextSection() {
+  numberSection++;
+  numberTopic = 1;
+  return `${numberSection}.`;
+}
+
+function nextTopic() {
+  const lastUsed = `${numberSection}.${numberTopic}`;
+  numberTopic++;
+  return lastUsed;
+}
+
+function formatTopic(source) {
+  const headingNumber = nextTopic();
+  return source.replace('%section%', headingNumber);
+}
+
 const template = fs.readFileSync('index-template.html', 'utf8');
 
 const tableSwadesh = renderTableRows(swadesh);
 const tableSilm100 = renderTableRows(silm100, true);
 
-const finalHtml = template
+const fileNames = [
+  { file: 'intro', pass: true },
+  { section: 'Fundamentals' },
+  { file: 'pronouns' },
+  { file: 'copula' },
+  { file: 'nouns' },
+];
+
+let finalHtml = template;
+
+fileNames.forEach((fileObj) => {
+  const { section, file: fileName, pass } = fileObj;
+  let formatted;
+
+  if (section) {
+    const currentSectionNumber = nextSection();
+    formatted = `
+<h1>
+  ${currentSectionNumber} ${section}
+</h1>
+<!--PLACEHOLDER-->
+  `
+  } else {
+    const sectionHtml = fs.readFileSync(`./src/${fileName}.html`, 'utf8');
+
+    if (!pass) {
+      formatted = formatTopic(sectionHtml);
+    } else {
+      formatted = sectionHtml;
+    }
+  }
+
+  finalHtml = finalHtml.replace(`<!--PLACEHOLDER-->`, formatted);
+});
+
+finalHtml = finalHtml
   .replace('<!--TABLE_SWADESH-->', tableSwadesh)
   .replace('<!--TABLE_SILM100-->', tableSilm100);
-
-// console.log(finalHtml);
 
 fs.writeFileSync('index.html', finalHtml, 'utf8');
 
