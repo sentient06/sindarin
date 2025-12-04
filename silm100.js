@@ -1,4 +1,4 @@
-var silm100 = [
+export const silm100 = [
   {
     term: "age",
     sindarin: [

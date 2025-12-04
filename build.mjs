@@ -1,6 +1,6 @@
 import fs from 'node:fs';
-// import { swadesh } from './swadesh.js';
-// import { silm100 } from './silm100.js';
+import { swadesh } from './swadesh.js';
+import { silm100 } from './silm100.js';
 
 function escapeHtml(str = '') {
   return String(str)
@@ -10,27 +10,70 @@ function escapeHtml(str = '') {
     .replace(/"/g, '&quot;');
 }
 
-function renderTableRows(words) {
-  return words
-    .map((entry, idx) => {
-      // adjust these names to match your actual data shape
-      const { term, sindarin } = entry;
+function renderTableRows(list, ignoreIndex = false) {
 
-      return `
-        <span>
-        TEST ${idx}
-        </span>`;
-    })
-    .join('\n');
+  const rows = [];
+
+  list.forEach((word, idx) => {
+    const { term, sindarin } = word;
+    const notes = [];
+    const gaps = 3 - sindarin.length;
+    const id = word.hasOwnProperty('id') ? word.id : idx + 1;
+    const tds = [];
+
+    if (ignoreIndex) {
+      tds.push(`<td>${term}</td>`);
+    } else {
+      tds.push(`<td>${id}</td>`);
+      tds.push(`      <td>${term}</td>`);
+    }
+    
+    sindarin.forEach(sin => {
+      let inner = '';
+
+      if (sin.hasOwnProperty('url')) {
+        inner = `<a href="${sin.url}" target="_blank">${sin.term}</a>`;
+      } else {
+        inner = sin.term;
+      }
+      tds.push(`      <td>${inner}</td>`);
+
+      if (sin.hasOwnProperty('comment')) {
+        notes.push(sin.comment);
+      }
+    });
+
+    for (var i = 0; i < gaps; i++) {
+      tds.push(`      <td></td>`);
+    }
+
+    if (word.hasOwnProperty('comment')) {
+      tds.push(word.comment);
+    }
+    
+    tds.push(`      <td>${notes.join("; ")}</td>`);
+
+    const tr = `    <tr>
+      ${tds.join('\n')}
+    </tr>`;
+
+    rows.push(tr);
+  });
+
+  return rows.join('\n');
 }
 
-const template = fs.readFileSync('template.html', 'utf8');
+const template = fs.readFileSync('index-template.html', 'utf8');
 
-const tableAHtml = renderTableRows(['a', 'b', 'c']);
+const tableSwadesh = renderTableRows(swadesh);
+const tableSilm100 = renderTableRows(silm100, true);
 
 const finalHtml = template
-  .replace('<!--TABLE_A-->', tableAHtml);
+  .replace('<!--TABLE_SWADESH-->', tableSwadesh)
+  .replace('<!--TABLE_SILM100-->', tableSilm100);
 
-fs.writeFileSync('index2.html', finalHtml, 'utf8');
+// console.log(finalHtml);
 
-console.log('Built index2.html');
+fs.writeFileSync('index.html', finalHtml, 'utf8');
+
+console.log('Built index.html');

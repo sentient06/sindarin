@@ -1,4 +1,4 @@
-var swadesh = [
+export const swadesh = [
   {
     id: 1,
     term: "I",
