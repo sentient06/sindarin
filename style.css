@@ -1,0 +1,421 @@
+    .image.right {
+      float: right;
+      max-width: 400px;
+      margin-left: 10px;
+    }
+
+    .menu.float {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 10px;
+      max-width: 280px;
+      font-size: 0.75em;
+      z-index: 1;
+      max-height: 100%;
+      overflow: auto;
+    }
+    .menu.float ul {
+      margin: 0;
+      padding: 0 0 0 10px;
+      list-style-position: inside;
+      list-style-type: "- ";
+    }
+    .menu.float li,
+    .menu.float li + ul {
+      margin-top: 5px;
+    }
+
+    .menu.float ul li a {
+      text-decoration: none;
+    }
+
+    .menu.float ul li a:hover {
+      text-decoration: underline;
+    }
+
+    h6 { font-size: 1.125em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.25em; margin: 0.5em 0 0 0; }
+    h5 { font-size: 1.266em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.35em; margin: 0.5em 0 0 0; }
+    h4 { font-size: 1.424em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.45em; margin: 0.5em 0 0 0; }
+    h3 { font-size: 1.602em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.55em; margin: 0.5em 0 0 0; }
+    h2 { font-size: 1.802em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.75em; margin: 0.5em 0 0 0; }
+    h1 { font-size: 2.027em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;
+      background: azure;
+      box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 0.25);
+      padding: 10px 16px;
+    }
+    h1.title {
+      font-size: 3em;
+      box-shadow: none;
+      background: none;
+      font-variant-caps: petite-caps;
+    }
+
+    h3, h4, h5 {
+      border-style: solid;
+      border-width: 0;
+      border-top-width: 1px;
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    h3 { border-color: rgba(0, 0, 0, 0.1); }
+    h4 { border-color: rgba(0, 0, 0, 0.05); }
+    h5 { border-color: rgba(0, 0, 0, 0.025); }
+
+    main {
+      padding-left: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      box-sizing: border-box;
+    }
+
+    main pre {
+      overflow: auto;
+    }
+
+    main pre.break {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    small.note {
+      font-style: italic;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    ol.alpha {
+      list-style: lower-alpha;
+    }
+
+    .old {
+      background: linen;
+    }
+
+    .new {
+      background: azure;
+    }
+
+    div.old {
+      padding: 10px;
+    }
+
+    div.new {
+      padding: 10px;
+    }
+
+    div.temp {
+      background: bisque;
+      padding: 10px;
+      font-style: italic;
+    }
+
+    .c1 {
+      display: inline-block;
+      border: 1px solid red;
+      border-width: 1px;
+      border-radius: 0.3em;
+      background: rgba(255,0,0,0.1);
+      padding: 0 1px;
+    }
+    .c2 {
+      display: inline-block;
+      border: 1px solid green;
+      border-width: 1px;
+      border-radius: 0.3em;
+      background: rgba(0,255,0,0.1);
+      padding: 0 1px;
+    }
+    .c3 {
+      display: inline-block;
+      border: 1px solid blue;
+      border-width: 1px;
+      border-radius: 0.3em;
+      background: rgba(0,0,255,0.1);
+      padding: 0 1px;
+    }
+    .c4 {
+      border: 1px solid fuchsia;
+      border-width: 1px;
+      border-radius: 0.3em;
+      background: rgba(255,0,255,0.1);
+      padding: 0 1px;
+    }
+
+    a {
+      color: #005BBB;
+    }
+
+    b {
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.125);
+    }
+
+    .soft {
+      border-radius: 0.4em 0 0.3em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(43, 184, 255, 0.2),
+        rgba(43, 184, 255, 0.7) 95%,
+        rgba(43, 184, 255, 0.1)
+      );
+    }
+
+    .nasal {
+      border-radius: 0.4em 0 0.3em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(241, 103, 243, 0.2),
+        rgba(241, 103, 243, 0.7) 95%,
+        rgba(241, 103, 243, 0.1)
+      );
+    }
+
+    .mixed {
+      border-radius: 0.4em 0 0.3em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(255, 120, 12, 0.2),
+        rgba(255, 120, 12, 0.7) 95%,
+        rgba(255, 120, 12, 0.1)
+      );
+    }
+
+    .stop {
+      border-radius: 1em 0 1em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(250, 30, 30, 0.2),
+        rgba(250, 30, 30, 0.7) 95%,
+        rgba(250, 30, 30, 0.1)
+      );
+    }
+
+    .liquid {
+      border-radius: 1em 0 1em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(2, 250, 186, 0.2),
+        rgba(2, 250, 186, 0.7) 95%,
+        rgba(2, 250, 186, 0.1)
+      );
+    }
+
+    .sibilant {
+      border-radius: 1em 0 1em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(144, 255, 24, 0.2),
+        rgba(144, 255, 24, 0.7) 95%,
+        rgba(144, 255, 24, 0.1)
+      );
+    }
+
+    .subtle {
+      color: #bbb;
+    }
+
+    @media (max-width: 667px)  {
+      body {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .menu.float {
+        position: revert;
+        font-size: 1em;
+      }
+      main {
+        padding-left: 0;
+      }
+      .hide {
+        display: none;
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .wrapper > hr {
+      width: 100%;
+      height: 1px;
+      background: #ccc;
+      border: none;
+      margin-bottom: 0;
+    }
+
+    .wrapper > .a1,
+    .wrapper > .a2 {
+      box-sizing: border-box;
+      flex: 0 0 50%;            /* two items per row: left + right */
+      vertical-align: top;      /* not strictly needed; flex aligns tops by default */
+    }
+
+    .a1, .a2 {
+      -webkit-text-size-adjust: 100%;
+      white-space: break-spaces;
+      font-family: monospace;
+      font-size: 1em;
+      max-width: 100%;
+    }
+
+    @media (max-width: 560px) {
+      .a1, .a2 {
+        white-space: pre;
+        overflow: auto;
+      }
+      .wrapper > .a1,
+      .wrapper > .a2 {
+        flex: 0 0 100%;         /* each takes full width → A1, A2, A1, A2, ... */
+      }
+    }
+
+    .padded {
+      margin: 0 10px;
+    }
+
+    .page {
+      box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 0.25);
+      padding: 0px 20px 10px 20px;
+      background: #FFF;
+      position: relative;
+    }
+
+    .sketch {
+      margin-top: 20px;
+      padding: 1px 20px;
+      padding-top: 20px;
+      background: #FFF;
+      position: relative;
+      border: 1px dashed #000;
+      -webkit-text-size-adjust: 100%;
+      white-space: break-spaces;
+      font-family: monospace;
+      font-size: 1em;
+      max-width: 100%;
+      font-style: italic;
+    }
+
+    .sketch:before {
+      content: "Sketch";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: antiquewhite;
+      padding: 3px;
+    }
+
+    .page + .page {
+      margin-top: 20px;
+    }
+
+    .page .top {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .top {
+      background: #555;
+      color: #FFF;
+      text-decoration: none;
+      padding: 2px 20px;
+    }
+
+    .anchor_wrapper {
+      position: relative;
+    }
+
+    small small {
+      font-size: 0.6em;
+    }
+
+    details {
+      padding: 10px;
+      border: 1px solid #bbb;
+      background: ghostwhite;
+      overflow: auto;
+    }
+
+    details summary {
+      cursor: pointer;
+    }
+
+    summary + table {
+      margin-top: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    th, td {
+      padding: 5px;
+    }
+    @media print {
+      .menu, .top, .notes {
+        display: none;
+      }
+      main {
+        margin-left: 0;
+      }
+      h1, .page {
+        box-shadow: none;
+      }
+
+      .soft {
+        color: #4B2CFF;
+      }
+
+      .nasal {
+        color: #D3358F;
+      }
+
+      .mixed {
+        color: #FF7F0E;
+      }
+
+      .stop {
+        color: #D62728;
+      }
+
+      .liquid {
+        color: #17BECF;
+      }
+
+      .sibilant {
+        color: #2CA02C;
+      }
+
+      .a1, .a2 {
+        white-space: pre;
+        overflow: auto;
+      }
+      .wrapper > .a1,
+      .wrapper > .a2 {
+        flex: 0 0 100%;
+      }
+
+      .wrapper > .a2 {
+        border-bottom: 1px solid #bbb;
+        padding-bottom: 10px;
+      }
+
+      details {
+        padding: 0;
+        border: none;
+      }
+      h1:has(+ .page) {
+        break-before: page;
+      }
+      .page { break-before: page; }
+      h1 + .page { break-before: revert; }
+    }

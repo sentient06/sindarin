@@ -63,28 +63,6 @@ function renderTableRows(list, ignoreIndex = false) {
   return rows.join('\n');
 }
 
-// let numberSection = 0;
-// let numberTopic = 0;
-
-// function nextSection() {
-//   numberSection++;
-//   numberTopic = 1;
-//   return `${numberSection}.`;
-// }
-
-// function nextTopic() {
-//   const lastUsed = `${numberSection}.${numberTopic}`;
-//   numberTopic++;
-//   return lastUsed;
-// }
-
-// function formatTopic(source) {
-//   const headingNumber = nextTopic();
-//   return source.replace('%section%', headingNumber);
-// }
-
-// const template = fs.readFileSync('index-template.html', 'utf8');
-
 const tableSwadesh = renderTableRows(swadesh);
 const tableSilm100 = renderTableRows(silm100, true);
 
@@ -168,6 +146,105 @@ const skeleton = [
         file: 'conjunctions'
       },
     ]
+  },
+  {
+    name: 'Prepositions',
+    file: 'intro_prepositions',
+    anchor: 'prepositions',
+    sections: [
+      {
+        name: 'Overview',
+        anchor: 'prepositions_overview',
+        file: 'prep_overview'
+      },
+      {
+        name: 'Prepositions of space',
+        anchor: 'prepositions_space',
+        file: 'prep_space'
+      },
+      {
+        name: 'Prepositions of time',
+        anchor: 'prepositions_time',
+        file: 'prep_time'
+      },
+      {
+        name: 'Prepositions of association, means, and possession',
+        anchor: 'prepositions_means',
+        file: 'prep_means'
+      },
+      {
+        name: 'Prepositions of comparison',
+        anchor: 'prepositions_role',
+        file: 'prep_role'
+      },
+      {
+        name: 'Prepositions of exclusion and opposition',
+        anchor: 'prepositions_opposition',
+        file: 'prep_opposition'
+      },
+    ]
+  },
+  {
+    name: 'Intermediate grammar',
+    anchor: 'intermediate',
+    sections: [
+      {
+        name: 'Participle',
+        anchor: 'participle',
+        file: 'participle',
+      },
+      {
+        name: 'Personal pronoun paradigm',
+        anchor: 'pronouns2',
+        file: 'pronouns2',
+      },
+      {
+        name: 'Demonstratives',
+        anchor: 'demonstrative_pronouns',
+        file: 'demonstratives',
+      },
+      {
+        name: 'Interrogative',
+        anchor: 'interrogative',
+        file: 'interrogatives',
+      },
+      {
+        name: 'Relative Pronouns',
+        anchor: 'relative_pronouns',
+        file: 'relatives',
+      }
+    ]
+  },
+  {
+    name: 'Grammatical Constructions',
+    anchor: 'constructions',
+    sections: [
+      {
+        name: 'Genitive',
+        anchor: 'genitive',
+        file: 'genitive'
+      },
+      {
+        name: 'Possessive',
+        anchor: 'possessive',
+        file: 'possessive'
+      },
+      {
+        name: 'Imperative',
+        anchor: 'imperative',
+        file: 'imperative'
+      },
+      {
+        name: 'Passive voice',
+        anchor: 'passive',
+        file: 'passive'
+      },
+      {
+        name: 'Modal constructions ',
+        anchor: 'modal',
+        file: 'modal'
+      }
+    ]
   }
 ];
 
@@ -176,22 +253,14 @@ let menu = '<!--MENU-->';
 
 let i = 0;
 skeleton.forEach((item) => {
-  const { file, name, anchor, sections } = item;
+  const { file, intro, name, anchor, sections } = item;
 
-  console.log('- Processing', file, name, anchor, sections?.length);
-
-  if (!!file && !!name) {
-    throw `Can't have file and name at the same time! ${file} - ${name}`;
-  }
-
-  if (file) {
-    const sectionHtml = fs.readFileSync(`./src/${file}.html`, 'utf8');
-    finalHtml = finalHtml.replace(`<!--PLACEHOLDER-->`, sectionHtml);
-  } else
+  console.log('\n- Processing', i+1, file || '--', name || '--', anchor || '--', sections?.length || '--');
 
   if (name) {
     i++;
     const formatted = `
+<a name="${anchor}"></a>
 <h1>
   ${i}. ${name}
 </h1>
@@ -202,10 +271,15 @@ skeleton.forEach((item) => {
     menu = menu.replace('<!--MENU-->', `    <li>\n      <a href="#${anchor}">${i}. ${name}</a>\n      <ul>\n<!--MENU-->\n      </ul>\n    </li>`);
   }
 
+  if (file) {
+    const sectionHtml = fs.readFileSync(`./src/${file}.html`, 'utf8');
+    finalHtml = finalHtml.replace(`<!--PLACEHOLDER-->`, sectionHtml);
+  }
+
   if (sections) {
     let j = 0;
     sections.forEach((section) => {
-      console.log('- - Processing', section.file, section.anchor, section.name);
+      console.log('- - Processing', j+1, section.file, section.anchor, section.name);
       j++;
       let sectionHtml = fs.readFileSync(`./src/${section.file}.html`, 'utf8');
       sectionHtml = sectionHtml.replace('%section%', `${i}.${j}`);
@@ -219,44 +293,10 @@ skeleton.forEach((item) => {
 
 menu = menu.replace('\n<!--MENU-->', '');
 
-
-
-// const fileNames = [
-//   { file: 'intro', pass: true },
-//   { section: 'Fundamentals' },
-//   { file: 'pronouns' },
-//   { file: 'copula' },
-//   { file: 'nouns' },
-// ];
-
-// let finalHtml = template;
-
-// fileNames.forEach((fileObj) => {
-//   const { section, file: fileName, pass } = fileObj;
-//   let formatted;
-
-//   if (section) {
-//     const currentSectionNumber = nextSection();
-//     formatted = `
-// <h1>
-//   ${currentSectionNumber} ${section}
-// </h1>
-// <!--PLACEHOLDER-->
-//   `
-//   } else {
-//     const sectionHtml = fs.readFileSync(`./src/${fileName}.html`, 'utf8');
-
-//     if (!pass) {
-//       formatted = formatTopic(sectionHtml);
-//     } else {
-//       formatted = sectionHtml;
-//     }
-//   }
-
-//   finalHtml = finalHtml.replace(`<!--PLACEHOLDER-->`, formatted);
-// });
+const styles = fs.readFileSync(`./style.css`, 'utf8');
 
 finalHtml = finalHtml
+  .replace('/***STYLES***/', styles)
   .replace('<!--MENU-->', menu)
   .replace('<!--TABLE_SWADESH-->', tableSwadesh)
   .replace('<!--TABLE_SILM100-->', tableSilm100);
