@@ -48,7 +48,7 @@ function renderTableRows(list, ignoreIndex = false) {
     }
 
     if (word.hasOwnProperty('comment')) {
-      tds.push(word.comment);
+      notes.push(word.comment);
     }
     
     tds.push(`      <td>${notes.join("; ")}</td>`);
@@ -245,11 +245,67 @@ const skeleton = [
         file: 'modal'
       }
     ]
+  },
+  {
+    name: 'Verbal System (advanced)',
+    anchor: 'verbal_system',
+    sections: [
+      {
+        name: 'Additional verb classes',
+        anchor: 'verb_classes',
+        file: 'verb_classes'
+      },
+      {
+        name: 'Past Tense',
+        anchor: 'past_tense',
+        file: 'verb_past'
+      },
+      {
+        name: 'Future Tense',
+        anchor: 'future_tense',
+        file: 'verb_future'
+      },
+      {
+        name: 'Other Tenses',
+        anchor: 'other_tenses',
+        file: 'verb_tenses'
+      }
+    ]
+  },
+  {
+    name: 'Word formation',
+    anchor: 'word_formation',
+    sections: [
+      {
+        name: 'Diminutive',
+        anchor: 'diminutive',
+        file: 'diminutive'
+      },
+      {
+        name: 'Augmentative',
+        anchor: 'augmentative',
+        file: 'augmentative'
+      }
+    ]
+  },
+  {
+    name: 'Vocabulary',
+    anchor: 'vocabulary',
+    sections: [
+      {
+        name: 'Word Lists',
+        anchor: 'word_lists',
+        file: 'word_lists'
+      }
+    ]
   }
 ];
 
 let finalHtml = fs.readFileSync('index-template.html', 'utf8');
 let menu = '<!--MENU-->';
+
+finalHtml = finalHtml.replace(`%date%`, new Date().toJSON().slice(0,10).split('-').reverse().join('/'));
+finalHtml = finalHtml.replace(`%year%`, new Date().toJSON().slice(0,10).split('-')[0]);
 
 let i = 0;
 skeleton.forEach((item) => {
