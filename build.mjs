@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import { swadesh } from './swadesh.js';
 import { silm100 } from './silm100.js';
 
+const debug = false;
+
 function escapeHtml(str = '') {
   return String(str)
     .replace(/&/g, '&amp;')
@@ -329,6 +331,9 @@ skeleton.forEach((item) => {
 
   if (file) {
     const sectionHtml = fs.readFileSync(`./src/${file}.html`, 'utf8');
+    if (debug) {
+      finalHtml = finalHtml.replace(`<!--PLACEHOLDER-->`, `[${file}.html]<!--PLACEHOLDER-->`);
+    }
     finalHtml = finalHtml.replace(`<!--PLACEHOLDER-->`, sectionHtml);
   }
 
@@ -339,6 +344,9 @@ skeleton.forEach((item) => {
       j++;
       let sectionHtml = fs.readFileSync(`./src/${section.file}.html`, 'utf8');
       sectionHtml = sectionHtml.replace('%section%', `${i}.${j}`);
+      if (debug) {
+        finalHtml = finalHtml.replace(`<!--PLACEHOLDER-->`, `[${section.file}.html]<!--PLACEHOLDER-->`);
+      }
       finalHtml = finalHtml.replace(`<!--PLACEHOLDER-->`, sectionHtml);
       menu = menu.replace('<!--MENU-->', `        <li><a href="#${section.anchor}">${i}.${j} ${section.name}</a></li>\n<!--MENU-->`);
     });
