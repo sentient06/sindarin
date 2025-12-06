@@ -554,6 +554,7 @@
 
     .dark-theme b {
       text-shadow: 0 0 3px rgba(255, 255, 255, 0.125);
+      color: #FFF;
     }
 
     .dark-theme .last-updated {
