@@ -398,24 +398,12 @@ until / till  Up to a point in time   until Tuesday, till midnight
 
 <script>
 
-
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-if (prefersDarkScheme.matches) {
-  document.body.classList.add("dark-theme");
-} else {
-  document.body.classList.remove("dark-theme");
-}
-
-
-
-
-
 
 // Select the button
 const btn = document.querySelector(".btn-toggle");
 // Select the theme preference from localStorage
-const currentTheme = localStorage.getItem("theme");
+const currentTheme = localStorage.getItem("theme") || prefersDarkScheme;
 
 // If the current theme in localStorage is "dark"...
 if (currentTheme == "dark") {
