@@ -552,8 +552,11 @@
       color: #70CBFF;
     }
 
-    .dark-theme
-    .last-updated {
+    .dark-theme b {
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.125);
+    }
+
+    .dark-theme .last-updated {
       color: rgba(255, 255, 255, 0.1);
     }
 
@@ -571,26 +574,22 @@
     .dark-theme h4 { border-color: rgba(255, 255, 255, 0.05); }
     .dark-theme h5 { border-color: rgba(255, 255, 255, 0.025); }
     
-    .dark-theme
-    .page {
+    .dark-theme .page {
       box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 1);
       background: #2C2C2EFF;
     }
 
-    .dark-theme
-    .top {
+    .dark-theme .top {
       background: #CCC;
       color: #000;
     }
 
-    .dark-theme
-    details {
+    .dark-theme details {
       border-color: #333;
       background: darkslategray;
     }
 
-    .dark-theme
-    .soft {
+    .dark-theme .soft {
       background-image: linear-gradient(
         -100deg,
         rgba(13, 104, 175, 0.2),
@@ -599,8 +598,7 @@
       );
     }
 
-    .dark-theme
-    .nasal {
+    .dark-theme .nasal {
       background-image: linear-gradient(
         -100deg,
         rgba(181, 33, 183, 0.2),
@@ -609,8 +607,7 @@
       );
     }
 
-    .dark-theme
-    .mixed {
+    .dark-theme .mixed {
       background-image: linear-gradient(
         -100deg,
         rgba(255, 120, 12, 0.2),
@@ -619,8 +616,7 @@
       );
     }
 
-    .dark-theme
-    .stop {
+    .dark-theme .stop {
       background-image: linear-gradient(
         -100deg,
         rgba(250, 30, 30, 0.2),
@@ -629,8 +625,7 @@
       );
     }
 
-    .dark-theme
-    .liquid {
+    .dark-theme .liquid {
       background-image: linear-gradient(
         -100deg,
         rgba(2, 190, 136, 0.2),
@@ -639,8 +634,7 @@
       );
     }
 
-    .dark-theme
-    .sibilant {
+    .dark-theme .sibilant {
       background-image: linear-gradient(
         -100deg,
         rgba(84, 195, 24, 0.2),
