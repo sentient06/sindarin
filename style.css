@@ -21,6 +21,70 @@
       cursor: pointer;
     }
 
+.toggler
+.toggle-switch {
+  position: relative;
+  width: 50px;
+}
+
+.toggler
+label {
+  position: absolute;
+  width: 100%;
+  height: 24px;
+  background-color: #28292c;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.toggler
+input {
+  position: absolute;
+  display: none;
+}
+
+.toggler
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.toggler
+input:checked ~ .slider {
+  background-color: #d8dbe0;
+}
+
+.toggler
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  box-shadow: inset 7px -1px 0px 0px #d8dbe0;
+  background-color: #28292c;
+  transition: 0.3s;
+}
+
+.toggler
+input:checked ~ .slider::before {
+  transform: translateX(24px);
+  background-color: #28292c;
+  box-shadow: none;
+}
+
+
+
+
+
+
+
+
     .image.right {
       float: right;
       max-width: 400px;
@@ -255,6 +319,14 @@
       .hide {
         display: none;
       }
+
+      .toggler {
+        position: unset;
+        display: block;
+        height: 24px;
+        padding: 10px 10px 0px 10px;
+        zoom: 1.5;
+      }
     }
 
     .wrapper {
@@ -455,6 +527,10 @@
         position: absolute;
         top: 20px;
         right: 0;
+      }
+
+      .toggler {
+        display: none;
       }
     }
 

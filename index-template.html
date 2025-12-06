@@ -36,7 +36,14 @@
 </head>
 <body>
 <div class="toggler">
-  <button class="btn-toggle">◉</button>
+
+  <div class='toggle-switch'>
+    <label>
+      <input type='checkbox' id="dark-status" />
+      <span class='slider'></span>
+    </label>
+  </div>
+
 </div>
 
 <a name="top"></a>
@@ -398,7 +405,7 @@ until / till  Up to a point in time   until Tuesday, till midnight
 
 <script>
   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-  const btn = document.querySelector(".btn-toggle");
+  const btn = document.querySelector("#dark-status");
   const currentTheme = localStorage.getItem("theme") || prefersDarkScheme;
 
   if (currentTheme == "dark") {
@@ -406,6 +413,7 @@ until / till  Up to a point in time   until Tuesday, till midnight
   }
 
   btn.addEventListener("click", function() {
+    console.log(btn);
     document.body.classList.toggle("dark-theme");
     let theme = "light";
     if (document.body.classList.contains("dark-theme")) {
