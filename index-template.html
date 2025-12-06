@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Basic SEO -->
+  <meta name="description" content="Comprehensive Neo-Sindarin grammar, including genitive structures, possessives, verb conjugations, participles, tenses, diminutives, augmentatives, and a full Swadesh 207 word list." />
+  <meta name="keywords" content="Sindarin, Neo-Sindarin, Tolkien languages, Eldarin, grammar, Sindarin verbs, Sindarin genitive, Sindarin possessive, Swadesh list, Elvish linguistics" />
+  <meta name="author" content="Giancarlo Mariot" />
+
+  <!-- Crawling & indexing -->
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <link rel="canonical" href="https://sindarin.mariot.uk/">
+
+  <!-- Social / OpenGraph -->
+  <meta property="og:title" content="Neo-Sindarin — A Stepwise Grammar" />
+  <meta property="og:description" content="A detailed, modern guide to Neo-Sindarin grammar, morphology, and vocabulary, including extensive examples and word lists." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sindarin.mariot.uk/" />
+  <meta property="og:image" content="https://sindarin.mariot.uk/cover.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Neo-Sindarin — A Stepwise Grammar" />
+  <meta name="twitter:description" content="Reference grammar and vocabulary for Neo-Sindarin learners and linguists." />
+  <meta name="twitter:image" content="https://sindarin.mariot.uk/cover.jpg" />
+
+  <meta name="color-scheme" content="dark light" />
+
   <title>Neo-Sindarin - A Stepwise Grammar</title>
   <style type="text/css">
 /***STYLES***/
   </style>
 </head>
 <body>
+<div class="toggler">
+  <button class="btn-toggle">Toggle Dark Mode</button>
+</div>
+
 <a name="top"></a>
 
 <div class="menu float">
@@ -260,7 +290,7 @@ recently
 io (ago)
 a little while ago
   The bus left a little while ago.
-  
+
 
 io (ago)
 a long time ago
@@ -367,6 +397,52 @@ until / till  Up to a point in time   until Tuesday, till midnight
 </div>
 
 <script>
+
+
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+if (prefersDarkScheme.matches) {
+  document.body.classList.add("dark-theme");
+} else {
+  document.body.classList.remove("dark-theme");
+}
+
+
+
+
+
+
+// Select the button
+const btn = document.querySelector(".btn-toggle");
+// Select the theme preference from localStorage
+const currentTheme = localStorage.getItem("theme");
+
+// If the current theme in localStorage is "dark"...
+if (currentTheme == "dark") {
+  // ...then use the .dark-theme class
+  document.body.classList.add("dark-theme");
+}
+
+// Listen for a click on the button 
+btn.addEventListener("click", function() {
+  // Toggle the .dark-theme class on each click
+  document.body.classList.toggle("dark-theme");
+  
+  // Let's say the theme is equal to light
+  let theme = "light";
+  // If the body contains the .dark-theme class...
+  if (document.body.classList.contains("dark-theme")) {
+    // ...then let's make the theme dark
+    theme = "dark";
+  }
+  // Then save the choice in localStorage
+  localStorage.setItem("theme", theme);
+});
+
+
+
+
+
   const [hash, qs] = window.location.hash.substr(1).split('?');
 
   if (!!hash && !!qs) {

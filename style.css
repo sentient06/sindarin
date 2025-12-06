@@ -1,10 +1,13 @@
-    .last-updated {
+    body {
+      background: #FFF;
+      color: #000;
+    }
+
+    .toggler {
       position: absolute;
-      top: 0;
-      right: 0;
-      size: 0.5em;
-      color: rgba(0,0,0,0.1);
-      font-family: monospace;
+      top: 20px;
+      right: 20px;
+      display: none;
     }
 
     .image.right {
@@ -374,10 +377,15 @@
         display: none;
       }
       main {
-        margin-left: 0;
+        padding-left: 0;
       }
+
+      .dark-theme * {
+        box-shadow: none !important;
+      }
+
       h1, .page {
-        box-shadow: none;
+        box-shadow: none !important;
       }
 
       .soft {
@@ -427,11 +435,141 @@
       }
       .page { break-before: page; }
       h1 + .page { break-before: revert; }
+
+      .last-updated,
+      .footer {
+        color: rgba(0,0,0,0.5);
+      }
+      .footer {
+        position: absolute;
+        top: 20px;
+        right: 0;
+      }
+    }
+
+    .last-updated {
+      position: absolute;
+      top: 0;
+      right: 0;
+      size: 0.5em;
+      color: rgba(0, 0, 0, 0.1);
+      font-family: monospace;
     }
 
     .footer {
       size: 0.5em;
-      color: rgba(0,0,0,0.1);
+      color: rgba(0, 0, 0, 0.1);
       font-family: monospace;
       text-align: right;
+    }
+
+    .dark-theme {
+      background: #1C1C1EFF;
+      color: #F2F2F7FF;
+    }
+
+    .dark-theme a {
+      color: #70CBFF;
+    }
+
+    .dark-theme
+    .last-updated {
+      color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dark-theme h1 {
+      background: #3F5658;
+      box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 1);
+    }
+
+    .dark-theme h1.title {
+      box-shadow: none;
+      background: none;
+    }
+    
+    .dark-theme h3 { border-color: rgba(255, 255, 255, 0.1); }
+    .dark-theme h4 { border-color: rgba(255, 255, 255, 0.05); }
+    .dark-theme h5 { border-color: rgba(255, 255, 255, 0.025); }
+    
+    .dark-theme
+    .page {
+      box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 1);
+      background: #2C2C2EFF;
+    }
+
+    .dark-theme
+    .top {
+      background: #CCC;
+      color: #000;
+    }
+
+    .dark-theme
+    details {
+      border-color: #333;
+      background: darkslategray;
+    }
+
+    .dark-theme
+    .soft {
+      background-image: linear-gradient(
+        -100deg,
+        rgba(13, 104, 175, 0.2),
+        rgba(13, 104, 175, 0.7) 95%,
+        rgba(13, 104, 175, 0.1)
+      );
+    }
+
+    .dark-theme
+    .nasal {
+      background-image: linear-gradient(
+        -100deg,
+        rgba(181, 33, 183, 0.2),
+        rgba(181, 33, 183, 0.7) 95%,
+        rgba(181, 33, 183, 0.1)
+      );
+    }
+
+    .dark-theme
+    .mixed {
+      background-image: linear-gradient(
+        -100deg,
+        rgba(255, 120, 12, 0.2),
+        rgba(255, 120, 12, 0.7) 95%,
+        rgba(255, 120, 12, 0.1)
+      );
+    }
+
+    .dark-theme
+    .stop {
+      background-image: linear-gradient(
+        -100deg,
+        rgba(250, 30, 30, 0.2),
+        rgba(250, 30, 30, 0.7) 95%,
+        rgba(250, 30, 30, 0.1)
+      );
+    }
+
+    .dark-theme
+    .liquid {
+      background-image: linear-gradient(
+        -100deg,
+        rgba(2, 190, 136, 0.2),
+        rgba(2, 190, 136, 0.7) 95%,
+        rgba(2, 190, 136, 0.1)
+      );
+    }
+
+    .dark-theme
+    .sibilant {
+      background-image: linear-gradient(
+        -100deg,
+        rgba(84, 195, 24, 0.2),
+        rgba(84, 195, 24, 0.7) 95%,
+        rgba(84, 195, 24, 0.1)
+      );
+    }
+
+    .dark-theme .last-updated,
+    .dark-theme .footer {
+      color: rgba(255,255,255,0.1);
     }
