@@ -13,7 +13,6 @@ function escapeHtml(str = '') {
 }
 
 function renderTableRows(list, ignoreIndex = false) {
-
   const rows = [];
 
   list.forEach((word, idx) => {
@@ -363,7 +362,8 @@ finalHtml = finalHtml
   .replace('/***STYLES***/', styles)
   .replace('<!--MENU-->', menu)
   .replace('<!--TABLE_SWADESH-->', tableSwadesh)
-  .replace('<!--TABLE_SILM100-->', tableSilm100);
+  .replace('<!--TABLE_SILM100-->', tableSilm100)
+  .replace('<!--PLACEHOLDER-->', '');
 
 fs.writeFileSync('index.html', finalHtml, 'utf8');
 
