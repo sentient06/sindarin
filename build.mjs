@@ -91,14 +91,14 @@ const skeleton = [
         file: 'nouns'
       },
       {
-        name: 'Basic verbs',
-        anchor: 'basic_verbs',
-        file: 'verbs1'
-      },
-      {
         name: 'Consonant mutations',
         anchor: 'mutations',
         file: 'mutations'
+      },
+      {
+        name: 'Basic verbs',
+        anchor: 'basic_verbs',
+        file: 'verbs1'
       },
     ]
   },
