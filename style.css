@@ -3,6 +3,12 @@
       color: #000;
     }
 
+    ::-moz-selection,
+    ::selection {
+      color: white;
+      background: #333;
+    }
+
     .toggler {
       position: absolute;
       top: 20px;
@@ -546,6 +552,12 @@
     .dark-theme {
       background: #1C1C1EFF;
       color: #F2F2F7FF;
+    }
+
+    .dark-theme ::-moz-selection,
+    .dark-theme ::selection {
+      color: #333;
+      background: white;
     }
 
     .dark-theme a {
