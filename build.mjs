@@ -317,9 +317,9 @@ skeleton.forEach((item) => {
   if (name) {
     i++;
     const formatted = `
-<h1 id="${anchor}">
+<h2 id="${anchor}">
   ${i}. ${name}
-</h1>
+</h2>
 <!--PLACEHOLDER-->
   `
     finalHtml = finalHtml.replace(`<!--PLACEHOLDER-->`, formatted);
