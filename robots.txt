@@ -1,4 +1,5 @@
 User-agent: *
-Disallow: 
 Disallow: /index-template.html
+Disallow: /google7f7648aa4bee10f3.html
+Disallow: /yandex_7f41ef606a79320c.html
 Sitemap: https://sindarin.mariot.uk/sitemap.txt
