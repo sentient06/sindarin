@@ -83,7 +83,7 @@
       margin-left: 10px;
     }
 
-    .menu.float {
+    nav {
       position: fixed;
       top: 0;
       left: 0;
@@ -94,22 +94,22 @@
       max-height: 100%;
       overflow: auto;
     }
-    .menu.float ul {
+    nav ul {
       margin: 0;
       padding: 0 0 0 10px;
       list-style-position: inside;
       list-style-type: "- ";
     }
-    .menu.float li,
-    .menu.float li + ul {
+    nav li,
+    nav li + ul {
       margin-top: 5px;
     }
 
-    .menu.float ul li a {
+    nav ul li a {
       text-decoration: none;
     }
 
-    .menu.float ul li a:hover {
+    nav ul li a:hover {
       text-decoration: underline;
     }
 
@@ -302,7 +302,7 @@
         margin-left: 0;
         margin-right: 0;
       }
-      .menu.float {
+      nav {
         position: revert;
         font-size: 1em;
       }
@@ -376,7 +376,7 @@
       margin: 0 10px;
     }
 
-    .page {
+    section {
       box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 0.25);
       padding: 0px 20px 10px 20px;
       background: #FFF;
@@ -408,11 +408,11 @@
       padding: 3px;
     }
 
-    .page + .page {
+    section + section {
       margin-top: 20px;
     }
 
-    .page .top {
+    section .top {
       position: absolute;
       top: 0;
       right: 0;
@@ -460,7 +460,7 @@
       padding: 5px;
     }
     @media print {
-      .menu, .top, .notes {
+      nav, .top, .notes {
         display: none;
       }
       main {
@@ -471,7 +471,7 @@
         box-shadow: none !important;
       }
 
-      h1, .page {
+      h1, section {
         box-shadow: none !important;
       }
 
@@ -513,11 +513,11 @@
         padding: 0;
         border: none;
       }
-      h1:has(+ .page) {
+      h1:has(+ section) {
         break-before: page;
       }
-      .page { break-before: page; }
-      h1 + .page { break-before: revert; }
+      section { break-before: page; }
+      h1 + section { break-before: revert; }
 
       .last-updated,
       .footer {
@@ -589,7 +589,7 @@
     .dark-theme h5 { border-color: rgba(255, 255, 255, 0.05); }
     .dark-theme h6 { border-color: rgba(255, 255, 255, 0.025); }
     
-    .dark-theme .page {
+    .dark-theme section {
       box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 1);
       background: #2C2C2EFF;
     }
