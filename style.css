@@ -513,11 +513,11 @@
         padding: 0;
         border: none;
       }
-      h1:has(+ section) {
+      h2:has(+ section) {
         break-before: page;
       }
       section { break-before: page; }
-      h1 + section { break-before: revert; }
+      h2 + section { break-before: revert; }
 
       .last-updated,
       .footer {
