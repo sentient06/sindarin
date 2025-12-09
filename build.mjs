@@ -410,5 +410,5 @@ finalHtml = finalHtml
   .replace('<!--TABLE_SILM100-->', tableSilm100)
   .replace('<!--PLACEHOLDER-->', '');
 
-fs.writeFileSync('./_index.html', finalHtml, 'utf8');
+fs.writeFileSync('./index.html', finalHtml, 'utf8');
 
