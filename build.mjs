@@ -175,7 +175,7 @@ const skeleton = [
       },
       {
         name: 'Prepositions of comparison',
-        anchor: 'prepositions_role',
+        anchor: 'prepositions_comparison',
         file: 'prep_role'
       },
       {
@@ -371,19 +371,24 @@ const notesTxt = fs.readFileSync(`./src/notes.txt`, 'utf8');
 
 const pageHtml = fs.readFileSync('page-template.html', 'utf8');
 
+const domain = 'https://sindarin.mariot.uk';
+const sitemap = ['index'];
+
 function buildPage(name, title) {
+  sitemap.push(name);
   let pageCode = pageHtml;
   const pageContent = fs.readFileSync(`pages/${name}.html`, 'utf8');
   const pageStyles = `${generalStyle}\n${pagesStyle}`
   pageCode = pageCode
     .replace(`%date%`, bakedDate)
     .replace(`%year%`, bakedYear)
+    .replaceAll(`<!--PAGE_NAME-->`, `${title}`)
     .replaceAll(`<!--TITLE-->`, `Neo Sindarin - ${title}`)
     .replace(`<!--PLACEHOLDER-->`, pageContent)
     .replace('/***STYLES***/', pageStyles)
     .replace('/***SCRIPTS***/', darkmodeScript);
-  fs.writeFileSync(`./out/page_${name}.html`, pageCode, 'utf8');
-  console.log(`Built page_${name}.html`);
+  fs.writeFileSync(`./${name}.html`, pageCode, 'utf8');
+  console.log(` → Built page "${name}.html"`);
 }
 
 const landingPages = [
@@ -392,12 +397,21 @@ const landingPages = [
   { name: 'Nouns', file: 'nouns'},
   { name: 'Mutations', file: 'mutations'},
   { name: 'Verbs', file: 'verbs'},
+  { name: 'Articles', file: 'articles'},
+  { name: 'Adjectives', file: 'adjectives'},
+  { name: 'Numerals', file: 'numerals'},
+  { name: 'Sentence Structure', file: 'sentence_structure' },
+  { name: 'Adverbs', file: 'adverbs'},
+  { name: 'Negation', file: 'negation'},
+  { name: 'Yes and no', file: 'yesno'},
+  { name: 'Conjunctions', file: 'conjunctions'},
+  { name: 'Prepositions', file: 'prepositions'},
+  { name: 'Genitive', file: 'genitive'},
 ];
 
-// landingPages.forEach((landingPage) => {
-//   const { name, file } = landingPage;
-//   buildPage(file, name);
-// });
+const landing = landingPages.map((item) => {
+  return `      <li><a href="${item.file}.html">${item.name}</a></li>`;
+}).join('\n');
 
 finalHtml = finalHtml
   .replace('/***STYLES***/', styles)
@@ -406,10 +420,11 @@ finalHtml = finalHtml
   .replace('<!--NOTES-->', notesTxt)
   .replace('<!--TABLE_SWADESH-->', tableSwadesh)
   .replace('<!--TABLE_SILM100-->', tableSilm100)
+  .replace('<!--LANDING-->', landing)
   .replace('<!--PLACEHOLDER-->', '');
 
 const username = process.env.USERNAME || process.env.USER;
-// console.log(`The current username is: ${username}`);
+console.log(`The current username is: ${username}`);
 
 // Source - https://stackoverflow.com/a
 // Posted by valdeci, modified by community. See post 'Timeline' for change history
@@ -418,11 +433,29 @@ const MD5 = function(d){var r = M(V(Y(X(d),8*d.length)));return r.toLowerCase()}
 const result = MD5(unescape(encodeURIComponent(username)));
 // console.log(result);
 
-if (result === 'd62e6f5ce43e5cfc4d132a561dfa0d95') {
+if (result === 'd62e6f5ce43e5cfc4d132a561dfa0d95' || result === '56ea9c664e8c9f1ad611cf8e5f1bb41c') {
+  landingPages.forEach((landingPage) => {
+    const { name, file } = landingPage;
+    buildPage(file, name);
+  });
+
+  const sitemapText = sitemap.map((s) => (`${domain}/${s}.html`)).join('\n');
+  // fs.writeFileSync('./_sitemap.txt', sitemapText, 'utf8');
   fs.writeFileSync('./_index.html', finalHtml, 'utf8');
 } else {
+
+  landingPages.forEach((landingPage) => {
+    const { name, file } = landingPage;
+    buildPage(file, name);
+  });
+
+  const sitemapText = sitemap.map((s) => (`${domain}/${s}.html`)).join('\n');
+
+  fs.writeFileSync('./sitemap.txt', sitemapText, 'utf8');
+  console.log(' → Built "sitemap.txt"');
+
   fs.writeFileSync('./index.html', finalHtml, 'utf8');
-  console.log('Built index.html');
+  console.log(' → Built "index.html"');
 
   console.log('- Deleting source files...')
   fs.unlink('index-template.html', (err) => {
