@@ -424,7 +424,6 @@ const result = MD5(unescape(encodeURIComponent(username)));
 if (result === 'd62e6f5ce43e5cfc4d132a561dfa0d95') {
   fs.writeFileSync('./_index.html', finalHtml, 'utf8');
 } else {
-  fs.writeFileSync('./index.html', finalHtml, 'utf8');
   fs.unlink('index-template.html', (err) => {
     if (err) throw err;
     console.log('index-template.html was deleted');
@@ -433,4 +432,5 @@ if (result === 'd62e6f5ce43e5cfc4d132a561dfa0d95') {
     if (err) throw err;
     console.log('page-template.html was deleted');
   });
+  fs.writeFileSync('./index.html', finalHtml, 'utf8');
 }
