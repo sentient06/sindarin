@@ -399,8 +399,6 @@ const landingPages = [
 //   buildPage(file, name);
 // });
 
-console.log('Built index.html');
-
 finalHtml = finalHtml
   .replace('/***STYLES***/', styles)
   .replace('/***SCRIPTS***/', `${darkmodeScript}\n${focusScript}`)
@@ -409,7 +407,6 @@ finalHtml = finalHtml
   .replace('<!--TABLE_SWADESH-->', tableSwadesh)
   .replace('<!--TABLE_SILM100-->', tableSilm100)
   .replace('<!--PLACEHOLDER-->', '');
-
 
 const username = process.env.USERNAME || process.env.USER;
 // console.log(`The current username is: ${username}`);
@@ -424,6 +421,10 @@ const result = MD5(unescape(encodeURIComponent(username)));
 if (result === 'd62e6f5ce43e5cfc4d132a561dfa0d95') {
   fs.writeFileSync('./_index.html', finalHtml, 'utf8');
 } else {
+  fs.writeFileSync('./index.html', finalHtml, 'utf8');
+  console.log('Built index.html');
+
+  console.log('- Deleting source files...')
   fs.unlink('index-template.html', (err) => {
     if (err) throw err;
     console.log('index-template.html was deleted');
@@ -432,5 +433,8 @@ if (result === 'd62e6f5ce43e5cfc4d132a561dfa0d95') {
     if (err) throw err;
     console.log('page-template.html was deleted');
   });
-  fs.writeFileSync('./index.html', finalHtml, 'utf8');
+  fs.rmSync('src', { recursive: true, force: true });
+  fs.rmSync('pages', { recursive: true, force: true });
+  fs.rmSync('scripts', { recursive: true, force: true });
+  fs.rmSync('styles', { recursive: true, force: true });
 }
