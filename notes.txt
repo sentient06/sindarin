@@ -1,0 +1,341 @@
+Random notes that require organising:
+
+
+To be added:
+
+5. Time expressions
+
+More topics:
+
+Adjunct Clauses
+Partitive Constructions - a bit done
+Locative Adverbial Phrases
+
+https://www.cis.upenn.edu/~xtag/tech-report/node1.html
+
+uin:
+https://discord.com/channels/397489292185960468/398407102344986625/1413872360364441711
+
+Prepositions:
+https://discord.com/channels/397489292185960468/1366798511445643325/1422264750334804020
+
+Unproven prepositions:
+
+Wrong type:
+N. pref. ath    + noun soft mutation = 'on both sides, across'
+N. adv.  am?    + noun soft mutation = 'up'
+
+Bollocks?:
+athra  + noun soft mutation = 'across'
+ned    + hard mutation      = 'in'
+ter                         = 'through'
+
+Diminutive and augmentative:
+https://discord.com/channels/397489292185960468/398407102344986625/1427670225372840106
+
+There is some research suggesting that Proto-Uralic used diminutives to designate singular instances from words which are either inherently groups or non-discrete things.
+Sindarin maybe uses diminutives that way too.
+
+
+Word for "during":
+
+mi + -llumë = milume = "during, in [this] time"
+
+https://discord.com/channels/397489292185960468/398407102344986625/1437139215937699951
+
+
+Map of issue with copula:
+
+
+Predication                                         Attribution                       Genitive
+
+Adjectives            Nouns                         Adjectives        Nouns
+
+the elf is tall       An elf is a king              the tall elf      the elf king    a king of elves
+tond en·edhel         edhel te aran                 en·edhel dond     en·edhelaran    aran edhil / aran nan edhil
+tall [is] the elf     [an] elf he [is] [a] king     the elf tall      the elf-king    [a] king [of] elves
+
+an elf is tall        An elf is the king            a tall elf        an elf king     a king of the elves
+tond edhel            er edhel en·aran              edhel dond        edhelaran       aran nan in·edhil
+tall [is] [an] elf    one elf [is] the king         [an] elf tall     elf-king        [a] king of the elves
+
+                      The elf is a king                                               the king of elves
+                      en·edhel aran                                                   en·aran nan edhil
+                      the elf [is] [a] king                                           the king of elves
+
+                      The elf is the king                                             the king of the elves
+                      en·edhel te en·aran                                             aran in·edhil
+                      the elf he [is] the king                                        [the] king [of] the elves
+
+
+PREDICATION:
+
+Adjectives:
+Definite   → "the elf is tall"
+  tond en·edhel = "tall [is] the elf"
+
+Indefinite → "an elf is tall"
+  tond edhel    = "tall [is] [an] elf"
+
+  tond nodui edhel = "tall some elf"
+  tynd edhil       = "tall elves"
+  edhil tynd       = "elves tall"
+  edhil ti dynd    = "elves they tall"
+
+This is ambiguous and IMO would sooner be interpreted as "a tall Elf" with the non-standard / poetic word order.
+If the intended meaning here is that some unspecified individual Elf is tall, then I would add a quantifier "some".
+If, however, the intended meaning is that if an individual is an Elf, then that individual is tall, then this is a generic statement and would be better in plural, "Elves are tall".
+And there it's a question of whether we accept ambiguity in tynd Edhil / Edhil tynd, or we add a pronoun to disambiguate the predicative meaning, Edhil ti dynd.
+Adding a pronoun is functionally useful, but unattested.
+
+
+Nouns:
+Elf and King are both indefinite      → An elf is a king
+  edhel te aran    = "[an] elf he [is] [a] king"
+
+Elf is indefinite / King is definite: → An elf is the king
+  er edhel en·aran = "one elf [is] the king"
+
+Elf is definite / King is indefinite  → The elf is a king
+  en·edhel aran    = "the elf [is] [a] king"
+
+Elf and King are both definite:       → The elf is the king
+  en·edhel te en·aran = "the elf he [is] the king" (maybe?)
+
+ATTRIBUTION:
+
+Adjectives:
+Definite   → "the tall elf"
+  en·edhel dond = "the elf tall"
+
+Indefinite → "a tall elf"
+  edhel dond    = "[an] elf tall"
+
+Nouns:
+Definite   → "the king elf" or "the elf king"
+  en·edhelaran = "the elf-king"
+  en·aran edhellen = "the king elvish"
+  en·edhel arnen = "the elf kingish"
+
+Indefinite → "a king elf" or "an elf king"
+  edhelaran    = "elf-king"
+
+I don't think these are valid.
+I would recommend rephrasing such things with an adjective:
+(en·)Aran Edhellen for "(the) Elf-king".
+The reverse, "King-elf", seems somewhat odd to me in terms of semantics, but perhaps could be satisfactorily expressed as (en·)Edhel arnen.
+
+
+
+GENITIVE
+King and Elves are both indefinite → a king of elves
+  aran edhil     = "[a] king [of] elves"
+  aran nan edhil = "king of elves"
+
+King is indefinite / Elves is definite: → a king of the elves
+
+  aran nan in·edhil = "[a] king of the elves"*
+
+King is definite / Elves is indefinite: → the king of elves
+
+  en·aran nan edhil = "the king of elves"*
+
+King and Elves are both definite → the king of the elves
+  aran in·edhil = "[the] king [of] the elves"
+  en·aran nan in·edhil = "the king of the elves"
+
+
+The two * should be used situationally - mismatches definiteness in genitives results in relatively niche or odd readings.
+
+Compared next to each other to avoid dupes:
+
+aran edhil           = genitive indef indef                   - "[a] king [of] elves"       |
+aran in·edhil        = genitive def def                       - "[the] king [of] the elves" |
+aran nan edhil       = genitive indef indef alt               - "king of elves"             |
+aran nan in·edhil    = genitive indef def                     - "[a] king of the elves"*    |
+edhel dond           = attribution adjectives indef           - "[an] elf tall"             |
+edhel te aran        = predication nouns indef indef          - "[an] elf he [is] [a] king" |
+edhelaran            = attribution nouns indef                - "elf-king"                  |
+edhil ti dynd        = predication adjectives indefinite alt  - "elves they tall"           |
+edhil tynd           = predication adjectives indefinite alt  - "elves tall"                |
+en·aran edhellen     = attribution nouns def alt              - "the king elvish"           |
+en·aran nan edhil    = genitive def indef                     - "the king of elves"*        |
+en·aran nan in·edhil = genitive def def alt                   - "the king of the elves"     |
+en·edhel aran        = predication nouns def indef            - "the elf [is] [a] king"     |
+en·edhel arnen       = attribution nouns def alt              - "the elf kingish"           |
+en·edhel dond        = attribution adjectives def             - "the elf tall"              |
+en·edhel te en·aran  = predication nouns def def              - "the elf he [is] the king"  |
+en·edhelaran         = attribution nouns def                  - "the elf-king"              |
+er edhel en·aran     = predication nouns indef def            - "one elf [is] the king"     |
+tond edhel           = predication adjectives indefinite      - "tall [is] [an] elf"        |
+tond en·edhel        = predication adjectives definite        - "tall [is] the elf"         |
+tond nodui edhel     = predication adjectives indefinite alt  - "tall some elf"             |
+tynd edhil           = predication adjectives indefinite alt  - "tall elves"                |
+
+
+Time:
+
+When something happens (past, present, or future)
+How often it happens (frequency)
+How long it lasts (duration)
+In what order it happens (sequence)
+
+Time Expressions for the Past
+
+Sindarin
+Expression
+  Example Sentence
+
+nuir
+yesterday
+  we met the Noldor yesterday
+  covanner i·ñgelydh nuir
+https://eldamo.org/content/words/word-3527217791.html?neo
+
+odlad (week)
+tell last
+last week / last year
+  he came to Númenor last summer
+  odul na *Dhunnor e·laer *dell
+https://eldamo.org/content/words/word-2184220279.html?neo odlad
+https://eldamo.org/content/words/word-242022079.html?neo tell
+
+oreth (hour)
+an hour ago
+  we will leave in the first hour
+  gwaeathof *vin oreth *vinui
+https://eldamo.org/content/words/word-1155906013.html?neo
+
+alanní = al + and + nî = not long ‹one time›
+[al](https://eldamo.org/content/words/word-214267251.html?neo) +
+[and](https://eldamo.org/content/words/word-3929533291.html?neo) +
+[ni](https://eldamo.org/content/words/word-3630208223.html?neo) = alanní "recently"
+alandlú = not long ‹one time›
+recently
+  angeliannen Edhellen alandlú
+  I learned Sindarin recently
+
+
+io (ago)
+a little while ago
+  The bus left a little while ago.
+
+
+io (ago)
+a long time ago
+  Dinosaurs lived a long time ago.
+https://eldamo.org/content/words/word-188313429.html?neo
+
+gwenwi (past)
+ᴺS. !gwanwas n. “the past, past days, olden times” 
+ᴺS. [ᴱN.], G. ^en adv. “then, [G.] that past,
+in the past
+  People didn’t have the internet in the past.
+https://eldamo.org/content/words/word-3985031835.html?neo
+https://eldamo.org/content/words/word-3193194523.html?neo
+
+amor (morning)
+this morning
+  I had a meeting this morning.
+https://eldamo.org/content/words/word-1930810753.html?neo
+
+nuir/orvedui nui- aur
+the day before yesterday
+  We arrived the day before yesterday.
+https://eldamo.org/content/words/word-3527217791.html?neo
+https://eldamo.org/content/words/word-1895902345.html?neo
+
+?
+when I was a child
+  When I was a child, I had a dog.
+
+
+present
+today   I’m feeling better today.
+this week   We have a lot to do this week.
+now   She is working now.
+as we speak   He’s arriving as we speak.
+at this moment  I can’t talk at this moment.
+these days  These days, I go to the gym regularly.
+nowadays  Nowadays, many people work from home.
+at this time  At this time, we can’t make any changes.
+always / usually  She usually walks to school.
+often / sometimes   We often watch movies together.
+
+future
+tomorrow  I’m seeing the dentist tomorrow.
+next week / next year   We’re going on vacation next week.
+in an hour  The show starts in an hour.
+soon  Dinner will be ready soon.
+in the near future  I hope to buy a car in the near future.
+way off in the future   That technology is way off in the future.
+eventually  They’ll understand eventually.
+later this evening  We’ll call you back later this evening.
+by next month   I’ll be finished by next month.
+someday   I want to visit Japan someday.
+
+frequency
+always  She always drinks coffee in the morning.
+usually   He usually walks to school.
+often   We often go to the movies on weekends.
+sometimes   I sometimes forget my keys.
+rarely  They rarely eat fast food.
+never   I never watch horror movies.
+every day / week  I go to the gym every day.
+once / twice a week   We meet twice a week.
+from time to time   From time to time, I bake cookies.
+
+duration
+for 10 minutes  I waited for 10 minutes.
+for two days  She stayed here for two days.
+all day   He worked all day.
+all night   They studied all night.
+since Monday  I’ve been here since Monday.
+until tomorrow  You can stay until tomorrow.
+till next week  We’re open till next week.
+
+Order and Sequence
+first / firstly   First, we’ll visit the museum.
+then / next   Then, we’ll have lunch.
+after that  After that, we’ll go shopping.
+before  I brushed my teeth before bed.
+earlier / later   He left earlier than expected.
+in the end  In the end, we decided to stay.
+finally   Finally, we caught the bus.
+
+prepositions
+
+Preposition   Used With   Examples
+at  Specific time   at 6 p.m., at midnight
+on  Days or specific dates  on Monday, on July 5th
+in  Months, years, parts of day   in April, in 2022, in the afternoon
+for   Duration  for 10 minutes, for a week
+since   Starting point  since Monday, since last year
+by  Deadline  by 5 p.m., by the weekend
+until / till  Up to a point in time   until Tuesday, till midnight
+
+
+
+Verb lenition issue:
+
+Why is pêd lenited in guren bêd enni while teithant is not lenited in Celebrimbor o Eregion teithant?
+
+In light of the explicit statement in PE23 that verbs should be lenited after the subject, the current working hypothesis is that the lenition does not apply after complex subjects, that is subjects that contain more material after the noun. In the case of Celebrimbor o Eregion, the underlined part is an adjunct which may perhaps block the lenition.
+
+https://discord.com/channels/397489292185960468/398407102344986625/1316100109204979802
+
+I would say that verb lenition after the subject happens only if the subject is a single prosodic word, whereas here you have two, forming a phonological phrase without the verb. In simpler terms for anyone unfamiliar with the terms - if the subject is more than one word, the verb probably doesn't lenite.
+
+https://discord.com/channels/397489292185960468/402164953529712640/1360371081164095660
+
+
+I choose not to soft-mutate m as per the CEA notes that this mutation was abandoned
+
+https://discord.com/channels/397489292185960468/1249156295177670778/1397754911936090223
+
+
+https://eldamo.org/elvish-essays/late-sindarin-articles-and-mutations.html#2.0
+
+Maybe relevant:
+
+According to PE23 verbs following their subjects, nouns or emphatic pronouns. The pronominal subjects of verbs had been agglutinated to the verbal stems already in CE. The normal sentence order in Q., T., and S. was subject, verb, first object, second object. But order was probably freer in CE, and in any case the weaker unemphatic pronominal words were evidently usually subordinated to the important verb stem.

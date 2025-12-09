@@ -82,12 +82,12 @@ const skeleton = [
       },
       {
         name: 'Copular system',
-        anchor: 'copular',
+        anchor: 'copula',
         file: 'copula'
       },
       {
         name: 'Basic nouns',
-        anchor: 'basic_nouns',
+        anchor: 'nouns',
         file: 'nouns'
       },
       {
@@ -196,7 +196,7 @@ const skeleton = [
       },
       {
         name: 'Personal pronoun paradigm',
-        anchor: 'pronouns2',
+        anchor: 'pronoun_paradigm',
         file: 'pronouns2',
       },
       {
@@ -305,8 +305,14 @@ const skeleton = [
 let finalHtml = fs.readFileSync('index-template.html', 'utf8');
 let menu = '<!--MENU-->';
 
-finalHtml = finalHtml.replace(`%date%`, new Date().toJSON().slice(0,10).split('-').reverse().join('/'));
-finalHtml = finalHtml.replace(`%year%`, new Date().toJSON().slice(0,10).split('-')[0]);
+const protoDate = new Date().toJSON().slice(0,10).split('-');
+const bakedYear = protoDate[0];
+const bakedDate = protoDate.reverse().join('/');
+
+finalHtml = finalHtml
+  .replaceAll(`<!--TITLE-->`, "Neo Sindarin - A Stepwise Grammar")
+  .replace(`%date%`, bakedDate)
+  .replace(`%year%`, bakedYear);
 
 let i = 0;
 skeleton.forEach((item) => {
@@ -355,15 +361,54 @@ skeleton.forEach((item) => {
 
 menu = menu.replace('\n<!--MENU-->', '');
 
-const styles = fs.readFileSync(`./style.css`, 'utf8');
+const generalStyle = fs.readFileSync(`./styles/general.css`, 'utf8');
+const indexStyle   = fs.readFileSync(`./styles/index.css`, 'utf8');
+const pagesStyle   = fs.readFileSync(`./styles/pages.css`, 'utf8');
+const styles = `${generalStyle}\n${indexStyle}`;
+const darkmodeScript = fs.readFileSync(`./scripts/darkmode.js`, 'utf8');
+const focusScript = ''; //fs.readFileSync(`./scripts/focus.js`, 'utf8');
+const notesTxt = fs.readFileSync(`./notes.txt`, 'utf8');
+
+const pageHtml = fs.readFileSync('page-template.html', 'utf8');
+
+function buildPage(name, title) {
+  let pageCode = pageHtml;
+  const pageContent = fs.readFileSync(`pages/${name}.html`, 'utf8');
+  const pageStyles = `${generalStyle}\n${pagesStyle}`
+  pageCode = pageCode
+    .replace(`%date%`, bakedDate)
+    .replace(`%year%`, bakedYear)
+    .replaceAll(`<!--TITLE-->`, `Neo Sindarin - ${title}`)
+    .replace(`<!--PLACEHOLDER-->`, pageContent)
+    .replace('/***STYLES***/', pageStyles)
+    .replace('/***SCRIPTS***/', darkmodeScript);
+  fs.writeFileSync(`./out/page_${name}.html`, pageCode, 'utf8');
+  console.log(`Built page_${name}.html`);
+}
+
+const landingPages = [
+  { name: 'Pronouns', file: 'pronouns'},
+  { name: 'Copula', file: 'copula'},
+  { name: 'Nouns', file: 'nouns'},
+  { name: 'Mutations', file: 'mutations'},
+  { name: 'Verbs', file: 'verbs'},
+];
+
+// landingPages.forEach((landingPage) => {
+//   const { name, file } = landingPage;
+//   buildPage(file, name);
+// });
+
+console.log('Built index.html');
 
 finalHtml = finalHtml
   .replace('/***STYLES***/', styles)
+  .replace('/***SCRIPTS***/', `${darkmodeScript}\n${focusScript}`)
   .replace('<!--MENU-->', menu)
+  .replace('<!--NOTES-->', notesTxt)
   .replace('<!--TABLE_SWADESH-->', tableSwadesh)
   .replace('<!--TABLE_SILM100-->', tableSilm100)
   .replace('<!--PLACEHOLDER-->', '');
 
-fs.writeFileSync('index.html', finalHtml, 'utf8');
+fs.writeFileSync('./_index.html', finalHtml, 'utf8');
 
-console.log('Built index.html');
