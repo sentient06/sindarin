@@ -28,6 +28,9 @@ jobs:
     
     - name: Run build script
       run: npm run build
+
+    - name: Delete build script from workspace
+      run: rm build.mjs
     
     - name: Setup Pages
       uses: actions/configure-pages@v4

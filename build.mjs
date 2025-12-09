@@ -1,6 +1,6 @@
 import fs from 'node:fs';
-import { swadesh } from './swadesh.js';
-import { silm100 } from './silm100.js';
+import { swadesh } from './build/swadesh.js';
+import { silm100 } from './build/silm100.js';
 
 const debug = false;
 
@@ -367,7 +367,7 @@ const pagesStyle   = fs.readFileSync(`./styles/pages.css`, 'utf8');
 const styles = `${generalStyle}\n${indexStyle}`;
 const darkmodeScript = fs.readFileSync(`./scripts/darkmode.js`, 'utf8');
 const focusScript = ''; //fs.readFileSync(`./scripts/focus.js`, 'utf8');
-const notesTxt = fs.readFileSync(`./notes.txt`, 'utf8');
+const notesTxt = fs.readFileSync(`./src/notes.txt`, 'utf8');
 
 const pageHtml = fs.readFileSync('page-template.html', 'utf8');
 
@@ -433,8 +433,17 @@ if (result === 'd62e6f5ce43e5cfc4d132a561dfa0d95') {
     if (err) throw err;
     console.log('page-template.html was deleted');
   });
+  fs.unlink('package.json', (err) => {
+    if (err) throw err;
+    console.log('package.json was deleted');
+  });
+  fs.unlink('package-lock.json', (err) => {
+    if (err) throw err;
+    console.log('package-lock.json was deleted');
+  });
   fs.rmSync('src', { recursive: true, force: true });
   fs.rmSync('pages', { recursive: true, force: true });
   fs.rmSync('scripts', { recursive: true, force: true });
   fs.rmSync('styles', { recursive: true, force: true });
+  fs.rmSync('build', { recursive: true, force: true });
 }
