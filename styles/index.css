@@ -61,6 +61,38 @@
     h5 { border-color: rgba(0, 0, 0, 0.05); }
     h6 { border-color: rgba(0, 0, 0, 0.025); }
 
+    footer {
+      opacity: 0.2;
+      display: flex;
+      flex-direction: row;
+      padding-left: 280px;
+      font-size: 0.75em;
+      justify-content: space-between;
+    }
+
+    footer nav {
+      display: block;
+      position: relative;
+      top: unset;
+      left: unset;
+      padding: unset;
+      max-width: unset;
+      font-size: unset;
+      max-height: unset;
+      overflow: unset;
+    }
+
+    footer nav ul {
+      display: flex;
+      list-style: none;
+      flex-direction: row;
+      gap: 3px;
+    }
+
+    footer div {
+      margin-top: 5px;
+    }
+
     @media (max-width: 667px)  {
       nav {
         position: revert;
@@ -68,6 +100,12 @@
       }
       main {
         padding-left: 0;
+      }
+      footer {
+        padding-left: 0;
+      }
+      footer nav ul {
+        display: none;
       }
     }
 
@@ -104,35 +142,3 @@
     .dark-theme h4 { border-color: rgba(255, 255, 255, 0.1); }
     .dark-theme h5 { border-color: rgba(255, 255, 255, 0.05); }
     .dark-theme h6 { border-color: rgba(255, 255, 255, 0.025); }
-
-    footer {
-      opacity: 0.2;
-      display: flex;
-      flex-direction: row;
-      padding-left: 280px;
-      font-size: 0.75em;
-      justify-content: space-between;
-    }
-
-    footer nav {
-      display: block;
-      position: relative;
-      top: unset;
-      left: unset;
-      padding: unset;
-      max-width: unset;
-      font-size: unset;
-      max-height: unset;
-      overflow: unset;
-    }
-
-    footer nav ul {
-      display: flex;
-      list-style: none;
-      flex-direction: row;
-      gap: 3px;
-    }
-
-    footer div {
-      margin-top: 5px;
-    }

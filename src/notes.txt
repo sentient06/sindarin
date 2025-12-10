@@ -339,3 +339,107 @@ https://eldamo.org/elvish-essays/late-sindarin-articles-and-mutations.html#2.0
 Maybe relevant:
 
 According to PE23 verbs following their subjects, nouns or emphatic pronouns. The pronominal subjects of verbs had been agglutinated to the verbal stems already in CE. The normal sentence order in Q., T., and S. was subject, verb, first object, second object. But order was probably freer in CE, and in any case the weaker unemphatic pronominal words were evidently usually subordinated to the important verb stem.
+
+
+Existential:
+
+S. dha v. “there is” (Category: Be)
+
+A word appearing in the phrase inn đa v’im “(lit.) a mind (inn) there is in me = I have a good mind (to do so)” from Late Notes on Verb Structure (LVS) from 1969 (PE22/165). This phrase was first written as inn no v’im with {no >>} đa (PE22/165 note #108). This alteration suggests that đa is a heavily eroded/mutated form of na- “to be”, perhaps particular to this idiomatic phrase. As a counter-argument, đa is being used here in an existential statement “there is = *exists”, and these same 1969 notes state that:
+
+    Stem of verb “exist” (have being in primary world of history) was √EŊE, distinct from √NA joining adjs./nouns/pronouns in statements (or wishes) asserting (or desiring) a thing to have a certain quality, or to be the same as another (PE22/147). 
+
+This means that (in Quenya at least) NA was not used for existential statements. This opens up the possibility that đa is a mutated form of *da- “exists” from an otherwise unattested root *√DA, the Sindarin equivalent of √EÑ.
+
+Neo-Sindarin: Given the speculative nature of this verb, I cannot currently recommend its use in Neo-Sindarin. It is, however, our only known means of making existential statements in that language.
+
+https://eldamo.org/content/words/word-1805153689.html
+
+existential verb da-
+
+nî guinas a glass: I'd use the existential da here, but that comes with two challenges - it's past tense (IMO daun), and whether and how to inflect it for plural. I never thought about the plural form of the past tense... Maybe it remains uninflected, maybe it becomes doner or dóner (< ✶dā·ne·r)? But that somewhat goes against the notion that it ought to be a clitic.
+
+https://discord.com/channels/397489292185960468/402164953529712640/1413889352307576892
+
+For "was not inclined" I used a twist of the attested inn dha v'im, with la < LĀ conceived as the negative equivalent of existential da, likewise formed as an unstressed element. This is somewhat experimental of me...
+
+https://discord.com/channels/397489292185960468/855600238445330452/1296795526271864925
+
+
+https://academy.realelvish.net/2020/07/17/sindarin-grammar-p34-copula/
+
+
+For one, inn no >> đa v’im “I have a good mind (to do so), (lit.) there is an ‘inn’ in me” has a different form
+On Parf Edhellen there is !naw "yes, it is so" < NĀ and most dictionaries list S na- to account for the imperative no aer i eneth lín “hallowed be thy name”, but usually don't indicate that one should use it like any other verb. In the end, inventing a na- paradigm is simply not necessary in most peoples' views, so why take the risk?
+
+https://discord.com/channels/397489292185960468/398407102344986625/1016276175657652265
+
+
+In inn dha v’im, dha is most likely mutated by its  subject inn, so I would posit a base form da-   (cp. also dôd, dád in VT44/22)
+
+https://discord.com/channels/397489292185960468/1425831601077485721/1425832571845214209
+
+That development path seems very unlikely. The Editoral Team's explanation for ped-'s unexpected lenition is connected to the now-disappeared final vowel of guren < ʒorenjā which precedes ped- in the phrase. This is what we may be seeing with inn dha v'im < indō nā [i]mi-imni, with a doubly unexpected lenition of "N > Ð". Either that or √NA has a variant √DA.
+
+Just on the margin: is this da "with" actually attested anywhere? 
+
+No. It's speculation, tied to AD (cf. S. adh, but later a(h) from AS), treated as reversible DA.
+
+https://discord.com/channels/397489292185960468/397490652096626698/412202982936018945
+
+
+there's nothing clear-cut at all about eithro (both its meaning and possible history are just editorial guesses), but let's not go off topic. So, again, IMHO the exact semantics of dha don't matter as long as we limit its use to the attested "there is X in/at/on/under/etc. Y".
+
+I don't think dha and thor are the same lexeme at all. After all, S. phonology wouldn't AFAIK allow anything like that.
+
+https://discord.com/channels/397489292185960468/402164953529712640/599671811294101536
+
+
+Sindarin Grammar P34: Copula
+
+(skipping another minor bridge entry)
+
+https://academy.realelvish.net/2020/07/17/sindarin-grammar-p34-copula/
+https://middangeard.org.uk/aglardh/node/504
+
+In this post I'm proposing something new for a change, in particular specialized past and future copula ne- "was" and tho- "will be", so I'm curious what people think.
+
+
+I think it's stating the obvious. The only objection I might have as for the copula per se: why long primitive vowel in tho, but short in ne?
+
+An important point though: inn dha v'im is not a copular construction, this dha is the existential "to be".
+
+
+Yes, that "dha" (whatever it is) seems to be "there is" like Q. eä- "to exist".
+
+
+VT 44/22.
+
+
+https://discord.com/channels/397489292185960468/397490652096626698/733821821501046894
+
+→
+https://discord.com/channels/397489292185960468/397490652096626698/733848391049805936
+
+
+Dha seems to be an existential verb "to be". It cannot have a direct object
+
+https://discord.com/channels/397489292185960468/478277939264225280/980464955792953395
+
+@Lokyt Someone was asking about whether we have a way of saying "there is..." but was unsure of "dha", which made me revisit our past discussions on it. I saw something interesting. I was saying that it may be "na-" but force-lenited to be "dha" (like m>v, nasal to voiced fricative) due to the possible "eroded form" of the phrase "I have a mind to...". But looks like you thought that I was saying NA > NDA > S. (n)da-, and then reanalysis as simple da-. This actually makes more sense to me, though it was not what I had suggested. Still, the existential form of "dha" could mean that it should not be so closely related to na- which is not existential. But a Primitive variant as simple DA could be far enough in the past to diverge like that perhaps.
+
+Well, at this point, anything is possible. But yes, given clear d... at the end of the first line of Ae Adar nín, it really looks like Tolkien had a verb with full-fledged d- in mind at certain moments
+
+You mean at the beginning of the second line?
+
+The end of the first line of the original (VT 44/23).
+
+https://discord.com/channels/397489292185960468/397490652096626698/1036893421408895017
+
+Given that inn dha v'im the only attested case of "there is" that we have in N./S. at all, I don't think there is much of a choice.
+So indeed yes, it's what I'd recommend. Anything else would be a mere speculation.
+
+https://discord.com/channels/397489292185960468/402164953529712640/1060920810744860744
+
+
+
