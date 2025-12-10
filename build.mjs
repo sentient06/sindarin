@@ -83,7 +83,7 @@ const skeleton = [
       {
         name: 'To be',
         anchor: 'tobe',
-        file: 'copula'
+        file: 'to_be'
       },
       {
         name: 'Basic nouns',
