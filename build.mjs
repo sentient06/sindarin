@@ -82,7 +82,7 @@ const skeleton = [
       },
       {
         name: 'To be',
-        anchor: 'tobe',
+        anchor: 'to_be',
         file: 'to_be'
       },
       {
