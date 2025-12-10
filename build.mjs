@@ -81,8 +81,8 @@ const skeleton = [
         file: 'pronouns'
       },
       {
-        name: 'Copular system',
-        anchor: 'copula',
+        name: 'To be',
+        anchor: 'tobe',
         file: 'copula'
       },
       {
@@ -387,7 +387,7 @@ function buildPage(name, title) {
     .replace(`<!--PLACEHOLDER-->`, pageContent)
     .replace('/***STYLES***/', pageStyles)
     .replace('/***SCRIPTS***/', darkmodeScript);
-  fs.writeFileSync(`./${name}.html`, pageCode, 'utf8');
+  // fs.writeFileSync(`./${name}.html`, pageCode, 'utf8');
   console.log(` → Built page "${name}.html"`);
 }
 

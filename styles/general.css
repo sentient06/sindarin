@@ -341,6 +341,11 @@
       padding: 3px;
     }
 
+    section .sketch {
+      font-style: unset;
+      white-space: unset;
+    }
+
     section + section {
       margin-top: 20px;
     }
@@ -403,6 +408,10 @@
 
       section {
         box-shadow: none !important;
+      }
+
+      .sketch {
+        border: 1px dashed #000;
       }
 
       .soft {
