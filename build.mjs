@@ -2,6 +2,31 @@ import fs from 'node:fs';
 import { swadesh } from './build/swadesh.js';
 import { silm100 } from './build/silm100.js';
 
+/*
+
+[implied]
+
+*italic*
+
+**bold**
+
+***italic bold***
+
+§soft§
+
+§§nasal§§
+
+§§§mixed§§§
+
+@stop@
+
+@@liquid@@
+
+@@@sibilant@@@
+
+*/
+
+
 const debug = false;
 
 function escapeHtml(str = '') {
@@ -86,7 +111,7 @@ const skeleton = [
         file: 'to_be'
       },
       {
-        name: 'Basic nouns',
+        name: 'Nouns',
         anchor: 'nouns',
         file: 'nouns'
       },
@@ -313,6 +338,21 @@ finalHtml = finalHtml
   .replace(`%date%`, bakedDate)
   .replace(`%year%`, bakedYear);
 
+
+function formatShortcuts(str) {
+  return str
+    .replace(/\*\*\*([^\*\n]+)\*\*\*/g, `<b><i>$1</i></b>`)
+    .replace(/\*\*([^\*\n]+)\*\*/g, `<b>$1</b>`)
+    .replace(/\*([^\*\n]+)\*/g, `<i>$1</i>`)
+    .replace(/§§§([^§\n]+)§§§/g, `<span class="mixed">$1</span>`)
+    .replace(/§§([^§\n]+)§§/g, `<span class="nasal">$1</span>`)
+    .replace(/§([^§\n]+)§/g, `<span class="soft">$1</span>`)
+    .replace(/@@@([^@\n]+)@@@/g, `<span class="stop">$1</span>`)
+    .replace(/@@([^@\n]+)@@/g, `<span class="liquid">$1</span>`)
+    .replace(/@([^@\n]+)@/g, `<span class="sibilant">$1</span>`)
+    .replace(/(?<=".*)(\[[^\]\n]+\])(?=[^"^\n]+")/g, `<span class="subtle">$1</span>`);
+}
+
 let i = 0;
 skeleton.forEach((item) => {
   const { file, intro, name, anchor, sections } = item;
@@ -334,17 +374,7 @@ skeleton.forEach((item) => {
 
   if (file) {
     let sectionHtml = fs.readFileSync(`./src/${file}.html`, 'utf8');
-    sectionHtml = sectionHtml
-      .replace(/\*\*\*([^\*\n]+)\*\*\*/g, `<b><i>$1</i></b>`)
-      .replace(/\*\*([^\*\n]+)\*\*/g, `<b>$1</b>`)
-      .replace(/\*([^\*\n]+)\*/g, `<i>$1</i>`)
-      .replace(/§§§([^§\n]+)§§§/g, `<span class="mixed">$1</span>`)
-      .replace(/§§([^§\n]+)§§/g, `<span class="nasal">$1</span>`)
-      .replace(/§([^§\n]+)§/g, `<span class="soft">$1</span>`)
-      .replace(/@@@([^@\n]+)@@@/g, `<span class="stop">$1</span>`)
-      .replace(/@@([^@\n]+)@@/g, `<span class="liquid">$1</span>`)
-      .replace(/@([^@\n]+)@/g, `<span class="sibilant">$1</span>`)
-      .replace(/(?<=".*)(\[[^\]\n]+\])(?=[^"^\n]+")/g, `<span class="subtle">$1</span>`);
+    sectionHtml = formatShortcuts(sectionHtml);
 
     if (debug) {
       finalHtml = finalHtml.replace(`<!--PLACEHOLDER-->`, `[${file}.html]<!--PLACEHOLDER-->`);
@@ -358,18 +388,7 @@ skeleton.forEach((item) => {
       console.log('- - Processing', j+1, section.file, section.anchor, section.name);
       j++;
       let sectionHtml = fs.readFileSync(`./src/${section.file}.html`, 'utf8');
-      sectionHtml = sectionHtml
-        .replace('%section%', `${i}.${j}`)
-        .replace(/\*\*\*([^\*\n]+)\*\*\*/g, `<b><i>$1</i></b>`)
-        .replace(/\*\*([^\*\n]+)\*\*/g, `<b>$1</b>`)
-        .replace(/\*([^\*\n]+)\*/g, `<i>$1</i>`)
-        .replace(/§§§([^§\n]+)§§§/g, `<span class="mixed">$1</span>`)
-        .replace(/§§([^§\n]+)§§/g, `<span class="nasal">$1</span>`)
-        .replace(/§([^§\n]+)§/g, `<span class="soft">$1</span>`)
-        .replace(/@@@([^@\n]+)@@@/g, `<span class="stop">$1</span>`)
-        .replace(/@@([^@\n]+)@@/g, `<span class="liquid">$1</span>`)
-        .replace(/@([^@\n]+)@/g, `<span class="sibilant">$1</span>`)
-        .replace(/(?<=".*)(\[[^\]\n]+\])(?=[^"^\n]+")/g, `<span class="subtle">$1</span>`);
+      sectionHtml = formatShortcuts(sectionHtml.replace('%section%', `${i}.${j}`));
 
       if (debug) {
         finalHtml = finalHtml.replace(`<!--PLACEHOLDER-->`, `[${section.file}.html]<!--PLACEHOLDER-->`);
