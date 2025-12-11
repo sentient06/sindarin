@@ -147,8 +147,8 @@ const skeleton = [
         file: 'numerals'
       },
       {
-        name: 'Syntax',
-        anchor: 'syntax',
+        name: 'Sentence structure',
+        anchor: 'sentence_structure',
         file: 'sentence'
       },
       {
