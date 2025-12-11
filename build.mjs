@@ -122,8 +122,8 @@ const skeleton = [
         file: 'numerals'
       },
       {
-        name: 'Sentence Structure',
-        anchor: 'sentence_structure',
+        name: 'Syntax',
+        anchor: 'syntax',
         file: 'sentence'
       },
       {
@@ -150,7 +150,6 @@ const skeleton = [
   },
   {
     name: 'Prepositions',
-    file: 'intro_prepositions',
     anchor: 'prepositions',
     sections: [
       {
@@ -334,7 +333,19 @@ skeleton.forEach((item) => {
   }
 
   if (file) {
-    const sectionHtml = fs.readFileSync(`./src/${file}.html`, 'utf8');
+    let sectionHtml = fs.readFileSync(`./src/${file}.html`, 'utf8');
+    sectionHtml = sectionHtml
+      .replace(/\*\*\*([^\*\n]+)\*\*\*/g, `<b><i>$1</i></b>`)
+      .replace(/\*\*([^\*\n]+)\*\*/g, `<b>$1</b>`)
+      .replace(/\*([^\*\n]+)\*/g, `<i>$1</i>`)
+      .replace(/§§§([^§\n]+)§§§/g, `<span class="mixed">$1</span>`)
+      .replace(/§§([^§\n]+)§§/g, `<span class="nasal">$1</span>`)
+      .replace(/§([^§\n]+)§/g, `<span class="soft">$1</span>`)
+      .replace(/@@@([^@\n]+)@@@/g, `<span class="stop">$1</span>`)
+      .replace(/@@([^@\n]+)@@/g, `<span class="liquid">$1</span>`)
+      .replace(/@([^@\n]+)@/g, `<span class="sibilant">$1</span>`)
+      .replace(/(?<=".*)(\[[^\]\n]+\])(?=[^"^\n]+")/g, `<span class="subtle">$1</span>`);
+
     if (debug) {
       finalHtml = finalHtml.replace(`<!--PLACEHOLDER-->`, `[${file}.html]<!--PLACEHOLDER-->`);
     }
@@ -347,7 +358,19 @@ skeleton.forEach((item) => {
       console.log('- - Processing', j+1, section.file, section.anchor, section.name);
       j++;
       let sectionHtml = fs.readFileSync(`./src/${section.file}.html`, 'utf8');
-      sectionHtml = sectionHtml.replace('%section%', `${i}.${j}`);
+      sectionHtml = sectionHtml
+        .replace('%section%', `${i}.${j}`)
+        .replace(/\*\*\*([^\*\n]+)\*\*\*/g, `<b><i>$1</i></b>`)
+        .replace(/\*\*([^\*\n]+)\*\*/g, `<b>$1</b>`)
+        .replace(/\*([^\*\n]+)\*/g, `<i>$1</i>`)
+        .replace(/§§§([^§\n]+)§§§/g, `<span class="mixed">$1</span>`)
+        .replace(/§§([^§\n]+)§§/g, `<span class="nasal">$1</span>`)
+        .replace(/§([^§\n]+)§/g, `<span class="soft">$1</span>`)
+        .replace(/@@@([^@\n]+)@@@/g, `<span class="stop">$1</span>`)
+        .replace(/@@([^@\n]+)@@/g, `<span class="liquid">$1</span>`)
+        .replace(/@([^@\n]+)@/g, `<span class="sibilant">$1</span>`)
+        .replace(/(?<=".*)(\[[^\]\n]+\])(?=[^"^\n]+")/g, `<span class="subtle">$1</span>`);
+
       if (debug) {
         finalHtml = finalHtml.replace(`<!--PLACEHOLDER-->`, `[${section.file}.html]<!--PLACEHOLDER-->`);
       }
@@ -364,7 +387,8 @@ menu = menu.replace('\n<!--MENU-->', '');
 const generalStyle = fs.readFileSync(`./styles/general.css`, 'utf8');
 const indexStyle   = fs.readFileSync(`./styles/index.css`, 'utf8');
 const pagesStyle   = fs.readFileSync(`./styles/pages.css`, 'utf8');
-const styles = `${generalStyle}\n${indexStyle}`;
+const styles = `  <style>\n${generalStyle}\n${indexStyle}\n  </style>`;
+
 const darkmodeScript = fs.readFileSync(`./scripts/darkmode.js`, 'utf8');
 const focusScript = ''; //fs.readFileSync(`./scripts/focus.js`, 'utf8');
 const notesTxt = fs.readFileSync(`./src/notes.txt`, 'utf8');
@@ -428,14 +452,15 @@ const landing = landingPages.map((item) => {
 }).join('\n');
 
 finalHtml = finalHtml
-  .replace('/***STYLES***/', styles)
-  .replace('/***SCRIPTS***/', `${darkmodeScript}\n${focusScript}`)
+  .replace('<!--PLACEHOLDER-->', '')
   .replace('<!--MENU-->', menu)
   .replace('<!--NOTES-->', notesTxt)
   .replace('<!--TABLE_SWADESH-->', tableSwadesh)
   .replace('<!--TABLE_SILM100-->', tableSilm100)
   .replace('<!--LANDING-->', landing)
-  .replace('<!--PLACEHOLDER-->', '');
+  .replace('<!--STYLES-->', styles)
+  .replace('/// SCRIPTS ///', `${darkmodeScript}\n${focusScript}`)
+  ;
 
 // console.log(result);
 
@@ -447,7 +472,7 @@ if (result === 'd62e6f5ce43e5cfc4d132a561dfa0d95' || result === '56ea9c664e8c9f1
 
   const sitemapText = sitemap.map((s) => (`${domain}/${s}.html`)).join('\n');
   // fs.writeFileSync('./_sitemap.txt', sitemapText, 'utf8');
-  // fs.writeFileSync('./_index.html', finalHtml, 'utf8');
+  fs.writeFileSync('./_index.html', finalHtml, 'utf8');
 } else {
 
   landingPages.forEach((landingPage) => {
