@@ -43,8 +43,13 @@
   Sindarin allows extended construct chains, where multiple nouns are stacked to create complex phrases.
 </p>
 <pre>
-  parf inias ionnath Elros — "book [of] [the] annals [of] [the] sons [of] Elros"
+  parf inias ionnath Elros — "[the] book [of] [the] annals [of] [the] sons [of] Elros"
 </pre>
+<p>
+  <small>
+    Notice that, because "Elros" is a propern noun, it's considered definite. Because it's the last item in the chain, all other nouns are also definite.
+  </small>
+</p>
 <p>
   Here, the construct has an internal hierarchical structure:
 </p>
@@ -62,9 +67,9 @@
   Here, the construct sequence spans three levels:
 </p>
 <pre>
-  parf inias ionnath Elros – book of [annals of [sons of Elros]]
-  inias ionnath Elros      – annals of [sons of Elros]
-  ionnath Elros            – sons of Elros
+  parf ‹inias ionnath Elros› – the book of ‹the annals of the sons of Elros›
+  inias ‹ionnath Elros›      – the annals of ‹the sons of Elros›
+  ionnath ‹Elros›            – the sons of ‹Elros›
 </pre>
 <h6>
   Adjectives in a construct chain
@@ -73,39 +78,44 @@
   Such constructions are semantically rich but syntactically rigid. Any adjective modifying the chain must follow the entire construct and agree in number with the element it refers to.
 </p>
 <p>
-  The first element of the chain is the head noun. If there is any ambiguity, adjectives by default are interpreted as referring to the head noun. For example:
+  The first element of the chain is the head noun. (In this example, *parf* "the book.") If there is any ambiguity, adjectives by default are interpreted as referring to the head noun. For example:
 </p>
 <pre>
-  <b>parf</b> inias ionnath Elros <span class="soft"><b>vrûn</b></span> = "<b>{old}</b> book [of] annals [of] sons [of] Elros"
-  <b>brûn</b> refers to <b>parf</b>, the head noun
+  brûn = "old"
+
+  **parf** inias ionnath Elros §**vrûn**§ = "[the] **old** book [of] [the] annals [of] [the] sons [of] Elros"
+  
+  **brûn** refers to **parf** - the head noun
 </pre>
 <p>
-  However, if syntactic agreement can indicate that the adjective actually refers to another element, that removes the ambiguity.
+  However, if syntactic agreement can indicate that the adjective actually refers to another element, that removes the ambiguity:
 </p>
 <pre>
-  aglar maethyr en·aran <span class="soft"><b>verin</b></span> = "glory [of the] <b>{brave}</b> warriors [of] the king"
+  beren = "brave" (singular) - plural *berin*
+
+  aglar maethyr en·aran §**verin**§ = "[the] glory [of] [the] **brave** warriors [of] the king"
 </pre>
 <p>
-  <b>berin</b> is plural, so it could only refer to <b>maethyr</b> (warriors).
+  Because **berin** is plural, so it could only refer to **maethyr** (warriors), which is also plural.
 </p>
 <p>
   Semantics can also disambiguate the chain. Example:
 </p>
 <pre>
-  bar en·aran <b>luin</b>  = "the <b>blue</b> house of the king"
-  bar en·aran <b>istui</b> = "the house of the <b>learned</b> king"
+  bar en·aran **luin**  = "[the] **blue** house of the king"
+  bar en·aran **istui** = "[the] house of the **learned** king"
 </pre>
 <p>
   If ambiguity persists and the adjective seems to wrongly refer to the head noun, it needs rephrasing.
 </p>
 <p>
-  Multiple adjectives should show up in reverse order and agree with their modified nouns:
+  Multiple adjectives are also possible, and they should show up, after the chain, in reverse order, and agree with their modified nouns:
 </p>
 <pre>
-  bar en·aran <b>istui</b> <b>luin</b> = "the <b>blue</b> house of the <b>learned</b> king"
+  bar en·aran **istui** **luin** = "the **blue** house of the **learned** king"
 </pre>
 <p>
-  To illustrate the reverse order of adjectives, let's re-use the first chain example:
+  To illustrate the reverse order of adjectives, let's re-use the first chain example and add adjectives:
 </p>
 <pre>
   <i>"the <b>great</b> book of the <b>old</b> annals of the <b>valiant</b> sons of <b>noble</b> Elros"</i>
@@ -126,7 +136,7 @@
   └─────────────────────────────────────────── <span class="soft"><b>veleg</b></span> ──┘
 </pre>
 <p>
-  While that's possible, it's clear it becomes more and more confusing the more noun-adjective pairs are added, therefore it should be discouraged.
+  While that's possible, it's clear it becomes more and more confusing the more noun-adjective pairs are added, therefore this kind of complex construction should be discouraged.
 </p>
 
 <h5>
@@ -143,17 +153,29 @@
   roch <span class="soft"><b>vaer</b></span> aran = "good horse of a king"
 </pre>
 <p>
-  This syntactic rigidity causes ambiguity. Sindarin normally relies on context or emphasis rather than rearrangement to solve that. A few workarounds may serve as reference:
+  This syntactic rigidity causes ambiguity if the adjective or demonstrative is applicable to multiple nouns. Sindarin normally relies on context or emphasis rather than rearrangement to solve that. A few workarounds may serve as reference:
 </p>
 <pre>
+  maer = "good"
+
+  If the horse is good:
+
   Standard, but ambiguous:
-  roch aran <span class="soft"><b>vaer</b></span> = "a horse of a good king"
+  roch aran **maer** = "[a] **good** horse [of] [a] king"
 
   Ungrammatical:
-  <s><span class="soft"><b>vaer</b></span> roch aran = "a good horse of a king"</s>
+  <s>**maer** roch aran = "[a] **good** horse [of] [a] king"</s>
 
   Prepositional genitives can prevent ambiguity:
-  roch <span class="soft"><b>vaer</b></span> <b>nan</b> aran = "good horse of a king"
+  roch **maer** *nan* aran = "[a] **good** horse *‹of a›* king"
+
+  If the King is good:
+
+  Prepositional genitives:
+  roch *nan* aran **maer** = "[a] horse *‹of a›* **good** king"
+
+  Relative pronouns:
+  roch aran, i **maer** = "[a] horse [of] [a] king, who [is] **good**"
 </pre>
 <!-- https://biblicalhebrew.org/how-genitive-constructions-work-in-biblical-hebrew.aspx -->
 
