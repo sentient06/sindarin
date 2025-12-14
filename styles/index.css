@@ -1,35 +1,235 @@
-    nav {
-      position: fixed;
+    body {
+      margin: 0;
+    }
+
+    :root {
+      --sticky-h: 40px;
+    }
+
+    [id] {
+      scroll-margin-top: calc(var(--sticky-h) + 20px);
+    }
+
+    .sticky {
+      position: sticky;
       top: 0;
       left: 0;
-      padding-top: 10px;
-      max-width: 280px;
-      font-size: 0.75em;
-      z-index: 1;
-      max-height: 100%;
-      overflow: auto;
-    }
-    nav ul {
-      margin: 0;
-      padding: 0 0 0 10px;
-      list-style-position: inside;
-      list-style-type: "- ";
-    }
-    nav li,
-    nav li + ul {
-      margin-top: 5px;
+      right: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding-top: 5px;
+      z-index: 2;
     }
 
-    nav ul li a {
+    .sticky-top a {
+      display: block;
+      font-size: 0.9em;
+      width: 50px;
+      text-align: center;
       text-decoration: none;
+      background-color: #1c1c1eff;
+      border-radius: 20px;
+      color: #fff;
+      padding: 5px 0;
+      margin: 0 8px;
     }
 
-    nav ul li a:hover {
-      text-decoration: underline;
+    .sticky nav ul {
+      border-radius: 20px;
+      height: -webkit-fit-content;
+      height: -moz-fit-content;
+      height: fit-content;
+      display: inline-flex;
+      background-color: #1c1c1eff;
+      align-items: center;
+      margin: 0;
+      padding: 0 8px;
+      flex-wrap: wrap;
+    }
+
+    .sticky nav ul ul {
+      border-radius: 0px;
+    }
+
+    .sticky nav li {
+      list-style: none;
+      color: white;
+      padding: 5px 0;
+      margin: 0 8px;
+      position: relative;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .sticky nav ul a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 0.9em;
+    }
+
+    .sticky nav ul li ul {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      padding-left: 0;
+      left: 0;
+      display: none;
+      z-index: 2;
+    }
+
+    .sticky nav ul li:hover > ul,
+    .sticky nav ul li ul:hover {
+      visibility: visible;
+      opacity: 1;
+      display: block;
+      min-width: 250px;
+      text-align: left;
+      box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .sticky nav ul li ul li {
+      clear: both;
+      width: 100%;
+      text-align: left;
+      border-style: none;
+    }
+
+    .sticky nav ul li ul li a {
+      display: block;
+      padding: 3px 0;
+    }
+
+    .sticky nav ul li ul li a:hover {
+      padding-left: 10px;
+      border-left: 2px solid #20b2aa;
+      transition: all 0.3s ease;
+    }
+
+    .sticky nav ul li ul li a {
+      transition: all 0.5s ease;
+    }
+
+    .dark-theme .sticky-top a {
+      background-color: #d8dbe0;
+      color: #000;
+    }
+
+    .dark-theme .sticky nav ul {
+      background-color: #d8dbe0;
+    }
+
+    .dark-theme .sticky nav li {
+      color: #000;
+    }
+
+    .dark-theme .sticky nav ul a {
+      color: #000;
+    }
+
+    @media (max-width: 667px)  {
+      [id] {
+        scroll-margin-top: 0;
+      }
+
+      .sticky {
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: unset;
+        padding-top: 0;
+        z-index: unset;
+      }
+
+      .sticky-top {
+        display: none;
+      }
+
+      .sticky nav ul {
+        border-radius: 0;
+        height: unset;
+        display: block;
+        background-color: unset;
+        align-items: unset;
+        margin: 0 10px;
+        padding: 0 10px;
+        flex-wrap: unset;
+      }
+
+      .sticky nav li {
+        list-style: unset;
+        color: #000;
+        padding: unset;
+        margin: unset;
+        position: relative;
+        cursor: pointer;
+        white-space: unset;
+      }
+
+      .sticky nav li::before {
+        content: unset;
+        position: unset;
+        display: none;
+      }
+
+      .sticky nav ul a {
+        color: unset;
+        font-size: 1em;
+      }
+
+      .sticky nav ul li ul {
+        visibility: visible;
+        opacity: 1;
+        position: relative;
+        padding-left: unset;
+        left: unset;
+        display: block;
+        z-index: unset;
+      }
+
+      .sticky nav ul li:hover > ul,
+      .sticky nav ul li ul:hover {
+        min-width: 100%;
+        box-shadow: unset;
+      }
+
+      .sticky nav ul li ul li a {
+        display: block;
+        padding: 3px 0;
+      }
+
+      .sticky nav ul li ul li a:hover {
+        padding-left: unset;
+        border-left: none;
+        transition: none;
+      }
+
+      .sticky nav ul li ul li a {
+        transition: none;
+      }
+
+      .dark-theme .sticky-top a {
+        background-color: unset;
+        color: unset;
+      }
+
+      .dark-theme .sticky nav ul {
+        background-color: unset;
+      }
+
+      .dark-theme .sticky nav li {
+        color: unset;
+      }
+
+      .dark-theme .sticky nav ul a {
+        color: unset;
+      }
     }
 
     main {
-      padding-left: 280px;
+      max-width: 80em;
+      margin: 0 auto;
+      margin-top: 40px;
     }
 
     h6.h7 { font-size: 1.125em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.25em; margin: 0.5em 0 0 0; }
@@ -38,7 +238,8 @@
     h4 { font-size: 1.602em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.55em; margin: 0.5em 0 0 0; }
     h3 { font-size: 1.802em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.75em; margin: 0.5em 0 0 0; }
     h2 { font-size: 2.027em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;
-      background: azure;
+      background: #333;
+      color: #fff;
       box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 0.25);
       padding: 10px 16px;
     }
@@ -120,6 +321,8 @@
         padding-left: 0;
       }
       h2 {
+        background: none;
+        color: #000;
         box-shadow: none !important;
       }
       h2:has(+ section) {
@@ -130,7 +333,9 @@
     }
 
     .dark-theme h2 {
-      background: #3F5658;
+      background: #fff;
+      color: #000;
+/*      background: #3F5658;*/
       box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 1);
     }
 

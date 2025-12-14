@@ -314,27 +314,21 @@ const skeleton = [
     ]
   },
   {
-    name: 'Vocabulary',
-    anchor: 'vocabulary',
+    name: 'More',
+    anchor: 'more',
     sections: [
       {
         name: 'Word Lists',
         anchor: 'word_lists',
         file: 'word_lists'
+      },
+      {
+        name: 'Time expressions',
+        anchor: 'time',
+        file: 'time'
       }
     ]
-  },
-  // {
-  //   name: 'Other topics',
-  //   anchor: 'other_topics',
-  //   sections: [
-  //     {
-  //       name: 'Time expressions',
-  //       anchor: 'time',
-  //       file: 'time'
-  //     },
-  //   ]
-  // }
+  }
 ];
 
 let finalHtml = fs.readFileSync('index-template.html', 'utf8');
@@ -420,6 +414,7 @@ const pagesStyle   = fs.readFileSync(`./styles/pages.css`, 'utf8');
 const styles = `  <style>\n${generalStyle}\n${indexStyle}\n  </style>`;
 
 const darkmodeScript = fs.readFileSync(`./scripts/darkmode.js`, 'utf8');
+const stickyScript = fs.readFileSync(`./scripts/sticky.js`, 'utf8');
 const focusScript = ''; //fs.readFileSync(`./scripts/focus.js`, 'utf8');
 const notesTxt = fs.readFileSync(`./src/notes.txt`, 'utf8');
 
@@ -489,7 +484,7 @@ finalHtml = finalHtml
   .replace('<!--TABLE_SILM100-->', tableSilm100)
   .replace('<!--LANDING-->', landing)
   .replace('<!--STYLES-->', styles)
-  .replace('/// SCRIPTS ///', `${darkmodeScript}\n${focusScript}`)
+  .replace('/// SCRIPTS ///', `${darkmodeScript}\n${focusScript}\n${stickyScript}`)
   ;
 
 // console.log(result);

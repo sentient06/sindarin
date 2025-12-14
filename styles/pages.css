@@ -5,7 +5,8 @@
     h3 { font-size: 1.602em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.55em; margin: 0.5em 0 0 0; }
     h2 { font-size: 1.802em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.75em; margin: 0.5em 0 0 0; }
     h1 { font-size: 2.027em; line-height: 130%; margin-top: 2em; margin-bottom: 0.75em;
-      background: azure;
+      background: #333;
+      color: #fff;
       box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 0.25);
       padding: 10px 16px;
     }
@@ -28,7 +29,9 @@
     }
 
     .dark-theme h1 {
-      background: #3F5658;
+/*      background: #3F5658;*/
+      background: #fff;
+      color: #000;
       box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 1);
     }
 
