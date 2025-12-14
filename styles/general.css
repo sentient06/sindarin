@@ -412,83 +412,6 @@
     th, td {
       padding: 5px;
     }
-    @media print {
-      .top, .notes {
-        display: none;
-      }
-
-      .dark-theme * {
-        box-shadow: none !important;
-      }
-
-      section {
-        box-shadow: none !important;
-      }
-
-      .sketch {
-        border: 1px dashed #000;
-      }
-
-      .soft {
-        color: #4B2CFF;
-      }
-
-      .nasal {
-        color: #D3358F;
-      }
-
-      .mixed {
-        color: #FF7F0E;
-      }
-
-      .stop {
-        color: #D62728;
-      }
-
-      .liquid {
-        color: #17BECF;
-      }
-
-      .sibilant {
-        color: #2CA02C;
-      }
-
-      .a1, .a2 {
-        white-space: pre;
-        overflow: auto;
-      }
-      .wrapper > .a1,
-      .wrapper > .a2 {
-        border-bottom: 1px solid #bbb;
-        flex: 0 0 100%;
-      }
-
-      details {
-        padding: 0;
-        border: none;
-      }
-
-      .last-updated,
-      .footer {
-        color: rgba(0,0,0,0.5);
-      }
-      .footer {
-        position: absolute;
-        top: 20px;
-        right: 0;
-      }
-
-      .toggler {
-        display: none;
-      }
-    }
-
-    .last-updated,
-    .footer {
-      color: rgba(0,0,0,0.2);
-      font-size: 0.8em;
-      font-family: monospace;
-    }
 
     .last-updated {
       position: absolute;
@@ -496,8 +419,25 @@
       right: 0;
     }
 
-    .footer {
-      text-align: right;
+    .last-updated,
+    footer {
+      opacity: 0.2;
+      font-size: 0.8em;
+      font-family: monospace;
+      min-height: 30px;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: row;
+      padding-left: 280px;
+      font-size: 0.75em;
+      justify-content: space-between;
+    }
+
+    footer > div {
+      line-height: 30px;
+      padding-right: 5px;
     }
 
     .dark-theme {
@@ -615,7 +555,7 @@
     }
 
     .dark-theme .last-updated,
-    .dark-theme .footer {
+    .dark-theme footer {
       color: rgba(255,255,255,0.1);
     }
 
@@ -638,5 +578,86 @@
 
       section .top {
         display: inline-block;
+      }
+    }
+
+    @media print {
+      .top, .notes {
+        display: none;
+      }
+
+      .dark-theme * {
+        box-shadow: none !important;
+      }
+
+      section {
+        box-shadow: none !important;
+      }
+
+      .sketch {
+        border: 1px dashed #000;
+      }
+
+      .soft {
+        color: #4B2CFF;
+      }
+
+      .nasal {
+        color: #D3358F;
+      }
+
+      .mixed {
+        color: #FF7F0E;
+      }
+
+      .stop {
+        color: #D62728;
+      }
+
+      .liquid {
+        color: #17BECF;
+      }
+
+      .sibilant {
+        color: #2CA02C;
+      }
+
+      .a1, .a2 {
+        white-space: pre;
+        overflow: auto;
+      }
+      .wrapper > .a1,
+      .wrapper > .a2 {
+        border-bottom: 1px solid #bbb;
+        flex: 0 0 100%;
+      }
+
+      details {
+        padding: 0;
+        border: none;
+      }
+
+      .last-updated,
+      footer {
+        opacity: 0.5;
+      }
+
+      footer {
+        position: absolute;
+        top: 20px;
+        right: 0;
+      }
+
+      footer > div {
+        line-height: unset;
+        padding-right: unset;
+      }
+
+      footer .year {
+        display: none;
+      }
+
+      .toggler {
+        display: none;
       }
     }
