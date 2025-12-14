@@ -186,69 +186,6 @@ Sindarin
 Expression
   Example Sentence
 
-nuir
-yesterday
-  we met the Noldor yesterday
-  covanner i·ñgelydh nuir
-https://eldamo.org/content/words/word-3527217791.html?neo
-
-odlad (week)
-tell last
-last week / last year
-  he came to Númenor last summer
-  odul na *Dhunnor e·laer *dell
-https://eldamo.org/content/words/word-2184220279.html?neo odlad
-https://eldamo.org/content/words/word-242022079.html?neo tell
-
-oreth (hour)
-an hour ago
-  we will leave in the first hour
-  gwaeathof *vin oreth *vinui
-https://eldamo.org/content/words/word-1155906013.html?neo
-
-alanní = al + and + nî = not long ‹one time›
-[al](https://eldamo.org/content/words/word-214267251.html?neo) +
-[and](https://eldamo.org/content/words/word-3929533291.html?neo) +
-[ni](https://eldamo.org/content/words/word-3630208223.html?neo) = alanní "recently"
-alandlú = not long ‹one time›
-recently
-  angeliannen Edhellen alandlú
-  I learned Sindarin recently
-
-
-io (ago)
-a little while ago
-  The bus left a little while ago.
-
-
-io (ago)
-a long time ago
-  Dinosaurs lived a long time ago.
-https://eldamo.org/content/words/word-188313429.html?neo
-
-gwenwi (past)
-ᴺS. !gwanwas n. “the past, past days, olden times” 
-ᴺS. [ᴱN.], G. ^en adv. “then, [G.] that past,
-in the past
-  People didn’t have the internet in the past.
-https://eldamo.org/content/words/word-3985031835.html?neo
-https://eldamo.org/content/words/word-3193194523.html?neo
-
-amor (morning)
-this morning
-  I had a meeting this morning.
-https://eldamo.org/content/words/word-1930810753.html?neo
-
-nuir/orvedui nui- aur
-the day before yesterday
-  We arrived the day before yesterday.
-https://eldamo.org/content/words/word-3527217791.html?neo
-https://eldamo.org/content/words/word-1895902345.html?neo
-
-?
-when I was a child
-  When I was a child, I had a dog.
-
 
 present
 today   I’m feeling better today.
@@ -450,3 +387,43 @@ avande! get hence! [PE12:33]
 ail oh! ha! etc. [ibid.]
 ene! look (at what you have)! [ibid.]
 iki! look! [PE12:41]
+
+
+
+
+Questions
+
+
+https://discord.com/channels/397489292185960468/398407102344986625/1449696079057522723
+
+man min feleg? a good way to translate "what's in the hole"?
+
+ma vin feleg?
+
+
+tirog ma vin feleg dûr san?
+
+
+If I remember correctly from PE23, Eldarin has wh-movement, so it would be van cenig vin feleg nûr han 
+(See also the additional lenition, and use of ‘Cen’ for basic ‘see’ vs tíra ‘to see, meet, visit’) 
+
+
+
+
+
+
+
+That rather depends on what the intended meaning was in the first place.
+
+If the intention was to ask "What do you see in the cave?", then indeed I'd expect Man cenig vin feleg?
+
+If the intention was rather to say "You see what is in the cave." (technically not a question at all - so probably not the intention here, given the question mark) - here we have a subordinate question - then I would expect Cenig van vin feleg.
+
+If, however, the intention was to ask, "Do you see, what is in the cave?" - here again the wh-question is subordinated, but the main clause is a question too - then I think there would be a disjunction before the subordinate question resulting in no mutation: Cenig, man vin feleg? (or perhaps also with an interrogative particle, Ma genig, man vin feleg?).
+
+Note that in all of this I do not think that object mutation can apply to the wh-word man. The mutations in late Sindarin are triggered by syntactic relations, but the syntactic relation of a wh-word in a language that has wh-movement is not the same as it would be without movement. I do not think mutation can be triggered in this case, at least not by the verb. 
+
+(Though technically there is no verb at all in the question clause in the latter option, which makes me wonder whether some form of da is required here 🤔 )
+
+Actually yeah, I think that is likely. So Cenig, man da vin feleg? "Do you see what is in the cave?" etc.
+

@@ -323,7 +323,18 @@ const skeleton = [
         file: 'word_lists'
       }
     ]
-  }
+  },
+  // {
+  //   name: 'Other topics',
+  //   anchor: 'other_topics',
+  //   sections: [
+  //     {
+  //       name: 'Time expressions',
+  //       anchor: 'time',
+  //       file: 'time'
+  //     },
+  //   ]
+  // }
 ];
 
 let finalHtml = fs.readFileSync('index-template.html', 'utf8');
