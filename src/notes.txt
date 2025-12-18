@@ -436,3 +436,28 @@ Vocative:
 Why is "pedo mellon" not lenited?
 
 https://discord.com/channels/397489292185960468/397490652096626698/1175014450173067336
+
+
+
+
+
+Lenition of m and doriathrin:
+
+
+Tolkien said that this mutation was eventually abandoned, and he explained that this was the case due to the clash with b.
+PE23 isn’t the only place where he expressed some hesitation regarding m lenition
+
+Bear in mind that your comparison above uses attested words and neologisms - the “real” Sindarin language has more words than we have attested.
+
+
+Quote:
+
+> This mutation was preserved in early records (and is reported to have been maintained in Doriath, where however the ṽ remained nasal). But generally it was abandoned as a mutation (it occurred very frequently medially and also[?] even[?] at [the] beginning of second elements of compounds), because of the resulting confusion with mutation of b- (after denasalizing of ṽ) as in morn, black, born, hot, malt, gold, balt, force. The mutation was earliest[?] given up in adjectives, cf. Imloth Melui. [PE23/136]
+
+The mutation was preserved in Doriath, where it was nasalised and therefore distinct from lenited b.
+
+In dialects where it was denasalised it was first given up in adjectives, but also later given up elsewhere "as a *mutation*" (Tolkien's italics!), yet still retained in compounds and such.
+
+In other words, Tolkien intended for m in late Sindarin to not undergo any syntactically-conditioned mutation.
+
+https://discord.com/channels/397489292185960468/397490652096626698/1451165751817015368
