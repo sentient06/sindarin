@@ -207,6 +207,11 @@ const skeleton = [
         anchor: 'prepositions_opposition',
         file: 'prep_opposition'
       },
+      {
+        name: 'Similar prepositions',
+        anchor: 'prepositions_similar',
+        file: 'prep_similar'
+      },
     ]
   },
   {
@@ -352,9 +357,9 @@ function formatShortcuts(str) {
     .replace(/§§§([^§\n]+)§§§/g, `<span class="mixed">$1</span>`)
     .replace(/§§([^§\n]+)§§/g, `<span class="nasal">$1</span>`)
     .replace(/§([^§\n]+)§/g, `<span class="soft">$1</span>`)
-    .replace(/@@@([^@\n]+)@@@/g, `<span class="stop">$1</span>`)
+    .replace(/@@@([^@\n]+)@@@/g, `<span class="sibilant">$1</span>`)
     .replace(/@@([^@\n]+)@@/g, `<span class="liquid">$1</span>`)
-    .replace(/@([^@\n]+)@/g, `<span class="sibilant">$1</span>`)
+    .replace(/@([^@\n]+)@/g, `<span class="stop">$1</span>`)
     .replace(/(?<=".*)(\[[^\]\n]+\])(?=[^"^\n]+")/g, `<span class="subtle">$1</span>`);
 }
 
