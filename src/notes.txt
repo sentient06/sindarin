@@ -187,41 +187,6 @@ Expression
   Example Sentence
 
 
-present
-today   I’m feeling better today.
-this week   We have a lot to do this week.
-now   She is working now.
-as we speak   He’s arriving as we speak.
-at this moment  I can’t talk at this moment.
-these days  These days, I go to the gym regularly.
-nowadays  Nowadays, many people work from home.
-at this time  At this time, we can’t make any changes.
-always / usually  She usually walks to school.
-often / sometimes   We often watch movies together.
-
-future
-tomorrow  I’m seeing the dentist tomorrow.
-next week / next year   We’re going on vacation next week.
-in an hour  The show starts in an hour.
-soon  Dinner will be ready soon.
-in the near future  I hope to buy a car in the near future.
-way off in the future   That technology is way off in the future.
-eventually  They’ll understand eventually.
-later this evening  We’ll call you back later this evening.
-by next month   I’ll be finished by next month.
-someday   I want to visit Japan someday.
-
-frequency
-always  She always drinks coffee in the morning.
-usually   He usually walks to school.
-often   We often go to the movies on weekends.
-sometimes   I sometimes forget my keys.
-rarely  They rarely eat fast food.
-never   I never watch horror movies.
-every day / week  I go to the gym every day.
-once / twice a week   We meet twice a week.
-from time to time   From time to time, I bake cookies.
-
 duration
 for 10 minutes  I waited for 10 minutes.
 for two days  She stayed here for two days.

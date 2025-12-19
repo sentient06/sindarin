@@ -242,6 +242,11 @@ const skeleton = [
         name: 'Relative Pronouns',
         anchor: 'relative_pronouns',
         file: 'relatives',
+      },
+      {
+        name: 'Comparative',
+        anchor: 'comparative',
+        file: 'comparative',
       }
     ]
   },

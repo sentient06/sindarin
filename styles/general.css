@@ -430,7 +430,6 @@
     footer {
       display: flex;
       flex-direction: row;
-      padding-left: 280px;
       font-size: 0.75em;
       justify-content: space-between;
     }
