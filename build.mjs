@@ -359,6 +359,7 @@ function formatShortcuts(str) {
     .replace(/\*\*\*([^\*\n]+)\*\*\*/g, `<b><i>$1</i></b>`)
     .replace(/\*\*([^\*\n]+)\*\*/g, `<b>$1</b>`)
     .replace(/\*([^\*\n]+)\*/g, `<i>$1</i>`)
+    .replace(/±([^±\n]+)±/g, `<small>$1</small>`)
     .replace(/§§§([^§\n]+)§§§/g, `<span class="mixed">$1</span>`)
     .replace(/§§([^§\n]+)§§/g, `<span class="nasal">$1</span>`)
     .replace(/§([^§\n]+)§/g, `<span class="soft">$1</span>`)
