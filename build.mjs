@@ -328,14 +328,14 @@ const skeleton = [
     anchor: 'more',
     sections: [
       {
-        name: 'Word Lists',
-        anchor: 'word_lists',
-        file: 'word_lists'
-      },
-      {
         name: 'Time expressions',
         anchor: 'time',
         file: 'time'
+      },
+      {
+        name: 'Word Lists',
+        anchor: 'word_lists',
+        file: 'word_lists'
       }
     ]
   }
