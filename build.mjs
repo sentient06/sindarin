@@ -419,7 +419,21 @@ skeleton.forEach((item) => {
 
 menu = menu.replace('\n<!--MENU-->', '');
 
-const generalStyle = fs.readFileSync(`./styles/general.css`, 'utf8');
+let generalStyle = '';
+
+const generalStyles = ['base', 'toggler', 'syntax', 'mutations', 'examples'];
+generalStyles.forEach((gs) => {
+  const nextCss = fs.readFileSync(`./styles/gen_${gs}.css`, 'utf8');
+  generalStyle += '\n';
+  generalStyle += nextCss;
+});
+
+const nextCss = fs.readFileSync(`./styles/general.css`, 'utf8');
+generalStyle += '\n';
+generalStyle += nextCss;
+
+
+
 const indexStyle   = fs.readFileSync(`./styles/index.css`, 'utf8');
 const pagesStyle   = fs.readFileSync(`./styles/pages.css`, 'utf8');
 const styles = `  <style>\n${generalStyle}\n${indexStyle}\n  </style>`;

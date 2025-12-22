@@ -1,0 +1,268 @@
+    body {
+      background: #FFF;
+      color: #000;
+    }
+
+    ::-moz-selection,
+    ::selection {
+      color: white;
+      background: #333;
+    }
+
+    .image.right {
+      float: right;
+      max-width: 400px;
+      margin-left: 10px;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      box-sizing: border-box;
+    }
+
+    main pre {
+      overflow: auto;
+    }
+
+    main pre.break {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    small.note {
+      font-style: italic;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    ol.alpha {
+      list-style: lower-alpha;
+    }
+
+    .old {
+      background: linen;
+    }
+
+    .new {
+      background: azure;
+    }
+
+    div.old {
+      padding: 10px;
+    }
+
+    div.new {
+      padding: 10px;
+    }
+
+    div.temp {
+      background: bisque;
+      padding: 10px;
+      font-style: italic;
+    }
+
+    .very_subtle {
+      color: rgba(0, 0, 0, 0.2);
+    }
+
+    .subtle {
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    h3:first-of-type,
+    h4:first-of-type,
+    h5:first-of-type,
+    h6:first-of-type {
+      border-top-width: 0;
+    }
+
+    a {
+      color: #005BBB;
+    }
+
+    b {
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.125);
+    }
+
+    .padded {
+      margin: 0 10px;
+    }
+
+
+    section {
+      box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 0.25);
+      padding: 0px 20px 10px 20px;
+      background: #FFF;
+      position: relative;
+    }
+
+    .sketch {
+      margin-top: 20px;
+      padding: 1px 20px;
+      padding-top: 20px;
+      position: relative;
+      border: 1px dashed #000;
+      -webkit-text-size-adjust: 100%;
+      white-space: break-spaces;
+      font-family: monospace;
+      font-size: 1em;
+      max-width: 100%;
+      font-style: italic;
+    }
+
+    .sketch:before {
+      content: "Sketch";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: antiquewhite;
+      padding: 3px;
+    }
+
+    section .sketch {
+      font-style: unset;
+      white-space: unset;
+    }
+
+    section + section {
+      margin-top: 20px;
+    }
+
+    section .top {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+    }
+
+    .top {
+      background: #555;
+      color: #FFF;
+      text-decoration: none;
+      padding: 2px 20px;
+    }
+
+    .anchor_wrapper {
+      position: relative;
+    }
+
+    small small {
+      font-size: 0.6em;
+    }
+
+    details {
+      padding: 10px;
+      border: 1px solid #bbb;
+      background: ghostwhite;
+      overflow: auto;
+    }
+
+    details summary {
+      cursor: pointer;
+    }
+
+    summary + table {
+      margin-top: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    th, td {
+      padding: 5px;
+    }
+
+    .last-updated {
+      position: absolute;
+      top: 40px;
+      right: 0;
+    }
+
+    .last-updated,
+    footer {
+      opacity: 0.2;
+      font-size: 0.8em;
+      font-family: monospace;
+      min-height: 30px;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: row;
+      font-size: 0.75em;
+      justify-content: space-between;
+    }
+
+    footer > div {
+      line-height: 30px;
+      padding-right: 5px;
+    }
+
+    .dark-theme {
+      background: #1C1C1EFF;
+      color: #F2F2F7FF;
+    }
+
+    .dark-theme ::-moz-selection,
+    .dark-theme ::selection {
+      color: #333;
+      background: white;
+    }
+
+    .dark-theme a {
+      color: #70CBFF;
+    }
+
+    .dark-theme b {
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.125);
+      color: #FFF;
+    }
+
+    .dark-theme div.temp {
+      background: maroon;
+    }
+
+    .dark-theme .very_subtle {
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .dark-theme .subtle {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .dark-theme .last-updated {
+      color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .dark-theme section {
+      box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 1);
+      background: #2C2C2EFF;
+    }
+
+    .dark-theme .top {
+      background: #CCC;
+      color: #000;
+    }
+
+    .dark-theme details {
+      border-color: #333;
+      background: darkslategray;
+    }
+
+    .dark-theme .sketch {
+      border-color: #fff;
+    }
+
+    .dark-theme .sketch:before {
+      background: sienna;
+    }

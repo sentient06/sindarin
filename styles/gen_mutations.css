@@ -1,0 +1,113 @@
+    .soft {
+      border-radius: 0.4em 0 0.3em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(43, 184, 255, 0.2),
+        rgba(43, 184, 255, 0.7) 95%,
+        rgba(43, 184, 255, 0.1)
+      );
+    }
+
+    .nasal {
+      border-radius: 0.4em 0 0.3em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(241, 103, 243, 0.2),
+        rgba(241, 103, 243, 0.7) 95%,
+        rgba(241, 103, 243, 0.1)
+      );
+    }
+
+    .mixed {
+      border-radius: 0.4em 0 0.3em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(255, 120, 12, 0.2),
+        rgba(255, 120, 12, 0.7) 95%,
+        rgba(255, 120, 12, 0.1)
+      );
+    }
+
+    .stop {
+      border-radius: 1em 0 1em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(250, 30, 30, 0.2),
+        rgba(250, 30, 30, 0.7) 95%,
+        rgba(250, 30, 30, 0.1)
+      );
+    }
+
+    .liquid {
+      border-radius: 1em 0 1em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(2, 250, 186, 0.2),
+        rgba(2, 250, 186, 0.7) 95%,
+        rgba(2, 250, 186, 0.1)
+      );
+    }
+
+    .sibilant {
+      border-radius: 1em 0 1em 0;
+      background-image: linear-gradient(
+        -100deg,
+        rgba(144, 255, 24, 0.2),
+        rgba(144, 255, 24, 0.7) 95%,
+        rgba(144, 255, 24, 0.1)
+      );
+    }
+
+    .dark-theme .soft {
+      background-image: linear-gradient(
+        -100deg,
+        rgba(13, 104, 175, 0.2),
+        rgba(13, 104, 175, 0.7) 95%,
+        rgba(13, 104, 175, 0.1)
+      );
+    }
+
+    .dark-theme .nasal {
+      background-image: linear-gradient(
+        -100deg,
+        rgba(181, 33, 183, 0.2),
+        rgba(181, 33, 183, 0.7) 95%,
+        rgba(181, 33, 183, 0.1)
+      );
+    }
+
+    .dark-theme .mixed {
+      background-image: linear-gradient(
+        -100deg,
+        rgba(255, 120, 12, 0.2),
+        rgba(255, 120, 12, 0.7) 95%,
+        rgba(255, 120, 12, 0.1)
+      );
+    }
+
+    .dark-theme .stop {
+      background-image: linear-gradient(
+        -100deg,
+        rgba(250, 30, 30, 0.2),
+        rgba(250, 30, 30, 0.7) 95%,
+        rgba(250, 30, 30, 0.1)
+      );
+    }
+
+    .dark-theme .liquid {
+      background-image: linear-gradient(
+        -100deg,
+        rgba(2, 190, 136, 0.2),
+        rgba(2, 190, 136, 0.7) 95%,
+        rgba(2, 190, 136, 0.1)
+      );
+    }
+
+    .dark-theme .sibilant {
+      background-image: linear-gradient(
+        -100deg,
+        rgba(84, 195, 24, 0.2),
+        rgba(84, 195, 24, 0.7) 95%,
+        rgba(84, 195, 24, 0.1)
+      );
+    }
