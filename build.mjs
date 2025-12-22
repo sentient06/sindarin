@@ -328,7 +328,7 @@ const skeleton = [
     anchor: 'more',
     sections: [
       {
-        name: 'Time expressions',
+        name: 'Time language',
         anchor: 'time',
         file: 'time'
       },
