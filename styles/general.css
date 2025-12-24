@@ -43,8 +43,15 @@
         position: unset;
         display: block;
         height: 24px;
-        padding: 10px 10px 0px 10px;
+        padding: 10px;
         zoom: 1.5;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      .last-updated {
+        position: relative;
+        text-align: right;
       }
 
       section .top {
@@ -53,7 +60,7 @@
     }
 
     @media print {
-      .top, .notes {
+      .dont-print, .top, .notes {
         display: none;
       }
 

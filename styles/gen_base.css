@@ -1,12 +1,27 @@
     body {
+      margin: 0;
       background: #FFF;
       color: #000;
+    }
+
+    main {
+      max-width: 80em;
+      margin: 0 auto;
+      margin-top: 40px;
     }
 
     ::-moz-selection,
     ::selection {
       color: white;
       background: #333;
+    }
+
+    a {
+      color: #005BBB;
+    }
+
+    b {
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.125);
     }
 
     .image.right {
@@ -65,6 +80,11 @@
       font-style: italic;
     }
 
+    a.inner-link {
+      color: darkcyan;
+      text-shadow: 0 0 3px rgba(0, 255, 0, 0.25);
+    }
+
     .very_subtle {
       color: rgba(0, 0, 0, 0.2);
     }
@@ -78,14 +98,6 @@
     h5:first-of-type,
     h6:first-of-type {
       border-top-width: 0;
-    }
-
-    a {
-      color: #005BBB;
-    }
-
-    b {
-      text-shadow: 0 0 3px rgba(0, 0, 0, 0.125);
     }
 
     .padded {
@@ -221,6 +233,11 @@
 
     .dark-theme a {
       color: #70CBFF;
+    }
+
+    .dark-theme a.inner-link {
+      color: aqua;
+      text-shadow: 0 0 3px rgba(0, 255, 0, 0.75);
     }
 
     .dark-theme b {

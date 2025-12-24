@@ -24,10 +24,30 @@ import { silm100 } from './build/silm100.js';
 
 @@@sibilant@@@
 
+||file||link||
+
 */
 
 
+// Source - https://stackoverflow.com/a
+// Posted by valdeci, modified by community. See post 'Timeline' for change history
+// Retrieved 2025-12-09, License - CC BY-SA 4.0
+const MD5 = function(d){var r = M(V(Y(X(d),8*d.length)));return r.toLowerCase()};function M(d){for(var _,m="0123456789ABCDEF",f="",r=0;r<d.length;r++)_=d.charCodeAt(r),f+=m.charAt(_>>>4&15)+m.charAt(15&_);return f}function X(d){for(var _=Array(d.length>>2),m=0;m<_.length;m++)_[m]=0;for(m=0;m<8*d.length;m+=8)_[m>>5]|=(255&d.charCodeAt(m/8))<<m%32;return _}function V(d){for(var _="",m=0;m<32*d.length;m+=8)_+=String.fromCharCode(d[m>>5]>>>m%32&255);return _}function Y(d,_){d[_>>5]|=128<<_%32,d[14+(_+64>>>9<<4)]=_;for(var m=1732584193,f=-271733879,r=-1732584194,i=271733878,n=0;n<d.length;n+=16){var h=m,t=f,g=r,e=i;f=md5_ii(f=md5_ii(f=md5_ii(f=md5_ii(f=md5_hh(f=md5_hh(f=md5_hh(f=md5_hh(f=md5_gg(f=md5_gg(f=md5_gg(f=md5_gg(f=md5_ff(f=md5_ff(f=md5_ff(f=md5_ff(f,r=md5_ff(r,i=md5_ff(i,m=md5_ff(m,f,r,i,d[n+0],7,-680876936),f,r,d[n+1],12,-389564586),m,f,d[n+2],17,606105819),i,m,d[n+3],22,-1044525330),r=md5_ff(r,i=md5_ff(i,m=md5_ff(m,f,r,i,d[n+4],7,-176418897),f,r,d[n+5],12,1200080426),m,f,d[n+6],17,-1473231341),i,m,d[n+7],22,-45705983),r=md5_ff(r,i=md5_ff(i,m=md5_ff(m,f,r,i,d[n+8],7,1770035416),f,r,d[n+9],12,-1958414417),m,f,d[n+10],17,-42063),i,m,d[n+11],22,-1990404162),r=md5_ff(r,i=md5_ff(i,m=md5_ff(m,f,r,i,d[n+12],7,1804603682),f,r,d[n+13],12,-40341101),m,f,d[n+14],17,-1502002290),i,m,d[n+15],22,1236535329),r=md5_gg(r,i=md5_gg(i,m=md5_gg(m,f,r,i,d[n+1],5,-165796510),f,r,d[n+6],9,-1069501632),m,f,d[n+11],14,643717713),i,m,d[n+0],20,-373897302),r=md5_gg(r,i=md5_gg(i,m=md5_gg(m,f,r,i,d[n+5],5,-701558691),f,r,d[n+10],9,38016083),m,f,d[n+15],14,-660478335),i,m,d[n+4],20,-405537848),r=md5_gg(r,i=md5_gg(i,m=md5_gg(m,f,r,i,d[n+9],5,568446438),f,r,d[n+14],9,-1019803690),m,f,d[n+3],14,-187363961),i,m,d[n+8],20,1163531501),r=md5_gg(r,i=md5_gg(i,m=md5_gg(m,f,r,i,d[n+13],5,-1444681467),f,r,d[n+2],9,-51403784),m,f,d[n+7],14,1735328473),i,m,d[n+12],20,-1926607734),r=md5_hh(r,i=md5_hh(i,m=md5_hh(m,f,r,i,d[n+5],4,-378558),f,r,d[n+8],11,-2022574463),m,f,d[n+11],16,1839030562),i,m,d[n+14],23,-35309556),r=md5_hh(r,i=md5_hh(i,m=md5_hh(m,f,r,i,d[n+1],4,-1530992060),f,r,d[n+4],11,1272893353),m,f,d[n+7],16,-155497632),i,m,d[n+10],23,-1094730640),r=md5_hh(r,i=md5_hh(i,m=md5_hh(m,f,r,i,d[n+13],4,681279174),f,r,d[n+0],11,-358537222),m,f,d[n+3],16,-722521979),i,m,d[n+6],23,76029189),r=md5_hh(r,i=md5_hh(i,m=md5_hh(m,f,r,i,d[n+9],4,-640364487),f,r,d[n+12],11,-421815835),m,f,d[n+15],16,530742520),i,m,d[n+2],23,-995338651),r=md5_ii(r,i=md5_ii(i,m=md5_ii(m,f,r,i,d[n+0],6,-198630844),f,r,d[n+7],10,1126891415),m,f,d[n+14],15,-1416354905),i,m,d[n+5],21,-57434055),r=md5_ii(r,i=md5_ii(i,m=md5_ii(m,f,r,i,d[n+12],6,1700485571),f,r,d[n+3],10,-1894986606),m,f,d[n+10],15,-1051523),i,m,d[n+1],21,-2054922799),r=md5_ii(r,i=md5_ii(i,m=md5_ii(m,f,r,i,d[n+8],6,1873313359),f,r,d[n+15],10,-30611744),m,f,d[n+6],15,-1560198380),i,m,d[n+13],21,1309151649),r=md5_ii(r,i=md5_ii(i,m=md5_ii(m,f,r,i,d[n+4],6,-145523070),f,r,d[n+11],10,-1120210379),m,f,d[n+2],15,718787259),i,m,d[n+9],21,-343485551),m=safe_add(m,h),f=safe_add(f,t),r=safe_add(r,g),i=safe_add(i,e)}return Array(m,f,r,i)}function md5_cmn(d,_,m,f,r,i){return safe_add(bit_rol(safe_add(safe_add(_,d),safe_add(f,i)),r),m)}function md5_ff(d,_,m,f,r,i,n){return md5_cmn(_&m|~_&f,d,_,r,i,n)}function md5_gg(d,_,m,f,r,i,n){return md5_cmn(_&f|m&~f,d,_,r,i,n)}function md5_hh(d,_,m,f,r,i,n){return md5_cmn(_^m^f,d,_,r,i,n)}function md5_ii(d,_,m,f,r,i,n){return md5_cmn(m^(_|~f),d,_,r,i,n)}function safe_add(d,_){var m=(65535&d)+(65535&_);return(d>>16)+(_>>16)+(m>>16)<<16|65535&m}function bit_rol(d,_){return d<<_|d>>>32-_}
+const username = process.env.USERNAME || process.env.USER;
+const result = MD5(unescape(encodeURIComponent(username)));
+const runner = '4bad0b8dd3074cd43f641c2ac22a3571'
+const isRunner = result === runner;
+console.log(`The current username is: ${username}`);
+const softGen = isRunner === false;
 const debug = false;
+
+console.log(`Soft generation is ${softGen ? 'true' : 'false'}`);
+
+if (softGen) {
+  fs.mkdir('./out', { recursive: true }, (err) => {
+    if (err) throw err;
+  });
+}
 
 function escapeHtml(str = '') {
   return String(str)
@@ -207,11 +227,11 @@ const skeleton = [
         anchor: 'prepositions_opposition',
         file: 'prep_opposition'
       },
-      {
-        name: 'Similar prepositions',
-        anchor: 'prepositions_similar',
-        file: 'prep_similar'
-      },
+      // {
+      //   name: 'Similar prepositions',
+      //   anchor: 'prepositions_similar',
+      //   file: 'prep_similar'
+      // },
     ]
   },
   {
@@ -326,20 +346,11 @@ const skeleton = [
   {
     name: 'More',
     anchor: 'more',
-    sections: [
-      {
-        name: 'Time language',
-        anchor: 'time',
-        file: 'time'
-      },
-      {
-        name: 'Word Lists',
-        anchor: 'word_lists',
-        file: 'word_lists'
-      }
-    ]
-  }
+    file: 'more'
+  },
 ];
+
+// Index file:
 
 let finalHtml = fs.readFileSync('index-template.html', 'utf8');
 let menu = '<!--MENU-->';
@@ -366,6 +377,7 @@ function formatShortcuts(str) {
     .replace(/@@@([^@\n]+)@@@/g, `<span class="sibilant">$1</span>`)
     .replace(/@@([^@\n]+)@@/g, `<span class="liquid">$1</span>`)
     .replace(/@([^@\n]+)@/g, `<span class="stop">$1</span>`)
+    .replace(/\|\|([^\|\n]+)\|\|([^\|\n]+)\|\|/g, `<a href="$1.html" class="inner-link">$2</a>`)
     .replace(/(?<=".*)(\[[^\]\n]+\])(?=[^"^\n]+")/g, `<span class="subtle">$1</span>`);
 }
 
@@ -421,7 +433,7 @@ menu = menu.replace('\n<!--MENU-->', '');
 
 let generalStyle = '';
 
-const generalStyles = ['base', 'toggler', 'syntax', 'mutations', 'examples'];
+const generalStyles = ['base', 'sticky', 'toggler', 'syntax', 'mutations', 'examples'];
 generalStyles.forEach((gs) => {
   const nextCss = fs.readFileSync(`./styles/gen_${gs}.css`, 'utf8');
   generalStyle += '\n';
@@ -443,91 +455,228 @@ const stickyScript = fs.readFileSync(`./scripts/sticky.js`, 'utf8');
 const focusScript = ''; //fs.readFileSync(`./scripts/focus.js`, 'utf8');
 const notesTxt = fs.readFileSync(`./src/notes.txt`, 'utf8');
 
-const pageHtml = fs.readFileSync('page-template.html', 'utf8');
+const pageHtmlTemplate = fs.readFileSync('page-template.html', 'utf8');
 
 const domain = 'https://sindarin.mariot.uk';
 const sitemap = ['index'];
 
-const username = process.env.USERNAME || process.env.USER;
-console.log(`The current username is: ${username}`);
 
-// Source - https://stackoverflow.com/a
-// Posted by valdeci, modified by community. See post 'Timeline' for change history
-// Retrieved 2025-12-09, License - CC BY-SA 4.0
-const MD5 = function(d){var r = M(V(Y(X(d),8*d.length)));return r.toLowerCase()};function M(d){for(var _,m="0123456789ABCDEF",f="",r=0;r<d.length;r++)_=d.charCodeAt(r),f+=m.charAt(_>>>4&15)+m.charAt(15&_);return f}function X(d){for(var _=Array(d.length>>2),m=0;m<_.length;m++)_[m]=0;for(m=0;m<8*d.length;m+=8)_[m>>5]|=(255&d.charCodeAt(m/8))<<m%32;return _}function V(d){for(var _="",m=0;m<32*d.length;m+=8)_+=String.fromCharCode(d[m>>5]>>>m%32&255);return _}function Y(d,_){d[_>>5]|=128<<_%32,d[14+(_+64>>>9<<4)]=_;for(var m=1732584193,f=-271733879,r=-1732584194,i=271733878,n=0;n<d.length;n+=16){var h=m,t=f,g=r,e=i;f=md5_ii(f=md5_ii(f=md5_ii(f=md5_ii(f=md5_hh(f=md5_hh(f=md5_hh(f=md5_hh(f=md5_gg(f=md5_gg(f=md5_gg(f=md5_gg(f=md5_ff(f=md5_ff(f=md5_ff(f=md5_ff(f,r=md5_ff(r,i=md5_ff(i,m=md5_ff(m,f,r,i,d[n+0],7,-680876936),f,r,d[n+1],12,-389564586),m,f,d[n+2],17,606105819),i,m,d[n+3],22,-1044525330),r=md5_ff(r,i=md5_ff(i,m=md5_ff(m,f,r,i,d[n+4],7,-176418897),f,r,d[n+5],12,1200080426),m,f,d[n+6],17,-1473231341),i,m,d[n+7],22,-45705983),r=md5_ff(r,i=md5_ff(i,m=md5_ff(m,f,r,i,d[n+8],7,1770035416),f,r,d[n+9],12,-1958414417),m,f,d[n+10],17,-42063),i,m,d[n+11],22,-1990404162),r=md5_ff(r,i=md5_ff(i,m=md5_ff(m,f,r,i,d[n+12],7,1804603682),f,r,d[n+13],12,-40341101),m,f,d[n+14],17,-1502002290),i,m,d[n+15],22,1236535329),r=md5_gg(r,i=md5_gg(i,m=md5_gg(m,f,r,i,d[n+1],5,-165796510),f,r,d[n+6],9,-1069501632),m,f,d[n+11],14,643717713),i,m,d[n+0],20,-373897302),r=md5_gg(r,i=md5_gg(i,m=md5_gg(m,f,r,i,d[n+5],5,-701558691),f,r,d[n+10],9,38016083),m,f,d[n+15],14,-660478335),i,m,d[n+4],20,-405537848),r=md5_gg(r,i=md5_gg(i,m=md5_gg(m,f,r,i,d[n+9],5,568446438),f,r,d[n+14],9,-1019803690),m,f,d[n+3],14,-187363961),i,m,d[n+8],20,1163531501),r=md5_gg(r,i=md5_gg(i,m=md5_gg(m,f,r,i,d[n+13],5,-1444681467),f,r,d[n+2],9,-51403784),m,f,d[n+7],14,1735328473),i,m,d[n+12],20,-1926607734),r=md5_hh(r,i=md5_hh(i,m=md5_hh(m,f,r,i,d[n+5],4,-378558),f,r,d[n+8],11,-2022574463),m,f,d[n+11],16,1839030562),i,m,d[n+14],23,-35309556),r=md5_hh(r,i=md5_hh(i,m=md5_hh(m,f,r,i,d[n+1],4,-1530992060),f,r,d[n+4],11,1272893353),m,f,d[n+7],16,-155497632),i,m,d[n+10],23,-1094730640),r=md5_hh(r,i=md5_hh(i,m=md5_hh(m,f,r,i,d[n+13],4,681279174),f,r,d[n+0],11,-358537222),m,f,d[n+3],16,-722521979),i,m,d[n+6],23,76029189),r=md5_hh(r,i=md5_hh(i,m=md5_hh(m,f,r,i,d[n+9],4,-640364487),f,r,d[n+12],11,-421815835),m,f,d[n+15],16,530742520),i,m,d[n+2],23,-995338651),r=md5_ii(r,i=md5_ii(i,m=md5_ii(m,f,r,i,d[n+0],6,-198630844),f,r,d[n+7],10,1126891415),m,f,d[n+14],15,-1416354905),i,m,d[n+5],21,-57434055),r=md5_ii(r,i=md5_ii(i,m=md5_ii(m,f,r,i,d[n+12],6,1700485571),f,r,d[n+3],10,-1894986606),m,f,d[n+10],15,-1051523),i,m,d[n+1],21,-2054922799),r=md5_ii(r,i=md5_ii(i,m=md5_ii(m,f,r,i,d[n+8],6,1873313359),f,r,d[n+15],10,-30611744),m,f,d[n+6],15,-1560198380),i,m,d[n+13],21,1309151649),r=md5_ii(r,i=md5_ii(i,m=md5_ii(m,f,r,i,d[n+4],6,-145523070),f,r,d[n+11],10,-1120210379),m,f,d[n+2],15,718787259),i,m,d[n+9],21,-343485551),m=safe_add(m,h),f=safe_add(f,t),r=safe_add(r,g),i=safe_add(i,e)}return Array(m,f,r,i)}function md5_cmn(d,_,m,f,r,i){return safe_add(bit_rol(safe_add(safe_add(_,d),safe_add(f,i)),r),m)}function md5_ff(d,_,m,f,r,i,n){return md5_cmn(_&m|~_&f,d,_,r,i,n)}function md5_gg(d,_,m,f,r,i,n){return md5_cmn(_&f|m&~f,d,_,r,i,n)}function md5_hh(d,_,m,f,r,i,n){return md5_cmn(_^m^f,d,_,r,i,n)}function md5_ii(d,_,m,f,r,i,n){return md5_cmn(m^(_|~f),d,_,r,i,n)}function safe_add(d,_){var m=(65535&d)+(65535&_);return(d>>16)+(_>>16)+(m>>16)<<16|65535&m}function bit_rol(d,_){return d<<_|d>>>32-_}
-const result = MD5(unescape(encodeURIComponent(username)));
-const runner = '4bad0b8dd3074cd43f641c2ac22a3571'
-const isRunner = result === runner;
+function processSection(extantHtml, name, anchor, file, idx) {
+  let finalHtml = extantHtml;
+  let sectionHtml = fs.readFileSync(`./pages/${file}.html`, 'utf8');
+  sectionHtml = sectionHtml.replace('%section%', `${idx + 1}.`);
+  sectionHtml = formatShortcuts(sectionHtml);
+  finalHtml = `${finalHtml}\n${sectionHtml}`;
+  return finalHtml;
+}
 
+function buildPage(pageObj) {
+  const { name, in: _in, out, skip, callback, sections } = pageObj;
+  // console.log(` ~> name: ${name}, in: ${_in}, out: ${out}, skip: ${skip ? 'true' : 'false'}, callback: ${callback ? 'true' : 'false'}, sections: ${sections?.length}`);
+  let fileInput   = _in;
+  let fileOutput  = out || _in;
+  let pageCode    = pageHtmlTemplate;
+  let pageHtml    = fileInput ? fs.readFileSync(`pages/${fileInput}.html`, 'utf8') : '';
+  let pageStyles  = `${generalStyle}\n${pagesStyle}`;
+  let pageScripts = `${darkmodeScript}`;
+  
+  sitemap.push(fileOutput);
 
-function buildPage(name, title) {
-  sitemap.push(name);
-  let pageCode = pageHtml;
-  const pageContent = fs.readFileSync(`pages/${name}.html`, 'utf8');
-  const pageStyles = `${generalStyle}\n${pagesStyle}`
+  // Setup basic values:
   pageCode = pageCode
     .replace(`%date%`, bakedDate)
     .replace(`%year%`, bakedYear)
-    .replaceAll(`<!--PAGE_NAME-->`, `${title}`)
-    .replaceAll(`<!--TITLE-->`, `Neo Sindarin - ${title}`)
-    .replace(`<!--PLACEHOLDER-->`, pageContent)
-    .replace('/***STYLES***/', pageStyles)
-    .replace('/***SCRIPTS***/', darkmodeScript);
-  if (isRunner) {
-    fs.writeFileSync(`./${name}.html`, pageCode, 'utf8');
-    console.log(` → Built page "${name}.html"`);
+    .replaceAll(`<!--PAGE_NAME-->`, `${name}`)
+    .replaceAll(`<!--TITLE-->`, `Neo Sindarin - ${name}`);
+    
+  // Setup CSS and JS:
+  pageCode = pageCode
+    .replace('<!--STYLES-->', `  <style>\n${pageStyles}\n  </style>`)
+    .replace('/// SCRIPTS ///', darkmodeScript);
+
+  // Setup HTML:
+  if (sections) {
+    sections.forEach((section, idx) => {
+      const { name, anchor, file } = section;
+      pageHtml = processSection(pageHtml, name, anchor, file, idx);
+    });
   }
+  if (callback) {
+    pageHtml = callback(pageHtml);
+  }
+  pageHtml = formatShortcuts(pageHtml);
+  pageCode = pageCode
+    .replace(`<!--PLACEHOLDER-->`, pageHtml)
+
+  if (softGen) {
+    fs.writeFileSync(`./out/${fileOutput}.html`, pageCode, 'utf8');
+  } else {
+    fs.writeFileSync(`./${fileOutput}.html`, pageCode, 'utf8');
+  }
+  console.log(` → Built page "${fileOutput}.html"`);
 }
 
 const landingPages = [
-  { name: 'Pronouns', file: 'pronouns'},
-  { name: 'Copula', file: 'copula'},
-  { name: 'Nouns', file: 'nouns'},
-  { name: 'Mutations', file: 'mutations'},
-  { name: 'Verbs', file: 'verbs'},
-  { name: 'Articles', file: 'articles'},
-  { name: 'Adjectives', file: 'adjectives'},
-  { name: 'Numerals', file: 'numerals'},
-  { name: 'Sentence Structure', file: 'sentence_structure' },
-  { name: 'Adverbs', file: 'adverbs'},
-  { name: 'Negation', file: 'negation'},
-  { name: 'Yes and no', file: 'yesno'},
-  { name: 'Conjunctions', file: 'conjunctions'},
-  { name: 'Prepositions', file: 'prepositions'},
-  { name: 'Genitive', file: 'genitive'},
+  {
+    name: 'Pronouns',
+    in: 'pronouns' 
+  },
+  // {
+  //   name: 'Copula',
+  //   in: 'copula' 
+  // },
+  {
+    name: 'Nouns',
+    in: 'nouns' 
+  },
+  {
+    name: 'Mutations',
+    in: 'mutations' 
+  },
+  {
+    name: 'Verbs',
+    in: 'verbs' 
+  },
+  {
+    name: 'Articles',
+    in: 'articles' 
+  },
+  {
+    name: 'Adjectives',
+    in: 'adjectives' 
+  },
+  {
+    name: 'Numerals',
+    in: 'numerals' 
+  },
+  {
+    name: 'Sentence Structure',
+    in: 'sentence_structure'  
+  },
+  {
+    name: 'Adverbs',
+    in: 'adverbs' 
+  },
+  {
+    name: 'Negation',
+    in: 'negation' 
+  },
+  {
+    name: 'Yes and no',
+    in: 'yesno' 
+  },
+  {
+    name: 'Conjunctions',
+    in: 'conjunctions' 
+  },
+  // {
+  //   name: 'Prepositions',
+  //   in: 'prepositions' 
+  // },
+  {
+    name: 'Genitive',
+    in: 'genitive' 
+  },
+  {
+    name: 'Word lists',
+    in: 'word_lists',
+    skip: true,
+    callback: (code) => {
+    return code
+      .replace('<!--TABLE_SWADESH-->', tableSwadesh)
+      .replace('<!--TABLE_SILM100-->', tableSilm100);
+    }
+  },
+  {
+    name: 'Time words and expressions',
+    in: 'time',
+    skip: true
+  },
+  {
+    name: 'Copula',
+    in: 'copula',
+    skip: true
+  },
+  {
+    name: 'Prepositions',
+    skip: true,
+    out: 'prepositions',
+    sections: [
+      {
+        name: 'Overview',
+        anchor: 'prepositions_overview',
+        file: 'prep_overview'
+      },
+      {
+        name: 'Prepositions of space',
+        anchor: 'prepositions_space',
+        file: 'prep_space'
+      },
+      {
+        name: 'Prepositions of time',
+        anchor: 'prepositions_time',
+        file: 'prep_time'
+      },
+      {
+        name: 'Prepositions of association, means, and possession',
+        anchor: 'prepositions_means',
+        file: 'prep_means'
+      },
+      {
+        name: 'Prepositions of comparison',
+        anchor: 'prepositions_comparison',
+        file: 'prep_role'
+      },
+      {
+        name: 'Prepositions of exclusion and opposition',
+        anchor: 'prepositions_opposition',
+        file: 'prep_opposition'
+      },
+      {
+        name: 'Similar prepositions',
+        anchor: 'prepositions_similar',
+        file: 'prep_similar'
+      },
+    ],
+  },
 ];
 
-const landing = landingPages.map((item) => {
-  return `      <li><a href="${item.file}.html">${item.name}</a></li>`;
+const landing = landingPages.filter((item) => {
+  if (item.hasOwnProperty('skip')) {
+    if (item.skip === true) {
+      return false;
+    }
+  }
+  return true;
+}).map((item) => {
+    return `      <li><a href="${item.file}.html">${item.name}</a></li>`;
 }).join('\n');
 
 finalHtml = finalHtml
   .replace('<!--PLACEHOLDER-->', '')
   .replace('<!--MENU-->', menu)
   .replace('<!--NOTES-->', notesTxt)
-  .replace('<!--TABLE_SWADESH-->', tableSwadesh)
-  .replace('<!--TABLE_SILM100-->', tableSilm100)
   .replace('<!--LANDING-->', landing)
   .replace('<!--STYLES-->', styles)
   .replace('/// SCRIPTS ///', `${darkmodeScript}\n${focusScript}\n${stickyScript}`)
   ;
 
-// console.log(result);
-
-if (result === 'd62e6f5ce43e5cfc4d132a561dfa0d95' || result === '56ea9c664e8c9f1ad611cf8e5f1bb41c') {
+// if (result === 'd62e6f5ce43e5cfc4d132a561dfa0d95' || result === '56ea9c664e8c9f1ad611cf8e5f1bb41c') {
+if (softGen) {
   landingPages.forEach((landingPage) => {
-    const { name, file } = landingPage;
-    buildPage(file, name);
+    buildPage(landingPage);
   });
 
   const sitemapText = sitemap.map((s) => (`${domain}/${s}.html`)).join('\n');
-  // fs.writeFileSync('./_sitemap.txt', sitemapText, 'utf8');
-  fs.writeFileSync('./_index.html', finalHtml, 'utf8');
+  fs.writeFileSync('./out/sitemap.txt', sitemapText, 'utf8');
+
+
+
+  fs.writeFileSync('./out/index.html', finalHtml, 'utf8');
 } else {
 
   landingPages.forEach((landingPage) => {
-    const { name, file } = landingPage;
-    buildPage(file, name);
+    buildPage(landingPage);
   });
 
   const sitemapText = sitemap.map((s) => (`${domain}/${s}.html`)).join('\n');
