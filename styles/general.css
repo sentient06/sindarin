@@ -8,7 +8,7 @@
       }
       .wrapper > .a1,
       .wrapper > .a2 {
-        flex: 0 0 100%;         /* each takes full width → A1, A2, A1, A2, ... */
+        flex: 0 0 100%;
       }
 
       .b30, .b40, .b60, .b70, .b50 {

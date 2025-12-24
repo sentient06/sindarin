@@ -16,9 +16,9 @@
       justify-content: space-around;
       padding-top: 5px;
       z-index: 2;
-/*      background-color: #1c281a;*/
       background-color: #f1f1f1;
       min-height: 30px;
+      box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.25);
     }
 
     .sticky-top a,
@@ -28,9 +28,6 @@
       width: 50px;
       text-align: center;
       text-decoration: none;
-/*      background-color: #1c1c1eff;*/
-/*      border-radius: 20px;*/
-/*      color: #fff;*/
       color: #000;
       padding: 5px 0;
       margin: 0 8px;
@@ -39,17 +36,13 @@
     .sticky nav {
       flex-grow: 2;
       max-width: 80em;
-/*      background: red;*/
     }
 
     .sticky nav ul {
-/*      border-radius: 20px;*/
       height: -webkit-fit-content;
       height: -moz-fit-content;
       height: fit-content;
       display: inline-flex;
-/*      background-color: #1c1c1eff;*/
-/*      background-color: #1c281a;*/
       background-color: #f1f1f1;
       align-items: center;
       margin: 0;
@@ -73,7 +66,6 @@
 
     .sticky nav ul a {
       text-decoration: none;
-/*      color: #fff;*/
       color: #000;
       font-size: 0.9em;
     }
@@ -112,8 +104,6 @@
 
     .sticky nav ul li ul li a:hover {
       padding-left: 10px;
-/*      border-left: 2px solid #20b2aa;*/
-/*      border-left: 2px solid #f0d795;*/
       border-left: 2px solid #1c281a;
       transition: all 0.3s ease;
     }
@@ -133,7 +123,6 @@
     }
 
     .dark-theme .sticky nav ul {
-/*      background-color: #d8dbe0;*/
       background-color: #1c281a;
     }
 
