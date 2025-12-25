@@ -679,7 +679,7 @@ if (softGen) {
     buildPage(landingPage);
   });
 
-  const sitemapText = sitemap.map((s) => (`${domain}/${s}.html`)).join('\n');
+  const sitemapText = sitemap.map((s) => (`${domain}/${s ? `${s}.html` : ''}`)).join('\n');
 
   fs.writeFileSync('./sitemap.txt', sitemapText, 'utf8');
   console.log(' → Built "sitemap.txt"');
