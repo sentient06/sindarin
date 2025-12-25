@@ -458,7 +458,7 @@ const notesTxt = fs.readFileSync(`./src/notes.txt`, 'utf8');
 const pageHtmlTemplate = fs.readFileSync('page-template.html', 'utf8');
 
 const domain = 'https://sindarin.mariot.uk';
-const sitemap = ['index'];
+const sitemap = [''];
 
 
 function processSection(extantHtml, name, anchor, file, idx) {
