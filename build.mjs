@@ -487,6 +487,7 @@ function buildPage(pageObj) {
     .replace(`%date%`, bakedDate)
     .replace(`%year%`, bakedYear)
     .replaceAll(`<!--PAGE_NAME-->`, `${name}`)
+    .replaceAll(`<!--CANONICAL-->`, `${fileOutput}.html`)
     .replaceAll(`<!--TITLE-->`, `Neo Sindarin - ${name}`);
     
   // Setup CSS and JS:
