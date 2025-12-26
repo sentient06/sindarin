@@ -335,6 +335,11 @@ const skeleton = [
     anchor: 'word_formation',
     sections: [
       {
+        name: 'Making compound words',
+        anchor: 'compounds',
+        file: 'compound-example'
+      },
+      {
         name: 'Diminutive',
         anchor: 'diminutive',
         file: 'diminutive'
@@ -375,8 +380,19 @@ function formatShortcuts(str) {
     .replace(/\*([^\*\n]+)\*/g, `<i>$1</i>`)
     .replace(/±([^±\n]+)±/g, `<small>$1</small>`)
     .replace(/§§§([^§\n]+)§§§/g, `<span class="mixed">$1</span>`)
+    .replace(/§§([^§\n\s-]+)§([^§\n\s-]+)§§/g, `<abbr class="nasal" title="$1">$2</abbr>`)
     .replace(/§§([^§\n]+)§§/g, `<span class="nasal">$1</span>`)
+    .replace(/§([^§\n\s-]+)§([^§\n\s-]+)§/g, `<abbr class="soft" title="$1">$2</abbr>`)
     .replace(/§([^§\n]+)§/g, `<span class="soft">$1</span>`)
+    // .replace(/§(([^§\n]{1})[^§\n]{1})([^§\n]+)§/g, (match, p1, p2, p3, offset, str) => {
+    //   const mutated = `${p1}${p3}`;
+    //   let unmutated = mutated;
+    //   console.log('>>>>', mutated, p1, p2, p3);
+    //   if (p2 === 'b') {
+    //     unmutated = unmutated.replace('b', 'p');
+    //   }
+    //   return `<abbr class="soft" title="${unmutated}">${mutated}</abbr>`;
+    // })
     .replace(/@@@([^@\n]+)@@@/g, `<span class="sibilant">$1</span>`)
     .replace(/@@([^@\n]+)@@/g, `<span class="liquid">$1</span>`)
     .replace(/@([^@\n]+)@/g, `<span class="stop">$1</span>`)
