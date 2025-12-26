@@ -117,6 +117,9 @@ const skeleton = [
     file: 'intro',
   },
   {
+    file: 'fundamentals',
+  },
+  {
     name: 'Fundamentals',
     anchor: 'fundamentals',
     sections: [
