@@ -673,7 +673,8 @@ const landing = landingPages.filter((item) => {
   }
   return true;
 }).map((item) => {
-    return `      <li><a href="${item.file}.html">${item.name}</a></li>`;
+  const fileName = item?.out || item?.in || '404';
+  return `      <li><a href="${fileName}.html">${item.name}</a></li>`;
 }).join('\n');
 
 finalHtml = finalHtml
