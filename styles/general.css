@@ -1,16 +1,4 @@
     @media (max-width: 560px) {
-      .a1, .a2 {
-        white-space: pre;
-        overflow: auto;
-      }
-      .wrapper > .a1 {
-        border-bottom-width: 0;
-      }
-      .wrapper > .a1,
-      .wrapper > .a2 {
-        flex: 0 0 100%;
-      }
-
       .b30, .b40, .b60, .b70, .b50 {
         flex: 0 0 100%;
         border-bottom-width: 0;
@@ -98,16 +86,6 @@
 
       .sibilant {
         color: #2CA02C;
-      }
-
-      .a1, .a2 {
-        white-space: pre;
-        overflow: auto;
-      }
-      .wrapper > .a1,
-      .wrapper > .a2 {
-        border-bottom: 1px solid #bbb;
-        flex: 0 0 100%;
       }
 
       details {
