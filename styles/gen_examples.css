@@ -3,7 +3,7 @@
       flex-wrap: wrap;
     }
 
-    .b30, .b40, .b60, .b70, .b50 {
+    .b30, .b40, .b60, .b70, .b50, .b50b {
       -webkit-text-size-adjust: 100%;
       white-space: break-spaces;
       font-family: monospace;
@@ -17,7 +17,7 @@
       border-bottom-width: 1px;
     }
 
-    .b50 {
+    .b50, .b50b {
       flex: 0 0 50%;            /* two items per row: left + right */
     }
 
@@ -47,6 +47,7 @@
     .dark-theme .b30,
     .dark-theme .b40,
     .dark-theme .b50,
+    .dark-theme .b50b,
     .dark-theme .b60,
     .dark-theme .b70 {
       border-color: rgba(255, 255, 255, 0.1);
