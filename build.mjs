@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import { swadesh } from './build/swadesh.js';
 import { silm100 } from './build/silm100.js';
+import { mutationsA, mutationsB } from './build/mutations.js';
 
 /*
 
@@ -109,8 +110,112 @@ function renderTableRows(list, ignoreIndex = false) {
   return rows.join('\n');
 }
 
+function renderMutations(mutations) {
+  console.log('> renderMutations ------------------------------------------');
+
+  let table = [];
+  let columns = [];
+
+  let colLen = [];
+
+  const typeStr = "[object String]";
+  const typeArr = "[object Array]";
+
+  // Define lengths of columns:
+  mutations.rows.forEach((row, i) => {
+    console.log(' - row', i);
+    row.forEach((col, j) => {
+      let celLength = colLen[j] || 0;
+
+      const rowType = Object.prototype.toString.call(col);
+
+      if (rowType === typeStr) {
+        // newRow[j] = col;
+        celLength = Math.max(celLength, col.length);
+        console.log(' - - col s', typeof col, j, col, celLength);
+      } else
+
+      if (rowType === typeArr) {
+        let _celLength = 0
+        col.reduce((acc, val, idx) => {
+          if (val.indexOf('[') > -1 && val.indexOf(']') > -1) {
+            _celLength += val.length - 2;
+          } else {
+            _celLength += val.length;
+          }
+        });
+        _celLength += (col.length - 1) * 2;
+        celLength = Math.max(celLength, _celLength);
+        console.log(' - - col a', typeof col, j, col, celLength);
+      }
+
+      colLen[j] = celLength;
+    });
+  });
+
+  const padVal = 5;
+
+  // Write lines:
+  mutations.rows.forEach((row, i) => {
+    table[i] = [];
+    const makeBold = i === 0;
+    row.forEach((col, j) => {
+      const rowType = Object.prototype.toString.call(col);
+      const firstItem = j === 0;
+
+      let _value = "";
+
+      if (rowType === typeStr) {
+        if (makeBold) {
+          const padSize = colLen[j] + padVal - col.length;
+          const boldVal = `<b>${col}</b>`;
+          _value = boldVal.padEnd(boldVal.length + padSize, ' ');
+        } else {
+          _value = col.padEnd(colLen[j] + padVal, ' ');
+        }
+
+        if (firstItem) {
+          _value = _value.padStart(_value.length + 2, ' ');
+        }
+
+      } else
+
+      if (rowType === typeArr) {
+        let hoverLen = colLen[j] + padVal - col.map(v => v.replace(/\[/, '').replace(/\]/, '')).join(', ').length;
+        console.log('~~~~~> a ', colLen[j], padVal, col.map(v => v.replace(/\[/, '').replace(/\]/, '')).join(', '));
+        const hoverVal = col.map((mut, l) => {
+          let newMut = mut;
+          const hoverOrg = j > 1 ? row[1][l] : '';
+          const quiet = hoverOrg === newMut ? ' quiet' : '';
+
+          if (mut.indexOf('[') > -1 && mut.indexOf(']') > -1) {
+            newMut = mut
+              .replace(/\[/g, `<span class="quiet">`)
+              .replace(/\]/g, `</span>`);
+          }
+
+          console.log('~~~~~> b ', hoverOrg, newMut, quiet, hoverLen);
+          return `<span class="c_${l}${quiet}">${newMut}</span>`;
+        }).join(', ');
+        _value = hoverVal.padEnd(hoverVal.length + hoverLen, ' ');
+      }
+
+      table[i][j] = _value;
+    });
+  });
+
+  let tableStr = table.map(row => row.join('')).map(_r => (`<span class="row">${_r}</span>`)).join('\n');
+
+
+  console.log('X renderMutations ------------------------------------------');
+
+  return tableStr;
+}
+
 const tableSwadesh = renderTableRows(swadesh);
 const tableSilm100 = renderTableRows(silm100, true);
+const tableMutationsA = renderMutations(mutationsA);
+const tableMutationsB = renderMutations(mutationsB);
 
 const skeleton = [
   {
@@ -141,7 +246,12 @@ const skeleton = [
       {
         name: 'Consonant mutations',
         anchor: 'mutations',
-        file: 'mutations'
+        file: 'mutations',
+        callback: (code) => {
+        return code
+          .replace('<!--MUTATIONS-A-->', tableMutationsA)
+          .replace('<!--MUTATIONS-B-->', tableMutationsB);
+        }
       },
       {
         name: 'Basic verbs',
@@ -406,7 +516,7 @@ function formatShortcuts(str) {
 
 let i = 0;
 skeleton.forEach((item) => {
-  const { file, intro, name, anchor, sections } = item;
+  const { file, intro, name, anchor, sections, callback } = item;
 
   console.log('\n- Processing', i+1, file || '--', name || '--', anchor || '--', sections?.length || '--');
 
@@ -425,6 +535,9 @@ skeleton.forEach((item) => {
 
   if (file) {
     let sectionHtml = fs.readFileSync(`./src/${file}.html`, 'utf8');
+    if (callback) {
+      sectionHtml = callback(sectionHtml);
+    }
     sectionHtml = formatShortcuts(sectionHtml);
 
     if (debug) {
@@ -439,6 +552,11 @@ skeleton.forEach((item) => {
       console.log('- - Processing', j+1, section.file, section.anchor, section.name);
       j++;
       let sectionHtml = fs.readFileSync(`./src/${section.file}.html`, 'utf8');
+      if (section.hasOwnProperty('callback')) {
+        if (section.callback) {
+          sectionHtml = section.callback(sectionHtml);
+        }
+      }
       sectionHtml = formatShortcuts(sectionHtml.replace('%section%', `${i}.${j}`));
 
       if (debug) {
@@ -555,7 +673,7 @@ const landingPages = [
   },
   {
     name: 'Mutations',
-    in: 'mutations' 
+    in: 'mutations'
   },
   {
     name: 'Verbs',

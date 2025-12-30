@@ -111,3 +111,55 @@
         rgba(84, 195, 24, 0.1)
       );
     }
+
+    .row .quiet {
+      color: rgba(0, 0, 0, 0.2);
+    }
+
+    .row .quiet .quiet {
+      color: rgba(0, 0, 0, 0.1);
+    }
+
+    .row:has(.c_0:hover) .c_0,
+    .row:has(.c_1:hover) .c_1,
+    .row:has(.c_2:hover) .c_2,
+    .row:has(.c_3:hover) .c_3,
+    .row:has(.c_4:hover) .c_4 {
+      color: blue;
+      text-shadow: 0 0 10px rgba(0, 100, 255, 1);
+    }
+
+    .row:has(.c_0:hover) .c_0.quiet,
+    .row:has(.c_1:hover) .c_1.quiet,
+    .row:has(.c_2:hover) .c_2.quiet,
+    .row:has(.c_3:hover) .c_3.quiet,
+    .row:has(.c_4:hover) .c_4.quiet {
+      color: rgba(0, 0, 0, 0.2);
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .dark-theme .row .quiet {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .dark-theme .row .quiet .quiet {
+      color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dark-theme .row:has(.c_0:hover) .c_0,
+    .dark-theme .row:has(.c_1:hover) .c_1,
+    .dark-theme .row:has(.c_2:hover) .c_2,
+    .dark-theme .row:has(.c_3:hover) .c_3,
+    .dark-theme .row:has(.c_4:hover) .c_4 {
+      color: deepskyblue;
+      text-shadow: 0 0 10px rgba(0, 100, 255, 1);
+    }
+
+    .dark-theme .row:has(.c_0:hover) .c_0.quiet,
+    .dark-theme .row:has(.c_1:hover) .c_1.quiet,
+    .dark-theme .row:has(.c_2:hover) .c_2.quiet,
+    .dark-theme .row:has(.c_3:hover) .c_3.quiet,
+    .dark-theme .row:has(.c_4:hover) .c_4.quiet {
+      color: rgba(255, 255, 255, 0.3);
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
