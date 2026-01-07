@@ -612,7 +612,7 @@ function processSection(extantHtml, name, anchor, file, idx) {
 }
 
 function buildPage(pageObj) {
-  const { name, in: _in, out, skip, callback, sections } = pageObj;
+  const { name, in: _in, out, skip, callback, sections, css } = pageObj;
   // console.log(` ~> name: ${name}, in: ${_in}, out: ${out}, skip: ${skip ? 'true' : 'false'}, callback: ${callback ? 'true' : 'false'}, sections: ${sections?.length}`);
   let fileInput   = _in;
   let fileOutput  = out || _in;
@@ -620,6 +620,13 @@ function buildPage(pageObj) {
   let pageHtml    = fileInput ? fs.readFileSync(`pages/${fileInput}.html`, 'utf8') : '';
   let pageStyles  = `${generalStyle}\n${pagesStyle}`;
   let pageScripts = `${darkmodeScript}`;
+
+  if (css) {
+    css.forEach((cssFile) => {
+      const cssFileCode = fs.readFileSync(`styles/${cssFile}.css`, 'utf8');
+      pageStyles += `\n${cssFileCode}`;
+    });
+  }
   
   sitemap.push(fileOutput);
 
@@ -673,7 +680,14 @@ const landingPages = [
   },
   {
     name: 'Mutations',
-    in: 'mutations'
+    in: 'mutations_old',
+    skip: true
+  },
+  {
+    name: 'Mutations table',
+    in: 'mutations',
+    css: ['mutations_table'],
+    skip: true
   },
   {
     name: 'Verbs',

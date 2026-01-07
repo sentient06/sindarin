@@ -12,21 +12,21 @@ export const mutationsA = {
 			["p", "t", "c"],
 			["b", "d", "g"],
 			["ph", "th", "ch"],
-			["b", "d", "g"]
+			["m·b", "n·d", "ñ·g"]
 		],
 		[
 			"Voiced Stops",
 			["b", "d", "g"],
 			["v", "dh", "'"],
 			["m", "n", "ñ (or ng)"],
-			["b", "d", "g"]
+			["m·b", "n·d", "ñ·g"]
 		],
 		[
 			"Nasalised Stops",
 			["[m]b", "[n]d", "[n]g"],
 			["m", "n", "ñ (or ng)"],
 			["m", "n", "ñ (or ng)"],
-			["mb", "nd", "ng"]
+			["m·b", "n·d", "ñ·g"]
 		],
 		[
 			"Sibilants and Spirants",
@@ -40,7 +40,7 @@ export const mutationsA = {
 			["lh", "rh"],
 			["thl", "thr"],
 			["thl", "thr"],
-			["'l", "'r"]
+			["thl", "thr"]
 		],
 		[
 			"Nasals",

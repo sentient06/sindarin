@@ -12,8 +12,8 @@
 
     ::-moz-selection,
     ::selection {
-      color: white;
-      background: #333;
+      color: #f0d795;
+      background: #1c281a;
     }
 
     a {
@@ -39,6 +39,15 @@
 
     main pre {
       overflow: auto;
+    }
+
+    blockquote {
+      border: 0 solid #ccc;
+      border-left-width: 4px;
+      padding-left: 10px;
+      font-family: Georgia, "Palatino Linotype", Palatino, serif;
+      font-size: 0.9em;
+      line-height: 1.5em;
     }
 
     main pre.break {
@@ -242,8 +251,8 @@
 
     .dark-theme ::-moz-selection,
     .dark-theme ::selection {
-      color: #333;
-      background: white;
+      color: #1c281a;
+      background: #f0d795;
     }
 
     .dark-theme a {
