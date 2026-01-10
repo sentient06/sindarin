@@ -306,3 +306,55 @@
       content: "";
       padding: 0;
     }
+
+    .table .td:has(.note),
+    .table .tr.note .td {
+      position: relative;
+    }
+
+    .table .td:has(.note)::before,
+    .table .tr.note .td:first-of-type::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 0.7em;
+      padding: 5px;
+      font-style: italic;
+      background: rgba(0,0,0,0.1);
+      display: none;
+    }
+
+    body:has(#toggle-notes:checked) .table .td:has(.note)::before,
+    body:has(#toggle-notes:checked) .table .tr.note .td:first-of-type::before {
+      display: block;
+    }
+
+    .table .td:has(.note-1)::before,
+    .table .tr.note-1 .td:first-of-type::before {
+      content: "1";
+    }
+
+    .table .td:has(.note-2)::before,
+    .table .tr.note-2 .td:first-of-type::before {
+      content: "2";
+    }
+
+    .table .td:has(.note-3)::before,
+    .table .tr.note-3 .td:first-of-type::before {
+      content: "3";
+    }
+
+    .table .td:has(.note-4)::before,
+    .table .tr.note-4 .td:first-of-type::before {
+      content: "4";
+    }
+
+    .table .td:has(.note-5)::before,
+    .table .tr.note-5 .td:first-of-type::before {
+      content: "5";
+    }
+
+    .table .td:has(.note-6)::before,
+    .table .tr.note-6 .td:first-of-type::before {
+      content: "6";
+    }
