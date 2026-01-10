@@ -1,5 +1,11 @@
     .checkboxes {
       padding: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .b25 {
+      flex: 0 0 20%;
     }
 
     @supports (-webkit-appearance: none) or (-moz-appearance: none) {
@@ -7,7 +13,7 @@
         --active: unset; /* background on */
         --active-inner: #d8dbe0; /* ball on */
         --focus: none;
-        --border: #d8dbe0; /* ball & border off */
+        --border: #d8dbe069; /* ball & border off */
         --border-hover: #d8dbe0; /* border hover off */
         --background: #333; /* background off */
         --disabled: #666; /* background disabled off */
@@ -125,6 +131,9 @@
     }
 
     @media (max-width: 667px)  {
+      .b25 {
+        flex: 0 0 100%;
+      }
       .checkbox-wrapper-14 * {
         zoom: 1.5;
       }
@@ -250,7 +259,14 @@
     .table .td.mixed,
     .table .td.stop,
     .table .td.liquid,
-    .table .td.sibilant {
+    .table .td.sibilant,
+    .table .row.voiceless-stop,
+    .table .row.voiced-stop,
+    .table .row.nasalised-stop,
+    .table .row.sibilant-spirant,
+    .table .row.nasal,
+    .table .row.liquid,
+    .table .row.approximant {
       display: none;
     }
 
@@ -261,6 +277,17 @@
     body:has(#toggle-liquid:checked) .table .td.liquid,
     body:has(#toggle-sibilant:checked) .table .td.sibilant {
       display: block;
+    }
+
+
+    body:has(#toggle-voiceless-stops:checked) .table .row.voiceless-stop,
+    body:has(#toggle-voiced-stops:checked) .table .row.voiced-stop,
+    body:has(#toggle-nasalised-stops:checked) .table .row.nasalised-stop,
+    body:has(#toggle-sibilants-spirants:checked) .table .row.sibilant-spirant,
+    body:has(#toggle-nasals:checked) .table .row.nasal,
+    body:has(#toggle-liquids:checked) .table .row.liquid,
+    body:has(#toggle-approximants:checked) .table .row.approximant {
+      display: flex;
     }
 
     .table .row.voiced-stop::before {
