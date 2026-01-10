@@ -2393,9 +2393,9 @@ export const swadesh = [
     term: "because",
     sindarin: [
       {
-        term: "a chaeth i",
+        term: "añ gaeth i",
         url: "https://eldamo.org/content/words/word-3509158641.html?neo",
-        comment: "Expression"
+        comment: "Expression (the exact syntax is debated)"
       }
     ]
   },
