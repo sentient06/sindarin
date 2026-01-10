@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://sindarin.mariot.uk/sitemap.txt
+Sitemap: https://sindarin.elvish.nz/sitemap.txt

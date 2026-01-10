@@ -598,7 +598,7 @@ const notesTxt = fs.readFileSync(`./src/notes.txt`, 'utf8');
 
 const pageHtmlTemplate = fs.readFileSync('page-template.html', 'utf8');
 
-const domain = 'https://sindarin.mariot.uk';
+const domain = 'https://sindarin.elvish.nz';
 const sitemap = [''];
 
 
