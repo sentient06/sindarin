@@ -20,3 +20,38 @@
       flex-direction: column;
       padding: 10px;
     }
+
+    .table .tr .td:first-of-type {
+      max-width: 50px;
+      display: flex;
+      align-items: center;
+    }
+
+    .table .tr .td.disabled {
+      color: rgba(0, 0, 0, 0.2);
+    }
+
+    .table .row.main::before,
+    .table .row.diphtongs::before,
+    .table .row.labialisations::before,
+    .table .row.special::before {
+      background: rgba(0, 0, 0, 0.1);
+      padding: 5px;
+    }
+
+    .table .row.main::before {
+      content: "Consonants and vowels";
+    }
+
+    .table .row.diphtongs::before {
+      content: "Diphtongs";
+    }
+
+    .table .row.labialisations::before {
+      content: "Labialisations";
+    }
+
+    .table .row.special::before {
+      content: "Special characters";
+    }
+
