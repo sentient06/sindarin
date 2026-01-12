@@ -1,0 +1,22 @@
+    .table {
+      width: 80%;
+    }
+
+    .table .tr .td > .tengwar {
+      font-size: 3em;
+    }
+
+    .table .tr .td {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .table .tr .td > div {
+      flex: 0 0 50%;
+    }
+
+    .table .tr .td .details {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }

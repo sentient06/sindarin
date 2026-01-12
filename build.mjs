@@ -612,7 +612,7 @@ function processSection(extantHtml, name, anchor, file, idx) {
 }
 
 function buildPage(pageObj) {
-  const { name, in: _in, out, skip, callback, sections, css } = pageObj;
+  const { name, in: _in, out, skip, callback, sections, css, unmap } = pageObj;
   // console.log(` ~> name: ${name}, in: ${_in}, out: ${out}, skip: ${skip ? 'true' : 'false'}, callback: ${callback ? 'true' : 'false'}, sections: ${sections?.length}`);
   let fileInput   = _in;
   let fileOutput  = out || _in;
@@ -628,7 +628,9 @@ function buildPage(pageObj) {
     });
   }
   
-  sitemap.push(fileOutput);
+  if (Boolean(unmap) === false) {
+    sitemap.push(fileOutput);
+  }
 
   // Setup basic values:
   pageCode = pageCode
@@ -686,7 +688,7 @@ const landingPages = [
   {
     name: 'Mutations table',
     in: 'mutations',
-    css: ['mutations_table'],
+    css: ['div_tables', 'mutations_table'],
     skip: true
   },
   {
@@ -795,6 +797,13 @@ const landingPages = [
       },
     ],
   },
+  {
+    name: 'Tengwar',
+    in: 'tengwar',
+    css: ['tengwar', 'div_tables', 'tengwar_table'],
+    skip: true,
+    unmap: true
+  },
 ];
 
 const landing = landingPages.filter((item) => {
@@ -824,12 +833,12 @@ if (softGen) {
     buildPage(landingPage);
   });
 
-  const sitemapText = sitemap.map((s) => (`${domain}/${s}.html`)).join('\n');
+  const sitemapText = sitemap.map((s) => (`${domain}/${s ? `${s}.html` : ''}`)).join('\n');
   fs.writeFileSync('./out/sitemap.txt', sitemapText, 'utf8');
-
-
-
   fs.writeFileSync('./out/index.html', finalHtml, 'utf8');
+  
+  fs.cp('./img', './out/img', { recursive: true }, (err) => err ? console.error(err) : null);
+  fs.cp('./tengwar', './out/tengwar', { recursive: true }, (err) => err ? console.error(err) : null);
 } else {
 
   landingPages.forEach((landingPage) => {
