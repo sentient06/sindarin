@@ -485,6 +485,7 @@ finalHtml = finalHtml
 
 function formatShortcuts(str) {
   return str
+    .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
     .replace(/\*\*\*([^\*\n]+)\*\*\*/g, `<b><i>$1</i></b>`)
     .replace(/\*\*([^\*\n]+)\*\*/g, `<b>$1</b>`)
     .replace(/\*([^\*\n]+)\*/g, `<i>$1</i>`)
@@ -801,6 +802,13 @@ const landingPages = [
     name: 'Tengwar',
     in: 'tengwar',
     css: ['tengwar', 'div_tables', 'tengwar_table'],
+    skip: true,
+    unmap: true
+  },
+  {
+    name: 'Translations',
+    in: 'translation',
+    css: ['tengwar'],
     skip: true,
     unmap: true
   },
