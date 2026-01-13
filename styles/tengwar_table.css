@@ -31,6 +31,10 @@
       color: rgba(0, 0, 0, 0.2);
     }
 
+    .dark-theme .table .tr .td.disabled {
+      color: rgba(255, 255, 255, 0.2);
+    }
+
     .table .row.main::before,
     .table .row.diphtongs::before,
     .table .row.labialisations::before,
@@ -55,7 +59,11 @@
       content: "Special characters";
     }
 
-    .stress {
-      color: red;
+    .tengwar b {
+      color: rgba(155, 0, 0, 1);
+    }
+
+    .dark-theme .tengwar b {
+      color: rgba(255, 185, 185, 1);
     }
 
