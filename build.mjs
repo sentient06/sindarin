@@ -802,15 +802,13 @@ const landingPages = [
     name: 'Tengwar',
     in: 'tengwar',
     css: ['tengwar', 'div_tables', 'tengwar_table'],
-    skip: true,
-    unmap: true
+    skip: true
   },
   {
-    name: 'Translations',
+    name: 'Example of a translation',
     in: 'translation',
     css: ['tengwar'],
-    skip: true,
-    unmap: true
+    skip: true
   },
 ];
 

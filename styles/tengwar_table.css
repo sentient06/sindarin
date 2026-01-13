@@ -67,3 +67,6 @@
       color: rgba(255, 185, 185, 1);
     }
 
+    pre .tengwar {
+      line-height: unset;
+    }
