@@ -511,7 +511,14 @@ function formatShortcuts(str) {
     .replace(/@@([^@\n]+)@@/g, `<span class="liquid">$1</span>`)
     .replace(/@([^@\n\s-]+)@([^@\n\s-]+)@/g, `<abbr class="stop" title="$1">$2</abbr>`)
     .replace(/@([^@\n]+)@/g, `<span class="stop">$1</span>`)
-    .replace(/\|\|([^\|\n]+)\|\|([^\|\n]+)\|\|/g, `<a href="$1.html" class="inner-link">$2</a>`)
+    .replace(/\|\|([^\|\n]+)\|\|([^\|\n]+)\|\|/g, (match, p1, p2) => {
+      let addr = `${p1}.html`;
+      if (p1.indexOf('/') > -1) {
+        const parts = p1.split('/');
+        addr = `${parts[0]}.html${parts[1]}`;
+      }
+      return `<a href="${addr}" class="inner-link">${p2}</a>`;
+    })
     .replace(/(?<=".*)(\[[^\]\n]+\])(?=[^"^\n]+")/g, `<span class="subtle">$1</span>`);
 }
 
