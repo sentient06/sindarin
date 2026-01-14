@@ -243,6 +243,9 @@
     }
 
     @media print {
+      .sticky {
+        box-shadow: none;
+      }
       .sticky-top a,
       .sticky-home a {
         display: none;

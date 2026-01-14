@@ -1,5 +1,5 @@
     .table {
-      width: 80%;
+      max-width: 60em;
     }
 
     .table .tr .td > .tengwar {
@@ -69,4 +69,19 @@
 
     pre .tengwar {
       line-height: unset;
+    }
+
+    @media (max-width: 667px)  {
+      .table .tr .td {
+        flex-direction: column;
+      }
+      .table .tr .td > .tengwar {
+        font-size: 2em;
+      }
+      .table .tr .td .details {
+        padding: 0 0 10px 0;
+      }
+      .table .tr .td:first-of-type {
+        max-width: 20px;
+      }
     }
