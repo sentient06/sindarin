@@ -244,6 +244,11 @@ const skeleton = [
         file: 'nouns'
       },
       {
+        name: 'Plural formation',
+        anchor: 'plural',
+        file: 'plural'
+      },
+      {
         name: 'Consonant mutations',
         anchor: 'mutations',
         file: 'mutations',
