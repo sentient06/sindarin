@@ -696,7 +696,8 @@ const landingPages = [
   {
     name: 'Mutations',
     in: 'mutations_old',
-    skip: true
+    skip: true,
+    unmap: true,
   },
   {
     name: 'Mutations table',
