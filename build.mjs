@@ -935,7 +935,10 @@ const landing = landingPages.filter((item) => {
   return `      <li><a href="${fileName}.html">${item.name}</a></li>`;
 }).join('\n');
 
+const fullDateTime = new Date().toISOString().replace(/\D/g, '').slice(0, 12);
+
 finalHtml = finalHtml
+  .replace('<!--LAST-->', `<!-- ${fullDateTime} -->`)
   .replace('<!--PLACEHOLDER-->', '')
   .replace('<!--MENU-->', menu)
   // .replace('<!--NOTES-->', notesTxt)
