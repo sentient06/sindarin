@@ -169,4 +169,10 @@ export const discord = [
       "https://discord.com/channels/397489292185960468/397490652096626698/1461404951204073535",
     ],
   },
+  {
+    topic: 'Labi or lebi or laib, Sindarin words for "unless"',
+    urls: [
+      "https://discord.com/channels/397489292185960468/398407102344986625/1454279585008058472"
+    ],
+  },
 ];
