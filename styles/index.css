@@ -2,7 +2,7 @@
     h6 { font-size: 1.266em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.35em; margin: 0.5em 0 0 0; }
     h5 { font-size: 1.424em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.45em; margin: 0.5em 0 0 0; }
     h4 { font-size: 1.602em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.55em; margin: 0.5em 0 0 0; }
-    h3 { font-size: 1.802em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.75em; margin: 0.5em 0 0 0; }
+    div.h3, h3 { font-size: 1.802em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.75em; margin: 0.5em 0 0 0; }
     h2 { font-size: 2.027em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;
       background: #333;
       color: #fff;
