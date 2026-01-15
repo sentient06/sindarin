@@ -2,13 +2,20 @@
     h6 { font-size: 1.266em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.35em; margin: 0.5em 0 0 0; }
     h5 { font-size: 1.424em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.45em; margin: 0.5em 0 0 0; }
     h4 { font-size: 1.602em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.55em; margin: 0.5em 0 0 0; }
-    div.h3, h3 { font-size: 1.802em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.75em; margin: 0.5em 0 0 0; }
     h2 { font-size: 2.027em; line-height: 130%; margin-top: 1em; margin-bottom: 0.75em;
       background: #333;
       color: #fff;
       box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 0.25);
       padding: 10px 16px;
     }
+    h2.h3 {
+      background: unset;
+      color: unset;
+      box-shadow: unset;
+      padding: unset;
+    }
+    h2.h3,
+    h3 { font-size: 1.802em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.75em; margin: 0.5em 0 0 0; }
 
     h1 {
       font-size: 3em;
@@ -78,11 +85,20 @@
         color: #000;
         box-shadow: none !important;
       }
+      h2.h3 {
+        background: unset;
+        color: unset;
+        box-shadow: unset;
+      }
       h2:has(+ section) {
         break-before: page;
       }
+      h2.h3:has(+ section) {
+        break-before: unset;
+      }
       section { break-before: page; }
       h2 + section { break-before: revert; }
+      h2.h3 + section { break-before: unset; }
       footer nav {
         display: none;
       }
@@ -92,6 +108,12 @@
       background: #fff;
       color: #000;
       box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 1);
+    }
+
+    .dark-theme h2.h3 {
+      background: unset;
+      color: unset;
+      box-shadow: unset;
     }
 
     .dark-theme h1 {
