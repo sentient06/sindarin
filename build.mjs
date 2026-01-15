@@ -54,6 +54,7 @@ if (softGen) {
 // Usage: const min = minifyCss(cssString);
 
 function minifyCss(css) {
+  return css;
   // Remove comments (both /* */ style)
   css = css.replace(/\/\*[\s\S]*?\*\//g, '');
   
