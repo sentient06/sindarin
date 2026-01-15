@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import { swadesh } from './build/swadesh.js';
 import { silm100 } from './build/silm100.js';
 import { mutationsA, mutationsB } from './build/mutations.js';
+import { discord } from './build/discord.js';
 
 /*
 
@@ -208,7 +209,7 @@ function renderTableRows(list, ignoreIndex = false) {
 }
 
 function renderMutations(mutations) {
-  console.log('> renderMutations ------------------------------------------');
+  // console.log('> renderMutations ------------------------------------------');
 
   let table = [];
   let columns = [];
@@ -220,7 +221,7 @@ function renderMutations(mutations) {
 
   // Define lengths of columns:
   mutations.rows.forEach((row, i) => {
-    console.log(' - row', i);
+    // console.log(' - row', i);
     row.forEach((col, j) => {
       let celLength = colLen[j] || 0;
 
@@ -229,7 +230,7 @@ function renderMutations(mutations) {
       if (rowType === typeStr) {
         // newRow[j] = col;
         celLength = Math.max(celLength, col.length);
-        console.log(' - - col s', typeof col, j, col, celLength);
+        // console.log(' - - col s', typeof col, j, col, celLength);
       } else
 
       if (rowType === typeArr) {
@@ -243,7 +244,7 @@ function renderMutations(mutations) {
         });
         _celLength += (col.length - 1) * 2;
         celLength = Math.max(celLength, _celLength);
-        console.log(' - - col a', typeof col, j, col, celLength);
+        // console.log(' - - col a', typeof col, j, col, celLength);
       }
 
       colLen[j] = celLength;
@@ -279,7 +280,7 @@ function renderMutations(mutations) {
 
       if (rowType === typeArr) {
         let hoverLen = colLen[j] + padVal - col.map(v => v.replace(/\[/, '').replace(/\]/, '')).join(', ').length;
-        console.log('~~~~~> a ', colLen[j], padVal, col.map(v => v.replace(/\[/, '').replace(/\]/, '')).join(', '));
+        // console.log('~~~~~> a ', colLen[j], padVal, col.map(v => v.replace(/\[/, '').replace(/\]/, '')).join(', '));
         const hoverVal = col.map((mut, l) => {
           let newMut = mut;
           const hoverOrg = j > 1 ? row[1][l] : '';
@@ -291,7 +292,7 @@ function renderMutations(mutations) {
               .replace(/\]/g, `</span>`);
           }
 
-          console.log('~~~~~> b ', hoverOrg, newMut, quiet, hoverLen);
+          // console.log('~~~~~> b ', hoverOrg, newMut, quiet, hoverLen);
           return `<span class="c_${l}${quiet}">${newMut}</span>`;
         }).join(', ');
         _value = hoverVal.padEnd(hoverVal.length + hoverLen, ' ');
@@ -304,15 +305,31 @@ function renderMutations(mutations) {
   let tableStr = table.map(row => row.join('')).map(_r => (`<span class="row">${_r}</span>`)).join('\n');
 
 
-  console.log('X renderMutations ------------------------------------------');
+  // console.log('X renderMutations ------------------------------------------');
 
   return tableStr;
+}
+
+function renderListReference(refs) {
+  let list = "";
+  refs.forEach((ref) => {
+    const { topic, urls } = ref;
+    let links = "";
+    urls.forEach((url, idx) => {
+      links += `        <li>\n          <a href="${url}" target="_blank">[${idx + 1}]</a>\n        </li>\n`;
+    });
+
+
+    list += `    <li>\n      <span>${topic}</span>\n      <ul>\n${links}      </ul>\n    </li>\n`;
+  });
+  return `  <ul>\n${list}\n  </ul>`;
 }
 
 const tableSwadesh = renderTableRows(swadesh);
 const tableSilm100 = renderTableRows(silm100, true);
 const tableMutationsA = renderMutations(mutationsA);
 const tableMutationsB = renderMutations(mutationsB);
+const listDiscord = renderListReference(discord);
 
 const skeleton = [
   {
@@ -922,6 +939,15 @@ const landingPages = [
     css: ['tengwar'],
     skip: true
   },
+  {
+    name: 'Sources from VL',
+    in: 'sources',
+    css: ['reference'],
+    callback: (code) => {
+    return code
+      .replace('<!--LIST_DISCORD-->', listDiscord)
+    }
+  }
 ];
 
 const landing = landingPages.filter((item) => {
