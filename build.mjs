@@ -53,109 +53,97 @@ if (softGen) {
 // cssmin.js - zero dependencies
 // Usage: const min = minifyCss(cssString);
 
-function minifyCss(input) {
-  let out = '';
+function minifyCss(css) {
+  // Remove comments (both /* */ style)
+  css = css.replace(/\/\*[\s\S]*?\*\//g, '');
+  
+  // Step 1: Extract and fix calc() expressions FIRST
+  // Need to handle nested parentheses properly
+  const calcs = [];
+  let result = '';
   let i = 0;
-
-  let inStr = false;      // inside "..." or '...'
-  let strQuote = '';
-  let inComment = false;  // inside /* ... */
-  let keepComment = false; // keep /*! ... */
-  let prevWasSpace = false;
-
-  const isWhitespace = (c) => c === ' ' || c === '\n' || c === '\r' || c === '\t' || c === '\f';
-
-  // Tokens around which whitespace can usually be removed safely
-  const tight = new Set(['{', '}', ':', ';', ',', '>', '+', '~', '=', '(', ')', '[', ']']);
-
-  while (i < input.length) {
-    const c = input[i];
-    const n = input[i + 1];
-
-    // Handle comments
-    if (!inStr && !inComment && c === '/' && n === '*') {
-      inComment = true;
-      keepComment = input[i + 2] === '!'; // /*! ... */ kept
-      i += 2;
-      if (keepComment) out += '/*!';
-      continue;
-    }
-
-    if (inComment) {
-      if (c === '*' && n === '/') {
-        inComment = false;
-        i += 2;
-        continue;
+  
+  while (i < css.length) {
+    // Look for calc(
+    const calcMatch = css.substring(i).match(/^calc\s*\(/i);
+    if (calcMatch) {
+      // Find the matching closing parenthesis
+      let depth = 1;
+      let j = i + calcMatch[0].length;
+      while (j < css.length && depth > 0) {
+        if (css[j] === '(') depth++;
+        if (css[j] === ')') depth--;
+        j++;
       }
-      if (keepComment) out += c; // preserve comment body
-      i += 1;
-      continue;
+      
+      // Extract the full calc expression
+      const fullCalc = css.substring(i, j);
+      
+      // Ensure proper spacing in calc: spaces around + and - operators
+      let fixed = fullCalc;
+      // Normalize all whitespace to single spaces first
+      fixed = fixed.replace(/\s+/g, ' ');
+      fixed = fixed.replace(/calc\s*\(/i, 'calc(');
+      fixed = fixed.replace(/\s*\)/g, ')');
+      
+      // Add spaces around + (not part of ++, which doesn't exist in CSS)
+      fixed = fixed.replace(/([^\s])\+/g, '$1 +');
+      fixed = fixed.replace(/\+([^\s])/g, '+ $1');
+      
+      // Add spaces around - ONLY when it's a binary operator
+      // Not when it's part of -- (custom property) or negative number
+      fixed = fixed.replace(/(\))\s*-\s*/g, '$1 - ');
+      fixed = fixed.replace(/([a-z0-9])\s+-\s+([a-z0-9])/gi, '$1 - $2');
+      
+      calcs.push(fixed);
+      result += `___CALC${calcs.length - 1}___`;
+      i = j;
+    } else {
+      result += css[i];
+      i++;
     }
-
-    // Handle strings
-    if (!inStr && (c === '"' || c === "'")) {
-      inStr = true;
-      strQuote = c;
-      out += c;
-      prevWasSpace = false;
-      i += 1;
-      continue;
-    }
-
-    if (inStr) {
-      out += c;
-      if (c === '\\') { // escape next char
-        if (i + 1 < input.length) {
-          out += input[i + 1];
-          i += 2;
-        } else {
-          i += 1;
-        }
-        continue;
-      }
-      if (c === strQuote) {
-        inStr = false;
-        strQuote = '';
-      }
-      i += 1;
-      continue;
-    }
-
-    // Whitespace collapsing
-    if (isWhitespace(c)) {
-      prevWasSpace = true;
-      i += 1;
-      continue;
-    }
-
-    // If we had whitespace pending, decide whether to emit a single space
-    if (prevWasSpace) {
-      const last = out[out.length - 1];
-      // Only keep a space when it’s needed to separate identifiers/tokens
-      // e.g. "div span" must keep one space; "a{", "a:" shouldn't.
-      const needSpace =
-        last &&
-        !tight.has(last) &&
-        c &&
-        !tight.has(c);
-
-      if (needSpace) out += ' ';
-      prevWasSpace = false;
-    }
-
-    // Remove whitespace before tight tokens by ensuring we didn't emit it above
-    out += c;
-    i += 1;
   }
-
-  // Cleanup passes:
-  // 1) Remove unnecessary semicolons before }
-  out = out.replace(/;}/g, '}');
-
-  // 2) Trim overall
-  out = out.trim();
-
-  return out;
+  
+  css = result;
+  
+  // Step 2: Extract strings and URLs
+  const strings = [];
+  css = css.replace(/(["'])(?:(?=(\\?))\2.)*?\1/g, (match) => {
+    strings.push(match);
+    return `___STRING${strings.length - 1}___`;
+  });
+  
+  // Step 3: Now do all the minification
+  // Remove whitespace around special characters
+  css = css.replace(/\s*([{}:;,>+~])\s*/g, '$1');
+  
+  // Remove whitespace around parentheses
+  css = css.replace(/\s*\(\s*/g, '(');
+  css = css.replace(/\s*\)\s*/g, ')');
+  
+  // Remove leading/trailing whitespace
+  css = css.trim();
+  
+  // Remove unnecessary semicolons before closing braces
+  css = css.replace(/;}/g, '}');
+  
+  // Optimize zero values (0px, 0em, etc. to just 0)
+  css = css.replace(/\b0(?:px|em|rem|vh|vw|vmin|vmax|cm|mm|in|pt|pc|ex|ch)\b/g, '0');
+  
+  // Optimize color values - convert #AABBCC to #ABC when possible
+  css = css.replace(/#([0-9a-f])\1([0-9a-f])\2([0-9a-f])\3\b/gi, '#$1$2$3');
+  
+  // Remove unnecessary decimal zeros
+  css = css.replace(/(\d)\.0+(?!\d)/g, '$1');
+  css = css.replace(/\.0+([^\d])/g, '0$1');
+  
+  // Step 4: Restore calc() first (they have the spaces we need)
+  css = css.replace(/___CALC(\d+)___/g, (match, index) => calcs[index]);
+  
+  // Step 5: Restore strings
+  css = css.replace(/___STRING(\d+)___/g, (match, index) => strings[index]);
+  
+  return css;
 }
 
 function escapeHtml(str = '') {
