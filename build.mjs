@@ -840,7 +840,7 @@ const landing = landingPages.filter((item) => {
 finalHtml = finalHtml
   .replace('<!--PLACEHOLDER-->', '')
   .replace('<!--MENU-->', menu)
-  .replace('<!--NOTES-->', notesTxt)
+  // .replace('<!--NOTES-->', notesTxt)
   .replace('<!--LANDING-->', landing)
   .replace('<!--STYLES-->', styles)
   .replace('/// SCRIPTS ///', `${darkmodeScript}\n${focusScript}\n${stickyScript}`)

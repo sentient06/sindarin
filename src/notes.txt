@@ -169,39 +169,6 @@ tond en·edhel        = predication adjectives definite        - "tall [is] the 
 tond nodui edhel     = predication adjectives indefinite alt  - "tall some elf"             |
 tynd edhil           = predication adjectives indefinite alt  - "tall elves"                |
 
-
-Time:
-
-When something happens (past, present, or future)
-How often it happens (frequency)
-How long it lasts (duration)
-In what order it happens (sequence)
-
-Time Expressions for the Past
-
-Sindarin
-Expression
-  Example Sentence
-
-
-duration
-for 10 minutes  I waited for 10 minutes.
-for two days  She stayed here for two days.
-all day   He worked all day.
-all night   They studied all night.
-since Monday  I’ve been here since Monday.
-until tomorrow  You can stay until tomorrow.
-till next week  We’re open till next week.
-
-Order and Sequence
-first / firstly   First, we’ll visit the museum.
-then / next   Then, we’ll have lunch.
-after that  After that, we’ll go shopping.
-before  I brushed my teeth before bed.
-earlier / later   He left earlier than expected.
-in the end  In the end, we decided to stay.
-finally   Finally, we caught the bus.
-
 prepositions
 
 Preposition   Used With   Examples
