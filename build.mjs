@@ -50,6 +50,114 @@ if (softGen) {
   });
 }
 
+// cssmin.js - zero dependencies
+// Usage: const min = minifyCss(cssString);
+
+function minifyCss(input) {
+  let out = '';
+  let i = 0;
+
+  let inStr = false;      // inside "..." or '...'
+  let strQuote = '';
+  let inComment = false;  // inside /* ... */
+  let keepComment = false; // keep /*! ... */
+  let prevWasSpace = false;
+
+  const isWhitespace = (c) => c === ' ' || c === '\n' || c === '\r' || c === '\t' || c === '\f';
+
+  // Tokens around which whitespace can usually be removed safely
+  const tight = new Set(['{', '}', ':', ';', ',', '>', '+', '~', '=', '(', ')', '[', ']']);
+
+  while (i < input.length) {
+    const c = input[i];
+    const n = input[i + 1];
+
+    // Handle comments
+    if (!inStr && !inComment && c === '/' && n === '*') {
+      inComment = true;
+      keepComment = input[i + 2] === '!'; // /*! ... */ kept
+      i += 2;
+      if (keepComment) out += '/*!';
+      continue;
+    }
+
+    if (inComment) {
+      if (c === '*' && n === '/') {
+        inComment = false;
+        i += 2;
+        continue;
+      }
+      if (keepComment) out += c; // preserve comment body
+      i += 1;
+      continue;
+    }
+
+    // Handle strings
+    if (!inStr && (c === '"' || c === "'")) {
+      inStr = true;
+      strQuote = c;
+      out += c;
+      prevWasSpace = false;
+      i += 1;
+      continue;
+    }
+
+    if (inStr) {
+      out += c;
+      if (c === '\\') { // escape next char
+        if (i + 1 < input.length) {
+          out += input[i + 1];
+          i += 2;
+        } else {
+          i += 1;
+        }
+        continue;
+      }
+      if (c === strQuote) {
+        inStr = false;
+        strQuote = '';
+      }
+      i += 1;
+      continue;
+    }
+
+    // Whitespace collapsing
+    if (isWhitespace(c)) {
+      prevWasSpace = true;
+      i += 1;
+      continue;
+    }
+
+    // If we had whitespace pending, decide whether to emit a single space
+    if (prevWasSpace) {
+      const last = out[out.length - 1];
+      // Only keep a space when it’s needed to separate identifiers/tokens
+      // e.g. "div span" must keep one space; "a{", "a:" shouldn't.
+      const needSpace =
+        last &&
+        !tight.has(last) &&
+        c &&
+        !tight.has(c);
+
+      if (needSpace) out += ' ';
+      prevWasSpace = false;
+    }
+
+    // Remove whitespace before tight tokens by ensuring we didn't emit it above
+    out += c;
+    i += 1;
+  }
+
+  // Cleanup passes:
+  // 1) Remove unnecessary semicolons before }
+  out = out.replace(/;}/g, '}');
+
+  // 2) Trim overall
+  out = out.trim();
+
+  return out;
+}
+
 function escapeHtml(str = '') {
   return String(str)
     .replace(/&/g, '&amp;')
@@ -490,6 +598,14 @@ finalHtml = finalHtml
 
 function formatShortcuts(str) {
   return str
+    .replace(/\|\|([^\|\n]+)\|\|([^\|\n]+)\|\|/g, (match, p1, p2) => {
+      let addr = `${p1}.html`;
+      if (p1.indexOf('/') > -1) {
+        const parts = p1.split('/');
+        addr = `${parts[0]}.html${parts[1]}`;
+      }
+      return `<a href="${addr}" class="inner-link">${p2}</a>`;
+    })
     .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
     .replace(/\*\*\*([^\*\n]+)\*\*\*/g, `<b><i>$1</i></b>`)
     .replace(/\*\*([^\*\n]+)\*\*/g, `<b>$1</b>`)
@@ -516,14 +632,6 @@ function formatShortcuts(str) {
     .replace(/@@([^@\n]+)@@/g, `<span class="liquid">$1</span>`)
     .replace(/@([^@\n\s-]+)@([^@\n\s-]+)@/g, `<abbr class="stop" title="$1">$2</abbr>`)
     .replace(/@([^@\n]+)@/g, `<span class="stop">$1</span>`)
-    .replace(/\|\|([^\|\n]+)\|\|([^\|\n]+)\|\|/g, (match, p1, p2) => {
-      let addr = `${p1}.html`;
-      if (p1.indexOf('/') > -1) {
-        const parts = p1.split('/');
-        addr = `${parts[0]}.html${parts[1]}`;
-      }
-      return `<a href="${addr}" class="inner-link">${p2}</a>`;
-    })
     .replace(/(?<=".*)(\[[^\]\n]+\])(?=[^"^\n]+")/g, `<span class="subtle">$1</span>`);
 }
 
@@ -602,7 +710,8 @@ generalStyle += nextCss;
 
 const indexStyle   = fs.readFileSync(`./styles/index.css`, 'utf8');
 const pagesStyle   = fs.readFileSync(`./styles/pages.css`, 'utf8');
-const styles = `  <style>\n${generalStyle}\n${indexStyle}\n  </style>`;
+const minifiedStyle = minifyCss(`${generalStyle}\n${indexStyle}`);
+const styles = `  <style>\n${minifiedStyle}\n  </style>`;
 
 const darkmodeScript = fs.readFileSync(`./scripts/darkmode.js`, 'utf8');
 const stickyScript = fs.readFileSync(`./scripts/sticky.js`, 'utf8');
@@ -654,6 +763,7 @@ function buildPage(pageObj) {
     .replaceAll(`<!--TITLE-->`, `Neo Sindarin - ${name}`);
     
   // Setup CSS and JS:
+  pageStyles = minifyCss(pageStyles);
   pageCode = pageCode
     .replace('<!--STYLES-->', `  <style>\n${pageStyles}\n  </style>`)
     .replace('/// SCRIPTS ///', darkmodeScript);
