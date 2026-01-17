@@ -19,6 +19,8 @@ import { discord } from './build/discord.js';
 §§nasal§§
 
 §§§mixed§§§
+§m{mixed|original}
+§m{mixed}
 
 @stop@
 
@@ -604,41 +606,61 @@ finalHtml = finalHtml
 
 function formatShortcuts(str) {
   return str
+    .replace(/§s\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<abbr class="soft" title="${m2}">${m1}</abbr>`)
+    .replace(/§n\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<abbr class="nasal" title="${m2}">${m1}</abbr>`)
+    .replace(/§m\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<abbr class="mixed" title="${m2}">${m1}</abbr>`)
+    .replace(/§t\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<abbr class="stop" title="${m2}">${m1}</abbr>`)
+    .replace(/§l\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<abbr class="liquid" title="${m2}">${m1}</abbr>`)
+    .replace(/§i\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<abbr class="sibilant" title="${m2}">${m1}</abbr>`)
+    .replace(/§s\{([^\^|}]+)\}/g, (_, m1) => `<span class="soft">${m1}</span>`)
+    .replace(/§n\{([^\^|}]+)\}/g, (_, m1) => `<span class="nasal">${m1}</span>`)
+    .replace(/§m\{([^\^|}]+)\}/g, (_, m1) => `<span class="mixed">${m1}</span>`)
+    .replace(/§t\{([^\^|}]+)\}/g, (_, m1) => `<span class="stop">${m1}</span>`)
+    .replace(/§l\{([^\^|}]+)\}/g, (_, m1) => `<span class="liquid">${m1}</span>`)
+    .replace(/§i\{([^\^|}]+)\}/g, (_, m1) => `<span class="sibilant">${m1}</span>`)
     .replace(/\|\|([^\|\n]+)\|\|([^\|\n]+)\|\|/g, (match, p1, p2) => {
       let addr = `${p1}.html`;
+      let aClass = 'inner-link';
       if (p1.indexOf('/') > -1) {
         const parts = p1.split('/');
         addr = `${parts[0]}.html${parts[1]}`;
       }
-      return `<a href="${addr}" class="inner-link">${p2}</a>`;
+      if (p1.indexOf('#') === 0) {
+        addr = p1;
+        aClass = 'inner-anchor';
+      }
+      return `<a href="${addr}" class="${aClass}">${p2}</a>`;
     })
     .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
     .replace(/\*\*\*([^\*\n]+)\*\*\*/g, `<b><i>$1</i></b>`)
     .replace(/\*\*([^\*\n]+)\*\*/g, `<b>$1</b>`)
     .replace(/\*([^\*\n]+)\*/g, `<i>$1</i>`)
     .replace(/±([^±\n]+)±/g, `<small>$1</small>`)
-    .replace(/§§§([^§\n\s-]+)§([^§\n\s-]+)§§§/g, `<abbr class="mixed" title="$1">$2</abbr>`)
-    .replace(/§§§([^§\n]+)§§§/g, `<span class="mixed">$1</span>`)
-    .replace(/§§([^§\n\s-]+)§([^§\n\s-]+)§§/g, `<abbr class="nasal" title="$1">$2</abbr>`)
-    .replace(/§§([^§\n]+)§§/g, `<span class="nasal">$1</span>`)
-    .replace(/§([^§\n\s-]+)§([^§\n\s-]+)§/g, `<abbr class="soft" title="$1">$2</abbr>`)
-    .replace(/§([^§\n]+)§/g, `<span class="soft">$1</span>`)
-    // .replace(/§(([^§\n]{1})[^§\n]{1})([^§\n]+)§/g, (match, p1, p2, p3, offset, str) => {
-    //   const mutated = `${p1}${p3}`;
-    //   let unmutated = mutated;
-    //   console.log('>>>>', mutated, p1, p2, p3);
-    //   if (p2 === 'b') {
-    //     unmutated = unmutated.replace('b', 'p');
-    //   }
-    //   return `<abbr class="soft" title="${unmutated}">${mutated}</abbr>`;
-    // })
-    .replace(/@@@([^@\n\s-]+)@([^@\n\s-]+)@@@/g, `<abbr class="sibilant" title="$1">$2</abbr>`)
-    .replace(/@@@([^@\n]+)@@@/g, `<span class="sibilant">$1</span>`)
-    .replace(/@@([^@\n\s-]+)@([^@\n\s-]+)@@/g, `<abbr class="liquid" title="$1">$2</abbr>`)
-    .replace(/@@([^@\n]+)@@/g, `<span class="liquid">$1</span>`)
-    .replace(/@([^@\n\s-]+)@([^@\n\s-]+)@/g, `<abbr class="stop" title="$1">$2</abbr>`)
-    .replace(/@([^@\n]+)@/g, `<span class="stop">$1</span>`)
-    .replace(/(?<=".*)(\[[^\]\n]+\])(?=[^"^\n]+")/g, `<span class="subtle">$1</span>`);
+    // .replace(/§§§([^§\n\s-]+)§([^§\n\s-]+)§§§/g, `<abbr class="mixed" title="$1">$2</abbr>`)
+    // .replace(/§§§([^§\n]+)§§§/g, `<span class="mixed">$1</span>`)
+    // .replace(/§§([^§\n\s-]+)§([^§\n\s-]+)§§/g, `<abbr class="nasal" title="$1">$2</abbr>`)
+    // .replace(/§§([^§\n]+)§§/g, `<span class="nasal">$1</span>`)
+    // .replace(/§([^§\n\s-]+)§([^§\n\s-]+)§/g, `<abbr class="soft" title="$1">$2</abbr>`)
+    // .replace(/§([^§\n]+)§/g, `<span class="soft">$1</span>`)
+    // // .replace(/§(([^§\n]{1})[^§\n]{1})([^§\n]+)§/g, (match, p1, p2, p3, offset, str) => {
+    // //   const mutated = `${p1}${p3}`;
+    // //   let unmutated = mutated;
+    // //   console.log('>>>>', mutated, p1, p2, p3);
+    // //   if (p2 === 'b') {
+    // //     unmutated = unmutated.replace('b', 'p');
+    // //   }
+    // //   return `<abbr class="soft" title="${unmutated}">${mutated}</abbr>`;
+    // // })
+    // .replace(/@@@([^@\n\s-]+)@([^@\n\s-]+)@@@/g, `<abbr class="sibilant" title="$1">$2</abbr>`)
+    // .replace(/@@@([^@\n]+)@@@/g, `<span class="sibilant">$1</span>`)
+    // .replace(/@@([^@\n\s-]+)@([^@\n\s-]+)@@/g, `<abbr class="liquid" title="$1">$2</abbr>`)
+    // .replace(/@@([^@\n]+)@@/g, `<span class="liquid">$1</span>`)
+    // .replace(/@([^@\n\s-]+)@([^@\n\s-]+)@/g, `<abbr class="stop" title="$1">$2</abbr>`)
+    // .replace(/@([^@\n]+)@/g, `<span class="stop">$1</span>`)
+    .replace(/[^"]*"([^"]*)\"/g, (m) => m.replace(/(\[[^\]]*\])/g, '<span class="subtle">$1</span>'))
+    // // .replace(/[^"]*?(\[[^\]]*])[^"]*?(\[[^\]]*])[^"]*?/g, `<span class="subtle">$1</span>`);
+    // // .replace(/(?<=".*)(\[[^\]\n]+\])(?=[^"^\n]+")/g, `<span class="subtle">$1</span>`);
+    ;
 }
 
 let i = 0;
