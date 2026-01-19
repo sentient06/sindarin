@@ -175,4 +175,10 @@ export const discord = [
       "https://discord.com/channels/397489292185960468/398407102344986625/1454279585008058472"
     ],
   },
+  {
+    topic: 'Negative ú- before vowels',
+    urls: [
+      "https://discord.com/channels/397489292185960468/398407102344986625/1277456993820348478",
+    ],
+  },
 ];
