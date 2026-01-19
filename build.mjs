@@ -375,7 +375,7 @@ const skeleton = [
         }
       },
       {
-        name: 'Basic verbs',
+        name: 'Verbs and present tense',
         anchor: 'basic_verbs',
         file: 'verbs1'
       },
