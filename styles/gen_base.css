@@ -16,8 +16,12 @@
       background: #1c281a;
     }
 
-    a {
+    a, span.fake_a {
       color: #005BBB;
+    }
+
+    span.fake_a {
+      text-decoration: underline;
     }
 
     b {
