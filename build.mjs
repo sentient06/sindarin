@@ -594,7 +594,8 @@ const skeleton = [
 let finalHtml = fs.readFileSync('index-template.html', 'utf8');
 let menu = '<!--MENU-->';
 
-const protoDate = new Date().toJSON().slice(0,10).split('-');
+const origiDate = new Date();
+const protoDate = origiDate.toJSON().slice(0,10).split('-');
 const bakedYear = protoDate[0];
 const bakedDate = protoDate.reverse().join('/');
 
@@ -750,6 +751,7 @@ const pageHtmlTemplate = fs.readFileSync('page-template.html', 'utf8');
 
 const domain = 'https://sindarin.elvish.nz';
 const sitemap = [''];
+const xmlMap = [];
 
 
 function processSection(extantHtml, name, anchor, file, idx) {
@@ -762,7 +764,7 @@ function processSection(extantHtml, name, anchor, file, idx) {
 }
 
 function buildPage(pageObj) {
-  const { name, in: _in, out, skip, callback, sections, css, unmap } = pageObj;
+  const { name, in: _in, out, skip, callback, sections, css, unmap, priority } = pageObj;
   // console.log(` ~> name: ${name}, in: ${_in}, out: ${out}, skip: ${skip ? 'true' : 'false'}, callback: ${callback ? 'true' : 'false'}, sections: ${sections?.length}`);
   let fileInput   = _in;
   let fileOutput  = out || _in;
@@ -789,7 +791,7 @@ function buildPage(pageObj) {
     .replaceAll(`<!--PAGE_NAME-->`, `${name}`)
     .replaceAll(`<!--CANONICAL-->`, `${fileOutput}.html`)
     .replaceAll(`<!--TITLE-->`, `Neo Sindarin - ${name}`);
-    
+
   // Setup CSS and JS:
   pageStyles = minifyCss(pageStyles);
   pageCode = pageCode
@@ -797,12 +799,32 @@ function buildPage(pageObj) {
     .replace('/// SCRIPTS ///', darkmodeScript);
 
   // Setup HTML:
+
+  let mtime = null;
+
   if (sections) {
+    const latestUpdate = [];
     sections.forEach((section, idx) => {
       const { name, anchor, file } = section;
       pageHtml = processSection(pageHtml, name, anchor, file, idx);
+      const stats = fs.statSync(`./pages/${file}.html`);
+      const _date = stats.mtime; //.toISOString().slice(0, 10);
+      latestUpdate.push(_date);
     });
+    const _allDates = latestUpdate.map((d) => d.getTime());
+    const mostRecent = new Date(Math.max(..._allDates));
+    mtime = mostRecent.toISOString().slice(0, 10);
+  } else {
+    const stats = fs.statSync(`pages/${fileInput}.html`);
+    mtime = stats.mtime.toISOString().slice(0, 10);
   }
+
+  xmlMap.push({
+    file: fileOutput,
+    date: mtime,
+    priority: priority,
+  });
+
   if (callback) {
     pageHtml = callback(pageHtml);
   }
@@ -815,7 +837,8 @@ function buildPage(pageObj) {
   } else {
     fs.writeFileSync(`./${fileOutput}.html`, pageCode, 'utf8');
   }
-  console.log(` → Built page "${fileOutput}.html"`);
+
+  console.log(` → Built page "${fileOutput}.html" - ${JSON.stringify(mtime)}`);
 }
 
 const landingPages = [
@@ -841,7 +864,8 @@ const landingPages = [
     name: 'Mutations table',
     in: 'mutations',
     css: ['div_tables', 'mutations_table'],
-    skip: true
+    skip: true,
+    priority: 0.9,
   },
   {
     name: 'Verbs',
@@ -891,6 +915,7 @@ const landingPages = [
     name: 'Word lists',
     in: 'word_lists',
     skip: true,
+    priority: 0.9,
     callback: (code) => {
     return code
       .replace('<!--TABLE_SWADESH-->', tableSwadesh)
@@ -905,12 +930,14 @@ const landingPages = [
   {
     name: 'Copula',
     in: 'copula',
-    skip: true
+    skip: true,
+    priority: 0.9,
   },
   {
     name: 'Prepositions',
     skip: true,
     out: 'prepositions',
+    priority: 0.9,
     sections: [
       {
         name: 'Overview',
@@ -953,13 +980,15 @@ const landingPages = [
     name: 'Tengwar',
     in: 'tengwar',
     css: ['tengwar', 'div_tables', 'tengwar_table'],
-    skip: true
+    skip: true,
+    priority: 0.8,
   },
   {
     name: 'Example of a translation',
     in: 'translation',
     css: ['tengwar'],
-    skip: true
+    skip: true,
+    priority: 0.8,
   },
   {
     name: 'Sources from VL',
@@ -996,16 +1025,47 @@ finalHtml = finalHtml
   .replace('/// SCRIPTS ///', `${darkmodeScript}\n${focusScript}\n${stickyScript}`)
   ;
 
+function makeMapEntry(uri, date, priority = 0.5) {
+  let s = '';
+  s += ` <url>\n`;
+  s += `  <loc>${uri}</loc>\n`;
+  s += `  <lastmod>${date}</lastmod>\n`;
+  s += `  <priority>${priority}</priority>\n`;
+  s += ` </url>\n`;
+  return s;
+}
+
 // if (result === 'd62e6f5ce43e5cfc4d132a561dfa0d95' || result === '56ea9c664e8c9f1ad611cf8e5f1bb41c') {
 if (softGen) {
   landingPages.forEach((landingPage) => {
     buildPage(landingPage);
   });
 
-  const sitemapText = sitemap.map((s) => (`${domain}/${s ? `${s}.html` : ''}`)).join('\n');
-  fs.writeFileSync('./out/sitemap.txt', sitemapText, 'utf8');
+  // const sitemapText = sitemap.map((s) => (`${domain}/${s ? `${s}.html` : ''}`)).join('\n');
+  // fs.writeFileSync('./out/sitemap.txt', sitemapText, 'utf8');
   fs.writeFileSync('./out/index.html', finalHtml, 'utf8');
+
+
+  // Site Map:
+
+  let xmlSiteMapCode =  '<?xml version="1.0" encoding="UTF-8"?>\n';
+      xmlSiteMapCode += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
   
+  // Index:
+  xmlSiteMapCode += makeMapEntry(`${domain}/`, origiDate.toISOString().slice(0, 10), 1);
+
+  // Landing pages:
+  xmlMap.map((p) => {
+    const { file, date, priority } = p;
+    const uri = `${domain}/${file ? `${file}.html` : ''}`;
+    xmlSiteMapCode += makeMapEntry(uri, date, priority);
+  })
+  xmlSiteMapCode += '</urlset>';
+
+  fs.writeFileSync('./out/sitemap.xml', xmlSiteMapCode, 'utf8');
+
+  // Done writing site map.
+
   fs.cp('./img', './out/img', { recursive: true }, (err) => err ? console.error(err) : null);
   fs.cp('./tengwar', './out/tengwar', { recursive: true }, (err) => err ? console.error(err) : null);
 } else {
@@ -1014,10 +1074,31 @@ if (softGen) {
     buildPage(landingPage);
   });
 
-  const sitemapText = sitemap.map((s) => (`${domain}/${s ? `${s}.html` : ''}`)).join('\n');
+  // const sitemapText = sitemap.map((s) => (`${domain}/${s ? `${s}.html` : ''}`)).join('\n');
 
-  fs.writeFileSync('./sitemap.txt', sitemapText, 'utf8');
-  console.log(' → Built "sitemap.txt"');
+  // fs.writeFileSync('./sitemap.txt', sitemapText, 'utf8');
+  // console.log(' → Built "sitemap.txt"');
+
+  // Site Map:
+
+  let xmlSiteMapCode =  '<?xml version="1.0" encoding="UTF-8"?>\n';
+      xmlSiteMapCode += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  
+  // Index:
+  xmlSiteMapCode += makeMapEntry(`${domain}/`, origiDate.toISOString().slice(0, 10), 1);
+
+  // Landing pages:
+  xmlMap.map((p) => {
+    const { file, date, priority } = p;
+    const uri = `${domain}/${file ? `${file}.html` : ''}`;
+    xmlSiteMapCode += makeMapEntry(uri, date, priority);
+  })
+  xmlSiteMapCode += '</urlset>';
+
+  fs.writeFileSync('./sitemap.xml', xmlSiteMapCode, 'utf8');
+  console.log(' → Built "sitemap.xml"');
+
+  // Done writing site map.
 
   fs.writeFileSync('./index.html', finalHtml, 'utf8');
   console.log(' → Built "index.html"');
