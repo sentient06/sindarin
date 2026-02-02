@@ -3,6 +3,7 @@ import { swadesh } from './build/swadesh.js';
 import { silm100 } from './build/silm100.js';
 import { mutationsA, mutationsB } from './build/mutations.js';
 import { discord } from './build/discord.js';
+import { fileDates } from './build/fileDates.js';
 
 /*
 
@@ -56,22 +57,26 @@ if (softGen) {
 // cssmin.js - zero dependencies
 // Usage: const min = minifyCss(cssString);
 
+// NOTE: Minification is currently disabled — the function returns the input
+// unchanged.  The full implementation is preserved below in case it is needed
+// again later.
 function minifyCss(css) {
   return css;
-  // Remove comments (both /* */ style)
+
+  /* eslint-disable no-unreachable */
+  // --- Minification implementation (currently unused) ---
+
+  // Remove comments
   css = css.replace(/\/\*[\s\S]*?\*\//g, '');
-  
-  // Step 1: Extract and fix calc() expressions FIRST
-  // Need to handle nested parentheses properly
+
+  // Step 1: Extract and fix calc() expressions first (handles nested parens)
   const calcs = [];
   let result = '';
   let i = 0;
-  
+
   while (i < css.length) {
-    // Look for calc(
     const calcMatch = css.substring(i).match(/^calc\s*\(/i);
     if (calcMatch) {
-      // Find the matching closing parenthesis
       let depth = 1;
       let j = i + calcMatch[0].length;
       while (j < css.length && depth > 0) {
@@ -79,26 +84,16 @@ function minifyCss(css) {
         if (css[j] === ')') depth--;
         j++;
       }
-      
-      // Extract the full calc expression
-      const fullCalc = css.substring(i, j);
-      
-      // Ensure proper spacing in calc: spaces around + and - operators
-      let fixed = fullCalc;
-      // Normalize all whitespace to single spaces first
+
+      let fixed = css.substring(i, j);
       fixed = fixed.replace(/\s+/g, ' ');
       fixed = fixed.replace(/calc\s*\(/i, 'calc(');
       fixed = fixed.replace(/\s*\)/g, ')');
-      
-      // Add spaces around + (not part of ++, which doesn't exist in CSS)
       fixed = fixed.replace(/([^\s])\+/g, '$1 +');
       fixed = fixed.replace(/\+([^\s])/g, '+ $1');
-      
-      // Add spaces around - ONLY when it's a binary operator
-      // Not when it's part of -- (custom property) or negative number
       fixed = fixed.replace(/(\))\s*-\s*/g, '$1 - ');
       fixed = fixed.replace(/([a-z0-9])\s+-\s+([a-z0-9])/gi, '$1 - $2');
-      
+
       calcs.push(fixed);
       result += `___CALC${calcs.length - 1}___`;
       i = j;
@@ -107,47 +102,35 @@ function minifyCss(css) {
       i++;
     }
   }
-  
+
   css = result;
-  
+
   // Step 2: Extract strings and URLs
   const strings = [];
   css = css.replace(/(["'])(?:(?=(\\?))\2.)*?\1/g, (match) => {
     strings.push(match);
     return `___STRING${strings.length - 1}___`;
   });
-  
-  // Step 3: Now do all the minification
-  // Remove whitespace around special characters
+
+  // Step 3: Minify
   css = css.replace(/\s*([{}:;,>+~])\s*/g, '$1');
-  
-  // Remove whitespace around parentheses
   css = css.replace(/\s*\(\s*/g, '(');
   css = css.replace(/\s*\)\s*/g, ')');
-  
-  // Remove leading/trailing whitespace
   css = css.trim();
-  
-  // Remove unnecessary semicolons before closing braces
   css = css.replace(/;}/g, '}');
-  
-  // Optimize zero values (0px, 0em, etc. to just 0)
   css = css.replace(/\b0(?:px|em|rem|vh|vw|vmin|vmax|cm|mm|in|pt|pc|ex|ch)\b/g, '0');
-  
-  // Optimize color values - convert #AABBCC to #ABC when possible
   css = css.replace(/#([0-9a-f])\1([0-9a-f])\2([0-9a-f])\3\b/gi, '#$1$2$3');
-  
-  // Remove unnecessary decimal zeros
   css = css.replace(/(\d)\.0+(?!\d)/g, '$1');
   css = css.replace(/\.0+([^\d])/g, '0$1');
-  
-  // Step 4: Restore calc() first (they have the spaces we need)
+
+  // Step 4: Restore calc() expressions (spaces already correct)
   css = css.replace(/___CALC(\d+)___/g, (match, index) => calcs[index]);
-  
+
   // Step 5: Restore strings
   css = css.replace(/___STRING(\d+)___/g, (match, index) => strings[index]);
-  
+
   return css;
+  /* eslint-enable no-unreachable */
 }
 
 function escapeHtml(str = '') {
@@ -165,7 +148,7 @@ function renderTableRows(list, ignoreIndex = false) {
     const { term, sindarin } = word;
     const notes = [];
     const gaps = 3 - sindarin.length;
-    const id = word.hasOwnProperty('id') ? word.id : idx + 1;
+    const id = 'id' in word ? word.id : idx + 1;
     const tds = [];
 
     if (ignoreIndex) {
@@ -178,23 +161,23 @@ function renderTableRows(list, ignoreIndex = false) {
     sindarin.forEach(sin => {
       let inner = '';
 
-      if (sin.hasOwnProperty('url')) {
+      if ('url' in sin) {
         inner = `<a href="${sin.url}" target="_blank">${sin.term}</a>`;
       } else {
         inner = sin.term;
       }
       tds.push(`      <td>${inner}</td>`);
 
-      if (sin.hasOwnProperty('comment')) {
+      if ('comment' in sin) {
         notes.push(sin.comment);
       }
     });
 
-    for (var i = 0; i < gaps; i++) {
+    for (let i = 0; i < gaps; i++) {
       tds.push(`      <td></td>`);
     }
 
-    if (word.hasOwnProperty('comment')) {
+    if ('comment' in word) {
       notes.push(word.comment);
     }
     
@@ -211,8 +194,6 @@ function renderTableRows(list, ignoreIndex = false) {
 }
 
 function renderMutations(mutations) {
-  // console.log('> renderMutations ------------------------------------------');
-
   let table = [];
   let columns = [];
 
@@ -230,12 +211,8 @@ function renderMutations(mutations) {
       const rowType = Object.prototype.toString.call(col);
 
       if (rowType === typeStr) {
-        // newRow[j] = col;
         celLength = Math.max(celLength, col.length);
-        // console.log(' - - col s', typeof col, j, col, celLength);
-      } else
-
-      if (rowType === typeArr) {
+      } else if (rowType === typeArr) {
         let _celLength = 0
         col.reduce((acc, val, idx) => {
           if (val.indexOf('[') > -1 && val.indexOf(']') > -1) {
@@ -246,7 +223,6 @@ function renderMutations(mutations) {
         });
         _celLength += (col.length - 1) * 2;
         celLength = Math.max(celLength, _celLength);
-        // console.log(' - - col a', typeof col, j, col, celLength);
       }
 
       colLen[j] = celLength;
@@ -278,11 +254,8 @@ function renderMutations(mutations) {
           _value = _value.padStart(_value.length + 2, ' ');
         }
 
-      } else
-
-      if (rowType === typeArr) {
+      } else if (rowType === typeArr) {
         let hoverLen = colLen[j] + padVal - col.map(v => v.replace(/\[/, '').replace(/\]/, '')).join(', ').length;
-        // console.log('~~~~~> a ', colLen[j], padVal, col.map(v => v.replace(/\[/, '').replace(/\]/, '')).join(', '));
         const hoverVal = col.map((mut, l) => {
           let newMut = mut;
           const hoverOrg = j > 1 ? row[1][l] : '';
@@ -293,7 +266,6 @@ function renderMutations(mutations) {
               .replace(/\[/g, `<span class="quiet">`)
               .replace(/\]/g, `</span>`);
           }
-
           // console.log('~~~~~> b ', hoverOrg, newMut, quiet, hoverLen);
           return `<span class="c_${l}${quiet}">${newMut}</span>`;
         }).join(', ');
@@ -305,9 +277,6 @@ function renderMutations(mutations) {
   });
 
   let tableStr = table.map(row => row.join('')).map(_r => (`<span class="row">${_r}</span>`)).join('\n');
-
-
-  // console.log('X renderMutations ------------------------------------------');
 
   return tableStr;
 }
@@ -637,30 +606,7 @@ function formatShortcuts(str) {
     .replace(/\*\*([^\*\n]+)\*\*/g, `<b>$1</b>`)
     .replace(/\*([^\*\n]+)\*/g, `<i>$1</i>`)
     .replace(/±([^±\n]+)±/g, `<small>$1</small>`)
-    // .replace(/§§§([^§\n\s-]+)§([^§\n\s-]+)§§§/g, `<abbr class="mixed" title="$1">$2</abbr>`)
-    // .replace(/§§§([^§\n]+)§§§/g, `<span class="mixed">$1</span>`)
-    // .replace(/§§([^§\n\s-]+)§([^§\n\s-]+)§§/g, `<abbr class="nasal" title="$1">$2</abbr>`)
-    // .replace(/§§([^§\n]+)§§/g, `<span class="nasal">$1</span>`)
-    // .replace(/§([^§\n\s-]+)§([^§\n\s-]+)§/g, `<abbr class="soft" title="$1">$2</abbr>`)
-    // .replace(/§([^§\n]+)§/g, `<span class="soft">$1</span>`)
-    // // .replace(/§(([^§\n]{1})[^§\n]{1})([^§\n]+)§/g, (match, p1, p2, p3, offset, str) => {
-    // //   const mutated = `${p1}${p3}`;
-    // //   let unmutated = mutated;
-    // //   console.log('>>>>', mutated, p1, p2, p3);
-    // //   if (p2 === 'b') {
-    // //     unmutated = unmutated.replace('b', 'p');
-    // //   }
-    // //   return `<abbr class="soft" title="${unmutated}">${mutated}</abbr>`;
-    // // })
-    // .replace(/@@@([^@\n\s-]+)@([^@\n\s-]+)@@@/g, `<abbr class="sibilant" title="$1">$2</abbr>`)
-    // .replace(/@@@([^@\n]+)@@@/g, `<span class="sibilant">$1</span>`)
-    // .replace(/@@([^@\n\s-]+)@([^@\n\s-]+)@@/g, `<abbr class="liquid" title="$1">$2</abbr>`)
-    // .replace(/@@([^@\n]+)@@/g, `<span class="liquid">$1</span>`)
-    // .replace(/@([^@\n\s-]+)@([^@\n\s-]+)@/g, `<abbr class="stop" title="$1">$2</abbr>`)
-    // .replace(/@([^@\n]+)@/g, `<span class="stop">$1</span>`)
     .replace(/[^"]*"([^"]*)\"/g, (m) => m.replace(/(\[[^\]]*\])/g, '<span class="subtle">$1</span>'))
-    // // .replace(/[^"]*?(\[[^\]]*])[^"]*?(\[[^\]]*])[^"]*?/g, `<span class="subtle">$1</span>`);
-    // // .replace(/(?<=".*)(\[[^\]\n]+\])(?=[^"^\n]+")/g, `<span class="subtle">$1</span>`);
     ;
 }
 
@@ -702,10 +648,8 @@ skeleton.forEach((item) => {
       console.log('- - Processing', j+1, section.file, section.anchor, section.name);
       j++;
       let sectionHtml = fs.readFileSync(`./src/${section.file}.html`, 'utf8');
-      if (section.hasOwnProperty('callback')) {
-        if (section.callback) {
-          sectionHtml = section.callback(sectionHtml);
-        }
+      if (section.callback) {
+        sectionHtml = section.callback(sectionHtml);
       }
       sectionHtml = formatShortcuts(sectionHtml.replace('%section%', `${i}.${j}`));
 
@@ -780,7 +724,7 @@ function buildPage(pageObj) {
     });
   }
   
-  if (Boolean(unmap) === false) {
+  if (!unmap) {
     sitemap.push(fileOutput);
   }
 
@@ -807,16 +751,25 @@ function buildPage(pageObj) {
     sections.forEach((section, idx) => {
       const { name, anchor, file } = section;
       pageHtml = processSection(pageHtml, name, anchor, file, idx);
-      const stats = fs.statSync(`./pages/${file}.html`);
-      const _date = stats.mtime; //.toISOString().slice(0, 10);
-      latestUpdate.push(_date);
+
+      const { lastUpdate } = fileDates.find((f) => f.file === `${file}.html`);
+      // mtime = lastUpdate;
+      latestUpdate.push(lastUpdate);
+
+    //   const stats = fs.statSync(`./pages/${file}.html`);
+    //   const _date = stats.mtime; //.toISOString().slice(0, 10);
+      // latestUpdate.push(_date);
     });
-    const _allDates = latestUpdate.map((d) => d.getTime());
-    const mostRecent = new Date(Math.max(..._allDates));
-    mtime = mostRecent.toISOString().slice(0, 10);
+    const mostRecent = latestUpdate.reduce((latest, d) => d > latest ? d : latest);
+    // const _allDates = latestUpdate.map((d) => d.getTime());
+    // const mostRecent = new Date(Math.max(..._allDates));
+    // mtime = mostRecent.toISOString().slice(0, 10);
+    mtime = mostRecent;
   } else {
-    const stats = fs.statSync(`pages/${fileInput}.html`);
-    mtime = stats.mtime.toISOString().slice(0, 10);
+    const { lastUpdate } = fileDates.find((f) => f.file === `${fileInput}.html`);
+    mtime = lastUpdate;
+    // const stats = fs.statSync(`pages/${fileInput}.html`);
+    // mtime = stats.mtime.toISOString().slice(0, 10);
   }
 
   xmlMap.push({
@@ -1035,94 +988,55 @@ function makeMapEntry(uri, date, priority = 0.5) {
   return s;
 }
 
-// if (result === 'd62e6f5ce43e5cfc4d132a561dfa0d95' || result === '56ea9c664e8c9f1ad611cf8e5f1bb41c') {
+// Output directory: './out/' when softGen, project root otherwise.
+const outDir = softGen ? './out/' : './';
+
+// Build every landing page.
+landingPages.forEach((landingPage) => {
+  buildPage(landingPage);
+});
+
+// Write index.html.
+fs.writeFileSync(`${outDir}index.html`, finalHtml, 'utf8');
+if (!softGen) console.log(' → Built "index.html"');
+
+// --- Sitemap ---
+
+let xmlSiteMapCode =  '<?xml version="1.0" encoding="UTF-8"?>\n';
+    xmlSiteMapCode += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+
+// Index entry:
+xmlSiteMapCode += makeMapEntry(`${domain}/`, origiDate.toISOString().slice(0, 10), 1);
+
+// Landing-page entries:
+xmlMap.forEach((p) => {
+  const { file, date, priority } = p;
+  const uri = `${domain}/${file ? `${file}.html` : ''}`;
+  xmlSiteMapCode += makeMapEntry(uri, date, priority);
+});
+xmlSiteMapCode += '</urlset>';
+
+fs.writeFileSync(`${outDir}sitemap.xml`, xmlSiteMapCode, 'utf8');
+if (!softGen) console.log(' → Built "sitemap.xml"');
+
+// --- Post-build steps ---
+
 if (softGen) {
-  landingPages.forEach((landingPage) => {
-    buildPage(landingPage);
-  });
-
-  // const sitemapText = sitemap.map((s) => (`${domain}/${s ? `${s}.html` : ''}`)).join('\n');
-  // fs.writeFileSync('./out/sitemap.txt', sitemapText, 'utf8');
-  fs.writeFileSync('./out/index.html', finalHtml, 'utf8');
-
-
-  // Site Map:
-
-  let xmlSiteMapCode =  '<?xml version="1.0" encoding="UTF-8"?>\n';
-      xmlSiteMapCode += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-  
-  // Index:
-  xmlSiteMapCode += makeMapEntry(`${domain}/`, origiDate.toISOString().slice(0, 10), 1);
-
-  // Landing pages:
-  xmlMap.map((p) => {
-    const { file, date, priority } = p;
-    const uri = `${domain}/${file ? `${file}.html` : ''}`;
-    xmlSiteMapCode += makeMapEntry(uri, date, priority);
-  })
-  xmlSiteMapCode += '</urlset>';
-
-  fs.writeFileSync('./out/sitemap.xml', xmlSiteMapCode, 'utf8');
-
-  // Done writing site map.
-
-  fs.cp('./img', './out/img', { recursive: true }, (err) => err ? console.error(err) : null);
-  fs.cp('./tengwar', './out/tengwar', { recursive: true }, (err) => err ? console.error(err) : null);
+  // Copy static asset folders into the output directory.
+  fs.cp('./img',     `${outDir}img`,     { recursive: true }, (err) => err ? console.error(err) : null);
+  fs.cp('./tengwar', `${outDir}tengwar`, { recursive: true }, (err) => err ? console.error(err) : null);
 } else {
-
-  landingPages.forEach((landingPage) => {
-    buildPage(landingPage);
-  });
-
-  // const sitemapText = sitemap.map((s) => (`${domain}/${s ? `${s}.html` : ''}`)).join('\n');
-
-  // fs.writeFileSync('./sitemap.txt', sitemapText, 'utf8');
-  // console.log(' → Built "sitemap.txt"');
-
-  // Site Map:
-
-  let xmlSiteMapCode =  '<?xml version="1.0" encoding="UTF-8"?>\n';
-      xmlSiteMapCode += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-  
-  // Index:
-  xmlSiteMapCode += makeMapEntry(`${domain}/`, origiDate.toISOString().slice(0, 10), 1);
-
-  // Landing pages:
-  xmlMap.map((p) => {
-    const { file, date, priority } = p;
-    const uri = `${domain}/${file ? `${file}.html` : ''}`;
-    xmlSiteMapCode += makeMapEntry(uri, date, priority);
-  })
-  xmlSiteMapCode += '</urlset>';
-
-  fs.writeFileSync('./sitemap.xml', xmlSiteMapCode, 'utf8');
-  console.log(' → Built "sitemap.xml"');
-
-  // Done writing site map.
-
-  fs.writeFileSync('./index.html', finalHtml, 'utf8');
-  console.log(' → Built "index.html"');
-
-  console.log('- Deleting source files...')
-  fs.unlink('index-template.html', (err) => {
-    if (err) throw err;
-    console.log('index-template.html was deleted');
-  });
-  fs.unlink('page-template.html', (err) => {
-    if (err) throw err;
-    console.log('page-template.html was deleted');
-  });
-  fs.unlink('package.json', (err) => {
-    if (err) throw err;
-    console.log('package.json was deleted');
-  });
-  fs.unlink('package-lock.json', (err) => {
-    if (err) throw err;
-    console.log('package-lock.json was deleted');
-  });
-  fs.rmSync('src', { recursive: true, force: true });
-  fs.rmSync('pages', { recursive: true, force: true });
-  fs.rmSync('scripts', { recursive: true, force: true });
-  fs.rmSync('styles', { recursive: true, force: true });
-  fs.rmSync('build', { recursive: true, force: true });
+  // Production: delete source / build artefacts that are no longer needed.
+  console.log('- Deleting source files...');
+  for (const file of ['index-template.html', 'page-template.html', 'package.json', 'package-lock.json', 'map.mjs']) {
+    fs.unlink(file, (err) => {
+      if (err) throw err;
+      console.log(`${file} was deleted`);
+    });
+  }
+  fs.rmSync('src',      { recursive: true, force: true });
+  fs.rmSync('pages',    { recursive: true, force: true });
+  fs.rmSync('scripts',  { recursive: true, force: true });
+  fs.rmSync('styles',   { recursive: true, force: true });
+  fs.rmSync('build',    { recursive: true, force: true });
 }
