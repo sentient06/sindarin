@@ -7,6 +7,8 @@ import { fileDates } from './build/fileDates.js';
 
 /*
 
+±small±
+
 [implied]
 
 *italic*
@@ -15,21 +17,26 @@ import { fileDates } from './build/fileDates.js';
 
 ***italic bold***
 
-§soft§
+§s{soft|original}
+§s{soft}
 
-§§nasal§§
+§n{nasal|original}
+§n{nasal}
 
-§§§mixed§§§
 §m{mixed|original}
 §m{mixed}
 
-@stop@
+§t{stop|original}
+§t{stop}
 
-@@liquid@@
+§l{liquid|original}
+§l{liquid}
 
-@@@sibilant@@@
+§i{sibilant|original}
+§i{sibilant}
 
 ||file||link||
+[external link](link)
 
 */
 
