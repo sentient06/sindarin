@@ -1,5 +1,5 @@
     @media (max-width: 560px) {
-      .b30, .b40, .b60, .b70, .b50 {
+      .b30, .b40, .b60, .b70, .b50, .b50b {
         flex: 0 0 100%;
         border-bottom-width: 0;
         white-space: pre;
@@ -8,7 +8,8 @@
 
       .b30 + .b70,
       .b40 + .b60,
-      .b50 + .b50 {
+      .b50 + .b50,
+      .b50 + .b50b {
         border-bottom-width: 1px;
       }
     }
