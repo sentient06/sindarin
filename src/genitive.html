@@ -1,8 +1,5 @@
 <section id="genitive">
 <a href="" class="top">Top</a>
-<div class="temp">
-  This part is being revised!
-</div>
 <h3>
   %section% Genitive
 </h3>
@@ -57,31 +54,35 @@
   Here, the construct has an internal hierarchical structure:
 </p>
 <pre>
-  [parf [inias [ionnath Elros]]]
-
-  ┌─ parf ────────────────────┐
-  │ ┌─ inias ───────────────┐ │
-  │ │     ionnath Elros     │ │
-  │ └───────────────────────┘ │
-  └───────────────────────────┘
+  parf ─────────────────┐
+  │ inias ────────────┐ │
+  │ │  ionnath Elros  │ │
+  │ └─────────────────┘ │
+  └─────────────────────┘
 </pre>
-
 <p>
-  Here, the construct sequence spans three levels:
+  The first element of the chain is called *the head noun*. It means the primary thing in the chain, the thing we are actually talking about. The other nouns are qualifiers or possessors. They add more information about the preceding noun.
+</p>
+<p>
+  In this example, the head noun is the book. The construct sequence spans three levels:
 </p>
 <pre>
-  parf ‹inias ionnath Elros› – the book of ‹the annals of the sons of Elros›
-  inias ‹ionnath Elros›      – the annals of ‹the sons of Elros›
-  ionnath ‹Elros›            – the sons of ‹Elros›
+  parf    ‹...› – the book   of ‹something› - head noun: we are talking about a book
+  inias   ‹...› – the annals of ‹something› - qualifier of the book
+  ionnath Elros – the sons   of Elros       - qualifier of the annals
 </pre>
-<h6>
-  Adjectives in a construct chain
-</h6>
 <p>
-  Such constructions are semantically rich but syntactically rigid. Any adjective modifying the chain must follow the entire construct and agree in number with the element it refers to.
+  "Elros" is also a qualifier or possessor. It's the "possessor" of "the sons", in this case.
+</p>
+
+<h5>
+  Adjectives with a construct chain
+</h5>
+<p>
+  Such constructions are semantically rich but syntactically rigid. Any adjective modifying the chain must ***follow the entire construct*** and agree in number with the element it refers to.
 </p>
 <p>
-  The first element of the chain is the head noun. (In this example, *parf* "the book.") If there is any ambiguity, adjectives by default are interpreted as referring to the head noun. For example:
+  If there is any ambiguity, adjectives by default are interpreted as referring to the head noun. For example:
 </p>
 <pre>
   brûn = "old"
@@ -111,11 +112,21 @@
 <p>
   If ambiguity persists and the adjective seems to wrongly refer to the head noun, it needs rephrasing.
 </p>
+
+<h6>
+  Multiple adjectives
+</h6>
 <p>
-  Multiple adjectives are also possible, and they should show up, after the chain, in reverse order, and agree with their modified nouns:
+  Multiple adjectives are also possible, and they should show up ***after the chain and in reverse order***. As always, they should agree with their modified nouns.
 </p>
 <pre>
   bar en·aran **istui** **luin** = "the **blue** house of the **learned** king"
+</pre>
+<p>
+  Order matters:
+</p>
+<pre>
+  <s>bar en·aran **luin** **istui**</s> = "the **learned** house of the **blue** king"
 </pre>
 <p>
   To illustrate the reverse order of adjectives, let's re-use the first chain example and add adjectives:
@@ -128,25 +139,16 @@
       ionnath **thelai** = "**valiant** sons"
         Elros **raud**   = "**noble** Elros"
 
-     parf inias ionnath Elros **raud** **thelai** **iaur** **§s{veleg|beleg}**
+     parf inias ionnath Elros **raud** **thelai** **iaur** **beleg**
 
-  ┌─ parf ─────────────────────────────────────────────┐
-  │   ┌── inias ───────────────────────────────────┐   │
-  │   │   ┌──── ionnath ───────────────────────┐   │   │
-  │   │   │             Elros **raud**             │   │   │
-  │   │   └─────────────────────── **thelai** ─────┘   │   │
-  │   └────────────────────────────────── **iaur** ────┘   │
-  └─────────────────────────────────────────── **§s{veleg}** ──┘
+       parf ──────────────────────────────────┐
+       │   inias ─────────────────────────┐   │
+       │   │   ionnath ───────────────┐   │   │
+       │   │   │      Elros **raud**      │   │   │
+       │   │   └──────────────── **thelai**   │   │
+       │   └────────────────────────── **iaur**   │
+       └───────────────────────────────── **beleg**
 </pre>
-<!--
-     parf
-     │    inias
-     │    │     ionnath
-     │    │     │       Elros─**raud**
-     │    │     └───────────────── **thelai**
-     │    └────────────────────────────── **iaur**
-     └──────────────────────────────────────── **§s{veleg}**
--->
 <p>
   While that's possible, it's clear it becomes more and more confusing the more noun-adjective pairs are added, therefore this kind of complex construction should be discouraged.
 </p>
@@ -155,33 +157,31 @@
   Interruption rules (prohibition), ambiguity and stylistic workarounds
 </h5>
 <p>
-  One of the strict features of the construct chain is that it must be uninterrupted. Unlike in English, where modifiers may separate the head noun from its genitive, Sindarin discourages such insertions. An adjective or demonstrative should follow the entire chain. For example:
+  One of the strict features of the construct chain is that it must be uninterrupted. Unlike in English, where modifiers may separate the head noun from its genitive, Sindarin discourages such insertions. An adjective or demonstrative must follow the entire chain.
 </p>
 <pre>
   Preferred:
-  roch aran **maer** = "a good horse of a king" (adjective comes after the whole phrase)
+  roch aran **§s{vaer|maer}** = "a **good** horse of a king"
 
   Highly stylised/poetic:
-  roch **maer** aran = "good horse of a king"
+  <s>roch **§s{vaer|maer}** aran</s> = "a **good** horse of a king"
 </pre>
 <p>
   This syntactic rigidity causes ambiguity if the adjective or demonstrative is applicable to multiple nouns. Sindarin normally relies on context or emphasis rather than rearrangement to solve that. A few workarounds may serve as reference:
 </p>
 <pre>
-  maer = "good"
+  **If the horse is good**
 
-  If the horse is good:
-
-  Standard, but ambiguous:
+  Standard:
   roch aran **§s{vaer|maer}** = "[a] **good** horse [of] [a] king"
 
   Ungrammatical:
-  <s>**maer** roch aran = "[a] **good** horse [of] [a] king"</s>
+  **maer** roch aran = "**good** [is] [a] horse [of] [a] king"
 
   Prepositional genitives can prevent ambiguity:
   roch **§s{vaer|maer}** *nan* aran = "[a] **good** horse *‹of a›* king"
 
-  If the King is good:
+  **If the King is good**
 
   Prepositional genitives:
   roch *nan* aran **§s{vaer|maer}** = "[a] horse *‹of a›* **good** king"
@@ -257,7 +257,7 @@
   </cite>
 </p>
 <p>
-  Tolkien contrasted a juxtapositional genitive <i>aran cîr lim</i> (no mutation) with a prepositional genitive <i>aran na chîr lim</i> "king of swift ships". He also compared the genitival preposition na "with, of", causing nasal mutation, with the allative preposition na to, toward", causing soft mutation. So <i>na thaur</i> means "of a forest" while <i>na daur</i> meand "to a forest".
+  Tolkien contrasted a juxtapositional genitive <i>aran cîr lim</i> (no mutation) with a prepositional genitive <i>aran na chîr lim</i> "king of swift ships". He also compared the genitival preposition na "with, of", causing nasal mutation, with the allative preposition na "to, toward", causing soft mutation. So <i>na thaur</i> means "of a forest" while <i>na daur</i> meand "to a forest".
 </p>
 <p>
   The <b>na(n)</b> preposition should always be indefinite and limited to partitive and compositional relationships. (It can precede an article, however.)
@@ -303,10 +303,11 @@
   Another example:
 </p>
 <pre>
+  Faramir §s{choen|hoen} aran      = "Faramir [is] ‹before the› king"
   Faramir §s{cho|ho} aran Gondor = "Faramir [is] before [the] king [of] Gondor"
 </pre>
 <p>
-  *Gondor* is definite, and so is *aran*.
+  *Gondor* is definite, and so is *aran*. This is why we use *ho* and not *hoen*.
 </p>
 </section>
 
