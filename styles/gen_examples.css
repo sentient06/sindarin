@@ -3,7 +3,8 @@
       flex-wrap: wrap;
     }
 
-    .b30, .b40, .b60, .b70, .b50, .b50b {
+    .wrapper > div,
+    .b30, .b40, .b60, .b70, .b50, .b50b, .b100 {
       -webkit-text-size-adjust: 100%;
       white-space: break-spaces;
       font-family: monospace;
@@ -15,6 +16,14 @@
       padding-bottom: 10px;
       border: 0 solid rgba(0, 0, 0, 0.1);
       border-bottom-width: 1px;
+    }
+
+    .wrapper.pre > div {
+      white-space: pre;
+    }
+
+    .b100 {
+      flex: 0 0 100%;
     }
 
     .b50, .b50b {

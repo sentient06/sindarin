@@ -583,12 +583,12 @@ finalHtml = finalHtml
 
 function formatShortcuts(str) {
   return str
-    .replace(/§s\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<abbr class="soft" title="${m2}">${m1}</abbr>`)
-    .replace(/§n\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<abbr class="nasal" title="${m2}">${m1}</abbr>`)
-    .replace(/§m\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<abbr class="mixed" title="${m2}">${m1}</abbr>`)
-    .replace(/§t\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<abbr class="stop" title="${m2}">${m1}</abbr>`)
-    .replace(/§l\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<abbr class="liquid" title="${m2}">${m1}</abbr>`)
-    .replace(/§i\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<abbr class="sibilant" title="${m2}">${m1}</abbr>`)
+    .replace(/§s\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<span class="soft" title="${m2}">${m1}</span>`)
+    .replace(/§n\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<span class="nasal" title="${m2}">${m1}</span>`)
+    .replace(/§m\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<span class="mixed" title="${m2}">${m1}</span>`)
+    .replace(/§t\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<span class="stop" title="${m2}">${m1}</span>`)
+    .replace(/§l\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<span class="liquid" title="${m2}">${m1}</span>`)
+    .replace(/§i\{([^|^\}]+)\|([^\}]+)\}/g, (_, m1, m2) => `<span class="sibilant" title="${m2}">${m1}</span>`)
     .replace(/§s\{([^\^|}]+)\}/g, (_, m1) => `<span class="soft">${m1}</span>`)
     .replace(/§n\{([^\^|}]+)\}/g, (_, m1) => `<span class="nasal">${m1}</span>`)
     .replace(/§m\{([^\^|}]+)\}/g, (_, m1) => `<span class="mixed">${m1}</span>`)
