@@ -937,6 +937,12 @@ const landingPages = [
     ],
   },
   {
+    name: 'Reconstructed duodecimal system',
+    in: 'duodecimal',
+    skip: true,
+    priority: 0.9,
+  },
+  {
     name: 'Tengwar',
     in: 'tengwar',
     css: ['tengwar', 'div_tables', 'tengwar_table'],

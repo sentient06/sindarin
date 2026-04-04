@@ -1,3 +1,7 @@
+    .red {
+      color: red;
+    }
+
     @media (max-width: 560px) {
       .b30, .b40, .b60, .b70, .b50, .b50b {
         flex: 0 0 100%;

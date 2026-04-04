@@ -4,6 +4,7 @@ export const fileDates = [
   { file: "articles.html", lastUpdate: "2025-12-09" },
   { file: "conjunctions.html", lastUpdate: "2025-12-09" },
   { file: "copula.html", lastUpdate: "2026-01-17" },
+  { file: "duodecimal.html", lastUpdate: "2026-04-03" },
   { file: "genitive.html", lastUpdate: "2025-12-09" },
   { file: "medial.html", lastUpdate: "2026-01-31" },
   { file: "mutations.html", lastUpdate: "2026-01-15" },
