@@ -1019,7 +1019,7 @@ let xmlSiteMapCode =  '<?xml version="1.0" encoding="UTF-8"?>\n';
     xmlSiteMapCode += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
 // Index entry:
-xmlSiteMapCode += makeMapEntry(`${domain}/`, origiDate.toISOString().slice(0, 10), 1);
+xmlSiteMapCode += makeMapEntry(`${domain}/index.html`, origiDate.toISOString().slice(0, 10), 1);
 
 // Landing-page entries:
 xmlMap.forEach((p) => {
