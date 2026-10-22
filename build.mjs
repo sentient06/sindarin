@@ -840,8 +840,9 @@ const landingPages = [
     in: 'adjectives' 
   },
   {
-    name: 'Numerals',
-    in: 'numerals' 
+    name: 'A Proposed Neo-Eldarin Numeral Standard',
+    in: 'numerals',
+    css: ['div_tables', 'numerals'],
   },
   {
     name: 'Sentence Structure',
