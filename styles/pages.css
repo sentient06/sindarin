@@ -1,18 +1,31 @@
     main {
       margin-top: 0;
+      padding-bottom: 8px;
     }
 
-    h6 { font-size: 1.125em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.25em; margin: 0.5em 0 0 0; }
-    h5 { font-size: 1.266em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.35em; margin: 0.5em 0 0 0; }
-    h4 { font-size: 1.424em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.45em; margin: 0.5em 0 0 0; }
-    h2 { font-size: 1.802em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.75em; margin: 0.5em 0 0 0; }
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--heading);
+      font-weight: 600;
+    }
+
+    h6 { font-size: 1.05em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.25em; margin: 0.5em 0 0 0; }
+    h5 { font-size: 1.125em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.25em; margin: 0.5em 0 0 0; }
+    h4 { font-size: 1.25em; line-height: 130%; padding-top: 0.6em; padding-bottom: 0.3em; margin: 0.5em 0 0 0; }
+    h2 { font-size: 1.7em; line-height: 130%; padding-top: 0.75em; padding-bottom: 0.4em; margin: 0.75em 0 0.25em 0; }
     h2.h3,
-    h3 { font-size: 1.602em; line-height: 130%; padding-top: 0.5em; padding-bottom: 0.55em; margin: 0.5em 0 0 0; }
-    h1 { font-size: 2.027em; line-height: 130%; margin-top: 2em; margin-bottom: 0.75em;
-      background: #333;
-      color: #fff;
-      box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 0.25);
-      padding: 10px 16px;
+    h3 { font-size: 1.45em; line-height: 130%; padding-top: 0.75em; padding-bottom: 0.35em; margin: 0.5em 0 0 0; }
+    h1 { font-size: 2.2em; line-height: 130%; margin-top: 2em; margin-bottom: 0.75em;
+      background: var(--green-900);
+      color: var(--gold);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 14px 22px;
+      letter-spacing: 0.01em;
+    }
+
+    h2 {
+      border-bottom: 1px solid var(--line);
     }
 
     h2.h3,
@@ -20,27 +33,24 @@
       border-style: solid;
       border-width: 0;
       border-top-width: 1px;
-      border-color: rgba(0, 0, 0, 0.1);
+      border-color: var(--line);
     }
 
-    h2.h3,
-    h3 { border-color: rgba(0, 0, 0, 0.1); }
-    h4 { border-color: rgba(0, 0, 0, 0.05); }
-    h5 { border-color: rgba(0, 0, 0, 0.025); }
+    h4, h5 { border-top-style: dotted; }
 
     @media print {
       h1 {
+        background: none;
+        color: #000;
+        border-left: none;
         box-shadow: none !important;
+      }
+      h2, h3, h4, h5, h6 {
+        color: #000;
       }
     }
 
     .dark-theme h1 {
-      background: #fff;
-      color: #000;
-      box-shadow: 10px 10px 40px 0px rgba(0, 0, 0, 1);
+      background: var(--green-800);
+      color: var(--gold);
     }
-
-    .dark-theme h2.h3,
-    .dark-theme h3 { border-color: rgba(255, 255, 255, 0.1); }
-    .dark-theme h4 { border-color: rgba(255, 255, 255, 0.05); }
-    .dark-theme h5 { border-color: rgba(255, 255, 255, 0.025); }

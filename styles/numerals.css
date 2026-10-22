@@ -1,0 +1,74 @@
+    main header {
+      margin-bottom: 1.5em;
+    }
+
+    .subtitle {
+      font-size: 1.25em;
+      font-style: italic;
+      color: var(--text-muted);
+      margin: 0 0 0.5em 0;
+    }
+
+    .meta {
+      font-size: 0.85em;
+      font-variant-caps: small-caps;
+      letter-spacing: 0.03em;
+      color: var(--text-muted);
+    }
+
+    .abstract {
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 18px 24px;
+      margin: 28px 0;
+    }
+
+    .formula {
+      text-align: center;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      margin: 18px 0;
+      font-size: 1.1em;
+    }
+
+    .status {
+      font-size: 0.85em;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-top: -0.5em;
+    }
+
+    main table {
+      max-width: 100%;
+    }
+
+    main td {
+      overflow-wrap: anywhere;
+    }
+
+    main pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    main ol li,
+    main ul li {
+      margin-bottom: 6px;
+    }
+
+    .footer {
+      margin-top: 48px;
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      font-size: 0.85em;
+      color: var(--text-muted);
+    }
+
+    @media print {
+      h2, h3 { break-after: avoid; }
+      table, pre, .abstract, .formula { break-inside: avoid; }
+    }

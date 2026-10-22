@@ -2,6 +2,7 @@
       padding: 20px 0;
       display: flex;
       flex-wrap: wrap;
+      font-size: 0.9em;
     }
 
     .b25 {
@@ -120,6 +121,13 @@
 
     .checkbox-wrapper-14 {
       line-height: 1.6em;
+      display: flex;
+      align-items: center;
+      padding-right: 8px;
+    }
+
+    .checkbox-wrapper-14 input[type=checkbox] {
+      flex-shrink: 0;
     }
 
     .checkbox-wrapper-14 * {

@@ -3,7 +3,7 @@
     }
 
     @media (max-width: 560px) {
-      .b30, .b40, .b60, .b70, .b50, .b50b {
+      .b30, .b40, .b60, .b70, .b50, .b50b, .b100 {
         flex: 0 0 100%;
         border-bottom-width: 0;
         white-space: pre;
@@ -18,15 +18,21 @@
       }
     }
 
-    .dark-theme .last-updated,
-    .dark-theme footer {
-      color: rgba(255,255,255,0.1);
-    }
-
     @media (max-width: 667px)  {
       body {
         margin-left: 0;
         margin-right: 0;
+      }
+      main {
+        padding: 0 8px;
+      }
+      section {
+        padding: 4px 16px 16px 16px;
+      }
+      .image.right {
+        float: none;
+        max-width: 100%;
+        margin: 1em 0;
       }
       .hide {
         display: none;
@@ -61,8 +67,18 @@
         box-shadow: none !important;
       }
 
+      body {
+        background: #fff;
+      }
+
       section {
         box-shadow: none !important;
+        border: none;
+        padding: 0;
+      }
+
+      pre, blockquote {
+        background: none;
       }
 
       .sketch {

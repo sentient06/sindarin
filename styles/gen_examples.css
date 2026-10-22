@@ -7,19 +7,33 @@
     .b30, .b40, .b60, .b70, .b50, .b50b, .b100 {
       -webkit-text-size-adjust: 100%;
       white-space: break-spaces;
-      font-family: monospace;
-      font-size: 1em;
+      font-family: var(--font-mono);
+      font-size: 0.85em;
+      line-height: 1.55;
       max-width: 100%;
       box-sizing: border-box;
       vertical-align: top;      /* not strictly needed; flex aligns tops by default */
-      padding: 0;
-      padding-bottom: 10px;
-      border: 0 solid rgba(0, 0, 0, 0.1);
+      padding: 8px 4px 10px 4px;
+      border: 0 solid var(--line);
       border-bottom-width: 1px;
     }
 
+    .wrapper {
+      margin: 1em 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .wrapper.pre {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+
     .wrapper.pre > div {
+      flex: 0 0 auto;
+      width: max-content;
+      max-width: none;
       white-space: pre;
+      overflow: visible;
     }
 
     .b100 {
@@ -46,19 +60,10 @@
       flex: 0 0 70%;
     }
 
-    .wrapper + h2.h3
+    .wrapper + h2.h3,
     .wrapper + h3,
     .wrapper + h4,
     .wrapper + h5,
     .wrapper + h6 {
       margin-top: -1px;
-    }
-
-    .dark-theme .b30,
-    .dark-theme .b40,
-    .dark-theme .b50,
-    .dark-theme .b50b,
-    .dark-theme .b60,
-    .dark-theme .b70 {
-      border-color: rgba(255, 255, 255, 0.1);
     }
