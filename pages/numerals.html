@@ -1,16 +1,545 @@
 <section>
-<h2>Summary</h2>
+
+<header>
+  <p class="subtitle">
+    Ascending Place-Value Order, Explicit Additive Grouping, and Unambiguous Multiplication
+  </p>
+  <p class="meta">
+    Scholarly proposal · 22 October 2026<br>
+    Applicable by convention to Early Qenya, Quenya, Sindarin, Neo-Quenya, and Neo-Sindarin
+  </p>
+</header>
+
+<div class="abstract">
+  <strong>Abstract.</strong>
+  This document proposes a unified, decimal numeral syntax for Tolkien's Elvish languages, adopting ascending place-value order, coefficient-before-denomination multiplication, and obligatory conjunctions between independent positional groups. The system is intended to resolve structural ambiguities while retaining selected features of Tolkien's attested Early Qenya numerals.
+
+  It is a proposed Neo-Eldarin convention, not a claim that Tolkien established such a universal system.
+</div>
+
+<h2>1. Fundamental Recommendation</h2>
+
 <p>
-  Elves use the duodecimal system, which is a base-12 system. Sindarin has a decimal system, but the duodecimal can be extrapolated.
+  The recommended model is a modified Malagasy-style numeration system, with ascending place-value order both within and between numerical groups. Multipliers precede the denominations they quantify. Independent additive groups must be separated by an explicit conjunction.
 </p>
+
+<p>The six governing principles are:</p>
+
+<ol>
+  <li>Arrange positional groups in ascending magnitude.</li>
+  <li>Arrange units, tens, and hundreds in ascending order within each group.</li>
+  <li>Place a complete coefficient before its denomination.</li>
+  <li>Require a spoken conjunction between independent groups.</li>
+  <li>Restrict multiplicative scope through explicit grammar.</li>
+  <li>Maintain one canonical representation per numerical value.</li>
+</ol>
+
 <p>
-  The numerals are written in crescent order of magnitude, so it starts at a unit, then decimal unit, hundreds, thousands, etc. Example:
+  This approach preserves more of the relevant Early Qenya ordering patterns than an English-style descending paradigm, while avoiding ambiguities arising from unrestricted numerical juxtaposition.
 </p>
+
+<h2>2. Historical Foundations</h2>
+
+<p>
+  The principal evidence comes from the Early Qenya Grammar, published in <em>Parma Eldalamberon</em> 14. The following expressions are reported as Tolkien's own examples.
+</p>
+
+<table>
+  <thead>
+  <tr>
+    <th>Early Qenya</th>
+    <th>Value</th>
+    <th>Significance</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr><td><em>min yukainen</em></td><td>21</td>
+    <td>Unit before tens.</td></tr>
+    <tr><td><em>kea tuksa</em></td><td>110</td>
+    <td>Additive tens and hundred.</td></tr>
+    <tr><td><em>yukainen tuksa</em></td><td>120</td>
+    <td>Ascending additive construction.</td></tr>
+    <tr><td><em>yúyo tuksa</em></td><td>200</td>
+    <td>Multiplier before hundred.</td></tr>
+    <tr><td><em>nelde tukse</em></td><td>300</td>
+    <td>Multiplier before hundreds.</td></tr>
+    <tr><td><em>yúyo húmi</em></td><td>2,000</td>
+    <td>Multiplier before thousand.</td></tr>
+    <tr><td><em>minqekainen</em></td><td>110</td>
+    <td>Alternative numeral construction.</td></tr>
+    <tr><td><em>yunqekainen</em></td><td>120</td>
+    <td>Alternative numeral construction.</td></tr>
+  </tbody>
+</table>
+
+<p class="status">
+  Source: PE14:49–50, 82–83, as reported in Eldamo and specialist commentary.
+</p>
+
+<p>
+  These examples demonstrate the coexistence of ascending additive order and coefficient-before-denomination multiplication. They do not establish a universal rule for complex multipliers of thousands or millions.
+</p>
+
+<h2>3. Structural Ambiguity</h2>
+
+<p>
+  Consider the Neo-Sindarin numerical vocabulary:
+  <em>eneg</em> (six), <em>nelphaen</em> (thirty),
+  and <em>meneg</em> (thousand).
+</p>
+
+<p>
+  Without explicit grouping, a hypothetical sequence <em>eneg nelphaen meneg</em> of these elements may permit competing arithmetical interpretations:
+</p>
+
+<table>
+  <tr><th>Interpretation</th><th>Arithmetic</th><th>Value</th></tr>
+  <tr>
+    <td>Grouped multiplier</td>
+    <td>(6 + 30) × 1,000</td><td>36,000</td>
+  </tr>
+  <tr>
+    <td>Separate components</td>
+    <td>6 + (30 × 1,000)</td><td>30,006</td>
+  </tr>
+  <tr>
+    <td>Additive elements</td>
+    <td>6 + 30 + 1,000</td><td>1,036</td>
+  </tr>
+</table>
+
+<p>
+  The problem is not ascending order itself, but the absence of a rule specifying where a multiplier begins and ends and where addition takes place.
+</p>
+
+<h2>4. Canonical Decimal Grouping</h2>
+
+<h3>Rule I — Divide numbers into positional groups</h3>
+
+<p>
+  Every number is represented as a sum of groups, each containing at most three decimal digits:
+</p>
+
+<div class="formula">
+  N = g<sub>0</sub> + 10³g<sub>1</sub> + 10⁶g<sub>2</sub> + …<br>
+  0 ≤ g<sub>i</sub> ≤ 999
+</div>
+
+<p>
+  Zero-valued groups are omitted. Nonzero groups are spoken in ascending order, beginning with the units and proceeding through thousands, millions, and successively higher denominations.
+</p>
+
+<h3>Rule II — Internal ascending order</h3>
+
+<p>
+  Within a coefficient of 1–999, components occur in the sequence:
+</p>
+
+<div class="formula">
+  Units → Tens → Hundreds
+</div>
+
+<p>
+  The hundreds component is internally multiplicative: a single digit followed by the hundred denomination. The coefficient of a hundred must be explicit when a lower-valued component precedes it.
+</p>
+
+<table>
+  <tr><th>Value</th><th>Structural expression</th></tr>
+  <tr><td>36</td><td>six thirty</td></tr>
+  <tr><td>100</td><td>hundred</td></tr>
+  <tr><td>106</td><td>six one-hundred</td></tr>
+  <tr><td>120</td><td>twenty one-hundred</td></tr>
+  <tr><td>236</td><td>six thirty two-hundred</td></tr>
+  <tr><td>456</td><td>six fifty four-hundred</td></tr>
+</table>
+
+<p class="status">
+  These English expressions are mathematical templates, not translations. Hyphens illustrate component grouping, not prescribed Elvish orthography.
+</p>
+
+<p>
+  For instance, the proposed canonical construction of 120 differs from historical Early Qenya <em>yukainen tuksa</em>. The historical form is retained as an attestation, but excluded from the new standardised grammar.
+</p>
+
+<h3>Rule III — Multiplier before denomination</h3>
+
+<p>
+  A complete coefficient precedes its higher denomination and is multiplied by that denomination.
+</p>
+
+<div class="formula">
+  [6 + 30] × 1,000 = 36,000
+</div>
+
+<div class="formula">
+  [6 + 30 + 200] × 1,000 = 236,000
+</div>
+
+<p>
+  The multiplier cannot include an earlier independent positional group across an additive conjunction. This is an editorial extension beyond Tolkien's attested examples.
+</p>
+
+<h3>
+  Rule IV — Obligatory additive conjunction
+</h3>
+
+<p>
+  Separate nonzero positional groups must be linked by an overt conjunction equivalent to "and". It is prohibited inside an individual coefficient.
+</p>
+
+<table>
+  <tr><th>Value</th><th>Canonical structural expression</th></tr>
+  <tr><td>1,036</td>
+  <td>six thirty AND thousand</td></tr>
+  <tr><td>30,006</td>
+  <td>six AND thirty thousand</td></tr>
+  <tr><td>36,000</td>
+  <td>six thirty thousand</td></tr>
+  <tr><td>36,036</td>
+  <td>six thirty AND six thirty thousand</td></tr>
+  <tr><td>123,456</td>
+  <td>six fifty four-hundred AND three twenty one-hundred thousand</td></tr>
+</table>
+
+<p>
+  The conjunction has additive force only. It cannot be interpreted as part of a multiplicative coefficient.
+</p>
+
+<h3>
+  Rule V — Ascending denomination order
+</h3>
+
+<p>
+  Each higher denomination may occur at most once, and denominations must appear in strictly ascending order across groups.
+</p>
+
+<p>
+  For example, 1,001,036 has the structural expression:
+</p>
+
+<div class="formula">
+  six thirty AND thousand AND million
+</div>
+
+<p>
+  Descending arrangements are disallowed in the canonical register.
+</p>
+
+<h3>
+  Rule VI — Restricted multiplication
+</h3>
+
+<ul>
+  <li>A hundred has a coefficient between 1 and 9.</li>
+  <li>Thousands and higher denominations have coefficients between 1 and 999.</li>
+  <li>A coefficient of one may be omitted before a thousand or a higher denomination.</li>
+  <li>Unrestricted nesting of scale words is prohibited.</li>
+  <li>Each numerical value has one canonical positional representation.</li>
+</ul>
+
+<p>
+  For example, 3,600 is expressed conceptually as 600 + (3 × 1,000), not as 36 × 100.
+</p>
+
+<h2>
+  5. Schematic Neo-Sindarin Examples
+</h2>
+
+<p>
+  The following expressions illustrate grouping with the lexical elements <em>eneg</em>, <em>nelphaen</em>, and <em>meneg</em>. They are not represented as morphologically verified Sindarin sentences. In particular, mutation and numeral–noun inflection remain to be established independently.
+</p>
+
+<table>
+  <tr><th>Value</th><th>Schematic expression</th></tr>
+  <tr>
+  <td>36,000</td>
+  <td><em>eneg nelphaen meneg</em></td>
+  </tr>
+  <tr>
+  <td>30,006</td>
+  <td><em>eneg a nelphaen meneg</em></td>
+  </tr>
+  <tr>
+  <td>1,036</td>
+  <td><em>eneg nelphaen a meneg</em></td>
+  </tr>
+</table>
+
+<p>
+  Here <em>a</em> is the attested Sindarin conjunction "and", assigned an obligatory group-boundary function by the proposed standard. These complete expressions are reconstructed syntactic illustrations, not Tolkien attestations.
+</p>
+
+<h2>6. Formal Grammar</h2>
+
 <pre>
-  Decimal ..: 74035
-  English ..: Seventy four thousand thirty five
-  Sindarin .: Leben nelphaen meneg canad odophaen
+NUMBER :=
+    BLOCK (AND BLOCK)*
+
+BLOCK :=
+    SMALL_GROUP
+    | SCALE
+    | SMALL_GROUP SCALE
+
+SMALL_GROUP :=
+    BELOW_HUNDRED
+    | HUNDRED
+    | HUNDREDS_COMPONENT
+    | BELOW_HUNDRED HUNDREDS_COMPONENT
+
+BELOW_HUNDRED :=
+    NUMBER_1_TO_19
+    | TENS
+    | UNIT TENS
+
+HUNDREDS_COMPONENT :=
+    DIGIT HUNDRED
+
+SCALE :=
+    THOUSAND
+    | MILLION
+    | BILLION
+    | ...
+
+Constraints:
+1. UNIT and DIGIT have values 1–9.
+2. TENS has values 20–90.
+3. SMALL_GROUP has value 1–999.
+4. BLOCKS occur in ascending scale order.
+5. Each scale appears no more than once.
+6. AND separates complete positional blocks.
+7. HUNDRED alone is permitted only when no lower component precedes it.
+8. A SCALE takes only a coefficient 1–999.
 </pre>
+
+<p>
+  The conjunction first divides the expression into independent blocks. Each block is evaluated internally, and its denomination determines its place-value multiplier. The resulting block values are added.
+</p>
+<p>
+  Under these restrictions, the proposed grammar assigns a single numerical interpretation to each well-formed canonical expression.
+</p>
+
+<h2>7. Comparison of Numeral Paradigms</h2>
+
+<table>
+  <tr>
+    <th>Feature</th>
+    <th>English</th>
+    <th>German</th>
+    <th>Proposed</th>
+  </tr>
+  <tr>
+    <td>Units before tens</td>
+    <td>No</td>
+    <td>Often</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td>Lower groups before higher</td>
+    <td>No</td>
+    <td>No</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td>Coefficient before denomination</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td>Compatible with Early Qenya 21 order</td>
+    <td>No</td>
+    <td>Yes</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td>Explicit additive boundaries</td>
+    <td>Variable</td><td>Variable</td>
+    <td>Obligatory</td>
+  </tr>
+  <tr>
+    <td>Unique canonical grouping</td>
+    <td>Language-dependent</td>
+    <td>Language-dependent</td>
+    <td>Required</td>
+  </tr>
+</table>
+
+<p>
+  The proposed system is Malagasy-like in its ascending positional organisation, but is not a direct adoption of Malagasy grammar or conjunction usage.
+</p>
+
+<h2>
+  8. Contradictions and Historical Limitations
+</h2>
+
+<table>
+<tr>
+  <th>Evidence</th><th>Implication</th>
+</tr>
+<tr>
+<td>PE14: Early Qenya additive hundreds</td>
+<td>Forms such as <em>yukainen tuksa</em>
+cannot remain canonical if adjacent coefficients
+are assigned strictly multiplicative scope.</td>
+</tr>
+<tr>
+<td>PE14: coefficient-before-denomination
+constructions</td>
+<td>Support the preferred multiplicative direction,
+but not compound thousand multipliers.</td>
+</tr>
+<tr>
+<td>PE21:77; VT49:45</td>
+<td>Later numeral–noun syntax may conflict with
+the selected Early Qenya-style ordering.</td>
+</tr>
+<tr>
+<td>Early meanings of <em>tuksa</em></td>
+<td>Decimal and duodecimal historical values
+must not be mixed without an explicit base.</td>
+</tr>
+<tr>
+<td>VT42; VT47</td>
+<td>Decimal and duodecimal practices require
+separate evaluation.</td>
+</tr>
+<tr>
+<td>WJ:415, <em>Menegroth</em></td>
+<td>The independent exact cardinal sense of
+Sindarin <em>meneg</em> needs qualification.</td>
+</tr>
+</table>
+
+<p>
+  These conflicts are not erased by the proposal. They demonstrate that the standard is a selective editorial system, rather than a reconstruction of an otherwise complete historical Tolkienian grammar.
+</p>
+
+<h2>
+  9. Language-Wide Application
+</h2>
+
+<p>
+  The same mathematical grammar may be adopted conventionally across Early Qenya, Quenya, Sindarin, Neo-Quenya and Neo-Sindarin. However, the actual lexical and morphological expressions must be developed separately for each language variety.
+</p>
+
+<p>
+  This includes:
+</p>
+
+<ul>
+  <li>Exact denomination vocabulary.</li>
+  <li>Numeral inflection and noun agreement.</li>
+  <li>Consonant mutations and sandhi.</li>
+  <li>The correct form of the additive conjunction.</li>
+  <li>Language-specific treatment of teens and tens.</li>
+  <li>Potential distinct duodecimal vocabulary.</li>
+</ul>
+
+<p>
+  A form that is historically Early Qenya should not automatically be treated as later Quenya. Similarly, a Neo-Sindarin formation should never be represented as a Tolkien-attested word.
+</p>
+
+<h2>10. Attestation Categories</h2>
+
+<p>
+  Every finished lexical or grammatical form should receive one of three labels:
+</p>
+
+<ol>
+  <li>
+    <strong>Attested:</strong> directly recorded by Tolkien in an identified published source.
+  </li>
+  <li>
+    <strong>Plausibly derived:</strong> constructed using identified attested elements and a justified rule; explicitly labeled Neo-.
+  </li>
+  <li>
+    <strong>Unattested and rejected:</strong> not sufficiently supported for use as a verified translation.
+  </li>
+</ol>
+
+<p>
+  The universal grouping rules proposed here belong to the second category at the level of grammatical design. Individual completed word forms may require further verification.
+</p>
+
+<h2>
+  11. Final Recommendation
+</h2>
+
+<p>
+  The recommended canonical numeral system is <strong>ascending, decimal, explicitly grouped, and coefficient-first</strong>.
+</p>
+
+<p>
+  It retains selected Early Qenya compositional principles while introducing compulsory additive boundaries, controlled multiplication, and a restriction against repeated denominations.
+</p>
+
+<p>
+  For the original example, the system distinguishes the three values structurally:
+</p>
+
+<table>
+<tr><th>Value</th><th>Arithmetic</th></tr>
+<tr><td>36,000</td>
+<td>(6 + 30) × 1,000</td></tr>
+<tr><td>30,006</td>
+<td>6 + (30 × 1,000)</td></tr>
+<tr><td>1,036</td>
+<td>(6 + 30) + 1,000</td></tr>
+</table>
+
+<p>
+  This distinction is explicit in both spoken and written form, provided that the standardized conjunction and morphology are implemented consistently.
+</p>
+
+<p>
+  The historical evidence supplies the constituent numeral principles; the new standard supplies the previously unspecified boundaries of arithmetic scope.
+</p>
+
+<h2>
+  12. Sources and Editorial Notes
+</h2>
+
+<ol>
+<li>
+J. R. R. Tolkien, <em>Early Qenya Grammar</em>,
+in <em>Parma Eldalamberon</em> 14,
+pp. 49–51 and 82–85.
+</li>
+<li>
+J. R. R. Tolkien, <em>Common Eldarin:
+Noun Structure</em>,
+in <em>Parma Eldalamberon</em> 21, p. 77.
+</li>
+<li>
+<em>Vinyar Tengwar</em> 42, pp. 24–25;
+47, pp. 10–17, 42;
+48, pp. 6, 21;
+49, p. 45.
+</li>
+<li>
+J. R. R. Tolkien,
+<em>The War of the Jewels</em>, p. 415,
+for the interpretation of <em>Menegroth</em>.
+</li>
+<li>
+Paul Strack, <em>Eldamo</em>,
+Quenya Numerals and related lexical entries:
+<a href="https://eldamo.org/">eldamo.org</a>.
+</li>
+<li>
+Thorsten Renk, <em>The Eldarin Numerals</em>:
+<a href="https://www.science-and-fiction.org/elvish/numerals.html">
+science-and-fiction.org/elvish/numerals.html</a>.
+</li>
+</ol>
+
+<p class="status">
+  Editorial qualification: This document consolidates the preceding scholarly proposal.
+</p>
+
+<div class="footer">
+  Proposed Neo-Eldarin Numeral Standard<br> A modern editorial grammar informed by the linguistic materials of J. R. R. Tolkien.<br> Not an authenticated or authorized statement of Tolkien's own numeral grammar.
+</div>
 
 <h2>Related Topics</h2>
 <ul>
