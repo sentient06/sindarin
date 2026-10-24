@@ -840,7 +840,7 @@ const landingPages = [
     in: 'adjectives' 
   },
   {
-    name: 'A Proposed Neo-Eldarin Numeral Standard',
+    name: 'Revised Numeral Paradigm',
     in: 'numerals',
     css: ['div_tables', 'numerals'],
   },
