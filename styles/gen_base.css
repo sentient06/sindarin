@@ -121,7 +121,7 @@
       font-style: italic;
       font-size: 0.95em;
       line-height: 1.6;
-      display: flex;
+      display: table;
       overflow-x: auto;
     }
 
