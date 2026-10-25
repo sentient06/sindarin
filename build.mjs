@@ -613,6 +613,7 @@ function formatShortcuts(str) {
     .replace(/\*\*([^\*\n]+)\*\*/g, `<b>$1</b>`)
     .replace(/\*([^\*\n]+)\*/g, `<i>$1</i>`)
     .replace(/±([^±\n]+)±/g, `<small>$1</small>`)
+    .replace(/¡([^¡\n]+)¡/g, `<span translate="no">$1</span>`)
     .replace(/[^"]*"([^"]*)\"/g, (m) => m.replace(/(\[[^\]]*\])/g, '<span class="subtle">$1</span>'))
     ;
 }
