@@ -896,6 +896,11 @@ const landingPages = [
     priority: 0.9,
   },
   {
+    name: 'Reconstruction of the "to be" verb',
+    in: 'to_be',
+    priority: 0.9,
+  },
+  {
     name: 'Prepositions',
     skip: true,
     out: 'prepositions',
