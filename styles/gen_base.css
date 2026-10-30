@@ -108,6 +108,10 @@
       padding: 12px 16px;
     }
 
+    pre.collapse {
+      white-space: pre-line;
+    }
+
     main pre {
       overflow: auto;
     }
