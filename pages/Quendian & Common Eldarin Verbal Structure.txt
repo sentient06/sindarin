@@ -1,0 +1,111 @@
+Quendian & Common Eldarin Verbal Structure
+
+The verbal system was, as far as the evidence goes, hardly elaborated at all in Common Quendian; though already one or two of the characteristic features of later Eldarin verbs had appeared: e.g. the association of an n-suffix or nasal infix with past time; the lengthening or fortification of the stem of strong verbs to indicate duration, with which also an ā-suffix or stem was usually associated.
+
+The full elaboration of the verbal system belongs to the Eldarin period, though many features were still unfixed at the time of the divergence; and the later languages (even in their older periods) differ greatly - partly because in addition to choosing differently among variations (of form or function), some of them, such as Noldorin, also abandoned a good deal that was once common. The best preserved, as well as the one most elaborated by later invention, was the verb of early classical Quenya.
+
+The following features of the verbal system are old and belong to Common Eldarin.
+
+Inflexion.
+
+Where no subject was expressed; or when the "action" was strictly impersonal, as in "(it) rains, (it) seems," the bare stem of the verb (or tense) was used uninflected. This was also (unlike Indo-European) the normal form when the subject was expressed by a full noun or name, except a person.
+
+This bare (tense-)stem functioned not only as the stem to which inflexions (pronominal) could be added but also as the 'infinitive' or object of another verb. Cf. English *give* in relation to *I give* or *gives* and in such expressions as *I can give*. But this "infinitive" could only be used as an object, it could not be declined as a noun, nor stand as subject. This again is like English *I can give*, *I can give it* but *Giving does no good; I have no desire of/ idea of giving*. Differences between English and Eldarin were: (a) that English usually employs what is virtually a prefixed infinitive inflexion to *I wish to _ give*; and in some cases uses the *ing*-noun such as *I avoid giving*. In both these cases Eldarin used the "bare infinitive." In other cases it used a noun with a suffix comparable to ing: [iyē, -bē, biyē, mē, miyē were among the commonest].
+
+
+→ NB. As seen below, the pronominal inflexions of Eldarin were objective, not subjective (as in I-E. languages). In consequence such a form as *antā* = give, but *antā-tĕ* "gives" has sense "give I gives it" or *(to) give it*. So Eldarin *ni-kabi antā-t(ĕ)* > *Q ni·kave antās* = I can give it.
+
+
+The *normal* order in Eldarin was with pronouns as with nouns (see Declension): *subject: indirect object: object*. "give the man a book" : "give him it." The subject usually preceded the verb, so that the normal order of a simple sentence was: *The man / he, (to) him, gives it.*
+
+The *unemphatic* pronominal *object* thus originally as a rule followed *immediately* after the verbal stem. From this already in Common Eldarin grew up a system of *inflexions* for the *objective* pronoun - not subjective (as in Indo-European).
+
+→ This has the result that the normal Eldarin verb expresses both the passive and the active: e.g. √MAT "eat": aorist stem *mati*; 1 pers. *matini* (agent unspecified) "one eats me; I am eaten."
+
+The agglutinated inflexional pronouns expressed normally the *direct object* in all *transitive* verbs. Thus *✶antā-ni* could only mean "gives me" not "gives to me." But in intransitive verbs (especially the impersonal) - i.e. in verbs only capable of one object - the inflexional form could be 'indirect': as *✶nemini* "appears/seems to me."
+
+The *unemphatic subject* pronoun *always*, if present, immediately preceded the verb and did not in Common Eldarin become agglutinated to it or inflexional, though this happened in Telerin. In Quenya and Noldorin the subject pronoun was proclitic and only tolerated the intrusion of an *indirect object pronoun* (nothing else). In these languages, therefore, there was a tendency for special coalescent forms of *subject + dative* pronouns to arise.
+
+The unemphatic *indirect object* ("dative") was freer. It appears never, however, to have *followed* a bare stem (of a transitive verb).
+
+→ [ Even in Quenya verse where both archaisms and poetic latitude of word-order appear this is the case without exception.] Its normal place was *between subject* and *verb + object* (or *object* if no verb was expressed).
+
+→ In Quenya *verse* it can follow (enclitic but not coalescent) after a pronominal object inflexion; but this is a literary device (breaking the normal order: subject: dative: object). In natural language, unless emphatic and in elaborated form, in which case it could be placed at will, the unemphatic dative pronoun was placed immediately *before* the verb-stem. In consequence, if there is only a dative pronoun and the *subject* is not expressed, the indefinite subject [CE *ga*, Q *a*] was used. *ni·antā* = "I give"; *e·ni·anta* = "he gives (to) me"; but *ga·ni·antā·t(e)* = "one gives me it, I am given it."
+
+Number in the objects was originally expressed only by their **basic stems** as *ni* "I": *me* "we"; *e* "it, he, she": *khe* "they." But *number* of the *subject* was expressed by inflexions added to the **verb stem** - before the addition of object inflexions. Where the subject was *plural* the inflexion was *r/l*: In Quenya *r* finally; but *l* medially before inflexions.§ Where the subject was *dual* the inflexion was *t/s*: In Quenya (where final *s* became same as *r*) *t* was final; but *s* interior as a rule. Thus: *matir* "(people) eat"; but "(people) eat something" *mati-l·sa* = Qu. *matilda*.
+
+§ In some cases a nasal (assimilated to the pronoun) appears: in Q. before pronominal elements of the 1st person. This is apparently [n] and not the same as the final *-m/n* that sometimes appears at the end of *object* pronouns in pl. and belongs to them, not to the subject.
+
+Another notable point was the absence of a reflexive form, but the employment of two third person pronouns: so called "near" and "remoter." The former were used when *only one* third person (or group) was considered, or for the first of such persons. In consequence with a third person subject it referred always to that subject and was in function "reflexive"; but it was not reflexive after a 1st or 2nd person subject. See *Pronouns*.
+
+Thus Common Eldarin *ni mati-te* = "I eat it (him/her)"; *ke mati-te* = "thou eatest it" etc.; *e mati-te* = "he eats him(self)"; *e mati-the* or *e mati-ste* = he eats him (another man); *ni mati-te* *mati-the* or *ni matitēthe*/*ni matite yu thē* = I eat it and that.
+
+Verbal Stems.
+
+The richest and most elaborated were those of the simple or strong verbs chiefly of √TAL- form.
+
+Already in CE, the majority of these had developed the following stems:-
+
+
+1. *Aorist*. To the simple unmodified stem the suffix *-i* was added: *mati*, eat; *tuli*, come; *kari*, make, do.
+
+This "tense" denoted no tense or time. Its uses closely resembled those of the simple so called present of English: I eat, I do. It was thus used of all statements true at all times (as in proverbs): "gold glitters"; "the sun rises in the morning"; habits, etc.: "I live in a small house." Also as with E. it may be employed as an 'historic present' for narrative; and for the future when defined by such words as 'tomorrow'.
+
+→ A difference from English is seen in the verbs such as "love, know," which in English seldom (or never in their proper sense) use the true or analytic present "I am knowing." In verbs of this sort the *aorist* is usually not constructed in Eldarin; or rather a similar "tense" but with a suffix -ā- is made: so CE melā-, love, istā-, know.
+
+*Present*. This is a genuine "tense," can only be used of what is happening "now" - or of course what is regarded as "now" in narrative or supposition; and usually also implies a fairly continued action (that began before the immediate moment and is likely to continue for some time).
+
+The suffix of this tense is [**ā**]. The stem was in Eldarin made in various ways. One feature was *lengthening* or *fortification* of the **base**: so *māt-ā*; *tūlā* or *taulā* = "am eating"; "am coming." *Reduplication* often accompanied by lengthening/fortification, or by "dynamic" lengthening of one of the base consonants, was another feature. This however in Quenya or Noldorin did not become part of normal conjugation, but served rather to produce new independent verb-stems as *✶mammata-* "to gobble up, to devour, to gorge." But the "repetitive" form with reduplication
+and gemination of the final basic consonant was so common in Q. as to be virtually part of the system of "strong" verbs; so *tutulla-*, to keep on coming (and going). [In Telerin reduplication was the normal way of forming continuative presents: *mamāta-* "is eating."]
+
+
+3. *Perfect*: describing an action that was completed in the immediate past, but the effects of which are still present. It is not certain whether this was completely differentiated from the next (Past) in C. Eldarin, or whether there were simply two similar competing methods of forming a "past" tense, the functions of which were not yet clearly fixed. The so-called "perfect" formations were marked by *lengthening* of the base (never by fortification), followed
+by a suffix **(i)yē**. These stems were also often augmented. There appears also to have been a variety with *compulsory* augment and short (aor.) stem followed by **yē** (not *iyē*). Thus √MAT: *mātiyē-* "have eaten" / *amatyē* / blended *amātiē*. √TUL: *tūliyē* "have come, am arrived, am here" / *utulyē* / *utūliyē*.
+
+The augment was probably more frequently used in words where the view was of the past rather than the present: thus rather *amatyē*, but *tūliyē* "I am here."
+
+
+4. *Past*. Plainly the form *amatyē* described above was also often used in CE as a mere "past." But the pure undefined "past" (referring to an action thought of as over) was usually formed either (a) by *nasalizing* the *aorist* (in which case the augment was usual): as *manti*, *amanti* "ate"; or by a suffix (added to the unmodified base) -nḗ:§ √MBAR: *mbarnē* "dwelt" / *ambarnē*; or blended form *mantē*, *ambarni* etc.
+
+§ It is thought (though it is not certain) that this form was in the beginning confined to *intransitive* verbs, and that *nḗ* (which also functioned alone as a base meaning "was") was originally a time adverb "then, ago." It can in fact still in Q. be used both verbally as "was" and adverbially as "ago," e.g. *á e·ndanne anda né* "Oh! he went back long ago." In that case *-nē* in weak formations or as a suffix, is ultimately distinct from *n*-infix. But it is clear that the two forms were already closely associated and regarded as related already in C. Eldarin - where variation between *n*-infix and *n*-suffix was in any case frequent - and that they were built into one system, in which the choice of which should be employed was originally primarily phonetic - the infix being normally used before *stops*. [With *nē* cf. *en-* of similar use as a deictic particle.]
+
+→ In Quenya "past" or "aorist past" was augmentless, and used very commonly nasal-infixion or suffix *nḗ*; the perfect was normally augmented and as a rule has lengthened stem + suffix *-iē*.
+
+
+5. *Future*. All the Eldarin languages express a simple *future* inflexionally, but the inflexions and patterns used are different. This may mean that the device of an inflexional future had already been achieved in CE but that the later languages all abandoned the older pattern and separately substituted new ones; or that the future could still in CE be expressed by the *aorist* with defining adverbs, while there were already a good many other modes of expression in competitive existence among which the later languages chose different modes to become their normal pattern. Cf. English "I *go* home (soon, tomorrow, next year)"; or defined by a future sentence: I shall go, when he *calls*; beside "I shall go, will go, am about to go, am going to go etc."
+
+In Old Noldorin the future was usually expressed by adding **-thā** to the aorist stem: *matithā-* "will eat." [This thā is probably in origin a defining adverb = then, next, since with time-reference the pronominal stem √THA in Noldorin referred *forward*.]
+
+In *Telerin* a suffix **-rō** is added to the base (or the aorist).
+
+→ In Quenya the suffix is -**bā** (Quenya -vă̄-), which is preceded by *u* (in case of most verbs). The origin of this formation is not clear; but *bā* is certainly verbal, not adverbial. Cf. √BĀ, BANA, go, proceed, as seen in Quenya *vanwa* "gone, over." Q *karuvā-* 'will make' thus originally = "is proceeding to / going to / make".§
+
+§ One view of the choice of u as "tense-vowel" before the suffix is that it is phonetic, and due to the convenience and euphony of *uvā* - which proceeded from the *uvā* naturally produced in verbs with a formative *-u*: as *kelu* "flow," *liru* "sing." These verbs in Quenya usually have future *ūva* (*kelūva* "will flow"); but this is probably secondary (a device to differentiate them after the *uva* suffix spread to other verbs) and the *-u-* of such verbs was in any case of variable quantity.•
+
+• But is also outside *tense* associated with the notion of "begin to do something now (completed later)" so in *u*-verbs: *kelu*, begin to flow. Cf. also *u*-la, ad j. = apt to, likely to do so.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
